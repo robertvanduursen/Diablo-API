@@ -67,6 +67,7 @@ Class_Info('necromancer')
 
 class Armour_miner:
     armorTypes = [
+        'ring',
         'helm',
         'shoulders',
         'torso',
@@ -126,9 +127,59 @@ class Armour_miner:
                 print(len(body))
                 # print(body)
                 for idx, piece in enumerate(re.findall(r'<tr class="row.(.*)? legendary"((.*\s*)*?)</tr>', body)):
-                    print(idx + 1, piece)
+                    print(idx + 1)
+                    print(piece[1])
+
+                    #<ul class="item-effects">
             break
         return True
+
+    def test_xpath(self):
+
+        #/html/body/div[4]/div/div[2]/div[1]/div/div[1]/div[2]/div[2]/div[4]/div[2]/div/table/tbody/tr[1]/td[1]/div/div[2]/div/ul[2]/span[4]
+
+        url = 'https://us.diablo3.com/en/item/{}/#type=legendary'.format('ring')
+        print(url)
+        req = requests.get(url)
+        text = req.text
+
+
+
+
+        import io
+        print(req.encoding)
+        sio = io.BytesIO(req.content)
+        #https://stackoverflow.com/questions/11914472/stringio-in-python3
+
+        # print(sio.getvalue().decode(req.encoding))
+        for idx, x in enumerate(sio.getvalue().decode(req.encoding).split('\n')):
+            print(idx, x)
+        # print(sio.getvalue().decode('utf8'))
+
+        ignore_encoding = lambda s: s.decode(req.encoding, 'ignore')
+
+        #.decode('utf8').encode('ascii')
+        # sio = r'C:\Users\rober\Desktop\necroTest.html'
+        #sio = io.BytesIO(sio.getvalue())
+        # from xml.etree import ElementTree as etree
+        # parser = etree.XMLParser(recover=True)
+        # root = etree.fromstring(text, parser=parser)
+
+        from lxml import etree
+        # from xml import etree
+        parser = etree.XMLParser(recover=True)
+        root = etree.fromstring(text, parser=parser)
+
+        # import xml.etree.cElementTree as ET
+        # root = ET.parse(sio)
+        result = ''
+        for elem in root.findall(r'//*[@id="table-items"]/div[2]/div/table/tbody/tr[1]/td[1]/div/div[2]/div/ul[2]/span[4]'):
+            # How to make decisions based on attributes even in 2.6:
+            if elem.attrib.get('name') == 'foo':
+                result = elem.text
+                print(result)
+                break
+
 
 
 class attribute:
@@ -185,7 +236,7 @@ class Gem:
 
 
 
-# Armour_miner('necromancer').get_legendaries()
+Armour_miner('necromancer').test_xpath()
 
 # lol, todo: this teaches accountantcy
 
