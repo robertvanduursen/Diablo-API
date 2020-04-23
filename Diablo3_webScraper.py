@@ -68,6 +68,7 @@ Class_Info('necromancer')
 class Armour_miner:
     armorTypes = [
         'ring',
+        'amulet',
         'helm',
         'shoulders',
         'torso',
@@ -76,13 +77,15 @@ class Armour_miner:
         'waist',
         'pants',
         'feet',
-        'jewelry',
-        'off-hand',
-        'follower-special',
+        'phylactery',
+        'scythe-1h',
+        'scythe-2h',
 
-        'one-handed',
-        'two-handed',
-        'ranged',
+        # 'jewelry',
+        # 'off-hand',
+        # 'one-handed',
+        # 'two-handed',
+        # 'ranged',
     ]
 
     def __init__(self, className):
@@ -134,52 +137,77 @@ class Armour_miner:
             break
         return True
 
-    def test_xpath(self):
+    def get_items(self):
+        from lxml import html
+        import requests
 
-        #/html/body/div[4]/div/div[2]/div[1]/div/div[1]/div[2]/div[2]/div[4]/div[2]/div/table/tbody/tr[1]/td[1]/div/div[2]/div/ul[2]/span[4]
+        for part in self.armorTypes:
+            print(part)
+            url = 'https://us.diablo3.com/en/item/{}/#type=legendary'.format(part)
+            print(url)
+            page = requests.get(url)
+            tree = html.fromstring(page.content)
 
-        url = 'https://us.diablo3.com/en/item/{}/#type=legendary'.format('ring')
+            _test = '//*[@class="item-details-text"]'
+            legendaries = tree.xpath(_test)
+            total = 0
+            for x in legendaries:
+                title = x.xpath('h3[1]/a[1]/text()')
+                _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
+                secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
+                itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+
+                if secondary and 'Legendary ' in _type:
+                    print(title[0])
+                    for y in secondary:
+                        print('\t', y.text_content())  # , '->', y.attrib)
+                    print()
+                    print()
+                    total += 1
+                if itemset and 'Set ' in _type:
+                    print(title[0])
+                    for y in itemset:
+                        print('\t', y.text_content())  # , '->', y.attrib)
+                    print()
+                    print()
+                    total += 1
+
+            print(total)
+
+    def get_gems(self):
+        from lxml import html
+        import requests
+
+        url = 'https://us.diablo3.com/en/item/gem/'
         print(url)
-        req = requests.get(url)
-        text = req.text
+        page = requests.get(url)
+        tree = html.fromstring(page.content)
 
-
-
-
-        import io
-        print(req.encoding)
-        sio = io.BytesIO(req.content)
-        #https://stackoverflow.com/questions/11914472/stringio-in-python3
-
-        # print(sio.getvalue().decode(req.encoding))
-        for idx, x in enumerate(sio.getvalue().decode(req.encoding).split('\n')):
-            print(idx, x)
-        # print(sio.getvalue().decode('utf8'))
-
-        ignore_encoding = lambda s: s.decode(req.encoding, 'ignore')
-
-        #.decode('utf8').encode('ascii')
-        # sio = r'C:\Users\rober\Desktop\necroTest.html'
-        #sio = io.BytesIO(sio.getvalue())
-        # from xml.etree import ElementTree as etree
-        # parser = etree.XMLParser(recover=True)
-        # root = etree.fromstring(text, parser=parser)
-
-        from lxml import etree
-        # from xml import etree
-        parser = etree.XMLParser(recover=True)
-        root = etree.fromstring(text, parser=parser)
-
-        # import xml.etree.cElementTree as ET
-        # root = ET.parse(sio)
-        result = ''
-        for elem in root.findall(r'//*[@id="table-items"]/div[2]/div/table/tbody/tr[1]/td[1]/div/div[2]/div/ul[2]/span[4]'):
-            # How to make decisions based on attributes even in 2.6:
-            if elem.attrib.get('name') == 'foo':
-                result = elem.text
-                print(result)
-                break
-
+        #//*[@id="grid-items"]/div[2]/div[1]/div[18]
+        _test = '//*[@class="data-cell"]'
+        legendaries = tree.xpath(_test)
+        total = 0
+        for x in legendaries:
+            print(x.attrib)
+            # title = x.xpath('h3[1]/a[1]/text()')
+            # _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
+            # secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
+            # itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+            #
+            # if secondary and 'Legendary ' in _type:
+            #     print(title[0])
+            #     for y in secondary:
+            #         print('\t', y.text_content())  # , '->', y.attrib)
+            #     print()
+            #     print()
+            #     total += 1
+            # if itemset and 'Set ' in _type:
+            #     print(title[0])
+            #     for y in itemset:
+            #         print('\t', y.text_content())  # , '->', y.attrib)
+            #     print()
+            #     print()
+            #     total += 1
 
 
 class attribute:
@@ -236,7 +264,8 @@ class Gem:
 
 
 
-Armour_miner('necromancer').test_xpath()
+Armour_miner('necromancer').get_gems()
+# Armour_miner('necromancer').get_items()
 
 # lol, todo: this teaches accountantcy
 
