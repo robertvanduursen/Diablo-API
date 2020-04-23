@@ -18,21 +18,29 @@ page = requests.get("https://us.diablo3.com/en/item/ring/#type=legendary")
 tree = html.fromstring(page.content)
 
 _test = '//*[@class="item-details-text"]'
-legendaries = tree.xpath(_test)  # + '/text()')
+legendaries = tree.xpath(_test)
 total = 0
 for x in legendaries:
     title = x.xpath('h3[1]/a[1]/text()')
-    _type = x.xpath('/*[@class="item-type"]') # /li[1]/span[1]/text()
-    print('_type', _type)
-    # secondary = x.xpath('div[1]/*[@class="item-effects"]/*[@class="d3-color-ffff8000"]')
+    _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0] # /li[1]/span[1]/text()
     secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
-    if secondary:
-        print(title)
+    itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+
+    if secondary and _type == 'Legendary Ring':
+        print(title[0])
         for y in secondary:
-            print(y.text_content())#, '->', y.attrib)
+            print('\t',y.text_content())#, '->', y.attrib)
+        print()
+        print()
+        total += 1
+    if itemset and _type == 'Set Ring':
+        print(title[0])
+        for y in itemset:
+            print('\t', y.text_content())  # , '->', y.attrib)
+        print()
         print()
         total += 1
 
 print(total)
-# <p class="item-property-category">Secondary</p>
+
 # todo: could just simply scrape all the items effects, if the amount of intel trumps the effect
