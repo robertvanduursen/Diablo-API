@@ -23,7 +23,9 @@ class Class_Info:
         self.break_down(r'https://us.diablo3.com/en/class/{}/active/'.format(self.className))
         self.break_down(r'https://us.diablo3.com/en/class/{}/passive/'.format(self.className))
 
-    def get_skills(self, url = r'https://us.diablo3.com/en/class/necromancer/active/'):
+    def _get_skills(self, url = r'https://us.diablo3.com/en/class/necromancer/active/'):
+        url = r'https://us.diablo3.com/en/class/{}/active/'.format(self.className)
+        print(url)
         req = requests.get(url)
         text = req.text
         # print(text)
@@ -31,6 +33,69 @@ class Class_Info:
         if result:
             # print(result.groups()[0])
             return result.groups()[0]
+
+    def get_skills(self):
+
+        from lxml import html
+        import requests
+
+        url = r'https://us.diablo3.com/en/class/{}/active/'.format(self.className)
+        print(url)
+        page = requests.get(url)
+        tree = html.fromstring(page.content)
+        #//*[@id="table-skills-active"]/div/div/table/tbody/tr[1]/td[2]/div/h3/a
+        _test = '//*[@class="skill-details"]'
+        legendaries = tree.xpath(_test)
+        total = 0
+        for x in legendaries:
+            title = x.xpath('h3[1]/a[1]')
+            print(total, title[0].text_content())
+            # print(title[0].attrib['href'])
+            total += 1
+
+            url = r'https://us.diablo3.com/{}'.format(title[0].attrib['href'])
+            page = requests.get(url)
+            tree = html.fromstring(page.content)
+            # //*[@id="table-skills-active"]/div/div/table/tbody/tr[1]/td[2]/div/h3/a
+
+            _test = '//*[@class="skill-desc"]'
+            skill = tree.xpath(_test)
+            print(skill[0].text_content().strip())
+
+
+            _test = '//*[@class="table rune-list"]'
+            runes = tree.xpath(_test)
+            for y in runes:
+                #//*[@id="rune-variants"]/div/div/table/tbody/tr[1]/td[2]/div
+                rune = y.xpath('table[1]/tbody[1]//*[@class="rune-details"]') #
+                for data in rune:
+                    name = data.xpath('h3[1]')
+                    print('\t', name[0].text_content())
+                    desc = data.xpath('div[2]')
+                    print('\t\t', desc[0].text_content())
+            print()
+
+
+            # _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
+            # secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
+            # itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+            #
+            # if secondary and 'Legendary ' in _type:
+            #     print(title[0])
+            #     for y in secondary:
+            #         print('\t', y.text_content())  # , '->', y.attrib)
+            #     print()
+            #     print()
+            #     total += 1
+            # if itemset and 'Set ' in _type:
+            #     print(title[0])
+            #     for y in itemset:
+            #         print('\t', y.text_content())  # , '->', y.attrib)
+            #     print()
+            #     print()
+            #     total += 1
+
+        print(total)
 
     def break_down(self, url):
         text = self.get_skills(url)
@@ -52,7 +117,7 @@ class Class_Info:
             links = re.findall(r'<div class="skill-description">(.*)?</div>', tableRow, re.S)
             for link in links:
                 description = re.sub(r'(<.*?>)', '', link).strip()
-            # print()
+
 
             print("""
             class {}:
@@ -62,7 +127,7 @@ class Class_Info:
     
             """.format(name.replace(' ','_'),name, category , description))
 
-Class_Info('necromancer')
+# Class_Info('necromancer')
 
 
 class Armour_miner:
@@ -262,10 +327,20 @@ class Gem:
         return Intel(280)
 
 
+import enum
+class Classes(enum.Enum):
+    BARBARIAN = 'barbarian'
+    NECROMANCER = 'necromancer'
+    WIZARD = 'wizard'
 
 
-Armour_miner('necromancer').get_gems()
-# Armour_miner('necromancer').get_items()
+barbarian = Armour_miner(Classes.BARBARIAN.value)
+print(Classes.BARBARIAN.value)
+print(Class_Info(Classes.BARBARIAN.value).get_skills())
+
+
+# Armour_miner('necromancer').get_gems()
+# barbarian.get_items()
 
 # lol, todo: this teaches accountantcy
 
