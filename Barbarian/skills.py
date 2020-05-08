@@ -1,6 +1,22 @@
+class Skill(object):
+    category = False
+    description = False
+    url = False
+    runes = False
+
+    @property
+    def data(self):
+        if self.category:
+            print('category: {}'.format(self.category))
+        if self.description:
+            print('description: {}'.format(self.description))
+        if self.runes:
+            print('runes: {}'.format(self.runes))
+
+        return True
 
 
-class Bash:
+class Bash(Skill):
     """ Bash """
     category = "active"
     description = """
@@ -11,7 +27,7 @@ class Bash:
     url = r'https://us.diablo3.com//en/class/barbarian/active/bash'
 
 
-    """
+    runes = """
 	 Frostbite
 		Each hit Freezes the enemy for 1.5 seconds.
 
@@ -36,7 +52,7 @@ class Bash:
     """
 
 
-class Hammer_of_the_Ancients:
+class Hammer_of_the_Ancients(Skill):
     """ Hammer of the Ancients """
     category = "active"
     description = """
@@ -47,7 +63,7 @@ class Hammer_of_the_Ancients:
     url = r'https://us.diablo3.com//en/class/barbarian/active/hammer-of-the-ancients'
 
 
-    """
+    runes = """
 	 Rolling Thunder
 		 Create a shockwave that deals 505% weapon damage to all enemies within 22 yards in front of you.
 
@@ -70,7 +86,7 @@ class Hammer_of_the_Ancients:
     """
 
 
-class Cleave:
+class Cleave(Skill):
     """ Cleave """
     category = "active"
     description = """
@@ -81,7 +97,7 @@ class Cleave:
     url = r'https://us.diablo3.com//en/class/barbarian/active/cleave'
 
 
-    """
+    runes = """
 	 Rupture
 		 Enemies slain by Cleave explode, causing 160% weapon damage as Fire to all other enemies within 8 yards.
 
@@ -104,7 +120,7 @@ class Cleave:
     """
 
 
-class Ground_Stomp:
+class Ground_Stomp(Skill):
     """ Ground Stomp """
     category = "active"
     description = """
@@ -116,7 +132,7 @@ class Ground_Stomp:
     url = r'https://us.diablo3.com//en/class/barbarian/active/ground-stomp'
 
 
-    """
+    runes = """
 	Deafening Crash
 		 Reduce the cooldown of Ground Stomp to 8 seconds.
 
@@ -137,7 +153,7 @@ class Ground_Stomp:
     """
 
 
-class Rend:
+class Rend(Skill):
     """ Rend """
     category = "active"
     description = """
@@ -148,7 +164,7 @@ class Rend:
     url = r'https://us.diablo3.com//en/class/barbarian/active/rend'
 
 
-    """
+    runes = """
 	 Ravage
 		 Increase the range of Rend to hit all enemies within 18 yards.
 
@@ -171,7 +187,7 @@ class Rend:
     """
 
 
-class Leap:
+class Leap(Skill):
     """ Leap """
     category = "active"
     description = """
@@ -183,7 +199,7 @@ class Leap:
     url = r'https://us.diablo3.com//en/class/barbarian/active/leap'
 
 
-    """
+    runes = """
 	Iron Impact
 		 Gain 150% additional Armor for 4 seconds after landing.
 
@@ -202,7 +218,7 @@ class Leap:
     """
 
 
-class Overpower:
+class Overpower(Skill):
     """ Overpower """
     category = "active"
     description = """
@@ -215,7 +231,7 @@ class Overpower:
     url = r'https://us.diablo3.com//en/class/barbarian/active/overpower'
 
 
-    """
+    runes = """
 	 Storm of Steel
 		 Throw up to 3 axes at nearby enemies that each deal 380% weapon damage.
 
@@ -236,7 +252,7 @@ class Overpower:
     """
 
 
-class Frenzy:
+class Frenzy(Skill):
     """ Frenzy """
     category = "active"
     description = """
@@ -247,7 +263,7 @@ class Frenzy:
     url = r'https://us.diablo3.com//en/class/barbarian/active/frenzy'
 
 
-    """
+    runes = """
 	Sidearm
 		 Each strike has a 25% chance to throw a piercing axe at a nearby enemy that deals 300% weapon damage as Cold to all enemies in its path.
 
@@ -272,7 +288,7 @@ class Frenzy:
     """
 
 
-class Seismic_Slam:
+class Seismic_Slam(Skill):
     """ Seismic Slam """
     category = "active"
     description = """
@@ -282,7 +298,7 @@ class Seismic_Slam:
     """
     url = r'https://us.diablo3.com//en/class/barbarian/active/seismic-slam'
 
-    """
+    runes = """
 	Stagger
 		 Reduce the cost to 22 Fury.
 
@@ -303,7 +319,7 @@ class Seismic_Slam:
     """
 
 
-class Revenge:
+class Revenge(Skill):
     """ Revenge """
     category = "active"
     description = """
@@ -316,7 +332,7 @@ class Revenge:
     url = r'https://us.diablo3.com//en/class/barbarian/active/revenge'
 
 
-    """
+    runes = """
 	 Blood Law
 		 Increase healing to 6% of maximum Life for each enemy hit.
 
@@ -339,7 +355,7 @@ class Revenge:
     """
 
 
-class Threatening_Shout:
+class Threatening_Shout(Skill):
     """ Threatening Shout """
     category = "active"
     description = """
@@ -351,7 +367,7 @@ class Threatening_Shout:
     url = r'https://us.diablo3.com//en/class/barbarian/active/threatening-shout'
 
 
-    """
+    runes = """
 	 Intimidate
 		 Affected enemies also have their movement speed reduced by 60%.
 
@@ -370,7 +386,7 @@ class Threatening_Shout:
     """
 
 
-class Sprint:
+class Sprint(Skill):
     """ Sprint """
     category = "active"
     description = """
@@ -380,7 +396,7 @@ class Sprint:
     url = r'https://us.diablo3.com//en/class/barbarian/active/sprint'
 
 
-    """
+    runes = """
 	 Rush
 		 Increase Dodge Chance by 12% while sprinting.
 
@@ -399,7 +415,7 @@ class Sprint:
     """
 
 
-class Weapon_Throw:
+class Weapon_Throw(Skill):
     """ Weapon Throw """
     category = "active"
     description = """
@@ -410,7 +426,7 @@ class Weapon_Throw:
     url = r'https://us.diablo3.com//en/class/barbarian/active/weapon-throw'
 
 
-    """
+    runes = """
 	 Mighty Throw
 		 Increase thrown weapon damage to 400% weapon damage as Lightning.
 
@@ -433,7 +449,7 @@ class Weapon_Throw:
     """
 
 
-class Earthquake:
+class Earthquake(Skill):
     """ Earthquake """
     category = "active"
     description = """
@@ -445,7 +461,7 @@ class Earthquake:
     url = r'https://us.diablo3.com//en/class/barbarian/active/earthquake'
 
 
-    """
+    runes = """
 	 Giant's Stride
 		 20 secondary tremors follow your movement and deal 300% weapon damage as Fire each.
 
@@ -468,7 +484,7 @@ class Earthquake:
     """
 
 
-class Whirlwind:
+class Whirlwind(Skill):
     """ Whirlwind """
     category = "active"
     description = """
@@ -481,7 +497,7 @@ class Whirlwind:
     url = r'https://us.diablo3.com//en/class/barbarian/active/whirlwind'
 
 
-    """
+    runes = """
 	 Dust Devils
 		 Generate harsh tornadoes that deal 180% weapon damage to enemies in their path.
 
@@ -504,7 +520,7 @@ class Whirlwind:
     """
 
 
-class Furious_Charge:
+class Furious_Charge(Skill):
     """ Furious Charge """
     category = "active"
     description = """
@@ -518,7 +534,7 @@ class Furious_Charge:
     url = r'https://us.diablo3.com//en/class/barbarian/active/furious-charge'
 
 
-    """
+    runes = """
 	 Battering Ram
 		 Increase the damage to 1050% weapon damage as Fire.
 
@@ -541,7 +557,7 @@ class Furious_Charge:
     """
 
 
-class Ignore_Pain:
+class Ignore_Pain(Skill):
     """ Ignore Pain """
     category = "active"
     description = """
@@ -552,7 +568,7 @@ class Ignore_Pain:
     url = r'https://us.diablo3.com//en/class/barbarian/active/ignore-pain'
 
 
-    """
+    runes = """
 	 Bravado
 		 While Ignore Pain is active, gain 40% increased movement speed and knock enemies away as you run.
 
@@ -571,7 +587,7 @@ class Ignore_Pain:
     """
 
 
-class Battle_Rage:
+class Battle_Rage(Skill):
     """ Battle Rage """
     category = "active"
     description = """
@@ -582,7 +598,7 @@ class Battle_Rage:
     url = r'https://us.diablo3.com//en/class/barbarian/active/battle-rage'
 
 
-    """
+    runes = """
 	 Marauder's Rage
 		 Increase damage bonus to 15%.
 
@@ -601,7 +617,7 @@ class Battle_Rage:
     """
 
 
-class Call_of_the_Ancients:
+class Call_of_the_Ancients(Skill):
     """ Call of the Ancients """
     category = "active"
     description = """
@@ -614,7 +630,7 @@ class Call_of_the_Ancients:
     url = r'https://us.diablo3.com//en/class/barbarian/active/call-of-the-ancients'
 
 
-    """
+    runes = """
 	 The Council Rises
 		 The Ancients deal 540% weapon damage as Fire with each attack.
 
@@ -637,7 +653,7 @@ class Call_of_the_Ancients:
     """
 
 
-class Ancient_Spear:
+class Ancient_Spear(Skill):
     """ Ancient Spear """
     category = "active"
     description = """
@@ -648,7 +664,7 @@ class Ancient_Spear:
     url = r'https://us.diablo3.com//en/class/barbarian/active/ancient-spear'
 
 
-    """
+    runes = """
 	 Ranseur
 		 Enemies hit are knocked back 5 yards.
 
@@ -667,7 +683,7 @@ class Ancient_Spear:
     """
 
 
-class War_Cry:
+class War_Cry(Skill):
     """ War Cry """
     category = "active"
     description = """
@@ -697,7 +713,7 @@ class War_Cry:
     """
 
 
-class Wrath_of_the_Berserker:
+class Wrath_of_the_Berserker(Skill):
     """ Wrath of the Berserker """
     category = "active"
     description = """
@@ -729,7 +745,7 @@ class Wrath_of_the_Berserker:
     """
 
 
-class Avalanche:
+class Avalanche(Skill):
     """ Avalanche """
     category = "active"
     description = """
