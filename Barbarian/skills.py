@@ -3,22 +3,24 @@
 class Bash:
     """ Bash """
     category = "active"
-    description = """Generate: 6 Fury per attack
+    description = """
+    Generate: 6 Fury per attack
 
-Brutally smash an enemy for 320% weapon damage."""
+    Brutally smash an enemy for 320% weapon damage.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/bash'
 
 
-"""
+    """
 	 Frostbite
-		 Each hit Freezes the enemy for 1.5 seconds.
+		Each hit Freezes the enemy for 1.5 seconds.
 
-Enemies can be frozen by Bash once every 5 seconds.
+        Enemies can be frozen by Bash once every 5 seconds.
 
 	 Onslaught
 		 The enemy has a 10% increased chance to be Critically Hit for 3 seconds.
 
-Bash's damage turns into Lightning.
+        Bash's damage turns into Lightning.
 
 	 Punish
 		 Increase your damage by 4% for 5 seconds after using Bash. This effect stacks up to 3 times.
@@ -26,24 +28,26 @@ Bash's damage turns into Lightning.
 	 Instigation
 		 Increase Fury generated to 9.
 
-Bash's damage turns into Fire.
+        Bash's damage turns into Fire.
 
 	 Pulverize
 		 Each hit causes a shockwave that deals 100% weapon damage as Fire to enemies in a 26 yard line behind the primary enemy.
 
-"""
+    """
 
 
 class Hammer_of_the_Ancients:
     """ Hammer of the Ancients """
     category = "active"
-    description = """Cost: 20 Fury
+    description = """
+    Cost: 20 Fury
 
-Call forth a massive hammer to smash enemies directly in front of you for 535% weapon damage. Hammer of the Ancients has a 1% increased Critical Hit Chance for every 5 Fury that you have."""
+    Call forth a massive hammer to smash enemies directly in front of you for 535% weapon damage. Hammer of the Ancients has a 1% increased Critical Hit Chance for every 5 Fury that you have.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/hammer-of-the-ancients'
 
 
-"""
+    """
 	 Rolling Thunder
 		 Create a shockwave that deals 505% weapon damage to all enemies within 22 yards in front of you.
 
@@ -53,36 +57,38 @@ Call forth a massive hammer to smash enemies directly in front of you for 535% w
 	 The Devil's Anvil
 		 Each hit creates a tremor at the point of impact for 2 seconds that Chills enemies by 80%.
 
-Hammer of the Ancients's damage turns into Cold.
+        Hammer of the Ancients's damage turns into Cold.
 
 	 Thunderstrike
 		 When you kill an enemy with Hammer of the Ancients, other enemies within 10 yards are Stunned for 2 seconds.
 
-Hammer of the Ancients turns into Lightning damage.
+        Hammer of the Ancients turns into Lightning damage.
 
 	 Birthright
 		 Critical Hits heal you for 3% of your maximum Life.
 
-"""
+    """
 
 
 class Cleave:
     """ Cleave """
     category = "active"
-    description = """Generate: 6 Fury per attack
+    description = """
+    Generate: 6 Fury per attack
 
-Swing your weapon in a wide arc to deal 200% weapon damage to all enemies caught in the swing."""
+    Swing your weapon in a wide arc to deal 200% weapon damage to all enemies caught in the swing.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/cleave'
 
 
-"""
+    """
 	 Rupture
 		 Enemies slain by Cleave explode, causing 160% weapon damage as Fire to all other enemies within 8 yards.
 
 	 Reaping Swing
 		 Generate 1 additional Fury per enemy hit.
 
-Cleave's damage turns into Fire.
+        Cleave's damage turns into Fire.
 
 	 Scattering Blast
 		 On Critical Hits, knock enemies up into the air and deal 80% weapon damage to enemies where they land.
@@ -93,26 +99,28 @@ Cleave's damage turns into Fire.
 	 Gathering Storm
 		 Enemies cleaved are Chilled and take 10% increased damage from all sources for 3 seconds.
 
-Cleave's damage turns into Cold.
+        Cleave's damage turns into Cold.
 
-"""
+    """
 
 
 class Ground_Stomp:
     """ Ground Stomp """
     category = "active"
-    description = """Generate: 15 Fury
-Cooldown: 12 seconds
+    description = """
+    Generate: 15 Fury
+    Cooldown: 12 seconds
 
-Smash the ground, stunning all enemies within 14 yards for 4 seconds."""
+    Smash the ground, stunning all enemies within 14 yards for 4 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/ground-stomp'
 
 
-"""
-	 Deafening Crash
+    """
+	Deafening Crash
 		 Reduce the cooldown of Ground Stomp to 8 seconds.
 
-Enemies in the area have their movement speed slowed by 80% for 8 seconds after they recover from being stunned.
+         Enemies in the area have their movement speed slowed by 80% for 8 seconds after they recover from being stunned.
 
 	 Wrenching Smash
 		 Increase the area of effect to 24 yards. Enemies are pulled closer before the strike lands.
@@ -126,23 +134,25 @@ Enemies in the area have their movement speed slowed by 80% for 8 seconds after 
 	 Jarring Slam
 		 Enemies hit have a chance to drop a health globe.
 
-"""
+    """
 
 
 class Rend:
     """ Rend """
     category = "active"
-    description = """Cost: 20 Fury
+    description = """
+    Cost: 20 Fury
 
-A sweeping strike causes all enemies within 12 yards to Bleed for 1100% weapon damage as Physical over 5 seconds."""
+    A sweeping strike causes all enemies within 12 yards to Bleed for 1100% weapon damage as Physical over 5 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/rend'
 
 
-"""
+    """
 	 Ravage
 		 Increase the range of Rend to hit all enemies within 18 yards.
 
-Rend's damage turns into Fire.
+         Rend's damage turns into Fire.
 
 	 Blood Lust
 		 Heal for 0.5% of your maximum Life per second for each affected enemy.
@@ -153,26 +163,28 @@ Rend's damage turns into Fire.
 	 Mutilate
 		 Affected enemies are Chilled and take 10% increased damage from all sources.
 
-Rend's damage turns into Cold.
+         Rend's damage turns into Cold.
 
 	 Bloodbath
 		 Enemies killed while bleeding cause all enemies within 10 yards to begin bleeding for 1100% weapon damage as Physical over 5 seconds.
 
-"""
+    """
 
 
 class Leap:
     """ Leap """
     category = "active"
-    description = """Generate: 15 Fury
-Cooldown: 10 seconds
+    description = """
+    Generate: 15 Fury
+    Cooldown: 10 seconds
 
-Leap into the air, dealing 180% weapon damage to all enemies within 10 yards of your destination and slowing their movement speed by 60% for 3 seconds."""
+    Leap into the air, dealing 180% weapon damage to all enemies within 10 yards of your destination and slowing their movement speed by 60% for 3 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/leap'
 
 
-"""
-	 Iron Impact
+    """
+	Iron Impact
 		 Gain 150% additional Armor for 4 seconds after landing.
 
 	 Launch
@@ -187,28 +199,30 @@ Leap into the air, dealing 180% weapon damage to all enemies within 10 yards of 
 	 Death from Above
 		 Land with such force that enemies have a 100% chance to be stunned for 3 seconds.
 
-"""
+    """
 
 
 class Overpower:
     """ Overpower """
     category = "active"
-    description = """Cooldown: 12 seconds
+    description = """
+    Cooldown: 12 seconds
 
-Deal 380% weapon damage to all enemies within 9 yards.
+    Deal 380% weapon damage to all enemies within 9 yards.
 
-Critical Hits have a chance to reduce the cooldown of Overpower by 1 second."""
+    Critical Hits have a chance to reduce the cooldown of Overpower by 1 second.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/overpower'
 
 
-"""
+    """
 	 Storm of Steel
 		 Throw up to 3 axes at nearby enemies that each deal 380% weapon damage.
 
 	 Killing Spree
 		 Your Critical Hit Chance is increased by 8% for 5 seconds.
 
-Overpower's damage turns into Lightning.
+         Overpower's damage turns into Lightning.
 
 	 Crushing Advance
 		 Redirect 35% of incoming melee damage back to the attacker for 5 seconds after Overpower is activated.
@@ -219,28 +233,30 @@ Overpower's damage turns into Lightning.
 	 Revel
 		 Increase damage to 760% weapon damage as Fire.
 
-"""
+    """
 
 
 class Frenzy:
     """ Frenzy """
     category = "active"
-    description = """Generate: 4 Fury per attack
+    description = """
+    Generate: 4 Fury per attack
 
-Swing for 220% weapon damage. Frenzy's attack speed increases by 15% for 4 seconds with each swing. This effect stacks up to 5 times."""
+    Swing for 220% weapon damage. Frenzy's attack speed increases by 15% for 4 seconds with each swing. This effect stacks up to 5 times.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/frenzy'
 
 
-"""
-	 Sidearm
+    """
+	Sidearm
 		 Each strike has a 25% chance to throw a piercing axe at a nearby enemy that deals 300% weapon damage as Cold to all enemies in its path.
 
-Frenzy's damage turns into Cold.
+         Frenzy's damage turns into Cold.
 
 	 Berserk
 		 Increase Fury generated to 6.
 
-Frenzy's damage turns into Cold.
+         Frenzy's damage turns into Cold.
 
 	 Vanguard
 		 Gain 5% movement speed for each stack of Frenzy.
@@ -251,25 +267,26 @@ Frenzy's damage turns into Cold.
 	 Maniac
 		 Each Frenzy effect also increases your damage by 2.5%.
 
-Frenzy's damage turns into Fire.
+         Frenzy's damage turns into Fire.
 
-"""
+    """
 
 
 class Seismic_Slam:
     """ Seismic Slam """
     category = "active"
-    description = """Cost: 30 Fury
+    description = """
+    Cost: 30 Fury
 
-Slam the ground and cause a wave of destruction that deals 620% weapon damage to enemies up to 50 yards in front of you."""
+    Slam the ground and cause a wave of destruction that deals 620% weapon damage to enemies up to 50 yards in front of you.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/seismic-slam'
 
-
-"""
-	 Stagger
+    """
+	Stagger
 		 Reduce the cost to 22 Fury.
 
-Seismic Slam's damage turns into Lightning.
+        Seismic Slam's damage turns into Lightning.
 
 	 Shattered Ground
 		 Increase damage to 735% weapon damage as Fire and knocks all enemies hit up into the air.
@@ -283,28 +300,30 @@ Seismic Slam's damage turns into Lightning.
 	 Permafrost
 		 Create a sheet of frost that deals 755% weapon damage as Cold and Chills enemies by 60% for 1 second.
 
-"""
+    """
 
 
 class Revenge:
     """ Revenge """
     category = "active"
-    description = """Cost: 1 charge
+    description = """
+    Cost: 1 charge
 
-Deal 300% weapon damage to all nearby enemies. You heal 4% of your maximum Life for each enemy hit.
+    Deal 300% weapon damage to all nearby enemies. You heal 4% of your maximum Life for each enemy hit.
 
-Revenge has a 15% chance to gain a charge each time you are hit. Maximum 2 charges."""
+    Revenge has a 15% chance to gain a charge each time you are hit. Maximum 2 charges.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/revenge'
 
 
-"""
+    """
 	 Blood Law
 		 Increase healing to 6% of maximum Life for each enemy hit.
 
 	 Best Served Cold
 		 Increase your Critical Hit Chance by 8% for 6 seconds after using Revenge.
 
-Revenge's damage turns into Cold.
+         Revenge's damage turns into Cold.
 
 	 Retribution
 		 Increase damage to 700% weapon damage as Fire.
@@ -312,25 +331,27 @@ Revenge's damage turns into Cold.
 	 Grudge
 		 Knockback enemies 24 yards when using Revenge.
 
-Revenge's damage turns into Lightning.
+        Revenge's damage turns into Lightning.
 
 	 Provocation
 		 Increase the maximum number of charges to 3.
 
-"""
+    """
 
 
 class Threatening_Shout:
     """ Threatening Shout """
     category = "active"
-    description = """Generate: 15 Fury
-Cooldown: 10 seconds
+    description = """
+    Generate: 15 Fury
+    Cooldown: 10 seconds
 
-Shout with great ferocity, reducing damage done by enemies within 25 yards by 20% for 15 seconds."""
+    Shout with great ferocity, reducing damage done by enemies within 25 yards by 20% for 15 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/threatening-shout'
 
 
-"""
+    """
 	 Intimidate
 		 Affected enemies also have their movement speed reduced by 60%.
 
@@ -346,19 +367,20 @@ Shout with great ferocity, reducing damage done by enemies within 25 yards by 20
 	 Terrify
 		 Enemies are severely demoralized. Each enemy has a 100% chance to flee in Fear for 3 seconds.
 
-"""
+    """
 
 
 class Sprint:
     """ Sprint """
     category = "active"
-    description = """Cost: 20 Fury
-
-Increase movement speed by 30% for 3 seconds."""
+    description = """
+    Cost: 20 Fury
+    Increase movement speed by 30% for 3 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/sprint'
 
 
-"""
+    """
 	 Rush
 		 Increase Dodge Chance by 12% while sprinting.
 
@@ -374,26 +396,28 @@ Increase movement speed by 30% for 3 seconds."""
 	 Forced March
 		 Increase movement speed of allies within 50 yards by 20% for 3 seconds.
 
-"""
+    """
 
 
 class Weapon_Throw:
     """ Weapon Throw """
     category = "active"
-    description = """Generate: 6 Fury per attack
+    description = """
+    Generate: 6 Fury per attack
 
-Hurl a throwing weapon at an enemy dealing 275% weapon damage."""
+    Hurl a throwing weapon at an enemy dealing 275% weapon damage.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/weapon-throw'
 
 
-"""
+    """
 	 Mighty Throw
 		 Increase thrown weapon damage to 400% weapon damage as Lightning.
 
 	 Ricochet
 		 The weapon ricochets to 3 enemies within 20 yards of each other.
 
-Weapon Throw's damage turns into Fire.
+         Weapon Throw's damage turns into Fire.
 
 	 Throwing Hammer
 		 Hurl a hammer with a 40% chance to Stun the enemy for 1 second.
@@ -404,22 +428,24 @@ Weapon Throw's damage turns into Fire.
 	 Balanced Weapon
 		 Increase Fury generated to 9.
 
-Weapon Throw's damage turns into Fire.
+        Weapon Throw's damage turns into Fire.
 
-"""
+    """
 
 
 class Earthquake:
     """ Earthquake """
     category = "active"
-    description = """Cost: 25 Fury
-Cooldown: 60 seconds
+    description = """
+    Cost: 25 Fury
+    Cooldown: 60 seconds
 
-Shake the ground violently, dealing 4800% weapon damage as Fire over 8 seconds to all enemies within 18 yards."""
+    Shake the ground violently, dealing 4800% weapon damage as Fire over 8 seconds to all enemies within 18 yards.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/earthquake'
 
 
-"""
+    """
 	 Giant's Stride
 		 20 secondary tremors follow your movement and deal 300% weapon damage as Fire each.
 
@@ -429,7 +455,7 @@ Shake the ground violently, dealing 4800% weapon damage as Fire over 8 seconds t
 	 The Mountain's Call
 		 Remove the Fury cost and reduce the cooldown to 30 seconds.
 
-Earthquake's damage turns into Lightning.
+         Earthquake's damage turns into Lightning.
 
 	 Molten Fury
 		 Increase Earthquake's damage to 6000% weapon damage as Fire.
@@ -437,30 +463,32 @@ Earthquake's damage turns into Lightning.
 	 Cave-In
 		 All enemies within 24 yards are pulled in towards you.
 
-Earthquake's damage turns into Physical.
+         Earthquake's damage turns into Physical.
 
-"""
+    """
 
 
 class Whirlwind:
     """ Whirlwind """
     category = "active"
-    description = """Cost: 10 Fury
+    description = """
+    Cost: 10 Fury
 
-Deliver multiple attacks to everything in your path for 340% weapon damage.
+    Deliver multiple attacks to everything in your path for 340% weapon damage.
 
-While whirlwinding, you move at 100% movement speed."""
+    While whirlwinding, you move at 100% movement speed.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/whirlwind'
 
 
-"""
+    """
 	 Dust Devils
 		 Generate harsh tornadoes that deal 180% weapon damage to enemies in their path.
 
 	 Hurricane
 		 Pull enemies from up to 35 yards away towards you while whirlwinding.
 
-Whirlwind's damage turns into Cold.
+        Whirlwind's damage turns into Cold.
 
 	 Blood Funnel
 		 Critical Hits restore 1% of your maximum Life.
@@ -468,27 +496,29 @@ Whirlwind's damage turns into Cold.
 	 Wind Shear
 		 Gain 1 Fury for every enemy struck.
 
-Whirlwind's damage turns into Lightning.
+         Whirlwind's damage turns into Lightning.
 
 	 Volcanic Eruption
 		 Turns Whirlwind into a torrent of magma that deals 400% weapon damage as Fire.
 
-"""
+    """
 
 
 class Furious_Charge:
     """ Furious Charge """
     category = "active"
-    description = """Cost: 1 Charge
-Generate: 15 Fury
+    description = """
+    Cost: 1 Charge
+    Generate: 15 Fury
 
-Rush forward knocking back and dealing 600% weapon damage to enemies along your path.
+    Rush forward knocking back and dealing 600% weapon damage to enemies along your path.
 
-You gain a charge every 10 seconds and can have up to 1 charge stored at a time."""
+    You gain a charge every 10 seconds and can have up to 1 charge stored at a time.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/furious-charge'
 
 
-"""
+    """
 	 Battering Ram
 		 Increase the damage to 1050% weapon damage as Fire.
 
@@ -501,26 +531,28 @@ You gain a charge every 10 seconds and can have up to 1 charge stored at a time.
 	 Cold Rush
 		 All enemies hit are Frozen for 2.5 seconds.
 
-Furious Charge's damage turns into Cold.
+         Furious Charge's damage turns into Cold.
 
 	 Dreadnought
 		 Store up to 3 charges of Furious Charge.
 
-Furious Charge's damage turns into Lightning.
+         Furious Charge's damage turns into Lightning.
 
-"""
+    """
 
 
 class Ignore_Pain:
     """ Ignore Pain """
     category = "active"
-    description = """Cooldown: 30 seconds
+    description = """
+    Cooldown: 30 seconds
 
-Reduce all damage taken by 50% and gain Immunity to all control-impairing effects for 5 seconds."""
+    Reduce all damage taken by 50% and gain Immunity to all control-impairing effects for 5 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/ignore-pain'
 
 
-"""
+    """
 	 Bravado
 		 While Ignore Pain is active, gain 40% increased movement speed and knock enemies away as you run.
 
@@ -536,19 +568,21 @@ Reduce all damage taken by 50% and gain Immunity to all control-impairing effect
 	 Contempt for Weakness
 		 Instantly heal for 35% of maximum Life when activating Ignore Pain.
 
-"""
+    """
 
 
 class Battle_Rage:
     """ Battle Rage """
     category = "active"
-    description = """Cost: 20 Fury
+    description = """
+    Cost: 20 Fury
 
-Enter a rage which increases your damage by 10% and Critical Hit Chance by 3%. Lasts 120 seconds."""
+    Enter a rage which increases your damage by 10% and Critical Hit Chance by 3%. Lasts 120 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/battle-rage'
 
 
-"""
+    """
 	 Marauder's Rage
 		 Increase damage bonus to 15%.
 
@@ -564,28 +598,30 @@ Enter a rage which increases your damage by 10% and Critical Hit Chance by 3%. L
 	 Bloodshed
 		 Deal damage equal to 20% of your recent Critical Hits to enemies within 20 yards every 1 second.
 
-"""
+    """
 
 
 class Call_of_the_Ancients:
     """ Call of the Ancients """
     category = "active"
-    description = """Cooldown: 120 seconds
+    description = """
+    Cooldown: 120 seconds
 
-Summon the ancient Barbarians Talic, Korlic, and Madawc to fight alongside you for 20 seconds. Each deals 270% weapon damage per swing in addition to bonus abilities.
+    Summon the ancient Barbarians Talic, Korlic, and Madawc to fight alongside you for 20 seconds. Each deals 270% weapon damage per swing in addition to bonus abilities.
 
- Talic wields a sword and shield and uses Whirlwind and Leap. Korlic wields a massive polearm and uses Cleave and Furious Charge. Madawc dual-wields axes and uses Weapon Throw and Seismic Slam."""
+    Talic wields a sword and shield and uses Whirlwind and Leap. Korlic wields a massive polearm and uses Cleave and Furious Charge. Madawc dual-wields axes and uses Weapon Throw and Seismic Slam.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/call-of-the-ancients'
 
 
-"""
+    """
 	 The Council Rises
 		 The Ancients deal 540% weapon damage as Fire with each attack.
 
 	 Duty to the Clan
 		 Enemies hit by the Ancients are Chilled for 2 seconds and have 10% increased chance to be Critically Hit.
 
-The Ancients' damage turns into Cold.
+         The Ancients' damage turns into Cold.
 
 	 Ancients' Blessing
 		 Each point of Fury you spend heals you and your Ancients for 966 Life.
@@ -596,21 +632,23 @@ The Ancients' damage turns into Cold.
 	 Together as One
 		 50% of all damage dealt to you is instead divided evenly between the Ancients.
 
-The Ancients' damage turns into Lightning.
+         The Ancients' damage turns into Lightning.
 
-"""
+    """
 
 
 class Ancient_Spear:
     """ Ancient Spear """
     category = "active"
-    description = """Cost: 25 Fury
+    description = """
+    Cost: 25 Fury
 
-Throw a spear that pierces enemies and deals 500% weapon damage."""
+    Throw a spear that pierces enemies and deals 500% weapon damage.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/ancient-spear'
 
 
-"""
+    """
 	 Ranseur
 		 Enemies hit are knocked back 5 yards.
 
@@ -626,20 +664,21 @@ Throw a spear that pierces enemies and deals 500% weapon damage."""
 	 Rage Flip
 		 Add a chain to the spear to throw all enemies hit behind you and Slow them by 60% for 1 second.
 
-"""
+    """
 
 
 class War_Cry:
     """ War Cry """
     category = "active"
-    description = """Generate: 20 Fury
-Cooldown: 20 seconds
-
-Unleash a rallying cry to increase Armor for you and all allies within 100 yards by 20% for 120 seconds."""
+    description = """
+    Generate: 20 Fury
+    Cooldown: 20 seconds
+    Unleash a rallying cry to increase Armor for you and all allies within 100 yards by 20% for 120 seconds.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/war-cry'
 
 
-"""
+    """
 	 Hardened Wrath
 		 For the first 5 seconds, gain an additional 60% increased Armor.
 
@@ -655,21 +694,23 @@ Unleash a rallying cry to increase Armor for you and all allies within 100 yards
 	 Impunity
 		 Increase resistance to all elements by 20% while affected by War Cry.
 
-"""
+    """
 
 
 class Wrath_of_the_Berserker:
     """ Wrath of the Berserker """
     category = "active"
-    description = """Cooldown: 120 seconds
+    description = """
+    Cooldown: 120 seconds
 
-Enter a berserker rage which raises several attributes for 20 seconds.
+    Enter a berserker rage which raises several attributes for 20 seconds.
 
- Critical Hit Chance: 10% Attack Speed: 25% Dodge Chance: 20% Movement Speed: 20%"""
+    Critical Hit Chance: 10% Attack Speed: 25% Dodge Chance: 20% Movement Speed: 20%
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/wrath-of-the-berserker'
 
 
-"""
+    """
 	 Arreat's Wail
 		 Activating Wrath of the Berserker deals 3400% weapon damage as Fire to all enemies within 15 yards.
 
@@ -685,21 +726,23 @@ Enter a berserker rage which raises several attributes for 20 seconds.
 	 Thrive on Chaos
 		 While active, gain 5364 Life per Fury spent.
 
-"""
+    """
 
 
 class Avalanche:
     """ Avalanche """
     category = "active"
-    description = """Cooldown: 30 seconds
+    description = """
+    Cooldown: 30 seconds
 
-Cause a massive avalanche of rocks to fall on an area dealing 2400% weapon damage to all enemies caught in its path.
+    Cause a massive avalanche of rocks to fall on an area dealing 2400% weapon damage to all enemies caught in its path.
 
-Cooldown is reduced by 1 second for every 25 Fury you spend."""
+    Cooldown is reduced by 1 second for every 25 Fury you spend.
+    """
     url = r'https://us.diablo3.com//en/class/barbarian/active/avalanche'
 
 
-"""
+    """
 	 Volcano
 		 Chunks of molten lava are randomly launched at nearby enemies, dealing 6600% weapon damage as Fire over 5 seconds.
 
@@ -715,5 +758,5 @@ Cooldown is reduced by 1 second for every 25 Fury you spend."""
 	 Glacier
 		 Giant blocks of ice hit enemies for 2400% weapon damage as Cold and Freeze them.
 
-"""
+    """
 
