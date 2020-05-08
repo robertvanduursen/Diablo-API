@@ -34,7 +34,7 @@ class Class_Info:
             # print(result.groups()[0])
             return result.groups()[0]
 
-    def get_skills(self):
+    def get_skills(self, url = ''):
 
         from lxml import html
         import requests
@@ -45,11 +45,13 @@ class Class_Info:
         tree = html.fromstring(page.content)
         #//*[@id="table-skills-active"]/div/div/table/tbody/tr[1]/td[2]/div/h3/a
         _test = '//*[@class="skill-details"]'
-        legendaries = tree.xpath(_test)
+        skills = tree.xpath(_test)
         total = 0
-        for x in legendaries:
-            title = x.xpath('h3[1]/a[1]')
-            print(total, title[0].text_content())
+        for idx, skill in enumerate(skills):
+
+            title = skill.xpath('h3[1]/a[1]')
+            print('{}: {} '.format(idx, title[0].text_content()) + '#' * 60)
+
             # print(title[0].attrib['href'])
             total += 1
 
@@ -59,9 +61,9 @@ class Class_Info:
             # //*[@id="table-skills-active"]/div/div/table/tbody/tr[1]/td[2]/div/h3/a
 
             _test = '//*[@class="skill-desc"]'
-            skill = tree.xpath(_test)
-            print(skill[0].text_content().strip())
-
+            desc = tree.xpath(_test)
+            print(desc[0].text_content().strip())
+            print()
 
             _test = '//*[@class="table rune-list"]'
             runes = tree.xpath(_test)
@@ -73,6 +75,7 @@ class Class_Info:
                     print('\t', name[0].text_content())
                     desc = data.xpath('div[2]')
                     print('\t\t', desc[0].text_content())
+                    print()
             print()
 
 
@@ -96,6 +99,7 @@ class Class_Info:
             #     total += 1
 
         print(total)
+        return True
 
     def break_down(self, url):
         text = self.get_skills(url)
@@ -309,12 +313,7 @@ off_hand = Gear(1)
 
 import copy
 totalGems = 0
-for name, cls in copy.copy(globals()).items():
-    if isinstance(cls, Gear):
-        print(name, cls)
-        totalGems += cls.gemSlots
-print(totalGems)
-print(totalGems * 280)
+
 
 # 15 * 280 = 4200
 
@@ -333,11 +332,57 @@ class Classes(enum.Enum):
     NECROMANCER = 'necromancer'
     WIZARD = 'wizard'
 
+if __name__ == '__main__':
+    for name, cls in copy.copy(globals()).items():
+        if isinstance(cls, Gear):
+            print(name, cls)
+            totalGems += cls.gemSlots
+    print(totalGems)
+    print(totalGems * 280)
 
-barbarian = Armour_miner(Classes.BARBARIAN.value)
-print(Classes.BARBARIAN.value)
-print(Class_Info(Classes.BARBARIAN.value).get_skills())
 
+    barbarian = Armour_miner(Classes.BARBARIAN.value)
+    print(Classes.BARBARIAN.value)
+    print(Class_Info(Classes.BARBARIAN.value).get_skills())
+
+
+def get_part_from_url(url=''):
+    print(url)
+
+    from lxml import html
+    import requests
+
+    page = requests.get(url)
+    tree = html.fromstring(page.content)
+
+    # /html/body/div[4]/div/div[2]/div[1]/div/div[1]/h2/a
+
+    _test = '//*[@class="page-header page-header-db"]'
+    skills = tree.xpath(_test)
+    total = 0
+
+    title = skills[0].xpath('h2[1]/a[1]')
+    title = title[0].text_content().strip()
+
+    subtitle = skills[0].xpath('h2[1]/small[1]')
+    subtitle = subtitle[0].text_content().strip()
+
+    _test = '//*[@class="detail-text"]'
+    skills = tree.xpath(_test)
+    part_name = skills[0].xpath('h2[1]')
+
+    part_name = part_name[0].text_content().strip()
+
+    template = '''
+    class {part}:
+        """ {title} """
+        type = '{title}'
+        name = "{part_name}"
+        url = r'{url}'
+
+    '''.format(part=subtitle, url=url, part_name=part_name, title=title)
+
+    return template
 
 # Armour_miner('necromancer').get_gems()
 # barbarian.get_items()
