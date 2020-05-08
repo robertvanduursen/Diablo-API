@@ -8,6 +8,18 @@ Season 20 Barbarian build
 class Immortal_Kings_Call:
     """ Immortal King's Call armor set """
 
+    @property
+    def setbonus(self):
+        return '''
+        
+        (2) Set:
+             Call of the Ancients last until they die.
+        (4) Set:
+             Reduce the cooldown of Wrath of the Berserker and Call of the Ancients by 3 seconds for every 10 Fury you spend with an attack.
+        (6) Set:
+             While both Wrath of the Berserker and Call of the Ancients is active, you deal 4000% increased damage.
+
+        '''
 
     class Head:
         """ Helms """
