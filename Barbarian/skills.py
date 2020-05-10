@@ -6,6 +6,7 @@ class Skill(object):
 
     @property
     def data(self):
+        print('name: {}'.format(self.__class__.__doc__))
         if self.category:
             print('category: {}'.format(self.category))
         if self.description:

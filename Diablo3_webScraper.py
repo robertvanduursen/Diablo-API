@@ -360,7 +360,7 @@ def get_part_from_url(url=''):
     return template
 
 
-# Armour_miner('necromancer').get_gems()
+
 # barbarian.get_items()
 
 # lol, todo: this teaches accountantcy
@@ -382,4 +382,6 @@ if __name__ == '__main__':
         print(totalGems * 280)
 
     barbarian = Armour_miner(Classes.BARBARIAN.value)
-    print(Class_Info(Classes.BARBARIAN.value).get_skills())
+    # print(Class_Info(Classes.BARBARIAN.value).get_skills())
+
+    barbarian.get_items()
