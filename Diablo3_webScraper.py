@@ -10,7 +10,7 @@ Diablo playstyle
 Necromancer
 
 '''
-
+import inspect
 import requests, re
 
 
@@ -115,6 +115,15 @@ class Class_Info:
         return True
 
 
+item_template = '''
+class {class_name}(Item):
+    """ {name} """
+    type = '{type}'
+    text = """
+{text}
+    """
+
+'''
 
 
 class Armour_miner:
@@ -193,9 +202,9 @@ class Armour_miner:
         import requests
 
         for part in self.armorTypes:
-            print(part)
+            # print(part)
             url = 'https://us.diablo3.com/en/item/{}/#type=legendary'.format(part)
-            print(url)
+            # print(url)
             page = requests.get(url)
             tree = html.fromstring(page.content)
 
@@ -206,24 +215,35 @@ class Armour_miner:
                 title = x.xpath('h3[1]/a[1]/text()')
                 _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
                 secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
-                itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
 
+
+                item = False
                 if secondary and 'Legendary ' in _type:
-                    print(title[0])
-                    for y in secondary:
-                        print('\t', y.text_content())  # , '->', y.attrib)
-                    print()
-                    print()
+                    name = title[0]
+                    text = '\n'.join(['\t' + y.text_content() for y in secondary])
+                    # print('secondary', secondary)
+                    # for y in secondary:
+                    #     print('\t', y.text_content())  # , '->', y.attrib)
+                    # print()
+                    # print()
                     total += 1
-                if itemset and 'Set ' in _type:
-                    print(title[0])
-                    for y in itemset:
-                        print('\t', y.text_content())  # , '->', y.attrib)
-                    print()
-                    print()
-                    total += 1
+                    item = True
 
-            print(total)
+                itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+                if itemset and 'Set ' in _type:
+                    name = title[0]
+                    text = '\n'.join(['\t' + y.text_content() for y in itemset])
+                    # for y in itemset:
+                    #     print('\t', y.text_content())  # , '->', y.attrib)
+                    # print()
+                    # print()
+                    total += 1
+                    item = True
+
+                if item:
+                    print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.]", '', name)), name=name, type=part, text=text))
+
+            # print(total)
 
     def get_gems(self):
         from lxml import html
@@ -349,7 +369,7 @@ def get_part_from_url(url=''):
     part_name = part_name[0].text_content().strip()
 
     template = '''
-    class {part}:
+    class {part}(Item):
         """ {title} """
         type = '{title}'
         name = "{part_name}"
