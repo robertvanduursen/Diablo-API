@@ -12,7 +12,7 @@ import skills
 
 
 
-skills.Call_of_the_Ancients().data
+# skills.Call_of_the_Ancients().data
 
 classes = [
     'barbarian',
@@ -55,9 +55,16 @@ def match_skills(item):
 
 filtered = list(filter(match_skills, eligible_items))
 
-for item in filtered:
-    # print(item)
-    print(inspect.getsource(item))
+# for nr, item in enumerate(filtered):
+#     print(nr, inspect.getsource(item))
 
 print(len(filtered))
 
+from character import Character
+
+myBarbi = Character()
+
+
+myBarbi.equip(filtered[0])
+myBarbi.equip(filtered[46])
+myBarbi.equip(filtered[44])

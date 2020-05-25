@@ -3,6 +3,7 @@
 
 class Immortal_Kings_Call:
     """ Immortal King's Call armor set """
+    set_size = 7
 
     @property
     def setbonus(self):
