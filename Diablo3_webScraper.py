@@ -118,6 +118,7 @@ class Class_Info:
 item_template = '''
 class {class_name}(Item):
     """ {name} """
+    url = r'{url}'
     type = '{type}'
     text = """
 {text}
@@ -147,6 +148,22 @@ class Armour_miner:
         # 'one-handed',
         # 'two-handed',
         # 'ranged',
+    ]
+
+    weaponTypes = [
+        'axe-1h',
+        'mighty-weapon-1h',
+        'mace-1h',
+        'sword-1h',
+        'spear',
+        'dagger',
+
+        'axe-2h',
+        'mighty-weapon-2h',
+        'mace-2h',
+        'sword-2h',
+        'polearm',
+        'staff',
     ]
 
     def __init__(self, className):
@@ -243,7 +260,52 @@ class Armour_miner:
                 if item:
                     print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.]", '', name)), name=name, type=part, text=text))
 
-            # print(total)
+    def get_weapons(self):
+        from lxml import html
+        import requests
+
+        for part in self.weaponTypes:
+            # print(part)
+            url = 'https://us.diablo3.com/en/item/{}/#type=legendary'.format(part)
+            # print(url)
+            page = requests.get(url)
+            tree = html.fromstring(page.content)
+
+            _test = '//*[@class="item-details-text"]'
+            legendaries = tree.xpath(_test)
+            total = 0
+            for x in legendaries:
+                item_url = x.xpath('h3[1]/a[1]')[0].attrib['href']
+                title = x.xpath('h3[1]/a[1]/text()')
+                _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
+                secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
+
+
+                item = False
+                if secondary and 'Legendary ' in _type:
+                    name = title[0]
+                    text = '\n'.join(['\t' + y.text_content() for y in secondary])
+                    # print('secondary', secondary)
+                    # for y in secondary:
+                    #     print('\t', y.text_content())  # , '->', y.attrib)
+                    # print()
+                    # print()
+                    total += 1
+                    item = True
+
+                itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+                if itemset and 'Set ' in _type:
+                    name = title[0]
+                    text = '\n'.join(['\t' + y.text_content() for y in itemset])
+                    # for y in itemset:
+                    #     print('\t', y.text_content())  # , '->', y.attrib)
+                    # print()
+                    # print()
+                    total += 1
+                    item = True
+
+                if item:
+                    print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.,]", '', name)), name=name, type=part, text=text, url=item_url ))
 
     def get_gems(self):
         from lxml import html
@@ -335,6 +397,7 @@ class Gem:
 import enum
 
 
+
 class Classes(enum.Enum):
     BARBARIAN = 'barbarian'
     NECROMANCER = 'necromancer'
@@ -380,6 +443,77 @@ def get_part_from_url(url=''):
     return template
 
 
+def get_char_profile(url=r"https://eu.diablo3.com/en/profile/Ralicx-2273/hero/133589041"):
+    print(url)
+
+    from lxml import html
+    import requests
+
+    page = requests.get(url)
+    tree = html.fromstring(page.content)
+
+    _test = '//*[@class="profile-sheet"]'
+
+    profile = tree.xpath(_test)
+    total = 0
+
+    classType = profile[0].xpath('h2[1]/a[1]/strong[1]')
+    classType= classType[0].text_content().strip()
+    print(classType)
+
+    classLvl = profile[0].xpath('h2[1]/a[1]/span[1]/strong[1]')
+    classLvl = classLvl[0].text.strip()
+    print(classLvl)
+
+    title = profile[0].xpath('h2[1]//*[@class="paragon-level"]')
+    title = title[0].text_content().strip()
+    print(title)
+
+    name = profile[0].xpath('h2[2]')
+    name = name[0].text_content().strip()
+    print(name)
+
+
+    _test = '//*[@class="page-section attributes"]'
+    attrs = tree.xpath(_test)
+
+    core_attrs = attrs[0].xpath('//*[@class="attributes-core"]')
+    core_attrs = core_attrs[0].text_content().strip()
+    print(core_attrs)
+
+    core_attrs = attrs[0].xpath('//*[@class="attributes-core secondary"]')
+    core_attrs = core_attrs[0].text_content().strip()
+    print(core_attrs)
+
+
+
+    _test = '//*[@class="skills-wrapper"]'
+    skills = tree.xpath(_test)
+
+    active_skills = skills[0].xpath('//*[@class="active-skills clear-after"]')
+    active_skills = active_skills[0].text_content().strip()
+    print(active_skills)
+
+
+    passive_skills = skills[0].xpath('//*[@class="passive-skills clear-after"]')
+    passive_skills = passive_skills[0].text_content().strip()
+    print(passive_skills )
+
+
+    # gear slots
+    _test = '//*[@class="gear-slots"]'
+    gear = tree.xpath(_test)
+    print(gear[0])
+    slots = gear[0].xpath('li')
+    for slot in slots:
+        # print(slot.attrib)
+        stats = slot.xpath('a[1]')
+        if stats:
+            print(slot.attrib)
+            # print(stats[0].attrib)#['class']
+            print(stats[0].attrib['href'])
+        # print(x)#active_skills[0].text_content().strip())
+
 
 # barbarian.get_items()
 
@@ -403,5 +537,40 @@ if __name__ == '__main__':
 
     barbarian = Armour_miner(Classes.BARBARIAN.value)
     # print(Class_Info(Classes.BARBARIAN.value).get_skills())
+    barbarian.get_weapons()
 
-    barbarian.get_items()
+    # get_char_profile()
+
+
+
+'''
+
+<li class="slot-head">
+
+				<a class="slot-link" href="/en/item/immortal-kings-triumph-Unique_Helm_008_x1" data-d3tooltip="item-profile/138156698~133589041~immortal-kings-triumph~Unique_Helm_008_x1">
+				<span class="d3-icon d3-icon-item d3-icon-item-green">
+					<span class="icon-item-gradient">
+						<span class="icon-item-inner"></span>
+					</span>
+				</span>
+
+					<span class="image">
+					<img src="https://blzmedia-a.akamaihd.net/d3/icons/items/large/unique_helm_008_x1_demonhunter_male.png" alt="">
+				</span>
+
+		<span class="sockets-wrapper">
+			<span class="sockets-align">
+					<span class="socket">
+						<img class="gem" src="https://blzmedia-a.akamaihd.net/d3/icons/items/small/x1_diamond_08_demonhunter_male.png">
+					</span><br>
+			</span>
+		</span>
+				</a>
+
+
+		<a href="/en/artisan/blacksmith/recipe/illustrious-klappvisier" class="item-transmog">
+			<img src="/static/images/profile/hero/bg-transmog.gif?v=58-121">
+		</a>
+
+	</li>
+'''

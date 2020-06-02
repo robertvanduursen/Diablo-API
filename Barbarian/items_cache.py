@@ -1,14 +1,48 @@
-class Item:
-    pass
+class Item(object):
+
+    def get_stat_potential(self):
+        print('own url', self.url)
+        #https://eu.diablo3.com/en/item/axe-2h/
+        pass
+
+    def recognize(self):
+        print('recognizing')
+        print(self.text)
+        pass
+
+class Set(object):
+    items = False
+    levels = dict
+
+    def yield_bonus(self, amount):
+        bonusses = []
+        for level, bonus in self.levels.items():
+            if level <= amount:
+                bonusses.append(bonus)
+        return bonusses
+
+
+
+class Set_Item(Item):
+    set = False
+
+
+
+class The_Legacy_of_Raekor(Set):
+    """ The Legacy of Raekor """
+    items = []
+    levels = {
+        2: 'Increase the damage per second of Rend by 500% and its duration to 15 seconds.',
+        4: 'During Whirlwind and for 3 seconds after, you gain 50% damage reduction and your applied Rends deal triple damage.',
+        6: 'Whirlwind gains the effect of the Dust Devils rune and all Whirlwind and Rend damage is increased by 10,000%.',
+    }
 
 
 class Hellfire_Ring(Item):
     """ Hellfire Ring """
     type = 'ring'
     text = """
-
 	+45% Experience. (4.5% at level 70)
-
 	Chance on hit to engulf the ground in lava, dealing 200% weapon damage per second for 6 seconds.
     """
 
@@ -947,7 +981,7 @@ class Sages_Orbit(Item):
     """
 
 
-class Immortal_Kings_Triumph(Item):
+class Immortal_Kings_Triumph(Set_Item):
     """ Immortal King's Triumph """
     type = 'helm'
     text = """
@@ -1080,8 +1114,9 @@ class Eyes_of_the_Earth(Item):
     """
 
 
-class Raekors_Will(Item):
+class Raekors_Will(Set_Item):
     """ Raekor's Will """
+    set = The_Legacy_of_Raekor
     type = 'helm'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -1563,8 +1598,9 @@ class Spines_of_Savages(Item):
     """
 
 
-class Raekors_Burden(Item):
+class Raekors_Burden(Set_Item):
     """ Raekor's Burden """
+    set = The_Legacy_of_Raekor
     type = 'shoulders'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -2061,8 +2097,9 @@ class Markings_of_Savages(Item):
     """
 
 
-class Raekors_Heart(Item):
+class Raekors_Heart(Set_Item):
     """ Raekor's Heart """
+    set = The_Legacy_of_Raekor
     type = 'torso'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -2965,8 +3002,9 @@ class Sages_Purchase(Item):
     """
 
 
-class Raekors_Wraps(Item):
+class Raekors_Wraps(Set_Item):
     """ Raekor's Wraps """
+    set = The_Legacy_of_Raekor
     type = 'hands'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -3997,8 +4035,9 @@ class Ashearas_Pace(Item):
     """
 
 
-class Raekors_Breeches(Item):
+class Raekors_Breeches(Set_Item):
     """ Raekor's Breeches """
+    set = ''
     type = 'pants'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -4560,8 +4599,9 @@ class Heel_of_Savages(Item):
     """
 
 
-class Raekors_Striders(Item):
+class Raekors_Striders(Set_Item):
     """ Raekor's Striders """
+    set = The_Legacy_of_Raekor
     type = 'feet'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -4927,4 +4967,3 @@ class Nayrs_Black_Death(Item):
 	(Necromancer Only)
 	[75 - 100]%
     """
-
