@@ -60,6 +60,14 @@ class KanaisCube:
             pass
 
         def REFORGE_LEGENDARY_OR_SET_ITEM(self, input):
+            """ Law of Kulle
+            Sacrificing great quantities of magical ingredients, the Horadric incantation known as the Law of Kulle
+            allows you to reforge any Legendary or Set item. This process will grant your item different attributes,
+            and may transform it into an Ancient or Primal Ancient version of the same item.
+
+            Be warned; reforging an Ancient or Primal Ancient Legendary or Set item might
+            result in the loss of the Ancient or Primal Ancient property.
+            """
             pass
 
         def AUGMENT_ANCIENT_OR_PRIMAL_ANCIENT_ITEM(self, input):

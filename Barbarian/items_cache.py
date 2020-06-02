@@ -2,6 +2,7 @@ class Item(object):
 
     def get_stat_potential(self):
         print('own url', self.url)
+        print('https://eu.diablo3.com{}'.format(self.url))
         #https://eu.diablo3.com/en/item/axe-2h/
         pass
 
