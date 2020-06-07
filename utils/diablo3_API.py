@@ -8,359 +8,148 @@ from lxml import html
 
 
 def get_characters_urls_from_profile(profile_url: str):
-    characters_urls = []
+    """
+    get the list of active characters from a profile
+    :returns list of tuples -> (name , ID)
+    """
+
+    characters_ids = []
 
     page = requests.get(profile_url)
     tree = html.fromstring(page.content)
 
     _test = '//*[@class="hero-tabs MediaCarousel-scroll"]'
     chars = tree.xpath(_test)
+    char_name = False
+    char_code = False
     if chars:
         for char in chars[0].xpath('li'):
             profile_nr = char.xpath('a[1]')
             if profile_nr:
                 char_code = profile_nr[0].attrib['href']
-                char_name = False
                 for x in profile_nr[0].xpath('span[@class="name"]'):
                     char_name = x.text_content().strip()
 
-            characters_urls.append('{}/hero/{}'.format(profile_url, char_code))
-                # result = re.search(r'<div class="detail-text">((.*\s*)*?)<span class="clear">', text)
+            characters_ids.append((char_name, '{}/hero/{}'.format(profile_url, char_code)))
+
+    return set(characters_ids)
 
 
-    return characters_urls
+def get_char_profile(char_url=r"https://eu.diablo3.com/en/profile/Ralicx-2273/hero/133589041"):
+    print(char_url)
+
+    from lxml import html
+    import requests
+
+    page = requests.get(char_url)
+    tree = html.fromstring(page.content)
+
+    _test = '//*[@class="profile-sheet"]'
+
+    profile = tree.xpath(_test)
+    total = 0
+
+    classType = profile[0].xpath('h2[1]/a[1]/strong[1]')
+    classType= classType[0].text_content().strip()
+    print(classType)
+
+    classLvl = profile[0].xpath('h2[1]/a[1]/span[1]/strong[1]')
+    classLvl = classLvl[0].text.strip()
+    print(classLvl)
+
+    title = profile[0].xpath('h2[1]//*[@class="paragon-level"]')
+    title = title[0].text_content().strip()
+    print(title)
+
+    name = profile[0].xpath('h2[2]')
+    name = name[0].text_content().strip()
+    print(name)
+
+
+    _test = '//*[@class="page-section attributes"]'
+    attrs = tree.xpath(_test)
+
+    core_attrs = attrs[0].xpath('//*[@class="attributes-core"]')
+    core_attrs = core_attrs[0].text_content().strip()
+    print(core_attrs)
+
+    core_attrs = attrs[0].xpath('//*[@class="attributes-core secondary"]')
+    core_attrs = core_attrs[0].text_content().strip()
+    print(core_attrs)
+
+
+
+    _test = '//*[@class="skills-wrapper"]'
+    skills = tree.xpath(_test)
+
+    active_skills = skills[0].xpath('//*[@class="active-skills clear-after"]')
+    active_skills = active_skills[0].text_content().strip()
+    print(active_skills)
+
+
+    passive_skills = skills[0].xpath('//*[@class="passive-skills clear-after"]')
+    passive_skills = passive_skills[0].text_content().strip()
+    print(passive_skills )
+
+
+    # gear slots
+    _test = '//*[@class="gear-slots"]'
+    gear = tree.xpath(_test)
+    print(gear[0])
+    slots = gear[0].xpath('li')
+    for slot in slots:
+        # print(slot.attrib)
+        stats = slot.xpath('a[1]')
+        if stats:
+            print(slot.attrib)
+            # print(stats[0].attrib)#['class']
+            print(stats[0].attrib['href'])
+        # print(x)#active_skills[0].text_content().strip())
+
+
+def get_part_from_url(url=''):
+    print(url)
+
+    from lxml import html
+    import requests
+
+    page = requests.get(url)
+    tree = html.fromstring(page.content)
+
+    # /html/body/div[4]/div/div[2]/div[1]/div/div[1]/h2/a
+
+    _test = '//*[@class="page-header page-header-db"]'
+    skills = tree.xpath(_test)
+    total = 0
+
+    title = skills[0].xpath('h2[1]/a[1]')
+    title = title[0].text_content().strip()
+
+    subtitle = skills[0].xpath('h2[1]/small[1]')
+    subtitle = subtitle[0].text_content().strip()
+
+    _test = '//*[@class="detail-text"]'
+    skills = tree.xpath(_test)
+    part_name = skills[0].xpath('h2[1]')
+
+    part_name = part_name[0].text_content().strip()
+
+    template = '''
+    class {part}(Item):
+        """ {title} """
+        type = '{title}'
+        name = "{part_name}"
+        url = r'{url}'
+
+    '''.format(part=subtitle, url=url, part_name=part_name, title=title)
+
+    return template
 
 
 if __name__ == '__main__':
+    my_profile = r'https://eu.diablo3.com/en/profile/Ralicx-2273/'
+    my_chars = dict(get_characters_urls_from_profile(my_profile))
 
-    for x in get_characters_urls_from_profile(r'https://eu.diablo3.com/en/profile/Ralicx-2273/'):
-        print(x)
+    char_profile = get_char_profile(my_chars['Burla'])
 
-'''
-<ul class="hero-tabs MediaCarousel-scroll" style="width: 1746px;">
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab barbarian-female active" href="133589041" data-tooltip="#hero-tab-tooltip-0">
-								<span class="hero-portrait">
-										<span class="small-seasonal-leaf"></span>
-								</span>
-								<span class="level">70</span>
-								<span class="name">Burla</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-0" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">Burla</h2>
-
-			<p>
-				<strong>70</strong> female
-				 - <span class="d3-color-seasonal">Seasonal Hero</span>
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab crusader-male " href="134261017" data-tooltip="#hero-tab-tooltip-1">
-								<span class="hero-portrait">
-										<span class="small-seasonal-leaf"></span>
-								</span>
-								<span class="level">70</span>
-								<span class="name">Charlemagne</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-1" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">Charlemagne</h2>
-
-			<p>
-				<strong>70</strong> male
-				 - <span class="d3-color-seasonal">Seasonal Hero</span>
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab necromancer-male " href="124935330" data-tooltip="#hero-tab-tooltip-2">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">70</span>
-								<span class="name">Emomuel</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-2" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">Emomuel</h2>
-
-			<p>
-				<strong>70</strong> male
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab monk-female " href="127544319" data-tooltip="#hero-tab-tooltip-3">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">70</span>
-								<span class="name">HITME</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-3" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">HITME</h2>
-
-			<p>
-				<strong>70</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab witch-doctor-female " href="127350103" data-tooltip="#hero-tab-tooltip-4">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">70</span>
-								<span class="name">TaiDalma</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-4" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">TaiDalma</h2>
-
-			<p>
-				<strong>70</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab necromancer-male " href="131034385" data-tooltip="#hero-tab-tooltip-5">
-								<span class="hero-portrait">
-										<span class="small-seasonal-leaf"></span>
-								</span>
-								<span class="level">70</span>
-								<span class="name">Vlad</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-5" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">Vlad</h2>
-
-			<p>
-				<strong>70</strong> male
-				 - <span class="d3-color-seasonal">Seasonal Hero</span>
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab wizard-female " href="124631594" data-tooltip="#hero-tab-tooltip-6">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">70</span>
-								<span class="name">hermione</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-6" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">hermione</h2>
-
-			<p>
-				<strong>70</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab barbarian-female " href="123210710" data-tooltip="#hero-tab-tooltip-7">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">64</span>
-								<span class="name">BattleWench</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-7" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">BattleWench</h2>
-
-			<p>
-				<strong>64</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab monk-female " href="123552406" data-tooltip="#hero-tab-tooltip-8">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">54</span>
-								<span class="name">FistyCuffs</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-8" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">FistyCuffs</h2>
-
-			<p>
-				<strong>54</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab necromancer-female " href="124900492" data-tooltip="#hero-tab-tooltip-9">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">26</span>
-								<span class="name">Morticia</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-9" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">Morticia</h2>
-
-			<p>
-				<strong>26</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab necromancer-female " href="129307511" data-tooltip="#hero-tab-tooltip-10">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">22</span>
-								<span class="name">Morta</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-10" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">Morta</h2>
-
-			<p>
-				<strong>22</strong> female
-			</p>
-		</div>
-	</div>
-						</li>
-
-
-						<li class="MediaCarousel-thumb">
-							<a class="hero-tab witch-doctor-male " href="124350001" data-tooltip="#hero-tab-tooltip-11">
-								<span class="hero-portrait">
-								</span>
-								<span class="level">1</span>
-								<span class="name">shakers</span>
-							</a>
-
-
-
-	<div id="hero-tab-tooltip-11" style="display:none">
-		<div class="hero-tab-tooltip profile-tooltip">
-			
-
-
-	<h2 class="subheader-2">shakers</h2>
-
-			<p>
-				<strong>1</strong> male
-			</p>
-		</div>
-	</div>
-						</li>
-							<li class="MediaCarousel-thumb">
-								<span class="hero-tab empty-hero"></span>
-							</li>
-							<li class="MediaCarousel-thumb">
-								<span class="hero-tab empty-hero"></span>
-							</li>
-							<li class="MediaCarousel-thumb">
-								<span class="hero-tab empty-hero"></span>
-							</li>
-							<li class="MediaCarousel-thumb">
-								<span class="hero-tab empty-hero"></span>
-							</li>
-							<li class="MediaCarousel-thumb">
-								<span class="hero-tab empty-hero"></span>
-							</li>
-							<li class="MediaCarousel-thumb">
-								<span class="hero-tab empty-hero"></span>
-							</li>
-				</ul>
-'''
+    # lol, todo: this teaches accountantcy

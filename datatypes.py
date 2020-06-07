@@ -48,6 +48,12 @@ class BloodShard:
         For the most blood shards you should be farming greater rifts that you can complete in 5ish minutes. Honestly blood shards aren't the best way to get new gear if you already have every piece you need and are looking to upgrade to ancient versions (which my guess would be what you are doing if you can complete gr 65). Good news is the best way to get ancients is to reforge a legendary, which would result in you doing the same thing, because farming grs is the best way to get legendaries also. Make sure you don't reforge the one you have equipped though because the reroll can make it worse, so keep an extra piece on your bank and just reroll the worse of the two until you get a better piece.
         '''
 
+    def howTo(self):
+        return '''
+        https://www.reddit.com/r/diablo3/comments/bagr92/fastest_way_to_farm_blood_shards/
+        https://www.icy-veins.com/d3/how-to-farm-legendary-and-set-items-guide
+        '''
+
 
 class Rare_Item:
     def howTo(self):
@@ -247,6 +253,56 @@ class KanaisCube:
         def AUGMENT_ANCIENT_OR_PRIMAL_ANCIENT_ITEM(self, input):
             pass
 
+
+class attribute:
+    def __init__(self, val):
+        pass
+
+
+Intel = attribute
+
+
+class Gear:
+    gemSlots = 0
+
+    def __init__(self, slots):
+        self.gemSlots = slots
+
+
+class Armour:
+    pass
+
+
+class Gem:
+    def __init__(self, type):
+        pass
+
+    @property
+    def max(self):
+        return Intel(280)
+
+
+import enum
+
+
+class Classes(enum.Enum):
+    BARBARIAN = 'barbarian'
+    WIZARD = 'wizard'
+    WITCH_DOCTOR = 'witch doctor'
+    DEMON_HUNTER = 'demon hunter'
+    NECROMANCER = 'necromancer'
+    CRUSADER = 'crusader'
+    MONK = 'monk'
+
+classes = [
+    'barbarian',
+    'wizard',
+    'witch doctor',
+    'demon hunter',
+    'necromancer',
+    'crusader',
+    'monk',
+]
 
 if __name__ == '__main__':
     try:

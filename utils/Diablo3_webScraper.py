@@ -1,17 +1,12 @@
 """
 
-Diablo playstyle
-
+Diablo webscraping utils
 
 """
 
-'''
-
-Necromancer
-
-'''
 import inspect
 import requests, re
+from datatypes import Classes
 
 
 class Class_Info:
@@ -19,7 +14,7 @@ class Class_Info:
         self.className = className
         # break_down & get_skills -> took 22 min
 
-    def get_skills(self):
+    def get_active_skills(self):
 
         from lxml import html
         import requests
@@ -69,8 +64,6 @@ class Class_Info:
                     print()
             print('"""')
             print()
-
-
 
         print(total)
         return True
@@ -229,10 +222,10 @@ class Armour_miner:
             legendaries = tree.xpath(_test)
             total = 0
             for x in legendaries:
+                item_url = x.xpath('h3[1]/a[1]')[0].attrib['href']
                 title = x.xpath('h3[1]/a[1]/text()')
                 _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
                 secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
-
 
                 item = False
                 if secondary and 'Legendary ' in _type:
@@ -258,7 +251,8 @@ class Armour_miner:
                     item = True
 
                 if item:
-                    print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.]", '', name)), name=name, type=part, text=text))
+                    print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.]", '', name)), name=name,
+                                               type=part, text=text, url=item_url))
 
     def get_weapons(self):
         from lxml import html
@@ -280,7 +274,6 @@ class Armour_miner:
                 _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]  # /li[1]/span[1]/text()
                 secondary = x.xpath('div[1]/*[@class="item-effects"]/*[.="Secondary"]/../span')
 
-
                 item = False
                 if secondary and 'Legendary ' in _type:
                     name = title[0]
@@ -305,7 +298,8 @@ class Armour_miner:
                     item = True
 
                 if item:
-                    print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.,]", '', name)), name=name, type=part, text=text, url=item_url ))
+                    print(item_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.,]", '', name)), name=name,
+                                               type=part, text=text, url=item_url))
 
     def get_gems(self):
         from lxml import html
@@ -343,189 +337,6 @@ class Armour_miner:
             #     total += 1
 
 
-class attribute:
-    def __init__(self, val):
-        pass
-
-
-Intel = attribute
-
-
-class Gear:
-    gemSlots = 0
-
-    def __init__(self, slots):
-        self.gemSlots = slots
-
-
-class Armour:
-    pass
-
-
-helm = Gear(1)
-# shoulders = Gear(1)
-torso = Gear(3)
-# wrists = Gear(1)
-# hands = Gear(1)
-# waist = Gear(0)
-pants = Gear(2)
-# feet = Gear(1)
-
-amulet = Gear(1)
-ring_left_hand = Gear(1)
-ring_right_hand = Gear(1)
-
-main_hand = Gear(1)
-off_hand = Gear(1)
-
-import copy
-
-totalGems = 0
-
-
-# 15 * 280 = 4200
-
-class Gem:
-    def __init__(self, type):
-        pass
-
-    @property
-    def max(self):
-        return Intel(280)
-
-
-import enum
-
-
-
-class Classes(enum.Enum):
-    BARBARIAN = 'barbarian'
-    NECROMANCER = 'necromancer'
-    WIZARD = 'wizard'
-
-
-def get_part_from_url(url=''):
-    print(url)
-
-    from lxml import html
-    import requests
-
-    page = requests.get(url)
-    tree = html.fromstring(page.content)
-
-    # /html/body/div[4]/div/div[2]/div[1]/div/div[1]/h2/a
-
-    _test = '//*[@class="page-header page-header-db"]'
-    skills = tree.xpath(_test)
-    total = 0
-
-    title = skills[0].xpath('h2[1]/a[1]')
-    title = title[0].text_content().strip()
-
-    subtitle = skills[0].xpath('h2[1]/small[1]')
-    subtitle = subtitle[0].text_content().strip()
-
-    _test = '//*[@class="detail-text"]'
-    skills = tree.xpath(_test)
-    part_name = skills[0].xpath('h2[1]')
-
-    part_name = part_name[0].text_content().strip()
-
-    template = '''
-    class {part}(Item):
-        """ {title} """
-        type = '{title}'
-        name = "{part_name}"
-        url = r'{url}'
-
-    '''.format(part=subtitle, url=url, part_name=part_name, title=title)
-
-    return template
-
-
-def get_char_profile(url=r"https://eu.diablo3.com/en/profile/Ralicx-2273/hero/133589041"):
-    print(url)
-
-    from lxml import html
-    import requests
-
-    page = requests.get(url)
-    tree = html.fromstring(page.content)
-
-    _test = '//*[@class="profile-sheet"]'
-
-    profile = tree.xpath(_test)
-    total = 0
-
-    classType = profile[0].xpath('h2[1]/a[1]/strong[1]')
-    classType= classType[0].text_content().strip()
-    print(classType)
-
-    classLvl = profile[0].xpath('h2[1]/a[1]/span[1]/strong[1]')
-    classLvl = classLvl[0].text.strip()
-    print(classLvl)
-
-    title = profile[0].xpath('h2[1]//*[@class="paragon-level"]')
-    title = title[0].text_content().strip()
-    print(title)
-
-    name = profile[0].xpath('h2[2]')
-    name = name[0].text_content().strip()
-    print(name)
-
-
-    _test = '//*[@class="page-section attributes"]'
-    attrs = tree.xpath(_test)
-
-    core_attrs = attrs[0].xpath('//*[@class="attributes-core"]')
-    core_attrs = core_attrs[0].text_content().strip()
-    print(core_attrs)
-
-    core_attrs = attrs[0].xpath('//*[@class="attributes-core secondary"]')
-    core_attrs = core_attrs[0].text_content().strip()
-    print(core_attrs)
-
-
-
-    _test = '//*[@class="skills-wrapper"]'
-    skills = tree.xpath(_test)
-
-    active_skills = skills[0].xpath('//*[@class="active-skills clear-after"]')
-    active_skills = active_skills[0].text_content().strip()
-    print(active_skills)
-
-
-    passive_skills = skills[0].xpath('//*[@class="passive-skills clear-after"]')
-    passive_skills = passive_skills[0].text_content().strip()
-    print(passive_skills )
-
-
-    # gear slots
-    _test = '//*[@class="gear-slots"]'
-    gear = tree.xpath(_test)
-    print(gear[0])
-    slots = gear[0].xpath('li')
-    for slot in slots:
-        # print(slot.attrib)
-        stats = slot.xpath('a[1]')
-        if stats:
-            print(slot.attrib)
-            # print(stats[0].attrib)#['class']
-            print(stats[0].attrib['href'])
-        # print(x)#active_skills[0].text_content().strip())
-
-
-# barbarian.get_items()
-
-# lol, todo: this teaches accountantcy
-
-# https://www.ign.com/wikis/diablo-3/Necromancer_Sets
-
-# https://www.reddit.com/r/diablo3/comments/bagr92/fastest_way_to_farm_blood_shards/
-
-# https://www.icy-veins.com/d3/how-to-farm-legendary-and-set-items-guide
-
-
 if __name__ == '__main__':
     if False:
         for name, cls in copy.copy(globals()).items():
@@ -535,11 +346,7 @@ if __name__ == '__main__':
         print(totalGems)
         print(totalGems * 280)
 
-    barbarian = Armour_miner(Classes.BARBARIAN.value)
-    # print(Class_Info(Classes.BARBARIAN.value).get_skills())
-    barbarian.get_weapons()
+    # barbarian = Armour_miner(Classes.CRUSADER.value)
+    # barbarian.get_items()
 
-    # get_char_profile()
-
-
-
+    print(Class_Info(Classes.CRUSADER.value).get_passives())
