@@ -28,6 +28,16 @@ class Character(object):
 
     paragon_points = 0
 
+
+    Strength = 0
+    Dexterity = 0
+    Intelligence = 0
+    Vitality = 0
+    Damage = 0
+    Toughness = 0
+    Recovery = 0
+
+
     def __init__(self):
 
         import inspect
@@ -112,6 +122,21 @@ class Character(object):
                 print('bonus: {}'.format(bonus))
                     # print(item.type, item.__doc__)
                 # print(item.text)
+
+
+    def max_me(self):
+        """ """
+
+    def calc_stats(self):
+        """ signal calculates based off of Gear """
+
+
+    def __sub__(self, other):
+        self.Strength -= other.Strength
+        # self.Dexterity -= other.Dexterity
+        # self.Intelligence -= other.Intelligence
+
+
 '''
 todo:
 on Character obj -> a method or mechanism to compare 
@@ -125,3 +150,15 @@ a way to turn statements into effects
 
 
 # todo: how does Gear / Character stat levels correspond to which Rift level is appropriate?
+
+
+t = Character()
+t.Strength = 100
+
+
+y = Character()
+y.Strength = 33
+
+t - y
+
+print(t.Strength)

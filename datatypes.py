@@ -1,3 +1,39 @@
+class Item(object):
+
+    def get_stat_potential(self):
+        print('own url', self.url)
+        print('https://eu.diablo3.com{}'.format(self.url))
+        # https://eu.diablo3.com/en/item/axe-2h/
+        pass
+
+    def recognize(self):
+        print('recognizing')
+        print(self.text)
+        pass
+
+    @property
+    def range(self):
+        return range(1,10)
+
+class Set(object):
+    items = False
+    levels = dict
+
+    def yield_bonus(self, amount):
+        bonusses = []
+        for level, bonus in self.levels.items():
+            if level <= amount:
+                bonusses.append(bonus)
+        return bonusses
+
+
+class Set_Item(Item):
+    set = False
+
+    def howTo(self):
+        return 'N/A'
+
+
 class BloodShard:
     """ Blood Shard """
     pass
@@ -16,16 +52,13 @@ class Rare_Item:
     def howTo(self):
         return 'N/A'
 
+
 class Legendary_Item:
     def howTo(self):
         return 'N/A'
 
-class Set_Item:
-    def howTo(self):
-        return 'N/A'
 
-
-class LEGENDARY_POWER:
+class Legendary_power:
     """ the extracted power Effect"""
 
     # @property
@@ -33,7 +66,9 @@ class LEGENDARY_POWER:
     #     return Kanai.KanaisCube
 
 
-class KHANDURAN_RUNE:
+# Legendary crafting items ---------------------------------------------------------------------------------------------
+
+class Khanduran_Rune:
     """ Legendary Crafting Material """
 
     def howTo(self):
@@ -68,7 +103,7 @@ class WESTMARCH_HOLY_WATER:
         return 'Obtained from Act V Horadric Caches.'
 
 
-class DEATHS_BREATH:
+class Deaths_Breath:
     """ Unique Crafting Material"""
 
     def howTo(self):
@@ -78,6 +113,7 @@ class DEATHS_BREATH:
         return '''
         https://www.gamecmd.com/diablo-3-deaths-breath-farming/
         '''
+
 
 class REUSABLE_PARTS:
     """ Crafting Material """
@@ -107,8 +143,7 @@ class FORGOTTEN_SOUL:
         return 'Obtained by using the Blacksmith to salvage legendary weapons and armor.'
 
 
-from Resources import BloodShard
-
+# Objects --------------------------------------------------------------------------------------------------------------
 
 class Rift(object):
     level = 1
@@ -122,16 +157,7 @@ class Rift(object):
         return amount
 
 
-
-
-
-
-
-
 # todo: how to express a Source-Of-<type> best?
-
-
-from Resources import *
 
 
 class KanaisCube:
@@ -143,20 +169,19 @@ class KanaisCube:
         self.slots = [] * 3
 
     def calcIngredients(self, wants):
-
         return []
 
     class transmute:
 
         def EXTRACT_LEGENDARY_POWER(self, input):
             input[Legendary_Item] -= 1
-            input[KHANDURAN_RUNE] -= 1
+            input[Khanduran_Rune] -= 1
             input[CALDEUM_NIGHTSHADE] -= 1
             input[ARREAT_WAR_TAPESTRY] -= 1
             input[CORRUPTED_ANGEL_FLESH] -= 1
             input[WESTMARCH_HOLY_WATER] -= 1
 
-            input[DEATHS_BREATH] -= 5
+            input[Deaths_Breath] -= 5
 
         # todo: note: how do you express a Required / Threshold / Activation function style in Python?
         #  as in 'you need X or this function will assert?' or 'will not function unless X'
@@ -170,21 +195,18 @@ class KanaisCube:
             input[REUSABLE_PARTS] -= 50
             input[ARCANE_DUST] -= 50
             input[VEILED_CRYSTAL] -= 50
-            input[DEATHS_BREATH] -= 25
+            input[Deaths_Breath] -= 25
 
             return Legendary_Item
 
-
         def CONVERT_CRAFTING_MATERIALS(self, input):
             pass
-
 
         def CONVERT_SET_ITEM(self, input: Set_Item) -> Set_Item:
             """ Skill of Nilfur
             Transforms a Set item into another item belonging to the same Set. This recipe only works on Sets containing 3 or more pieces. For example, Natalya's Embrace would be transformed into another random piece of the Natalya’s Vengeance set.
             """
             return Set_Item
-
 
         def CONVERT_GEMS(self, input):
             pass
@@ -207,13 +229,15 @@ class KanaisCube:
             pass
 
 
-try:
-    print(KanaisCube.transmute().UPGRADE_RARE_ITEM())
-except TypeError as t:
-    print(t)
-    print(t.args)
-    print('typed')
-except Exception as e:
 
-    print(e)
-print('after')
+if __name__ == '__main__':
+    try:
+        print(KanaisCube.transmute().UPGRADE_RARE_ITEM())
+    except TypeError as t:
+        print(t)
+        print(t.args)
+        print('typed')
+    except Exception as e:
+
+        print(e)
+    print('after')

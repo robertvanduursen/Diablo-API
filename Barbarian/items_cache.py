@@ -1,31 +1,4 @@
-class Item(object):
-
-    def get_stat_potential(self):
-        print('own url', self.url)
-        print('https://eu.diablo3.com{}'.format(self.url))
-        #https://eu.diablo3.com/en/item/axe-2h/
-        pass
-
-    def recognize(self):
-        print('recognizing')
-        print(self.text)
-        pass
-
-class Set(object):
-    items = False
-    levels = dict
-
-    def yield_bonus(self, amount):
-        bonusses = []
-        for level, bonus in self.levels.items():
-            if level <= amount:
-                bonusses.append(bonus)
-        return bonusses
-
-
-
-class Set_Item(Item):
-    set = False
+from datatypes import Item, Set, Set_Item
 
 
 
@@ -1903,7 +1876,7 @@ class Zunimassas_Marrow(Item):
     """
 
 
-class Immortal_Kings_Eternal_Reign(Item):
+class Immortal_Kings_Eternal_Reign(Set_Item):
     """ Immortal King's Eternal Reign """
     type = 'torso'
     text = """
@@ -2885,7 +2858,7 @@ class Natalyas_Touch(Item):
     """
 
 
-class Immortal_Kings_Irons(Item):
+class Immortal_Kings_Irons(Set_Item):
     """ Immortal King's Irons """
     type = 'hands'
     text = """
@@ -3877,7 +3850,7 @@ class Zunimassas_Cloth(Item):
     """
 
 
-class Immortal_Kings_Stature(Item):
+class Immortal_Kings_Stature(Set_Item):
     """ Immortal King's Stature """
     type = 'pants'
     text = """
@@ -4493,7 +4466,7 @@ class Blackthornes_Spurs(Item):
     """
 
 
-class Immortal_Kings_Stride(Item):
+class Immortal_Kings_Stride(Set_Item):
     """ Immortal King's Stride """
     type = 'feet'
     text = """
