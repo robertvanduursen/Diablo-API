@@ -13,7 +13,8 @@ class Item(object):
 
     @property
     def range(self):
-        return range(1,10)
+        return range(1, 10)
+
 
 class Set(object):
     items = False
@@ -159,6 +160,24 @@ class Rift(object):
 
 # todo: how to express a Source-Of-<type> best?
 
+class Horadric_Cache:
+    """ Horadric Cache """
+    '''
+    # Each Horadric Cache obtained at level 70 is also guaranteed to have the corresponding Crafting Material (last entry in each section). Drop rates depend on difficulty at which the Cache was acquired:
+    #
+    # 3 per cache (Normal – Master)
+    # 6 per cache (Torment I – VI)  # correct
+    #
+    # 8 per cache (Torment VII – IX)
+    # 10 per cache (Torment X)
+    # 12 per cache (Torment XI)
+    # 14 per cache (Torment XII)
+    # 16 per cache (Torment XIII)
+    # 18 per cache (Torment XIV)
+    # 20 per cache (Torment XV)
+    # 22 per cache (Torment XVI)
+    '''
+
 
 class KanaisCube:
     source = r"https://eu.diablo3.com/en/game/guide/items/kanais-cube"
@@ -227,7 +246,6 @@ class KanaisCube:
 
         def AUGMENT_ANCIENT_OR_PRIMAL_ANCIENT_ITEM(self, input):
             pass
-
 
 
 if __name__ == '__main__':

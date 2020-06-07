@@ -543,34 +543,3 @@ if __name__ == '__main__':
 
 
 
-'''
-
-<li class="slot-head">
-
-				<a class="slot-link" href="/en/item/immortal-kings-triumph-Unique_Helm_008_x1" data-d3tooltip="item-profile/138156698~133589041~immortal-kings-triumph~Unique_Helm_008_x1">
-				<span class="d3-icon d3-icon-item d3-icon-item-green">
-					<span class="icon-item-gradient">
-						<span class="icon-item-inner"></span>
-					</span>
-				</span>
-
-					<span class="image">
-					<img src="https://blzmedia-a.akamaihd.net/d3/icons/items/large/unique_helm_008_x1_demonhunter_male.png" alt="">
-				</span>
-
-		<span class="sockets-wrapper">
-			<span class="sockets-align">
-					<span class="socket">
-						<img class="gem" src="https://blzmedia-a.akamaihd.net/d3/icons/items/small/x1_diamond_08_demonhunter_male.png">
-					</span><br>
-			</span>
-		</span>
-				</a>
-
-
-		<a href="/en/artisan/blacksmith/recipe/illustrious-klappvisier" class="item-transmog">
-			<img src="/static/images/profile/hero/bg-transmog.gif?v=58-121">
-		</a>
-
-	</li>
-'''

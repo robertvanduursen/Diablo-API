@@ -1,51 +1,366 @@
-# test
-from Kanai import Legendary_Item, KHANDURAN_RUNE, CALDEUM_NIGHTSHADE, ARREAT_WAR_TAPESTRY, CORRUPTED_ANGEL_FLESH, \
-    WESTMARCH_HOLY_WATER, DEATHS_BREATH, REUSABLE_PARTS, ARCANE_DUST, VEILED_CRYSTAL, FORGOTTEN_SOUL, KanaisCube
+"""
 
-# Each Horadric Cache obtained at level 70 is also guaranteed to have the corresponding Crafting Material (last entry in each section). Drop rates depend on difficulty at which the Cache was acquired:
-#
-# 3 per cache (Normal – Master)
-# 6 per cache (Torment I – VI)  # correct
-#
-# 8 per cache (Torment VII – IX)
-# 10 per cache (Torment X)
-# 12 per cache (Torment XI)
-# 14 per cache (Torment XII)
-# 16 per cache (Torment XIII)
-# 18 per cache (Torment XIV)
-# 20 per cache (Torment XV)
-# 22 per cache (Torment XVI)
+Main entry point
 
-############################################################################
-############################################################################
-############################################################################
+"""
+import requests, re
+from lxml import html
 
 
-# for name, typ in list(globals().items()): print(name)
+def get_characters_urls_from_profile(profile_url: str):
+    characters_urls = []
 
-ingredients = {
-    Legendary_Item: 0,
+    page = requests.get(profile_url)
+    tree = html.fromstring(page.content)
 
-    KHANDURAN_RUNE: 4,
-    CALDEUM_NIGHTSHADE: 5,
-    ARREAT_WAR_TAPESTRY: 5,
-    CORRUPTED_ANGEL_FLESH: 5,
-    WESTMARCH_HOLY_WATER: 0,
+    _test = '//*[@class="hero-tabs MediaCarousel-scroll"]'
+    chars = tree.xpath(_test)
+    if chars:
+        for char in chars[0].xpath('li'):
+            profile_nr = char.xpath('a[1]')
+            if profile_nr:
+                char_code = profile_nr[0].attrib['href']
+                char_name = False
+                for x in profile_nr[0].xpath('span[@class="name"]'):
+                    char_name = x.text_content().strip()
 
-    DEATHS_BREATH: 22,
-
-    REUSABLE_PARTS: 1686,
-    ARCANE_DUST: 2924,
-    VEILED_CRYSTAL: 2839,
-
-    FORGOTTEN_SOUL: 43,
-}
-
-KanaisCube().transmute().UPGRADE_RARE_ITEM(ingredients)
-KanaisCube().transmute().UPGRADE_RARE_ITEM(ingredients)
-KanaisCube().transmute().UPGRADE_RARE_ITEM(ingredients)
-KanaisCube().transmute().UPGRADE_RARE_ITEM(ingredients)
+            characters_urls.append('{}/hero/{}'.format(profile_url, char_code))
+                # result = re.search(r'<div class="detail-text">((.*\s*)*?)<span class="clear">', text)
 
 
-for item, quanitity in ingredients.items():
-    print(item.__name__, '-->', 'still need %s more' % abs(quanitity) if quanitity < 0.0 else quanitity, '\t\t', item().howTo() )
+    return characters_urls
+
+
+if __name__ == '__main__':
+
+    for x in get_characters_urls_from_profile(r'https://eu.diablo3.com/en/profile/Ralicx-2273/'):
+        print(x)
+
+'''
+<ul class="hero-tabs MediaCarousel-scroll" style="width: 1746px;">
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab barbarian-female active" href="133589041" data-tooltip="#hero-tab-tooltip-0">
+								<span class="hero-portrait">
+										<span class="small-seasonal-leaf"></span>
+								</span>
+								<span class="level">70</span>
+								<span class="name">Burla</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-0" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">Burla</h2>
+
+			<p>
+				<strong>70</strong> female
+				 - <span class="d3-color-seasonal">Seasonal Hero</span>
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab crusader-male " href="134261017" data-tooltip="#hero-tab-tooltip-1">
+								<span class="hero-portrait">
+										<span class="small-seasonal-leaf"></span>
+								</span>
+								<span class="level">70</span>
+								<span class="name">Charlemagne</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-1" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">Charlemagne</h2>
+
+			<p>
+				<strong>70</strong> male
+				 - <span class="d3-color-seasonal">Seasonal Hero</span>
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab necromancer-male " href="124935330" data-tooltip="#hero-tab-tooltip-2">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">70</span>
+								<span class="name">Emomuel</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-2" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">Emomuel</h2>
+
+			<p>
+				<strong>70</strong> male
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab monk-female " href="127544319" data-tooltip="#hero-tab-tooltip-3">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">70</span>
+								<span class="name">HITME</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-3" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">HITME</h2>
+
+			<p>
+				<strong>70</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab witch-doctor-female " href="127350103" data-tooltip="#hero-tab-tooltip-4">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">70</span>
+								<span class="name">TaiDalma</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-4" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">TaiDalma</h2>
+
+			<p>
+				<strong>70</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab necromancer-male " href="131034385" data-tooltip="#hero-tab-tooltip-5">
+								<span class="hero-portrait">
+										<span class="small-seasonal-leaf"></span>
+								</span>
+								<span class="level">70</span>
+								<span class="name">Vlad</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-5" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">Vlad</h2>
+
+			<p>
+				<strong>70</strong> male
+				 - <span class="d3-color-seasonal">Seasonal Hero</span>
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab wizard-female " href="124631594" data-tooltip="#hero-tab-tooltip-6">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">70</span>
+								<span class="name">hermione</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-6" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">hermione</h2>
+
+			<p>
+				<strong>70</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab barbarian-female " href="123210710" data-tooltip="#hero-tab-tooltip-7">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">64</span>
+								<span class="name">BattleWench</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-7" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">BattleWench</h2>
+
+			<p>
+				<strong>64</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab monk-female " href="123552406" data-tooltip="#hero-tab-tooltip-8">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">54</span>
+								<span class="name">FistyCuffs</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-8" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">FistyCuffs</h2>
+
+			<p>
+				<strong>54</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab necromancer-female " href="124900492" data-tooltip="#hero-tab-tooltip-9">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">26</span>
+								<span class="name">Morticia</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-9" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">Morticia</h2>
+
+			<p>
+				<strong>26</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab necromancer-female " href="129307511" data-tooltip="#hero-tab-tooltip-10">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">22</span>
+								<span class="name">Morta</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-10" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">Morta</h2>
+
+			<p>
+				<strong>22</strong> female
+			</p>
+		</div>
+	</div>
+						</li>
+
+
+						<li class="MediaCarousel-thumb">
+							<a class="hero-tab witch-doctor-male " href="124350001" data-tooltip="#hero-tab-tooltip-11">
+								<span class="hero-portrait">
+								</span>
+								<span class="level">1</span>
+								<span class="name">shakers</span>
+							</a>
+
+
+
+	<div id="hero-tab-tooltip-11" style="display:none">
+		<div class="hero-tab-tooltip profile-tooltip">
+			
+
+
+	<h2 class="subheader-2">shakers</h2>
+
+			<p>
+				<strong>1</strong> male
+			</p>
+		</div>
+	</div>
+						</li>
+							<li class="MediaCarousel-thumb">
+								<span class="hero-tab empty-hero"></span>
+							</li>
+							<li class="MediaCarousel-thumb">
+								<span class="hero-tab empty-hero"></span>
+							</li>
+							<li class="MediaCarousel-thumb">
+								<span class="hero-tab empty-hero"></span>
+							</li>
+							<li class="MediaCarousel-thumb">
+								<span class="hero-tab empty-hero"></span>
+							</li>
+							<li class="MediaCarousel-thumb">
+								<span class="hero-tab empty-hero"></span>
+							</li>
+							<li class="MediaCarousel-thumb">
+								<span class="hero-tab empty-hero"></span>
+							</li>
+				</ul>
+'''
