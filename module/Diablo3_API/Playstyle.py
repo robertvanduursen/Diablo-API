@@ -5,6 +5,21 @@ class Playstyle:
 
     # yields: <the best build for X>
 
+    cls = ''
+
+    def __init__(self):
+        cls = ''
+
+    class Discover:
+
+        def pick(self):
+            return True
+
+
+
+    @property
+    def discover(self):
+        return self.Discover()
 
 from datatypes import Classes, Gear
 
