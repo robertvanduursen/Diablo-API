@@ -1,21 +1,4 @@
-class Skill(object):
-    category = False
-    description = False
-    url = False
-    runes = False
-
-    @property
-    def data(self):
-        print('name: {}'.format(self.__class__.__doc__))
-        if self.category:
-            print('category: {}'.format(self.category))
-        if self.description:
-            print('description: {}'.format(self.description))
-        if self.runes:
-            print('runes: {}'.format(self.runes))
-
-        return True
-
+from datatypes import Skill
 
 class Bash(Skill):
     """ Bash """

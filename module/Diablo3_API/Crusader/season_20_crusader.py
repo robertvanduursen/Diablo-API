@@ -10,8 +10,22 @@ Season 20 Crusader build
 
 #https://eu.diablo3.com/en/profile/Ralicx-2273/
 
-import skills
+import Crusader.skills
 
-import Playstyle
+from Playstyle import Playstyle
 
-Playstyle.Playstyle().discover.pick()
+_test = Playstyle(cls='Crusader')
+
+_test.discover.focus('close up')
+
+from utils import analyse_sets
+from utils import item_utils
+
+
+
+import Crusader.items_cache as items
+# analyse_sets.get_sets(items)
+
+
+for x in item_utils.get_class_eligible_items(items, 'crusader'):
+    print(x)

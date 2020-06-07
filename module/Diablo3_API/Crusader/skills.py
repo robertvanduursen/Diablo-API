@@ -1,13 +1,14 @@
+from datatypes import Skill
 
-class Punish:
-                """ Punish """
-                category = "active"
-                description = """Generate: 5 Wrath per attack
+class Punish(Skill):
+    """ Punish """
+    category = "active"
+    description = """Generate: 5 Wrath per attack
 
 Strike your enemy for 335% weapon damage and gain Hardened Senses, increasing your Block Chance by 15% for 5 seconds.
 
 Requires Shield"""
-                url = r'https://us.diablo3.com//en/class/crusader/active/punish'
+    url = r'https://us.diablo3.com//en/class/crusader/active/punish'
 
 
 """
@@ -28,15 +29,16 @@ Requires Shield"""
 
 """
 
-class Shield_Bash:
-                """ Shield Bash """
-                category = "active"
-                description = """Cost: 30 Wrath
+
+class Shield_Bash(Skill):
+    """ Shield Bash """
+    category = "active"
+    description = """Cost: 30 Wrath
 
 Charge at your enemy, bashing him and all nearby foes. Deals 700% weapon damage plus 300% of your shield Block Chance as Holy damage.
 
 Requires Shield"""
-                url = r'https://us.diablo3.com//en/class/crusader/active/shield-bash'
+    url = r'https://us.diablo3.com//en/class/crusader/active/shield-bash'
 
 
 """
@@ -57,13 +59,14 @@ Requires Shield"""
 
 """
 
-class Slash:
-                """ Slash """
-                category = "active"
-                description = """Generate: 5 Wrath per attack
+
+class Slash(Skill):
+    """ Slash """
+    category = "active"
+    description = """Generate: 5 Wrath per attack
 
 Ignite the air in front of you, dealing 230% weapon damage as Fire."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/slash'
+    url = r'https://us.diablo3.com//en/class/crusader/active/slash'
 
 
 """
@@ -84,15 +87,16 @@ Ignite the air in front of you, dealing 230% weapon damage as Fire."""
 
 """
 
-class Shield_Glare:
-                """ Shield Glare """
-                category = "active"
-                description = """Cooldown: 12 seconds
+
+class Shield_Glare(Skill):
+    """ Shield Glare """
+    category = "active"
+    description = """Cooldown: 12 seconds
 
 Light erupts from your shield, Blinding all enemies up to 30 yards in front of you for 4 seconds.
 
 Requires Shield"""
-                url = r'https://us.diablo3.com//en/class/crusader/active/shield-glare'
+    url = r'https://us.diablo3.com//en/class/crusader/active/shield-glare'
 
 
 """
@@ -113,15 +117,16 @@ Requires Shield"""
 
 """
 
-class Sweep_Attack:
-                """ Sweep Attack """
-                category = "active"
-                description = """Cost: 20 Wrath
+
+class Sweep_Attack(Skill):
+    """ Sweep Attack """
+    category = "active"
+    description = """Cost: 20 Wrath
 
 Sweep a mystical flail through enemies up to 18 yards before you, dealing 480% weapon damage.
 
 Requires Weapon"""
-                url = r'https://us.diablo3.com//en/class/crusader/active/sweep-attack'
+    url = r'https://us.diablo3.com//en/class/crusader/active/sweep-attack'
 
 
 """
@@ -144,13 +149,14 @@ Sweep Attack's damage turns into Holy.
 
 """
 
-class Iron_Skin:
-                """ Iron Skin """
-                category = "active"
-                description = """Cooldown: 30 seconds
+
+class Iron_Skin(Skill):
+    """ Iron Skin """
+    category = "active"
+    description = """Cooldown: 30 seconds
 
 Your skin turns to iron, absorbing 50% of all incoming damage for 4 seconds."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/iron-skin'
+    url = r'https://us.diablo3.com//en/class/crusader/active/iron-skin'
 
 
 """
@@ -171,14 +177,15 @@ Your skin turns to iron, absorbing 50% of all incoming damage for 4 seconds."""
 
 """
 
-class Provoke:
-                """ Provoke """
-                category = "active"
-                description = """Cooldown: 20 seconds
+
+class Provoke(Skill):
+    """ Provoke """
+    category = "active"
+    description = """Cooldown: 20 seconds
 Generate: 30 Wrath
 
 Taunt all nearby enemies and instantly generate an additional 5 Wrath for every enemy taunted. Taunted enemies will focus their attention on you for 4 seconds."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/provoke'
+    url = r'https://us.diablo3.com//en/class/crusader/active/provoke'
 
 
 """
@@ -199,13 +206,14 @@ Taunt all nearby enemies and instantly generate an additional 5 Wrath for every 
 
 """
 
-class Smite:
-                """ Smite """
-                category = "active"
-                description = """Generate: 5 Wrath per attack
+
+class Smite(Skill):
+    """ Smite """
+    category = "active"
+    description = """Generate: 5 Wrath per attack
 
 Smite enemies up to 30 yards away with holy chains that deal 175% weapon damage as Holy. The chains break off and strike up to 3 additional enemies within 20 yards for 150% weapon damage as Holy."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/smite'
+    url = r'https://us.diablo3.com//en/class/crusader/active/smite'
 
 
 """
@@ -226,13 +234,14 @@ Smite enemies up to 30 yards away with holy chains that deal 175% weapon damage 
 
 """
 
-class Blessed_Hammer:
-                """ Blessed Hammer """
-                category = "active"
-                description = """Cost: 10 Wrath
+
+class Blessed_Hammer(Skill):
+    """ Blessed Hammer """
+    category = "active"
+    description = """Cost: 10 Wrath
 
 Summon a blessed hammer that spins around you, dealing 320% weapon damage as Holy to all enemies hit."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/blessed-hammer'
+    url = r'https://us.diablo3.com//en/class/crusader/active/blessed-hammer'
 
 
 """
@@ -253,13 +262,14 @@ Summon a blessed hammer that spins around you, dealing 320% weapon damage as Hol
 
 """
 
-class Steed_Charge:
-                """ Steed Charge """
-                category = "active"
-                description = """Cooldown: 16 seconds
+
+class Steed_Charge(Skill):
+    """ Steed Charge """
+    category = "active"
+    description = """Cooldown: 16 seconds
 
 Mount a celestial war horse that allows you to ride through enemies unhindered for 2 seconds."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/steed-charge'
+    url = r'https://us.diablo3.com//en/class/crusader/active/steed-charge'
 
 
 """
@@ -280,17 +290,18 @@ Mount a celestial war horse that allows you to ride through enemies unhindered f
 
 """
 
-class Laws_of_Valor:
-                """ Laws of Valor """
-                category = "active"
-                description = """Cooldown: 30 seconds
+
+class Laws_of_Valor(Skill):
+    """ Laws of Valor """
+    category = "active"
+    description = """Cooldown: 30 seconds
 
 Active: Empower the Law, granting you and your allies 15% increased Attack Speed for 5 seconds.
 
 Passive: Recite the Law, granting you and your allies 8% increased Attack Speed.
 
 Only one Law may be active at a time."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/laws-of-valor'
+    url = r'https://us.diablo3.com//en/class/crusader/active/laws-of-valor'
 
 
 """
@@ -311,13 +322,14 @@ Only one Law may be active at a time."""
 
 """
 
-class Justice:
-                """ Justice """
-                category = "active"
-                description = """Generate: 5 Wrath per attack
+
+class Justice(Skill):
+    """ Justice """
+    category = "active"
+    description = """Generate: 5 Wrath per attack
 
 Hurl a hammer of justice at your enemies, dealing 245% weapon damage."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/justice'
+    url = r'https://us.diablo3.com//en/class/crusader/active/justice'
 
 
 """
@@ -338,13 +350,14 @@ Hurl a hammer of justice at your enemies, dealing 245% weapon damage."""
 
 """
 
-class Consecration:
-                """ Consecration """
-                category = "active"
-                description = """Cooldown: 30 seconds
+
+class Consecration(Skill):
+    """ Consecration """
+    category = "active"
+    description = """Cooldown: 30 seconds
 
 Consecrate the ground 20 yards around you for 10 seconds. You and your allies heal for 32,185 Life per second while standing on the consecrated ground."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/consecration'
+    url = r'https://us.diablo3.com//en/class/crusader/active/consecration'
 
 
 """
@@ -367,17 +380,18 @@ The duration of the consecration is reduced to 5 seconds.
 
 """
 
-class Laws_of_Justice:
-                """ Laws of Justice """
-                category = "active"
-                description = """Cooldown: 30 seconds
+
+class Laws_of_Justice(Skill):
+    """ Laws of Justice """
+    category = "active"
+    description = """Cooldown: 30 seconds
 
 Active: Empower the Law, granting you and your allies 490 increased resistance to all elements for 5 seconds.
 
 Passive: Recite the Law, granting you and your allies 140 increased resistance to all elements.
 
 Only one Law may be active at a time."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/laws-of-justice'
+    url = r'https://us.diablo3.com//en/class/crusader/active/laws-of-justice'
 
 
 """
@@ -398,16 +412,17 @@ Only one Law may be active at a time."""
 
 """
 
-class Falling_Sword:
-                """ Falling Sword """
-                category = "active"
-                description = """Cost: 25 Wrath
+
+class Falling_Sword(Skill):
+    """ Falling Sword """
+    category = "active"
+    description = """Cost: 25 Wrath
 Cooldown: 30 seconds
 
 Launch yourself into the heavens and come crashing down on your enemies, dealing 1700% weapon damage to everything within 14 yards of where you land.
 
 This ability does not start its cooldown until after its effects expire."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/falling-sword'
+    url = r'https://us.diablo3.com//en/class/crusader/active/falling-sword'
 
 
 """
@@ -428,15 +443,16 @@ This ability does not start its cooldown until after its effects expire."""
 
 """
 
-class Blessed_Shield:
-                """ Blessed Shield """
-                category = "active"
-                description = """Cost: 20 Wrath
+
+class Blessed_Shield(Skill):
+    """ Blessed Shield """
+    category = "active"
+    description = """Cost: 20 Wrath
 
 Hurl your shield, dealing 430% weapon damage as Holy plus 250% of shield Block Chance as Holy damage. The shield will ricochet to 3 nearby enemies.
 
 Requires Shield"""
-                url = r'https://us.diablo3.com//en/class/crusader/active/blessed-shield'
+    url = r'https://us.diablo3.com//en/class/crusader/active/blessed-shield'
 
 
 """
@@ -457,13 +473,14 @@ Requires Shield"""
 
 """
 
-class Condemn:
-                """ Condemn """
-                category = "active"
-                description = """Cooldown: 15 seconds
+
+class Condemn(Skill):
+    """ Condemn """
+    category = "active"
+    description = """Cooldown: 15 seconds
 
 Build up a massive explosion, unleashing it after 3 seconds, dealing 1160% weapon damage as Holy to all enemies within 15 yards."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/condemn'
+    url = r'https://us.diablo3.com//en/class/crusader/active/condemn'
 
 
 """
@@ -484,13 +501,14 @@ Build up a massive explosion, unleashing it after 3 seconds, dealing 1160% weapo
 
 """
 
-class Judgment:
-                """ Judgment """
-                category = "active"
-                description = """Cooldown: 20 seconds
+
+class Judgment(Skill):
+    """ Judgment """
+    category = "active"
+    description = """Cooldown: 20 seconds
 
 Pass judgment on all enemies within 20 yards of the targeted location, Immobilizing them in place for 6 seconds."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/judgment'
+    url = r'https://us.diablo3.com//en/class/crusader/active/judgment'
 
 
 """
@@ -511,17 +529,18 @@ Pass judgment on all enemies within 20 yards of the targeted location, Immobiliz
 
 """
 
-class Laws_of_Hope:
-                """ Laws of Hope """
-                category = "active"
-                description = """Cooldown: 30 seconds
+
+class Laws_of_Hope(Skill):
+    """ Laws of Hope """
+    category = "active"
+    description = """Cooldown: 30 seconds
 
 Active: Empower the Law, surrounding you and your allies in a shield for 5 seconds that absorbs up to 124,128 damage.
 
 Passive: Recite the Law, healing you and your allies for 10,728 Life per second.
 
 Only one Law may be active at a time."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/laws-of-hope'
+    url = r'https://us.diablo3.com//en/class/crusader/active/laws-of-hope'
 
 
 """
@@ -542,42 +561,43 @@ Only one Law may be active at a time."""
 
 """
 
-class Akarats_Champion:
-                """ Akarat's Champion """
-                category = "active"
-                description = """Cooldown: 90 seconds
 
-Explode with the power of your order, increasing your damage by 35% and increasing your Wrath regeneration by 5 for 20 seconds."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/akarats-champion'
+class Akarats_Champion(Skill):
+    """ Akarat's Champion """
+    category = "active"
+    description = """Cooldown: 90 seconds
+    
+    Explode with the power of your order, increasing your damage by 35% and increasing your Wrath regeneration by 5 for 20 seconds."""
+    url = r'https://us.diablo3.com//en/class/crusader/active/akarats-champion'
+
+    """
+         Fire Starter
+             Dealing damage burns enemies with the power of Akarat, dealing 460% weapon damage as Fire over 3 seconds.
+    
+         Embodiment of Power
+             Increases the bonus Wrath regeneration from Akarat's Champion to 10.
+    
+         Rally
+             Using Akarat's Champion reduces the remaining cooldown of your other abilities by 12 seconds.
+    
+         Prophet
+             Gain 150% additional Armor while Akarat's Champion is active.
+    
+    The first time you take fatal damage while Akarat's Champion is active, you will be returned to full health.
+    
+         Hasteful
+             Gain 15% increased attack speed while Akarat's Champion is active.
+    
+    """
 
 
-"""
-	 Fire Starter
-		 Dealing damage burns enemies with the power of Akarat, dealing 460% weapon damage as Fire over 3 seconds.
-
-	 Embodiment of Power
-		 Increases the bonus Wrath regeneration from Akarat's Champion to 10.
-
-	 Rally
-		 Using Akarat's Champion reduces the remaining cooldown of your other abilities by 12 seconds.
-
-	 Prophet
-		 Gain 150% additional Armor while Akarat's Champion is active.
-
-The first time you take fatal damage while Akarat's Champion is active, you will be returned to full health.
-
-	 Hasteful
-		 Gain 15% increased attack speed while Akarat's Champion is active.
-
-"""
-
-class Fist_of_the_Heavens:
-                """ Fist of the Heavens """
-                category = "active"
-                description = """Cost: 30 Wrath
+class Fist_of_the_Heavens(Skill):
+    """ Fist of the Heavens """
+    category = "active"
+    description = """Cost: 30 Wrath
 
 Call forth a pillar of lightning from the heavens that explodes, dealing 545% weapon damage as Lightning to any enemy within 8 yards. The explosion creates 6 piercing charged bolts that arc outward and deal 255% weapon damage as Lightning."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/fist-of-the-heavens'
+    url = r'https://us.diablo3.com//en/class/crusader/active/fist-of-the-heavens'
 
 
 """
@@ -600,13 +620,14 @@ The explosion creates 6 piercing charged bolts that crawl outward, dealing 185% 
 
 """
 
-class Phalanx:
-                """ Phalanx """
-                category = "active"
-                description = """Cost: 30 Wrath
+
+class Phalanx(Skill):
+    """ Phalanx """
+    category = "active"
+    description = """Cost: 30 Wrath
 
 Summon powerful avatars who charge forward to the targeted destination. Enemies caught in the charge path take 490% weapon damage."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/phalanx'
+    url = r'https://us.diablo3.com//en/class/crusader/active/phalanx'
 
 
 """
@@ -633,42 +654,45 @@ The Avatars can only be summoned once every 30 seconds.
 
 """
 
-class Heavens_Fury:
-                """ Heaven's Fury """
-                category = "active"
-                description = """Cooldown: 20 seconds
 
-Call down a furious ray of Holy power that deals 1710% weapon damage as Holy over 6 seconds to all enemies caught within it."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/heavens-fury'
+class Heavens_Fury(Skill):
 
 
-"""
-	 Blessed Ground
-		 The ground touched by the ray becomes blessed, scorching it and dealing 1550% weapon damage over 5 seconds to enemies who walks through.
+    """ Heaven's Fury """
+    category = "active"
+    description = """Cooldown: 20 seconds
+    
+    Call down a furious ray of Holy power that deals 1710% weapon damage as Holy over 6 seconds to all enemies caught within it."""
+    url = r'https://us.diablo3.com//en/class/crusader/active/heavens-fury'
 
-	 Ascendancy
-		 The ray of Holy power grows to encompass 12 yards, dealing 2766% weapon damage as Holy over 6 seconds to enemies caught within it.
+    """
+         Blessed Ground
+             The ground touched by the ray becomes blessed, scorching it and dealing 1550% weapon damage over 5 seconds to enemies who walks through.
+    
+         Ascendancy
+             The ray of Holy power grows to encompass 12 yards, dealing 2766% weapon damage as Holy over 6 seconds to enemies caught within it.
+    
+         Split Fury
+             The ray splits into 3 smaller beams, each dealing 1980% weapon damage as Holy over 6 seconds.
+    
+         Thou Shalt Not Pass
+             Ground touched by the ray pulses with power for 6 seconds, stopping enemies who try to pass over it.
+    
+         Fires of Heaven
+             Call down a furious ray of Holy power that is focused through you in a beam across the battlefield, dealing 960% weapon damage as Holy to all enemies it hits.
+    
+    The cooldown is removed. Now costs 40 Wrath.
+    
+    """
 
-	 Split Fury
-		 The ray splits into 3 smaller beams, each dealing 1980% weapon damage as Holy over 6 seconds.
 
-	 Thou Shalt Not Pass
-		 Ground touched by the ray pulses with power for 6 seconds, stopping enemies who try to pass over it.
-
-	 Fires of Heaven
-		 Call down a furious ray of Holy power that is focused through you in a beam across the battlefield, dealing 960% weapon damage as Holy to all enemies it hits.
-
-The cooldown is removed. Now costs 40 Wrath.
-
-"""
-
-class Bombardment:
-                """ Bombardment """
-                category = "active"
-                description = """Cooldown: 60 seconds
+class Bombardment(Skill):
+    """ Bombardment """
+    category = "active"
+    description = """Cooldown: 60 seconds
 
 Call in an assault from afar, raining 5 spheres of burning pitch and stone onto enemies around you, dealing 2850% total weapon damage to enemies within 12 yards of the impact zone."""
-                url = r'https://us.diablo3.com//en/class/crusader/active/bombardment'
+    url = r'https://us.diablo3.com//en/class/crusader/active/bombardment'
 
 
 """
@@ -688,4 +712,3 @@ Call in an assault from afar, raining 5 spheres of burning pitch and stone onto 
 		 Instead of randomly finding targets nearby, the bombardment will continue to fall on your initial target.
 
 """
-

@@ -1,10 +1,9 @@
-import items_cache, inspect
+import inspect
 
-def get_sets():
-    for name, cls in inspect.getmembers(items_cache, lambda x: inspect.isclass(x)):
-        if issubclass(cls, items_cache.Set_Item):
+def get_sets(_collection):
+    from datatypes import Set_Item
+    for name, cls in inspect.getmembers(_collection, lambda x: inspect.isclass(x)):
+        if issubclass(cls, Set_Item):
             print(name, cls)
 
 
-
-get_sets()

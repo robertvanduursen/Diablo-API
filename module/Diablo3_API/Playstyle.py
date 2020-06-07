@@ -7,19 +7,30 @@ class Playstyle:
 
     cls = ''
 
-    def __init__(self):
-        cls = ''
+    def __init__(self, cls=False):
+        if cls:
+            self._class = cls
 
     class Discover:
 
         def pick(self):
             return True
 
+        def focus(self, on):
+            """ what to focus on """
 
+    def goals(self):
+        return self.Goals()
+
+    class Goals:
+
+        def set(self):
+            pass
 
     @property
     def discover(self):
         return self.Discover()
+
 
 from datatypes import Classes, Gear
 

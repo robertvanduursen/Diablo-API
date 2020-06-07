@@ -304,6 +304,25 @@ classes = [
     'monk',
 ]
 
+class Skill(object):
+    category = False
+    description = False
+    url = False
+    runes = False
+
+    @property
+    def data(self):
+        print('name: {}'.format(self.__class__.__doc__))
+        if self.category:
+            print('category: {}'.format(self.category))
+        if self.description:
+            print('description: {}'.format(self.description))
+        if self.runes:
+            print('runes: {}'.format(self.runes))
+
+        return True
+
+
 if __name__ == '__main__':
     try:
         print(KanaisCube.transmute().UPGRADE_RARE_ITEM())
@@ -315,3 +334,4 @@ if __name__ == '__main__':
 
         print(e)
     print('after')
+

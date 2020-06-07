@@ -41,7 +41,7 @@ class Class_Info:
             desc = desc[0].text_content().strip()
 
             template = '''
-            class {name}:
+            class {name}(Skill):
                 """ {title} """
                 category = "active"
                 description = """{desc}"""
@@ -349,4 +349,4 @@ if __name__ == '__main__':
     # barbarian = Armour_miner(Classes.CRUSADER.value)
     # barbarian.get_items()
 
-    print(Class_Info(Classes.CRUSADER.value).get_passives())
+    print(Class_Info(Classes.CRUSADER.value).get_active_skills())
