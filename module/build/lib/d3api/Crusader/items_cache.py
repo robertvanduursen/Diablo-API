@@ -1,4 +1,6 @@
-from datatypes import Item
+import sys
+sys.path.append("..\..")
+from d3api.datatypes import Item, Set, Set_Item
 
 
 class Hellfire_Ring(Item):
@@ -3227,7 +3229,7 @@ class Pull_of_the_Earth(Item):
     """
 
 
-class Vyrs_Grasping_Gauntlets(Item):
+class Vyrs_Grasping_Gauntlets(Set_Item):
     """ Vyr's Grasping Gauntlets """
     url = r'/en/item/vyrs-grasping-gauntlets-Unique_Gloves_Set_13_x1'
     type = 'hands'
@@ -3238,7 +3240,7 @@ class Vyrs_Grasping_Gauntlets(Item):
     """
 
 
-class Sages_Purchase(Item):
+class Sages_Purchase(Set_Item):
     """ Sage's Purchase """
     url = r'/en/artisan/blacksmith/recipe/sages-purchase'
     type = 'hands'
@@ -3248,7 +3250,7 @@ class Sages_Purchase(Item):
     """
 
 
-class Raekors_Wraps(Item):
+class Raekors_Wraps(Set_Item):
     """ Raekor's Wraps """
     url = r'/en/item/raekors-wraps-Unique_Gloves_Set_05_x1'
     type = 'hands'
@@ -3259,7 +3261,7 @@ class Raekors_Wraps(Item):
     """
 
 
-class Gauntlet_of_the_Wastes(Item):
+class Gauntlet_of_the_Wastes(Set_Item):
     """ Gauntlet of the Wastes """
     url = r'/en/item/gauntlet-of-the-wastes-Unique_Gloves_Set_01_p2'
     type = 'hands'
@@ -3270,7 +3272,7 @@ class Gauntlet_of_the_Wastes(Item):
     """
 
 
-class Claws_of_Savages(Item):
+class Claws_of_Savages(Set_Item):
     """ Claws of Savages """
     url = r'/en/item/claws-of-savages-P68_Unique_Gloves_Set_05'
     type = 'hands'
@@ -3281,7 +3283,7 @@ class Claws_of_Savages(Item):
     """
 
 
-class Will_of_the_Light(Item):
+class Will_of_the_Light(Set_Item):
     """ Will of the Light """
     url = r'/en/item/will-of-the-light-Unique_Gloves_Set_03_p3'
     type = 'hands'
@@ -3292,7 +3294,7 @@ class Will_of_the_Light(Item):
     """
 
 
-class Gauntlets_of_Valor(Item):
+class Gauntlets_of_Valor(Set_Item):
     """ Gauntlets of Valor """
     url = r'/en/item/gauntlets-of-valor-P67_Unique_Gloves_Set_01'
     type = 'hands'
@@ -3303,7 +3305,7 @@ class Gauntlets_of_Valor(Item):
     """
 
 
-class Gauntlets_of_Akkhan(Item):
+class Gauntlets_of_Akkhan(Set_Item):
     """ Gauntlets of Akkhan """
     url = r'/en/item/gauntlets-of-akkhan-Unique_Gloves_Set_10_x1'
     type = 'hands'
@@ -3314,7 +3316,7 @@ class Gauntlets_of_Akkhan(Item):
     """
 
 
-class Rolands_Grasp(Item):
+class Rolands_Grasp(Set_Item):
     """ Roland's Grasp """
     url = r'/en/item/rolands-grasp-Unique_Gloves_Set_01_p1'
     type = 'hands'
@@ -3347,7 +3349,7 @@ class Marauders_Gloves(Item):
     """
 
 
-class Ulianas_Fury(Item):
+class Ulianas_Fury(Set_Item):
     """ Uliana's Fury """
     url = r'/en/item/ulianas-fury-Unique_Gloves_Set_01_p3'
     type = 'hands'
@@ -3369,7 +3371,7 @@ class Fists_of_Thunder(Item):
     """
 
 
-class Bazubands_of_Justice(Item):
+class Bazubands_of_Justice(Set_Item):
     """ Bazubands of Justice """
     url = r'/en/item/bazubands-of-justice-P67_Unique_Gloves_Set_02'
     type = 'hands'
@@ -4912,7 +4914,7 @@ class Jade_Harvesters_Swiftness(Item):
     """
 
 
-class Zeal_of_the_Invoker(Item):
+class Zeal_of_the_Invoker(Set_Item):
     """ Zeal of the Invoker """
     url = r'/en/item/zeal-of-the-invoker-Unique_Boots_Set_12_x1'
     type = 'feet'

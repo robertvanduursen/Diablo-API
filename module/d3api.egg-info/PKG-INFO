@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: Diablo3-API
-Version: 0.0.1
+Name: d3api
+Version: 0.0.2
 Summary: A small example package
 Home-page: https://github.com/pypa/sampleproject
 Author: Robert van Duursen

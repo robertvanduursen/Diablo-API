@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Diablo3-API", # Replace with your own username
-    version="0.0.1",
+    name="d3api", # Replace with your own username
+    version="0.0.2",
     author="Robert van Duursen",
     author_email="author@example.com",
     description="A small example package",

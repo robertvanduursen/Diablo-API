@@ -1,4 +1,7 @@
-from datatypes import Skill
+import sys
+sys.path.append("..\..")
+from d3api.datatypes import Skill
+
 
 class Punish(Skill):
     """ Punish """

@@ -1,4 +1,6 @@
-from datatypes import Item, Set, Set_Item
+import sys
+sys.path.append("..\..")
+from d3api.datatypes import Item, Set, Set_Item
 
 
 class Hellfire_Ring(Item):
