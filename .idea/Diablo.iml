@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Barbarian" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/module/d3api/Crusader" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/module/d3api" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/module/d3api/utils" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

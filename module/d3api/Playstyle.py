@@ -31,8 +31,8 @@ class Playstyle:
     def discover(self):
         return self.Discover()
 
+from d3api.datatypes import Classes, Gear
 
-from datatypes import Classes, Gear
 
 # helm = Gear(1)
 # # shoulders = Gear(1)

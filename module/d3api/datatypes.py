@@ -15,6 +15,10 @@ class Item(object):
     def range(self):
         return range(1, 10)
 
+    def gemSlots(self):
+        """ return derived gemslots """
+        return 0
+
 
 class Set(object):
     items = False
@@ -294,6 +298,7 @@ class Classes(enum.Enum):
     CRUSADER = 'crusader'
     MONK = 'monk'
 
+
 classes = [
     'barbarian',
     'wizard',
@@ -303,6 +308,21 @@ classes = [
     'crusader',
     'monk',
 ]
+
+
+def isGenerator(obj):
+    """ assert when object generates the primary resource """
+    import inspect
+    if inspect.isclass(obj):
+        class_str = inspect.getsource(obj).lower()
+        if 'generate' in class_str and 'wrath' in class_str:
+            return True
+
+    # if hasattr(obj, 'description') and obj.description:
+    #     if 'Generate' in obj.description:
+    #         return True
+    return False
+
 
 class Skill(object):
     category = False
@@ -322,6 +342,24 @@ class Skill(object):
 
         return True
 
+    @property
+    def isGenerator(self):
+        if 'Generate' in self.description:
+            return True
+        return False
+
+
+class Passive(Skill):
+    pass
+
+
+class Active(Skill):
+    pass
+
+
+class Rune:
+    pass
+
 
 if __name__ == '__main__':
     try:
@@ -334,4 +372,3 @@ if __name__ == '__main__':
 
         print(e)
     print('after')
-

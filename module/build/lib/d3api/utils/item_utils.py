@@ -21,9 +21,11 @@ def get_class_eligible_items(_collection, class_name='barbarian'):
     print(total)
     return items
 
-def debug_get_items():
+def debug_get_items(items):
     from d3api.Crusader import items_cache as items
     eligible_items = get_class_eligible_items(items, 'crusader')
+
+
     from d3api.Crusader import skills as _skills
 
 
@@ -44,4 +46,3 @@ def debug_get_items():
 
     print(len(filtered))
 
-debug_get_items()

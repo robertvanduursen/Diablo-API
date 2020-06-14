@@ -1,22 +1,6 @@
-from items_cache import Item
-
-
-class Set(object):
-    items = False
-    levels = dict
-
-    def yield_bonus(self, amount):
-        bonusses = []
-        for level, bonus in self.levels.items():
-            if level <= amount:
-                bonusses.append(bonus)
-        return bonusses
-
-
-class Set_Item(Item):
-    set = False
-
-
+import sys
+sys.path.append("..\..")
+from d3api.datatypes import Item, Set, Set_Item
 
 class Genzaniku(Item):
     """ Genzaniku """
@@ -61,15 +45,12 @@ class The_Butchers_Sickle(Item):
     """
 
 
-class Sky_Splitter(Item):
-    """ Sky Splitter """
-    url = r'/en/item/sky-splitter-Unique_Axe_1H_005_p2'
+class Hallowed_Storm(Item):
+    """ Hallowed Storm """
+    url = r'/en/artisan/blacksmith/recipe/hallowed-storm'
     type = 'axe-1h'
     text = """
-
-	+[981 - 1199]-[1175 - 1490] Holy Damage
-	 17% chance to Smite enemies for 600-750% weapon damage as Lightning when you hit them.
-	[15 - 20]%
+	(2) Set:      +40 Resistance to All Elements     Attack Speed Increased by 5.0%
     """
 
 
@@ -86,21 +67,15 @@ class The_Burning_Axe_of_Sankis(Item):
     """
 
 
-class Hallowed_Storm(Item):
-    """ Hallowed Storm """
-    url = r'/en/artisan/blacksmith/recipe/hallowed-storm'
+class Sky_Splitter(Item):
+    """ Sky Splitter """
+    url = r'/en/item/sky-splitter-Unique_Axe_1H_005_p2'
     type = 'axe-1h'
     text = """
-	(2) Set:      +40 Resistance to All Elements     Attack Speed Increased by 5.0%
-    """
 
-
-class Hallowed_Breach(Item):
-    """ Hallowed Breach """
-    url = r'/en/artisan/blacksmith/recipe/hallowed-breach'
-    type = 'axe-1h'
-    text = """
-	(2) Set:      +100 Resistance to All Elements     Attack Speed Increased by 10.0%
+	+[981 - 1199]-[1175 - 1490] Holy Damage
+	 17% chance to Smite enemies for 600-750% weapon damage as Lightning when you hit them.
+	[15 - 20]%
     """
 
 
@@ -112,6 +87,15 @@ class Mordullus_Promise(Item):
 	 Firebomb generates 120 Mana.
 	(Witch Doctor Only)
 	[100 - 125]
+    """
+
+
+class Hallowed_Breach(Item):
+    """ Hallowed Breach """
+    url = r'/en/artisan/blacksmith/recipe/hallowed-breach'
+    type = 'axe-1h'
+    text = """
+	(2) Set:      +100 Resistance to All Elements     Attack Speed Increased by 10.0%
     """
 
 
@@ -278,19 +262,6 @@ class Nutcracker(Item):
     """
 
 
-class Jaces_Hammer_of_Vigilance(Item):
-    """ Jace's Hammer of Vigilance """
-    url = r'/en/item/jaces-hammer-of-vigilance-Unique_Mace_1H_103_x1'
-    type = 'mace-1h'
-    text = """
-
-	+[981 - 1199]-[1175 - 1490] Holy Damage
-	 Increases Blessed Hammer Damage by [15 - 20]%
-	 Increase the size of your Blessed Hammers.
-	(Crusader Only)
-    """
-
-
 class Solanium(Item):
     """ Solanium """
     url = r'/en/item/solanium-Unique_Mace_1H_102_x1'
@@ -305,17 +276,16 @@ class Solanium(Item):
     """
 
 
-class Nailbiter(Item):
-    """ Nailbiter """
-    url = r'/en/item/nailbiter-Unique_Mace_1H_008_x1'
+class Jaces_Hammer_of_Vigilance(Item):
+    """ Jace's Hammer of Vigilance """
+    url = r'/en/item/jaces-hammer-of-vigilance-Unique_Mace_1H_103_x1'
     type = 'mace-1h'
     text = """
 
-	+[6 - 10]% Damage
-
-	+[981 - 1199]-[1175 - 1490] Damage
-
-	+[5334 - 7696] Thorns Damage
+	+[981 - 1199]-[1175 - 1490] Holy Damage
+	 Increases Blessed Hammer Damage by [15 - 20]%
+	 Increase the size of your Blessed Hammers.
+	(Crusader Only)
     """
 
 
@@ -333,19 +303,17 @@ class Neanderthal(Item):
     """
 
 
-class Earthshatter(Item):
-    """ Earthshatter """
-    url = r'/en/artisan/blacksmith/recipe/earthshatter'
+class Nailbiter(Item):
+    """ Nailbiter """
+    url = r'/en/item/nailbiter-Unique_Mace_1H_008_x1'
     type = 'mace-1h'
     text = """
 
-	+[4 - 7]% Damage
+	+[6 - 10]% Damage
 
-	[1.0 - 2.6]% Chance to Stun on Hit
+	+[981 - 1199]-[1175 - 1490] Damage
 
-	[1.0 - 2.6]% Chance to Immobilize on Hit
-
-	[20 - 35]% chance to cause the ground to shudder when attacking.
+	+[5334 - 7696] Thorns Damage
     """
 
 
@@ -377,6 +345,22 @@ class Echoing_Fury(Item):
 
 	[10.0 - 20.0]% Chance to Fear on Hit
 	 Slaying enemies engulfs the wielder into a Frenzy.
+    """
+
+
+class Earthshatter(Item):
+    """ Earthshatter """
+    url = r'/en/artisan/blacksmith/recipe/earthshatter'
+    type = 'mace-1h'
+    text = """
+
+	+[4 - 7]% Damage
+
+	[1.0 - 2.6]% Chance to Stun on Hit
+
+	[1.0 - 2.6]% Chance to Immobilize on Hit
+
+	[20 - 35]% chance to cause the ground to shudder when attacking.
     """
 
 
@@ -611,6 +595,111 @@ class The_Twisted_Sword(Item):
     """
 
 
+class Gyrfalcons_Foote(Item):
+    """ Gyrfalcon's Foote """
+    url = r'/en/item/gyrfalcons-foote-P61_Unique_Flail_1H_105_x1'
+    type = 'flail-1h'
+    text = """
+
+	+[626 - 750] Strength
+	 Removes the resource cost of Blessed Shield and increases its damage by 319%.
+	(Crusader Only)
+	[275 - 350]%
+    """
+
+
+class Justinians_Mercy(Item):
+    """ Justinian's Mercy """
+    url = r'/en/item/justinians-mercy-Unique_Flail_1H_102_x1'
+    type = 'flail-1h'
+    text = """
+
+	Sockets (1)
+	 Blessed Hammer gains the effect of the Dominion rune.
+	(Crusader Only)
+    """
+
+
+class Darklight(Item):
+    """ Darklight """
+    url = r'/en/item/darklight-P67_Unique_Flail_1H_106'
+    type = 'flail-1h'
+    text = """
+
+	+[981 - 1199]-[1175 - 1490] Lightning Damage
+
+	+[626 - 750] Strength
+	 Fist of the Heavens now casts twice and deals 874% more damage.
+	(Crusader Only)
+	[800 - 1000]%
+    """
+
+
+class Swiftmount(Item):
+    """ Swiftmount """
+    url = r'/en/item/swiftmount-Unique_Flail_1H_103_x1'
+    type = 'flail-1h'
+    text = """
+
+	+[626 - 750] Strength
+	 Doubles the duration of Steed Charge.
+	(Crusader Only)
+    """
+
+
+class Kassars_Retribution(Item):
+    """ Kassar's Retribution """
+    url = r'/en/item/kassars-retribution-Unique_Flail_1H_104_x1'
+    type = 'flail-1h'
+    text = """
+
+	+[626 - 750] Strength
+	 Casting Justice increases your movement speed by 17% for 2 seconds.
+	(Crusader Only)
+	[15 - 20]%
+    """
+
+
+class Inviolable_Faith(Item):
+    """ Inviolable Faith """
+    url = r'/en/item/inviolable-faith-Unique_Flail_1H_107_x1'
+    type = 'flail-1h'
+    text = """
+
+	+[981 - 1199]-[1175 - 1490] Holy Damage
+
+	Sockets (1)
+	 Casting Consecration also casts Consecration beneath all of your allies.
+    """
+
+
+class Johannas_Argument(Item):
+    """ Johanna's Argument """
+    url = r'/en/item/johannas-argument-P1_flail1H_norm_unique_01'
+    type = 'flail-1h'
+    text = """
+
+	+[626 - 750] Strength
+	 Increase the attack speed and damage of Blessed Hammer by 100%.
+	(Crusader Only)
+	100%
+    """
+
+
+class Golden_Scourge(Item):
+    """ Golden Scourge """
+    url = r'/en/artisan/blacksmith/recipe/golden-scourge'
+    type = 'flail-1h'
+    text = """
+
+	+[981 - 1199]-[1175 - 1490] Holy Damage
+
+	Holy skills deal [15 - 20]% more damage.
+
+	Smite now jumps to 3 additional enemies.
+    """
+
+
 class Spear_of_Jairo(Item):
     """ Spear of Jairo """
     url = r'/en/item/spear-of-jairo-P6_Unique_Spear_01'
@@ -710,20 +799,6 @@ class Blood_Magic_Blade(Item):
     """
 
 
-class Blood_Magic_Edge(Item):
-    """ Blood-Magic Edge """
-    url = r'/en/artisan/blacksmith/recipe/bloodmagic-edge'
-    type = 'dagger'
-    text = """
-
-	+[858 - 1049]-[1028 - 1304] Damage
-
-	Increases Attack Speed by [5 - 7]%
-
-	Blood oozes from you.
-    """
-
-
 class Karleis_Point(Item):
     """ Karlei's Point """
     url = r'/en/item/karleis-point-P61_Unique_Dagger_101_x1'
@@ -759,6 +834,20 @@ class Lord_Greenstones_Fan(Item):
 	 Every second, gain 328% increased damage for your next Fan of Knives. Stacks up to 30 times.
 	(Demon Hunter Only)
 	[300 - 400]%
+    """
+
+
+class Blood_Magic_Edge(Item):
+    """ Blood-Magic Edge """
+    url = r'/en/artisan/blacksmith/recipe/bloodmagic-edge'
+    type = 'dagger'
+    text = """
+
+	+[858 - 1049]-[1028 - 1304] Damage
+
+	Increases Attack Speed by [5 - 7]%
+
+	Blood oozes from you.
     """
 
 
@@ -810,18 +899,6 @@ class Messerschmidts_Reaver(Item):
     """
 
 
-class Skorn(Item):
-    """ Skorn """
-    url = r'/en/item/skorn-Unique_Axe_2H_009_x1'
-    type = 'axe-2h'
-    text = """
-
-	[34.0 - 39.0]% chance to inflict Bleed for [300 - 400]% weapon damage over 5 seconds.
-
-	Sockets (1)
-    """
-
-
 class Fire_Brand(Item):
     """ Fire Brand """
     url = r'/en/artisan/blacksmith/recipe/fire-brand'
@@ -833,6 +910,18 @@ class Fire_Brand(Item):
 	+[81 - 100] Fire Resistance
 
 	[25 - 50]% chance to cast a fireball when attacking.
+    """
+
+
+class Skorn(Item):
+    """ Skorn """
+    url = r'/en/item/skorn-Unique_Axe_2H_009_x1'
+    type = 'axe-2h'
+    text = """
+
+	[34.0 - 39.0]% chance to inflict Bleed for [300 - 400]% weapon damage over 5 seconds.
+
+	Sockets (1)
     """
 
 
@@ -925,6 +1014,105 @@ class Blade_of_the_Tribes(Item):
 	 Increases Earthquake Damage by [150 - 200]%
 	 War Cry and Threatening Shout cause an Avalanche and Earthquake.
 	(Barbarian Only)
+    """
+
+
+class Flail_of_the_Ascended(Item):
+    """ Flail of the Ascended """
+    url = r'/en/item/flail-of-the-ascended-P4_Unique_Flail_2H_002'
+    type = 'flail-2h'
+    text = """
+
+	+[946 - 1125] Strength
+	 Your Shield Glare deals damage equal to up to your last 5 Shield Bash casts.
+	(Crusader Only)
+	5
+    """
+
+
+class Akkhans_Addendum(Item):
+    """ Akkhan's Addendum """
+    url = r'/en/item/akkhans-addendum-P4_Unique_Flail_2H_001'
+    type = 'flail-2h'
+    text = """
+
+	+[946 - 1125] Strength
+	 Akarat's Champion gains the effects of the Prophet and Embodiment of Power runes.
+	(Crusader Only)
+    """
+
+
+class Golden_Flense(Item):
+    """ Golden Flense """
+    url = r'/en/item/golden-flense-P61_Unique_Flail_2H_104'
+    type = 'flail-2h'
+    text = """
+
+	+[946 - 1125] Strength
+	 Sweep Attack restores 6 Wrath for each enemy hit and has its damage increased by 269%.
+	(Crusader Only)
+	[225 - 300]%
+    """
+
+
+class Baleful_Remnant(Item):
+    """ Baleful Remnant """
+    url = r'/en/item/baleful-remnant-Unique_Flail_2H_102_x1'
+    type = 'flail-2h'
+    text = """
+
+	Sockets (1)
+	 Enemies killed while Akarat's Champion is active turn into Phalanx Avatars for 10 seconds.
+	(Crusader Only)
+    """
+
+
+class Fate_of_the_Fell(Item):
+    """ Fate of the Fell """
+    url = r'/en/item/fate-of-the-fell-P61_Unique_Flail_2H_103_x1'
+    type = 'flail-2h'
+    text = """
+
+	+[1177 - 1439]-[1410 - 1788] Fire Damage
+
+	+[946 - 1125] Strength
+	 Heaven's Fury gains two additional rays and has its damage increased by 473%.
+	(Crusader Only)
+	[375 - 500]%
+    """
+
+
+class The_Mortal_Drama(Item):
+    """ The Mortal Drama """
+    url = r'/en/item/the-mortal-drama-Unique_Flail_2H_101_x1'
+    type = 'flail-2h'
+    text = """
+
+	+[946 - 1125] Strength
+	 Double the number of Bombardment impacts.
+	(Crusader Only)
+    """
+
+
+class Flail_of_the_Charge(Item):
+    """ Flail of the Charge """
+    url = r'/en/item/flail-of-the-charge-P4_Unique_Flail_2H_Set_01_x1'
+    type = 'flail-2h'
+    text = """
+	(2) Set:      Increases the duration of Steed Charge by 2 seconds. In addition, killing an enemy reduces the cooldown of Steed Charge by 1 second.     Gain 100% increased damage while using Steed Charge and for 5 seconds after it ends.
+    """
+
+
+class Akkhans_Leniency(Item):
+    """ Akkhan's Leniency """
+    url = r'/en/item/akkhans-leniency-P65_flail2H_norm_unique_01'
+    type = 'flail-2h'
+    text = """
+
+	+[946 - 1125] Strength
+	 Each enemy hit by your Blessed Shield increases the damage of your Blessed Shield by 37% for 3 seconds.
+	(Crusader Only)
+	[35 - 40]%
     """
 
 
@@ -1118,6 +1306,18 @@ class Blade_of_Prophecy(Item):
     """
 
 
+class Warmonger(Item):
+    """ Warmonger """
+    url = r'/en/item/warmonger-Unique_Sword_2H_003_x1'
+    type = 'sword-2h'
+    text = """
+
+	+[1177 - 1439]-[1410 - 1788] Damage
+
+	Sockets (1)
+    """
+
+
 class The_Grandfather(Item):
     """ The Grandfather """
     url = r'/en/item/the-grandfather-Unique_Sword_2H_001_x1'
@@ -1142,18 +1342,6 @@ class Maximus(Item):
 
 	Fire skills deal [15 - 20]% more damage.
 	 Chance on hit to summon a Demonic Slave.
-    """
-
-
-class Warmonger(Item):
-    """ Warmonger """
-    url = r'/en/item/warmonger-Unique_Sword_2H_003_x1'
-    type = 'sword-2h'
-    text = """
-
-	+[1177 - 1439]-[1410 - 1788] Damage
-
-	Sockets (1)
     """
 
 
@@ -1384,5 +1572,4 @@ class The_Grand_Vizier(Item):
 	(Wizard Only)
 	[300 - 400]%
     """
-
 

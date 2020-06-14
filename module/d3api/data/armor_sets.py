@@ -1,6 +1,18 @@
 # Items repository
 
 
+from datatypes import Item, Set, Set_Item
+
+
+class The_Legacy_of_Raekor(Set):
+    """ The Legacy of Raekor """
+    items = []
+    levels = {
+        2: 'Increase the damage per second of Rend by 500% and its duration to 15 seconds.',
+        4: 'During Whirlwind and for 3 seconds after, you gain 50% damage reduction and your applied Rends deal triple damage.',
+        6: 'Whirlwind gains the effect of the Dust Devils rune and all Whirlwind and Rend damage is increased by 10,000%.',
+    }
+
 class Immortal_Kings_Call:
     """ Immortal King's Call armor set """
     set_size = 7

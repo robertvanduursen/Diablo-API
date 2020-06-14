@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="d3api", # Replace with your own username
-    version="0.0.2",
+    name="d3api",
+    version="0.0.3",
     author="Robert van Duursen",
     author_email="author@example.com",
     description="A small example package",

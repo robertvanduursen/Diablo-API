@@ -1,28 +1,23 @@
-from datatypes import Item, Set, Set_Item
-
-
-
-class The_Legacy_of_Raekor(Set):
-    """ The Legacy of Raekor """
-    items = []
-    levels = {
-        2: 'Increase the damage per second of Rend by 500% and its duration to 15 seconds.',
-        4: 'During Whirlwind and for 3 seconds after, you gain 50% damage reduction and your applied Rends deal triple damage.',
-        6: 'Whirlwind gains the effect of the Dust Devils rune and all Whirlwind and Rend damage is increased by 10,000%.',
-    }
+import sys
+sys.path.append("..\..")
+from d3api.datatypes import Item, Set, Set_Item
 
 
 class Hellfire_Ring(Item):
     """ Hellfire Ring """
+    url = r'/en/artisan/jeweler/recipe/hellfire-ring'
     type = 'ring'
     text = """
+
 	+45% Experience. (4.5% at level 70)
+
 	Chance on hit to engulf the ground in lava, dealing 200% weapon damage per second for 6 seconds.
     """
 
 
-class Hellfire_Ring2(Item):
+class Hellfire_Ring(Item):
     """ Hellfire Ring """
+    url = r'/en/artisan/jeweler/recipe/hellfire-ring-of-strength'
     type = 'ring'
     text = """
 
@@ -36,6 +31,7 @@ class Hellfire_Ring2(Item):
 
 class Band_of_Might(Item):
     """ Band of Might """
+    url = r'/en/item/band-of-might-P61_Unique_Ring_05'
     type = 'ring'
     text = """
 
@@ -48,6 +44,7 @@ class Band_of_Might(Item):
 
 class Circle_of_Nailujs_Evol(Item):
     """ Circle of Nailuj's Evol """
+    url = r'/en/item/circle-of-nailujs-evol-P6_Unique_Ring_01'
     type = 'ring'
     text = """
 
@@ -60,6 +57,7 @@ class Circle_of_Nailujs_Evol(Item):
 
 class Ring_of_Royal_Grandeur(Item):
     """ Ring of Royal Grandeur """
+    url = r'/en/item/ring-of-royal-grandeur-Unique_Ring_107_x1'
     type = 'ring'
     text = """
 
@@ -73,6 +71,7 @@ class Ring_of_Royal_Grandeur(Item):
 
 class Pandemonium_Loop(Item):
     """ Pandemonium Loop """
+    url = r'/en/item/pandemonium-loop-Unique_Ring_109_x1'
     type = 'ring'
     text = """
 	 Enemies slain while Feared die in a bloody explosion and cause other nearby enemies to flee in Fear.
@@ -81,6 +80,7 @@ class Pandemonium_Loop(Item):
 
 class Avarice_Band(Item):
     """ Avarice Band """
+    url = r'/en/item/avarice-band-Unique_Ring_108_x1'
     type = 'ring'
     text = """
 
@@ -93,6 +93,7 @@ class Avarice_Band(Item):
 
 class Leorics_Signet(Item):
     """ Leoric's Signet """
+    url = r'/en/item/leorics-signet-Unique_Ring_002_x1'
     type = 'ring'
     text = """
 
@@ -104,6 +105,7 @@ class Leorics_Signet(Item):
 
 class Pandemonium_Loop(Item):
     """ Pandemonium Loop """
+    url = r'/en/item/pandemonium-loop-Unique_Ring_109_p2'
     type = 'ring'
     text = """
 	 Enemies slain while Feared die in a bloody explosion for 800% weapon damage and cause other nearby enemies to flee in Fear.
@@ -112,6 +114,7 @@ class Pandemonium_Loop(Item):
 
 class Manald_Heal(Item):
     """ Manald Heal """
+    url = r'/en/item/manald-heal-P43_Unique_Ring_021_x1'
     type = 'ring'
     text = """
 	 Enemies stunned with Paralysis also take 13,462% weapon damage as Lightning.
@@ -122,6 +125,7 @@ class Manald_Heal(Item):
 
 class Broken_Promises(Item):
     """ Broken Promises """
+    url = r'/en/item/broken-promises-Unique_Ring_006_p2'
     type = 'ring'
     text = """
 
@@ -133,6 +137,7 @@ class Broken_Promises(Item):
 
 class Puzzle_Ring(Item):
     """ Puzzle Ring """
+    url = r'/en/item/puzzle-ring-Unique_Ring_004_x1'
     type = 'ring'
     text = """
 
@@ -146,6 +151,7 @@ class Puzzle_Ring(Item):
 
 class Halo_of_Karini(Item):
     """ Halo of Karini """
+    url = r'/en/item/halo-of-karini-P61_Unique_Ring_03'
     type = 'ring'
     text = """
 
@@ -158,6 +164,7 @@ class Halo_of_Karini(Item):
 
 class The_Tall_Mans_Finger(Item):
     """ The Tall Man's Finger """
+    url = r'/en/item/the-tall-mans-finger-Unique_Ring_101_x1'
     type = 'ring'
     text = """
 	 Zombie Dogs instead summons a single gargantuan dog with more damage and health than all other dogs combined.
@@ -167,6 +174,7 @@ class The_Tall_Mans_Finger(Item):
 
 class Rechels_Ring_of_Larceny(Item):
     """ Rechel's Ring of Larceny """
+    url = r'/en/item/rechels-ring-of-larceny-Unique_Ring_104_x1'
     type = 'ring'
     text = """
 
@@ -178,6 +186,7 @@ class Rechels_Ring_of_Larceny(Item):
 
 class Arcstone(Item):
     """ Arcstone """
+    url = r'/en/item/arcstone-P2_Unique_Ring_03'
     type = 'ring'
     text = """
 	 Lightning pulses periodically between all wearers of this item, dealing 1350% weapon damage.
@@ -187,6 +196,7 @@ class Arcstone(Item):
 
 class Band_of_the_Rue_Chambers(Item):
     """ Band of the Rue Chambers """
+    url = r'/en/item/band-of-the-rue-chambers-Unique_Ring_106_x1'
     type = 'ring'
     text = """
 
@@ -199,6 +209,7 @@ class Band_of_the_Rue_Chambers(Item):
 
 class Rogars_Huge_Stone(Item):
     """ Rogar's Huge Stone """
+    url = r'/en/item/rogars-huge-stone-Unique_Ring_103_x1'
     type = 'ring'
     text = """
 	 Increase your Life per Second by up to 95% based on your missing Life.
@@ -208,6 +219,7 @@ class Rogars_Huge_Stone(Item):
 
 class Wyrdward(Item):
     """ Wyrdward """
+    url = r'/en/item/wyrdward-Unique_Ring_102_p2'
     type = 'ring'
     text = """
 	 Lightning damage has a 25% chance to Stun for 1.5 seconds.
@@ -217,6 +229,7 @@ class Wyrdward(Item):
 
 class The_Short_Mans_Finger(Item):
     """ The Short Man's Finger """
+    url = r'/en/item/the-short-mans-finger-P61_Unique_Ring_01'
     type = 'ring'
     text = """
 
@@ -229,6 +242,7 @@ class The_Short_Mans_Finger(Item):
 
 class Lornelles_Sunstone(Item):
     """ Lornelle's Sunstone """
+    url = r'/en/item/lornelles-sunstone-P6_Unique_Ring_04'
     type = 'ring'
     text = """
 	 Your damage reduction is increased by 0.89% for every 1% Life you are missing.
@@ -239,6 +253,7 @@ class Lornelles_Sunstone(Item):
 
 class Nagelring(Item):
     """ Nagelring """
+    url = r'/en/item/nagelring-Unique_Ring_018_p2'
     type = 'ring'
     text = """
 	 Summons a Fallen Lunatic to your side every 10 seconds.
@@ -248,6 +263,7 @@ class Nagelring(Item):
 
 class Obsidian_Ring_of_the_Zodiac(Item):
     """ Obsidian Ring of the Zodiac """
+    url = r'/en/item/obsidian-ring-of-the-zodiac-Unique_Ring_023_p2'
     type = 'ring'
     text = """
 
@@ -267,6 +283,7 @@ class Obsidian_Ring_of_the_Zodiac(Item):
 
 class Justice_Lantern(Item):
     """ Justice Lantern """
+    url = r'/en/item/justice-lantern-P4_Unique_Ring_03'
     type = 'ring'
     text = """
 
@@ -282,6 +299,7 @@ class Justice_Lantern(Item):
 
 class Bul_Kathoss_Wedding_Band(Item):
     """ Bul-Kathos's Wedding Band """
+    url = r'/en/item/bulkathoss-wedding-band-Unique_Ring_020_x1'
     type = 'ring'
     text = """
 
@@ -292,6 +310,7 @@ class Bul_Kathoss_Wedding_Band(Item):
 
 class Eternal_Union(Item):
     """ Eternal Union """
+    url = r'/en/item/eternal-union-Unique_Ring_007_p1'
     type = 'ring'
     text = """
 	 Increases the duration of Phalanx avatars by 200%.
@@ -301,6 +320,7 @@ class Eternal_Union(Item):
 
 class Krysbins_Sentence(Item):
     """ Krysbin's Sentence """
+    url = r'/en/item/krysbins-sentence-P6_Unique_Ring_03'
     type = 'ring'
     text = """
 
@@ -313,6 +333,7 @@ class Krysbins_Sentence(Item):
 
 class Halo_of_Arlyse(Item):
     """ Halo of Arlyse """
+    url = r'/en/item/halo-of-arlyse-p2_Unique_Ring_Wizard_001'
     type = 'ring'
     text = """
 
@@ -325,6 +346,7 @@ class Halo_of_Arlyse(Item):
 
 class Convention_of_Elements(Item):
     """ Convention of Elements """
+    url = r'/en/item/convention-of-elements-P2_Unique_Ring_04'
     type = 'ring'
     text = """
 
@@ -338,6 +360,7 @@ class Convention_of_Elements(Item):
 
 class Litany_of_the_Undaunted(Item):
     """ Litany of the Undaunted """
+    url = r'/en/item/litany-of-the-undaunted-Unique_Ring_015_x1'
     type = 'ring'
     text = """
 	(2) Set:      While this is your only Item Set bonus every Ancient item you have equipped increases your damage dealt by 750% and reduces your damage taken by 4%.
@@ -346,6 +369,7 @@ class Litany_of_the_Undaunted(Item):
 
 class The_Compass_Rose(Item):
     """ The Compass Rose """
+    url = r'/en/item/the-compass-rose-Unique_Ring_013_x1'
     type = 'ring'
     text = """
 	(2) Set:      While moving, damage taken is reduced by up to 50%.     While standing still, damage dealt is increased by up to 100%.
@@ -354,6 +378,7 @@ class The_Compass_Rose(Item):
 
 class The_Wailing_Host(Item):
     """ The Wailing Host """
+    url = r'/en/item/the-wailing-host-Unique_Ring_014_x1'
     type = 'ring'
     text = """
 	(2) Set:      While this is your only Item Set bonus every Ancient item you have equipped increases your damage dealt by 750% and reduces your damage taken by 4%.
@@ -362,6 +387,7 @@ class The_Wailing_Host(Item):
 
 class Skull_Grasp(Item):
     """ Skull Grasp """
+    url = r'/en/item/skull-grasp-P61_Unique_Ring_02'
     type = 'ring'
     text = """
 
@@ -374,6 +400,7 @@ class Skull_Grasp(Item):
 
 class Band_of_Hollow_Whispers(Item):
     """ Band of Hollow Whispers """
+    url = r'/en/item/band-of-hollow-whispers-Unique_Ring_001_x1'
     type = 'ring'
     text = """
 	 This ring occasionally haunts nearby enemies.
@@ -382,6 +409,7 @@ class Band_of_Hollow_Whispers(Item):
 
 class Ring_of_Emptiness(Item):
     """ Ring of Emptiness """
+    url = r'/en/item/ring-of-emptiness-P42_Unique_Ring_Haunt'
     type = 'ring'
     text = """
 
@@ -394,6 +422,7 @@ class Ring_of_Emptiness(Item):
 
 class Kredes_Flame(Item):
     """ Krede's Flame """
+    url = r'/en/item/kredes-flame-Unique_Ring_003_x1'
     type = 'ring'
     text = """
 	 Taking Fire damage restores your primary resource.
@@ -402,6 +431,7 @@ class Kredes_Flame(Item):
 
 class Elusive_Ring(Item):
     """ Elusive Ring """
+    url = r'/en/item/elusive-ring-P4_Unique_Ring_02'
     type = 'ring'
     text = """
 
@@ -414,6 +444,7 @@ class Elusive_Ring(Item):
 
 class Zunimassas_Pox(Item):
     """ Zunimassa's Pox """
+    url = r'/en/item/zunimassas-pox-Unique_Ring_012_x1'
     type = 'ring'
     text = """
 	(2) Set:      Your Fetish Army lasts until they die and the cooldown of your Fetish Army is reduced by 80%.
@@ -424,6 +455,7 @@ class Zunimassas_Pox(Item):
 
 class Stone_of_Jordan(Item):
     """ Stone of Jordan """
+    url = r'/en/item/stone-of-jordan-Unique_Ring_019_x1'
     type = 'ring'
     text = """
 
@@ -435,6 +467,7 @@ class Stone_of_Jordan(Item):
 
 class Unity(Item):
     """ Unity """
+    url = r'/en/item/unity-Unique_Ring_010_x1'
     type = 'ring'
     text = """
 
@@ -447,6 +480,7 @@ class Unity(Item):
 
 class Oculus_Ring(Item):
     """ Oculus Ring """
+    url = r'/en/item/oculus-ring-Unique_Ring_017_p4'
     type = 'ring'
     text = """
 
@@ -458,6 +492,7 @@ class Oculus_Ring(Item):
 
 class Natalyas_Reflection(Item):
     """ Natalya's Reflection """
+    url = r'/en/item/natalyas-reflection-Unique_Ring_011_x1'
     type = 'ring'
     text = """
 	(2) Set:      Reduce the cooldown of Rain of Vengeance by 4 seconds when you hit with a Hatred-generating attack or Hatred-spending attack.
@@ -468,6 +503,7 @@ class Natalyas_Reflection(Item):
 
 class Focus(Item):
     """ Focus """
+    url = r'/en/item/focus-Unique_Ring_Set_001_x1'
     type = 'ring'
     text = """
 	(2) Set:      When you hit with a resource-generating attack or primary skill, deal 50% increased damage for 5 seconds.
@@ -477,6 +513,7 @@ class Focus(Item):
 
 class Briggs_Wrath(Item):
     """ Briggs' Wrath """
+    url = r'/en/item/briggs-wrath-P6_Unique_Ring_02'
     type = 'ring'
     text = """
 
@@ -488,6 +525,7 @@ class Briggs_Wrath(Item):
 
 class Restraint(Item):
     """ Restraint """
+    url = r'/en/item/restraint-Unique_Ring_Set_002_x1'
     type = 'ring'
     text = """
 	(2) Set:      When you hit with a resource-generating attack or primary skill, deal 50% increased damage for 5 seconds.
@@ -497,6 +535,7 @@ class Restraint(Item):
 
 class Hellfire_Amulet(Item):
     """ Hellfire Amulet """
+    url = r'/en/artisan/jeweler/recipe/hellfire-amulet-of-intelligence'
     type = 'amulet'
     text = """
 
@@ -510,6 +549,7 @@ class Hellfire_Amulet(Item):
 
 class Squirts_Necklace(Item):
     """ Squirt's Necklace """
+    url = r'/en/item/squirts-necklace-P66_Unique_Amulet_010'
     type = 'amulet'
     text = """
 
@@ -522,6 +562,7 @@ class Squirts_Necklace(Item):
 
 class Moonlight_Ward(Item):
     """ Moonlight Ward """
+    url = r'/en/item/moonlight-ward-Unique_Amulet_003_x1'
     type = 'amulet'
     text = """
 
@@ -535,6 +576,7 @@ class Moonlight_Ward(Item):
 
 class Overwhelming_Desire(Item):
     """ Overwhelming Desire """
+    url = r'/en/item/overwhelming-desire-Unique_Amulet_106_x1'
     type = 'amulet'
     text = """
 
@@ -545,6 +587,7 @@ class Overwhelming_Desire(Item):
 
 class Golden_Gorget_of_Leoric(Item):
     """ Golden Gorget of Leoric """
+    url = r'/en/item/golden-gorget-of-leoric-Unique_Amulet_105_x1'
     type = 'amulet'
     text = """
 
@@ -558,6 +601,7 @@ class Golden_Gorget_of_Leoric(Item):
 
 class Wisdom_of_Kalan(Item):
     """ Wisdom of Kalan """
+    url = r'/en/item/wisdom-of-kalan-P6_Unique_Amulet_03'
     type = 'amulet'
     text = """
 
@@ -570,6 +614,7 @@ class Wisdom_of_Kalan(Item):
 
 class Talisman_of_Aranoch(Item):
     """ Talisman of Aranoch """
+    url = r'/en/item/talisman-of-aranoch-Unique_Amulet_012_x1'
     type = 'amulet'
     text = """
 	 Prevent all Cold damage taken and heal yourself for 12% of the amount prevented.
@@ -579,6 +624,7 @@ class Talisman_of_Aranoch(Item):
 
 class Eye_of_Etlich(Item):
     """ Eye of Etlich """
+    url = r'/en/item/eye-of-etlich-Unique_Amulet_014_x1'
     type = 'amulet'
     text = """
 
@@ -588,6 +634,7 @@ class Eye_of_Etlich(Item):
 
 class Rondals_Locket(Item):
     """ Rondal's Locket """
+    url = r'/en/item/rondals-locket-Unique_Amulet_009_x1'
     type = 'amulet'
     text = """
 
@@ -599,6 +646,7 @@ class Rondals_Locket(Item):
 
 class Dovu_Energy_Trap(Item):
     """ Dovu Energy Trap """
+    url = r'/en/item/dovu-energy-trap-Unique_Amulet_107_x1'
     type = 'amulet'
     text = """
 
@@ -610,6 +658,7 @@ class Dovu_Energy_Trap(Item):
 
 class Ancestors_Grace(Item):
     """ Ancestors' Grace """
+    url = r'/en/item/ancestors-grace-Unique_Amulet_102_x1'
     type = 'amulet'
     text = """
 
@@ -620,6 +669,7 @@ class Ancestors_Grace(Item):
 
 class Countess_Julias_Cameo(Item):
     """ Countess Julia's Cameo """
+    url = r'/en/item/countess-julias-cameo-Unique_Amulet_103_x1'
     type = 'amulet'
     text = """
 
@@ -631,6 +681,7 @@ class Countess_Julias_Cameo(Item):
 
 class Rakoffs_Glass_of_Life(Item):
     """ Rakoff's Glass of Life """
+    url = r'/en/item/rakoffs-glass-of-life-Unique_Amulet_108_x1'
     type = 'amulet'
     text = """
 
@@ -642,6 +693,7 @@ class Rakoffs_Glass_of_Life(Item):
 
 class The_Ess_of_Johan(Item):
     """ The Ess of Johan """
+    url = r'/en/item/the-ess-of-johan-Unique_Amulet_104_x1'
     type = 'amulet'
     text = """
 
@@ -653,6 +705,7 @@ class The_Ess_of_Johan(Item):
 
 class Haunt_of_Vaxo(Item):
     """ Haunt of Vaxo """
+    url = r'/en/item/haunt-of-vaxo-Unique_Amulet_101_x1'
     type = 'amulet'
     text = """
 
@@ -664,6 +717,7 @@ class Haunt_of_Vaxo(Item):
 
 class The_Flavor_of_Time(Item):
     """ The Flavor of Time """
+    url = r'/en/item/the-flavor-of-time-P66_Unique_Amulet_001'
     type = 'amulet'
     text = """
 
@@ -676,6 +730,7 @@ class The_Flavor_of_Time(Item):
 
 class Kymbos_Gold(Item):
     """ Kymbo's Gold """
+    url = r'/en/item/kymbos-gold-Unique_Amulet_002_p1'
     type = 'amulet'
     text = """
 	 Picking up gold heals you for an amount equal to the gold that was picked up.
@@ -684,6 +739,7 @@ class Kymbos_Gold(Item):
 
 class The_Travelers_Pledge(Item):
     """ The Traveler's Pledge """
+    url = r'/en/item/the-travelers-pledge-Unique_Amulet_008_x1'
     type = 'amulet'
     text = """
 	(2) Set:      While moving, damage taken is reduced by up to 50%.     While standing still, damage dealt is increased by up to 100%.
@@ -692,6 +748,7 @@ class The_Travelers_Pledge(Item):
 
 class Tal_Rashas_Allegiance(Item):
     """ Tal Rasha's Allegiance """
+    url = r'/en/item/tal-rashas-allegiance-Unique_Amulet_007_x1'
     type = 'amulet'
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
@@ -702,6 +759,7 @@ class Tal_Rashas_Allegiance(Item):
 
 class Maras_Kaleidoscope(Item):
     """ Mara's Kaleidoscope """
+    url = r'/en/item/maras-kaleidoscope-Unique_Amulet_015_x1'
     type = 'amulet'
     text = """
 
@@ -713,6 +771,7 @@ class Maras_Kaleidoscope(Item):
 
 class Blackthornes_Duncraig_Cross(Item):
     """ Blackthorne's Duncraig Cross """
+    url = r'/en/item/blackthornes-duncraig-cross-Unique_Amulet_016_x1'
     type = 'amulet'
     text = """
 	(2) Set:      +250 Vitality     Increases damage against elites by 10.0%
@@ -723,6 +782,7 @@ class Blackthornes_Duncraig_Cross(Item):
 
 class The_Star_of_Azkaranth(Item):
     """ The Star of Azkaranth """
+    url = r'/en/item/the-star-of-azkaranth-Unique_Amulet_006_x1'
     type = 'amulet'
     text = """
 
@@ -734,6 +794,7 @@ class The_Star_of_Azkaranth(Item):
 
 class Xephirian_Amulet(Item):
     """ Xephirian Amulet """
+    url = r'/en/item/xephirian-amulet-Unique_Amulet_004_x1'
     type = 'amulet'
     text = """
 
@@ -745,6 +806,7 @@ class Xephirian_Amulet(Item):
 
 class The_Johnstone(Item):
     """ The Johnstone """
+    url = r'/en/item/the-johnstone-P6_Unique_Amulet_01'
     type = 'amulet'
     text = """
 
@@ -757,6 +819,7 @@ class The_Johnstone(Item):
 
 class Halcyons_Ascent(Item):
     """ Halcyon's Ascent """
+    url = r'/en/item/halcyons-ascent-Unique_Amulet_109_x1_210'
     type = 'amulet'
     text = """
 
@@ -766,6 +829,7 @@ class Halcyons_Ascent(Item):
 
 class Haunted_Visions(Item):
     """ Haunted Visions """
+    url = r'/en/item/haunted-visions-P6_Unique_Amulet_02'
     type = 'amulet'
     text = """
 
@@ -778,6 +842,7 @@ class Haunted_Visions(Item):
 
 class Sunwukos_Shines(Item):
     """ Sunwuko's Shines """
+    url = r'/en/item/sunwukos-shines-Unique_Amulet_Set_11_x1'
     type = 'amulet'
     text = """
 	(2) Set:      Your damage taken is reduced by 50% while Sweeping Wind is active.
@@ -788,6 +853,7 @@ class Sunwukos_Shines(Item):
 
 class Talisman_of_Akkhan(Item):
     """ Talisman of Akkhan """
+    url = r'/en/item/talisman-of-akkhan-P43_AkkhanSet_Amulet'
     type = 'amulet'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -798,6 +864,7 @@ class Talisman_of_Akkhan(Item):
 
 class Leorics_Crown(Item):
     """ Leoric's Crown """
+    url = r'/en/item/leorics-crown-Unique_Helm_002_p1'
     type = 'helm'
     text = """
 
@@ -809,6 +876,7 @@ class Leorics_Crown(Item):
 
 class Prides_Fall(Item):
     """ Pride's Fall """
+    url = r'/en/item/prides-fall-Unique_Helm_103_x1'
     type = 'helm'
     text = """
 
@@ -821,6 +889,7 @@ class Prides_Fall(Item):
 
 class Broken_Crown(Item):
     """ Broken Crown """
+    url = r'/en/item/broken-crown-P2_Unique_Helm_001'
     type = 'helm'
     text = """
 
@@ -831,6 +900,7 @@ class Broken_Crown(Item):
 
 class Cains_Memory(Item):
     """ Cain's Memory """
+    url = r'/en/artisan/blacksmith/recipe/cains-memory'
     type = 'helm'
     text = """
 	(2) Set:      Attack Speed Increased by 2.0%
@@ -840,6 +910,7 @@ class Cains_Memory(Item):
 
 class Deathseers_Cowl(Item):
     """ Deathseer's Cowl """
+    url = r'/en/item/deathseers-cowl-Unique_Helm_102_x1'
     type = 'helm'
     text = """
 
@@ -851,6 +922,7 @@ class Deathseers_Cowl(Item):
 
 class Warhelm_of_Kassar(Item):
     """ Warhelm of Kassar """
+    url = r'/en/item/warhelm-of-kassar-P4_Unique_Helm_102'
     type = 'helm'
     text = """
 
@@ -863,6 +935,7 @@ class Warhelm_of_Kassar(Item):
 
 class Visage_of_Gunes(Item):
     """ Visage of Gunes """
+    url = r'/en/item/visage-of-gunes-P4_Unique_Helm_103'
     type = 'helm'
     text = """
 
@@ -874,6 +947,7 @@ class Visage_of_Gunes(Item):
 
 class Mask_of_Scarlet_Death(Item):
     """ Mask of Scarlet Death """
+    url = r'/en/item/mask-of-scarlet-death-P6_Necro_Unique_Helm_21'
     type = 'helm'
     text = """
 
@@ -886,6 +960,7 @@ class Mask_of_Scarlet_Death(Item):
 
 class Aughilds_Peak(Item):
     """ Aughild's Peak """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-peak'
     type = 'helm'
     text = """
 	(2) Set:      Reduces damage from melee attacks by 2.0%
@@ -895,6 +970,7 @@ class Aughilds_Peak(Item):
 
 class Skull_of_Resonance(Item):
     """ Skull of Resonance """
+    url = r'/en/item/skull-of-resonance-Unique_Helm_004_x1'
     type = 'helm'
     text = """
 
@@ -908,6 +984,7 @@ class Skull_of_Resonance(Item):
 
 class Guardians_Foresight(Item):
     """ Guardian's Foresight """
+    url = r'/en/artisan/blacksmith/recipe/guardians-foresight'
     type = 'helm'
     text = """
 	(2) Set:      +110 Vitality     Regenerates 130 Life per Second
@@ -916,6 +993,7 @@ class Guardians_Foresight(Item):
 
 class Mempo_of_Twilight(Item):
     """ Mempo of Twilight """
+    url = r'/en/item/mempo-of-twilight-Unique_Helm_006_x1'
     type = 'helm'
     text = """
 
@@ -929,6 +1007,7 @@ class Mempo_of_Twilight(Item):
 
 class Natalyas_Sight(Item):
     """ Natalya's Sight """
+    url = r'/en/item/natalyas-sight-Unique_Helm_009_x1'
     type = 'helm'
     text = """
 	(2) Set:      Reduce the cooldown of Rain of Vengeance by 4 seconds when you hit with a Hatred-generating attack or Hatred-spending attack.
@@ -939,6 +1018,7 @@ class Natalyas_Sight(Item):
 
 class Tal_Rashas_Guise_of_Wisdom(Item):
     """ Tal Rasha's Guise of Wisdom """
+    url = r'/en/item/tal-rashas-guise-of-wisdom-Unique_Helm_010_x1'
     type = 'helm'
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
@@ -949,14 +1029,16 @@ class Tal_Rashas_Guise_of_Wisdom(Item):
 
 class Sages_Orbit(Item):
     """ Sage's Orbit """
+    url = r'/en/artisan/blacksmith/recipe/sages-orbit'
     type = 'helm'
     text = """
 	(2) Set:      +35 Strength     +35 Dexterity     +35 Intelligence     +35 Vitality
     """
 
 
-class Immortal_Kings_Triumph(Set_Item):
+class Immortal_Kings_Triumph(Item):
     """ Immortal King's Triumph """
+    url = r'/en/item/immortal-kings-triumph-Unique_Helm_008_x1'
     type = 'helm'
     text = """
 	(2) Set:      Call of the Ancients last until they die.
@@ -967,6 +1049,7 @@ class Immortal_Kings_Triumph(Set_Item):
 
 class Andariels_Visage(Item):
     """ Andariel's Visage """
+    url = r'/en/item/andariels-visage-Unique_Helm_003_p2'
     type = 'helm'
     text = """
 
@@ -982,6 +1065,7 @@ class Andariels_Visage(Item):
 
 class Fates_Vow(Item):
     """ Fate's Vow """
+    url = r'/en/item/fates-vow-P61_Necro_Unique_Helm_22'
     type = 'helm'
     text = """
 
@@ -994,6 +1078,7 @@ class Fates_Vow(Item):
 
 class Jade_Harvesters_Wisdom(Item):
     """ Jade Harvester's Wisdom """
+    url = r'/en/item/jade-harvesters-wisdom-Unique_Helm_Set_09_x1'
     type = 'helm'
     text = """
 	(2) Set:      When Haunt lands on an enemy already affected by Haunt, it instantly deals 3500 seconds worth of Haunt damage.
@@ -1004,6 +1089,7 @@ class Jade_Harvesters_Wisdom(Item):
 
 class Guardians_Gaze(Item):
     """ Guardian's Gaze """
+    url = r'/en/artisan/blacksmith/recipe/guardians-gaze'
     type = 'helm'
     text = """
 	(2) Set:      +250 Vitality     Regenerates 8000 Life per Second
@@ -1013,6 +1099,7 @@ class Guardians_Gaze(Item):
 
 class Sunwukos_Crown(Item):
     """ Sunwuko's Crown """
+    url = r'/en/item/sunwukos-crown-Unique_Helm_Set_11_x1'
     type = 'helm'
     text = """
 	(2) Set:      Your damage taken is reduced by 50% while Sweeping Wind is active.
@@ -1023,6 +1110,7 @@ class Sunwukos_Crown(Item):
 
 class Sages_Apogee(Item):
     """ Sage's Apogee """
+    url = r'/en/artisan/blacksmith/recipe/sages-apogee'
     type = 'helm'
     text = """
 	(2) Set:      +250 Strength     +250 Dexterity     +250 Intelligence     +250 Vitality
@@ -1032,6 +1120,7 @@ class Sages_Apogee(Item):
 
 class Vyrs_Sightless_Skull(Item):
     """ Vyr's Sightless Skull """
+    url = r'/en/item/vyrs-sightless-skull-Unique_Helm_Set_13_x1'
     type = 'helm'
     text = """
 	(2) Set:      Archon gains the effect of every rune.
@@ -1042,6 +1131,7 @@ class Vyrs_Sightless_Skull(Item):
 
 class Cains_Insight(Item):
     """ Cain's Insight """
+    url = r'/en/artisan/blacksmith/recipe/cains-insight'
     type = 'helm'
     text = """
 	(2) Set:      Attack Speed Increased by 8.0%     +50% Experience. (5.0% at level 70)
@@ -1051,6 +1141,7 @@ class Cains_Insight(Item):
 
 class Crown_of_the_Invoker(Item):
     """ Crown of the Invoker """
+    url = r'/en/item/crown-of-the-invoker-Unique_Helm_Set_12_x1'
     type = 'helm'
     text = """
 	(2) Set:      Your Thorns damage now hits all enemies in a 15 yard radius around you. Each time you hit an enemy with Punish, Slash, or block an attack your Thorns is increased by 350% for 2 seconds.
@@ -1061,6 +1152,7 @@ class Crown_of_the_Invoker(Item):
 
 class Aughilds_Spike(Item):
     """ Aughild's Spike """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-spike'
     type = 'helm'
     text = """
 	(2) Set:      Reduces damage taken by 15%.     Increases damage dealt by 30%.
@@ -1070,6 +1162,7 @@ class Aughilds_Spike(Item):
 
 class The_Shadows_Mask(Item):
     """ The Shadow's Mask """
+    url = r'/en/item/the-shadows-mask-Unique_Helm_Set_14_x1'
     type = 'helm'
     text = """
 	(2) Set:      While equipped with a melee weapon, your damage is increased by 6000%.
@@ -1080,6 +1173,7 @@ class The_Shadows_Mask(Item):
 
 class Eyes_of_the_Earth(Item):
     """ Eyes of the Earth """
+    url = r'/en/item/eyes-of-the-earth-Unique_Helm_Set_15_x1'
     type = 'helm'
     text = """
 	(2) Set:      Reduce the cooldown of Earthquake, Avalanche, Leap, and Ground Stomp by 1 second for every 30 Fury you spend with an attack.
@@ -1088,9 +1182,9 @@ class Eyes_of_the_Earth(Item):
     """
 
 
-class Raekors_Will(Set_Item):
+class Raekors_Will(Item):
     """ Raekor's Will """
-    set = The_Legacy_of_Raekor
+    url = r'/en/item/raekors-will-Unique_Helm_Set_05_x1'
     type = 'helm'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -1101,6 +1195,7 @@ class Raekors_Will(Set_Item):
 
 class Helm_of_the_Wastes(Item):
     """ Helm of the Wastes """
+    url = r'/en/item/helm-of-the-wastes-Unique_Helm_Set_01_p2'
     type = 'helm'
     text = """
 	(2) Set:      Increase the damage per second of Rend by 500% and its duration to 15 seconds.
@@ -1111,6 +1206,7 @@ class Helm_of_the_Wastes(Item):
 
 class Skull_of_Savages(Item):
     """ Skull of Savages """
+    url = r'/en/item/skull-of-savages-P68_Unique_Helm_Set_05'
     type = 'helm'
     text = """
 	(2) Set:      Double the effectiveness of shouts. You deal double damage to Feared, Frozen, or Stunned enemies.
@@ -1121,6 +1217,7 @@ class Skull_of_Savages(Item):
 
 class Crown_of_the_Light(Item):
     """ Crown of the Light """
+    url = r'/en/item/crown-of-the-light-Unique_Helm_Set_03_p3'
     type = 'helm'
     text = """
 	(2) Set:      Every use of Blessed Hammer that hits an enemy reduces the cooldown of Falling Sword and Provoke by 1 second.
@@ -1131,6 +1228,7 @@ class Crown_of_the_Light(Item):
 
 class Crown_of_Valor(Item):
     """ Crown of Valor """
+    url = r'/en/item/crown-of-valor-P67_Unique_Helm_Set_01'
     type = 'helm'
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
@@ -1141,6 +1239,7 @@ class Crown_of_Valor(Item):
 
 class Rolands_Visage(Item):
     """ Roland's Visage """
+    url = r'/en/item/rolands-visage-Unique_Helm_Set_01_p1'
     type = 'helm'
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
@@ -1151,6 +1250,7 @@ class Rolands_Visage(Item):
 
 class Helm_of_Akkhan(Item):
     """ Helm of Akkhan """
+    url = r'/en/item/helm-of-akkhan-Unique_Helm_Set_10_x1'
     type = 'helm'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -1161,6 +1261,7 @@ class Helm_of_Akkhan(Item):
 
 class Accursed_Visage(Item):
     """ Accursed Visage """
+    url = r'/en/item/accursed-visage-Unique_Helm_Set_03_p2'
     type = 'helm'
     text = """
 	(2) Set:      Your generators generate 2 additional Hatred and 1 Discipline.
@@ -1171,6 +1272,7 @@ class Accursed_Visage(Item):
 
 class Marauders_Visage(Item):
     """ Marauder's Visage """
+    url = r'/en/item/marauders-visage-Unique_Helm_Set_07_x1'
     type = 'helm'
     text = """
 	(2) Set:      Companion calls all companions to your side.
@@ -1181,6 +1283,7 @@ class Marauders_Visage(Item):
 
 class Mask_of_the_Searing_Sky(Item):
     """ Mask of the Searing Sky """
+    url = r'/en/item/mask-of-the-searing-sky-Unique_Helm_Set_08_x1'
     type = 'helm'
     text = """
 	(2) Set:      Your Spirit Generators have 25% increased attack speed and 400% increased damage.
@@ -1191,6 +1294,7 @@ class Mask_of_the_Searing_Sky(Item):
 
 class Ulianas_Spirit(Item):
     """ Uliana's Spirit """
+    url = r'/en/item/ulianas-spirit-Unique_Helm_Set_01_p3'
     type = 'helm'
     text = """
 	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
@@ -1201,6 +1305,7 @@ class Ulianas_Spirit(Item):
 
 class Decree_of_Justice(Item):
     """ Decree of Justice """
+    url = r'/en/item/decree-of-justice-P67_Unique_Helm_Set_02'
     type = 'helm'
     text = """
 	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
@@ -1211,6 +1316,7 @@ class Decree_of_Justice(Item):
 
 class Firebirds_Plume(Item):
     """ Firebird's Plume """
+    url = r'/en/item/firebirds-plume-Unique_Helm_Set_06_x1'
     type = 'helm'
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
@@ -1221,6 +1327,7 @@ class Firebirds_Plume(Item):
 
 class Shrouded_Mask(Item):
     """ Shrouded Mask """
+    url = r'/en/item/shrouded-mask-Unique_Helm_Set_02_p2'
     type = 'helm'
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
@@ -1231,6 +1338,7 @@ class Shrouded_Mask(Item):
 
 class Typhons_Frons(Item):
     """ Typhon's Frons """
+    url = r'/en/item/typhons-frons-P68_Unique_Helm_Set_03'
     type = 'helm'
     text = """
 	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
@@ -1241,6 +1349,7 @@ class Typhons_Frons(Item):
 
 class Arachyrs_Visage(Item):
     """ Arachyr's Visage """
+    url = r'/en/item/arachyrs-visage-Unique_Helm_Set_02_p3'
     type = 'helm'
     text = """
 	(2) Set:      Summon a permanent Spider Queen who leaves behind webs that deal 4000% weapon damage over 5 seconds and Slows enemies. The Spider Queen is commanded to move to where you cast your Corpse Spiders.
@@ -1251,6 +1360,7 @@ class Arachyrs_Visage(Item):
 
 class Helltooth_Mask(Item):
     """ Helltooth Mask """
+    url = r'/en/item/helltooth-mask-Unique_Helm_Set_16_x1'
     type = 'helm'
     text = """
 	(2) Set:      Enemies hit by your primary skills, Acid Cloud, Firebats, Zombie Charger, Zombie Dogs, Gargantuan, Grasp of the Dead, Piranhas, or Wall of Death are afflicted by Necrosis, becoming Slowed and taking 3000% weapon damage every second for 10 seconds.
@@ -1261,6 +1371,7 @@ class Helltooth_Mask(Item):
 
 class TragOuls_Guise(Item):
     """ Trag'Oul's Guise """
+    url = r'/en/item/tragouls-guise-P6_Necro_Set_2_Helm'
     type = 'helm'
     text = """
 	(2) Set:      Blood Rush gains the effect of every rune.
@@ -1271,6 +1382,7 @@ class TragOuls_Guise(Item):
 
 class Inariuss_Understanding(Item):
     """ Inarius's Understanding """
+    url = r'/en/item/inariuss-understanding-P6_Necro_Set_3_Helm'
     type = 'helm'
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
@@ -1281,6 +1393,7 @@ class Inariuss_Understanding(Item):
 
 class Pestilence_Mask(Item):
     """ Pestilence Mask """
+    url = r'/en/item/pestilence-mask-P6_Necro_Set_4_Helm'
     type = 'helm'
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
@@ -1291,6 +1404,7 @@ class Pestilence_Mask(Item):
 
 class Rathmas_Skull_Helm(Item):
     """ Rathma's Skull Helm """
+    url = r'/en/item/rathmas-skull-helm-P6_Necro_Set_1_Helm'
     type = 'helm'
     text = """
 	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
@@ -1301,6 +1415,7 @@ class Rathmas_Skull_Helm(Item):
 
 class Homing_Pads(Item):
     """ Homing Pads """
+    url = r'/en/item/homing-pads-Unique_Shoulder_001_x1'
     type = 'shoulders'
     text = """
 
@@ -1312,6 +1427,7 @@ class Homing_Pads(Item):
 
 class Pauldrons_of_the_Skeleton_King(Item):
     """ Pauldrons of the Skeleton King """
+    url = r'/en/item/pauldrons-of-the-skeleton-king-Unique_Shoulder_103_x1'
     type = 'shoulders'
     text = """
 
@@ -1324,6 +1440,7 @@ class Pauldrons_of_the_Skeleton_King(Item):
 
 class Razeths_Volition(Item):
     """ Razeth's Volition """
+    url = r'/en/item/razeths-volition-P6_Necro_Unique_Shoulders_22'
     type = 'shoulders'
     text = """
 
@@ -1335,6 +1452,7 @@ class Razeths_Volition(Item):
 
 class Borns_Impunity(Item):
     """ Born's Impunity """
+    url = r'/en/artisan/blacksmith/recipe/borns-impunity'
     type = 'shoulders'
     text = """
 	(2) Set:      +2% Life     +20% Experience. (2.0% at level 70)
@@ -1343,6 +1461,7 @@ class Borns_Impunity(Item):
 
 class Death_Watch_Mantle(Item):
     """ Death Watch Mantle """
+    url = r'/en/item/death-watch-mantle-Unique_Shoulder_002_p2'
     type = 'shoulders'
     text = """
 	 30% chance to explode in a fan of knives for 750-950% weapon damage when hit.
@@ -1352,6 +1471,7 @@ class Death_Watch_Mantle(Item):
 
 class Corpsewhisper_Pauldrons(Item):
     """ Corpsewhisper Pauldrons """
+    url = r'/en/item/corpsewhisper-pauldrons-P6_Necro_Unique_Shoulders_21'
     type = 'shoulders'
     text = """
 	 Corpse Lance damage is increased by 29% for 3 seconds when you consume a corpse. Max 20 stacks.
@@ -1362,6 +1482,7 @@ class Corpsewhisper_Pauldrons(Item):
 
 class Lefebvres_Soliloquy(Item):
     """ Lefebvre's Soliloquy """
+    url = r'/en/item/lefebvres-soliloquy-P4_Unique_Shoulder_101'
     type = 'shoulders'
     text = """
 	 Cyclone Strike reduces your damage taken by 45% for 5 seconds.
@@ -1372,6 +1493,7 @@ class Lefebvres_Soliloquy(Item):
 
 class Mantle_of_Channeling(Item):
     """ Mantle of Channeling """
+    url = r'/en/item/mantle-of-channeling-P4_Unique_Shoulder_103'
     type = 'shoulders'
     text = """
 
@@ -1383,6 +1505,7 @@ class Mantle_of_Channeling(Item):
 
 class Spaulders_of_Zakara(Item):
     """ Spaulders of Zakara """
+    url = r'/en/item/spaulders-of-zakara-Unique_Shoulder_102_x1'
     type = 'shoulders'
     text = """
 	 Your items become indestructible.
@@ -1391,6 +1514,7 @@ class Spaulders_of_Zakara(Item):
 
 class Fury_of_the_Ancients(Item):
     """ Fury of the Ancients """
+    url = r'/en/item/fury-of-the-ancients-P67_Unique_Shoulder_102'
     type = 'shoulders'
     text = """
 	 Call of the Ancients gains the effect of the Ancients' Fury rune, and your Ancients attack 100% faster.
@@ -1400,6 +1524,7 @@ class Fury_of_the_Ancients(Item):
 
 class Aughilds_Reign(Item):
     """ Aughild's Reign """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-reign'
     type = 'shoulders'
     text = """
 	(2) Set:      Reduces damage from melee attacks by 2.0%
@@ -1409,6 +1534,7 @@ class Aughilds_Reign(Item):
 
 class Ashearas_Guard(Item):
     """ Asheara's Guard """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-guard'
     type = 'shoulders'
     text = """
 	(2) Set:      +30 Resistance to All Elements
@@ -1418,6 +1544,7 @@ class Ashearas_Guard(Item):
 
 class Vile_Ward(Item):
     """ Vile Ward """
+    url = r'/en/item/vile-ward-Unique_Shoulder_003_p1'
     type = 'shoulders'
     text = """
 	 Furious Charge deals 34% increased damage for every enemy hit while charging.
@@ -1428,6 +1555,7 @@ class Vile_Ward(Item):
 
 class Seven_Sins(Item):
     """ Seven Sins """
+    url = r'/en/artisan/blacksmith/recipe/seven-sins'
     type = 'shoulders'
     text = """
 
@@ -1445,6 +1573,7 @@ class Seven_Sins(Item):
 
 class Demons_Flight(Item):
     """ Demon's Flight """
+    url = r'/en/artisan/blacksmith/recipe/demons-flight'
     type = 'shoulders'
     text = """
 	(2) Set:      +999 Fire Thorns Damage
@@ -1455,6 +1584,7 @@ class Demons_Flight(Item):
 
 class Burden_of_the_Invoker(Item):
     """ Burden of the Invoker """
+    url = r'/en/item/burden-of-the-invoker-Unique_Shoulder_Set_12_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Your Thorns damage now hits all enemies in a 15 yard radius around you. Each time you hit an enemy with Punish, Slash, or block an attack your Thorns is increased by 350% for 2 seconds.
@@ -1465,6 +1595,7 @@ class Burden_of_the_Invoker(Item):
 
 class Spires_of_the_Earth(Item):
     """ Spires of the Earth """
+    url = r'/en/item/spires-of-the-earth-Unique_Shoulder_Set_15_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Reduce the cooldown of Earthquake, Avalanche, Leap, and Ground Stomp by 1 second for every 30 Fury you spend with an attack.
@@ -1475,6 +1606,7 @@ class Spires_of_the_Earth(Item):
 
 class Demons_Aileron(Item):
     """ Demon's Aileron """
+    url = r'/en/artisan/blacksmith/recipe/demons-aileron'
     type = 'shoulders'
     text = """
 	(2) Set:      +6000 Fire Thorns Damage
@@ -1485,6 +1617,7 @@ class Demons_Aileron(Item):
 
 class Aughilds_Power(Item):
     """ Aughild's Power """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-power'
     type = 'shoulders'
     text = """
 	(2) Set:      Reduces damage taken by 15%.     Increases damage dealt by 30%.
@@ -1494,6 +1627,7 @@ class Aughilds_Power(Item):
 
 class Sunwukos_Balance(Item):
     """ Sunwuko's Balance """
+    url = r'/en/item/sunwukos-balance-Unique_Shoulder_Set_11_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Your damage taken is reduced by 50% while Sweeping Wind is active.
@@ -1504,6 +1638,7 @@ class Sunwukos_Balance(Item):
 
 class Corruption(Item):
     """ Corruption """
+    url = r'/en/artisan/blacksmith/recipe/corruption'
     type = 'shoulders'
     text = """
 
@@ -1515,6 +1650,7 @@ class Corruption(Item):
 
 class Jade_Harvesters_Joy(Item):
     """ Jade Harvester's Joy """
+    url = r'/en/item/jade-harvesters-joy-Unique_Shoulder_Set_09_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      When Haunt lands on an enemy already affected by Haunt, it instantly deals 3500 seconds worth of Haunt damage.
@@ -1525,6 +1661,7 @@ class Jade_Harvesters_Joy(Item):
 
 class Borns_Privilege(Item):
     """ Born's Privilege """
+    url = r'/en/artisan/blacksmith/recipe/borns-privilege'
     type = 'shoulders'
     text = """
 	(2) Set:      +15% Life
@@ -1534,6 +1671,7 @@ class Borns_Privilege(Item):
 
 class Ashearas_Custodian(Item):
     """ Asheara's Custodian """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-custodian'
     type = 'shoulders'
     text = """
 	(2) Set:      +100 Resistance to All Elements
@@ -1544,6 +1682,7 @@ class Ashearas_Custodian(Item):
 
 class Vyrs_Proud_Pauldrons(Item):
     """ Vyr's Proud Pauldrons """
+    url = r'/en/item/vyrs-proud-pauldrons-Unique_Shoulder_Set_13_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Archon gains the effect of every rune.
@@ -1554,6 +1693,7 @@ class Vyrs_Proud_Pauldrons(Item):
 
 class The_Shadows_Burden(Item):
     """ The Shadow's Burden """
+    url = r'/en/item/the-shadows-burden-Unique_Shoulder_Set_14_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      While equipped with a melee weapon, your damage is increased by 6000%.
@@ -1564,6 +1704,7 @@ class The_Shadows_Burden(Item):
 
 class Spines_of_Savages(Item):
     """ Spines of Savages """
+    url = r'/en/item/spines-of-savages-P68_Unique_Shoulder_Set_05'
     type = 'shoulders'
     text = """
 	(2) Set:      Double the effectiveness of shouts. You deal double damage to Feared, Frozen, or Stunned enemies.
@@ -1572,9 +1713,9 @@ class Spines_of_Savages(Item):
     """
 
 
-class Raekors_Burden(Set_Item):
+class Raekors_Burden(Item):
     """ Raekor's Burden """
-    set = The_Legacy_of_Raekor
+    url = r'/en/item/raekors-burden-Unique_Shoulder_Set_05_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -1585,6 +1726,7 @@ class Raekors_Burden(Set_Item):
 
 class Pauldrons_of_the_Wastes(Item):
     """ Pauldrons of the Wastes """
+    url = r'/en/item/pauldrons-of-the-wastes-Unique_Shoulder_Set_01_p2'
     type = 'shoulders'
     text = """
 	(2) Set:      Increase the damage per second of Rend by 500% and its duration to 15 seconds.
@@ -1595,6 +1737,7 @@ class Pauldrons_of_the_Wastes(Item):
 
 class Spaulders_of_Valor(Item):
     """ Spaulders of Valor """
+    url = r'/en/item/spaulders-of-valor-P67_Unique_Shoulder_Set_01'
     type = 'shoulders'
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
@@ -1605,6 +1748,7 @@ class Spaulders_of_Valor(Item):
 
 class Rolands_Mantle(Item):
     """ Roland's Mantle """
+    url = r'/en/item/rolands-mantle-Unique_Shoulder_Set_01_p1'
     type = 'shoulders'
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
@@ -1615,6 +1759,7 @@ class Rolands_Mantle(Item):
 
 class Mountain_of_the_Light(Item):
     """ Mountain of the Light """
+    url = r'/en/item/mountain-of-the-light-Unique_Shoulder_Set_03_p3'
     type = 'shoulders'
     text = """
 	(2) Set:      Every use of Blessed Hammer that hits an enemy reduces the cooldown of Falling Sword and Provoke by 1 second.
@@ -1625,6 +1770,7 @@ class Mountain_of_the_Light(Item):
 
 class Pauldrons_of_Akkhan(Item):
     """ Pauldrons of Akkhan """
+    url = r'/en/item/pauldrons-of-akkhan-Unique_Shoulder_Set_10_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -1635,6 +1781,7 @@ class Pauldrons_of_Akkhan(Item):
 
 class Unsanctified_Shoulders(Item):
     """ Unsanctified Shoulders """
+    url = r'/en/item/unsanctified-shoulders-Unique_Shoulder_Set_03_p2'
     type = 'shoulders'
     text = """
 	(2) Set:      Your generators generate 2 additional Hatred and 1 Discipline.
@@ -1645,6 +1792,7 @@ class Unsanctified_Shoulders(Item):
 
 class Marauders_Spines(Item):
     """ Marauder's Spines """
+    url = r'/en/item/marauders-spines-Unique_Shoulder_Set_07_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Companion calls all companions to your side.
@@ -1655,6 +1803,7 @@ class Marauders_Spines(Item):
 
 class Mantle_of_the_Upside_Down_Sinners(Item):
     """ Mantle of the Upside-Down Sinners """
+    url = r'/en/item/mantle-of-the-upsidedown-sinners-Unique_Shoulder_Set_08_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Your Spirit Generators have 25% increased attack speed and 400% increased damage.
@@ -1665,6 +1814,7 @@ class Mantle_of_the_Upside_Down_Sinners(Item):
 
 class Ulianas_Strength(Item):
     """ Uliana's Strength """
+    url = r'/en/item/ulianas-strength-Unique_Shoulder_Set_01_p3'
     type = 'shoulders'
     text = """
 	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
@@ -1675,6 +1825,7 @@ class Ulianas_Strength(Item):
 
 class Mirrors_of_Justice(Item):
     """ Mirrors of Justice """
+    url = r'/en/item/mirrors-of-justice-P67_Unique_Shoulder_Set_02'
     type = 'shoulders'
     text = """
 	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
@@ -1683,8 +1834,20 @@ class Mirrors_of_Justice(Item):
     """
 
 
+class Dashing_Pauldrons_of_Despair(Item):
+    """ Dashing Pauldrons of Despair """
+    url = r'/en/item/dashing-pauldrons-of-despair-Unique_Shoulder_Set_02_p2'
+    type = 'shoulders'
+    text = """
+	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
+	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
+	(6) Set:      Enemies affected by your Slow Time and for 5 seconds after exiting take 8500% increased damage from your Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, and Wave of Force abilities.
+    """
+
+
 class Firebirds_Pinions(Item):
     """ Firebird's Pinions """
+    url = r'/en/item/firebirds-pinions-Unique_Shoulder_Set_06_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
@@ -1695,6 +1858,7 @@ class Firebirds_Pinions(Item):
 
 class Typhons_Tibia(Item):
     """ Typhon's Tibia """
+    url = r'/en/item/typhons-tibia-P68_Unique_Shoulder_Set_03'
     type = 'shoulders'
     text = """
 	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
@@ -1703,18 +1867,9 @@ class Typhons_Tibia(Item):
     """
 
 
-class Dashing_Pauldrons_of_Despair(Item):
-    """ Dashing Pauldrons of Despair """
-    type = 'shoulders'
-    text = """
-	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
-	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
-	(6) Set:      Enemies affected by your Slow Time and for 5 seconds after exiting take 8500% increased damage from your Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, and Wave of Force abilities.
-    """
-
-
 class Mundunugus_Descendant(Item):
     """ Mundunugu's Descendant """
+    url = r'/en/item/mundunugus-descendant-P68_Unique_Shoulder_Set_04'
     type = 'shoulders'
     text = """
 	(2) Set:      Big Bad Voodoo now follows you and lasts twice as long.
@@ -1725,6 +1880,7 @@ class Mundunugus_Descendant(Item):
 
 class Helltooth_Mantle(Item):
     """ Helltooth Mantle """
+    url = r'/en/item/helltooth-mantle-Unique_Shoulder_Set_16_x1'
     type = 'shoulders'
     text = """
 	(2) Set:      Enemies hit by your primary skills, Acid Cloud, Firebats, Zombie Charger, Zombie Dogs, Gargantuan, Grasp of the Dead, Piranhas, or Wall of Death are afflicted by Necrosis, becoming Slowed and taking 3000% weapon damage every second for 10 seconds.
@@ -1735,6 +1891,7 @@ class Helltooth_Mantle(Item):
 
 class Arachyrs_Mantle(Item):
     """ Arachyr's Mantle """
+    url = r'/en/item/arachyrs-mantle-Unique_Shoulder_Set_02_p3'
     type = 'shoulders'
     text = """
 	(2) Set:      Summon a permanent Spider Queen who leaves behind webs that deal 4000% weapon damage over 5 seconds and Slows enemies. The Spider Queen is commanded to move to where you cast your Corpse Spiders.
@@ -1745,6 +1902,7 @@ class Arachyrs_Mantle(Item):
 
 class Pestilence_Defense(Item):
     """ Pestilence Defense """
+    url = r'/en/item/pestilence-defense-P6_Necro_Set_4_Shoulders'
     type = 'shoulders'
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
@@ -1755,6 +1913,7 @@ class Pestilence_Defense(Item):
 
 class Rathmas_Spikes(Item):
     """ Rathma's Spikes """
+    url = r'/en/item/rathmas-spikes-P6_Necro_Set_1_Shoulders'
     type = 'shoulders'
     text = """
 	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
@@ -1765,6 +1924,7 @@ class Rathmas_Spikes(Item):
 
 class TragOuls_Heart(Item):
     """ Trag'Oul's Heart """
+    url = r'/en/item/tragouls-heart-P6_Necro_Set_2_Shoulders'
     type = 'shoulders'
     text = """
 	(2) Set:      Blood Rush gains the effect of every rune.
@@ -1775,6 +1935,7 @@ class TragOuls_Heart(Item):
 
 class Inariuss_Martyrdom(Item):
     """ Inarius's Martyrdom """
+    url = r'/en/item/inariuss-martyrdom-P6_Necro_Set_3_Shoulders'
     type = 'shoulders'
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
@@ -1785,6 +1946,7 @@ class Inariuss_Martyrdom(Item):
 
 class Heart_of_Iron(Item):
     """ Heart of Iron """
+    url = r'/en/item/heart-of-iron-P4_Unique_Chest_018'
     type = 'torso'
     text = """
 
@@ -1798,6 +1960,7 @@ class Heart_of_Iron(Item):
 
 class Borns_Heart_of_Steel(Item):
     """ Born's Heart of Steel """
+    url = r'/en/artisan/blacksmith/recipe/borns-heart-of-steel'
     type = 'torso'
     text = """
 	(2) Set:      +2% Life     +20% Experience. (2.0% at level 70)
@@ -1806,6 +1969,7 @@ class Borns_Heart_of_Steel(Item):
 
 class Aquila_Cuirass(Item):
     """ Aquila Cuirass """
+    url = r'/en/item/aquila-cuirass-P4_Unique_Chest_012'
     type = 'torso'
     text = """
 
@@ -1817,6 +1981,7 @@ class Aquila_Cuirass(Item):
 
 class Chaingmail(Item):
     """ Chaingmail """
+    url = r'/en/item/chaingmail-Unique_Chest_010_x1'
     type = 'torso'
     text = """
 
@@ -1827,6 +1992,7 @@ class Chaingmail(Item):
 
 class Shi_Mizus_Haori(Item):
     """ Shi Mizu's Haori """
+    url = r'/en/item/shi-mizus-haori-Unique_Chest_101_x1'
     type = 'torso'
     text = """
 	 While below 24% Life, all attacks are guaranteed Critical Hits.
@@ -1836,6 +2002,7 @@ class Shi_Mizus_Haori(Item):
 
 class Cindercoat(Item):
     """ Cindercoat """
+    url = r'/en/item/cindercoat-Unique_Chest_006_x1'
     type = 'torso'
     text = """
 
@@ -1847,6 +2014,7 @@ class Cindercoat(Item):
 
 class Aughilds_Dominion(Item):
     """ Aughild's Dominion """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-dominion'
     type = 'torso'
     text = """
 	(2) Set:      Reduces damage from melee attacks by 2.0%
@@ -1856,6 +2024,7 @@ class Aughilds_Dominion(Item):
 
 class Goldskin(Item):
     """ Goldskin """
+    url = r'/en/item/goldskin-Unique_Chest_001_x1'
     type = 'torso'
     text = """
 
@@ -1868,6 +2037,7 @@ class Goldskin(Item):
 
 class Zunimassas_Marrow(Item):
     """ Zunimassa's Marrow """
+    url = r'/en/item/zunimassas-marrow-Unique_Chest_016_x1'
     type = 'torso'
     text = """
 	(2) Set:      Your Fetish Army lasts until they die and the cooldown of your Fetish Army is reduced by 80%.
@@ -1876,8 +2046,9 @@ class Zunimassas_Marrow(Item):
     """
 
 
-class Immortal_Kings_Eternal_Reign(Set_Item):
+class Immortal_Kings_Eternal_Reign(Item):
     """ Immortal King's Eternal Reign """
+    url = r'/en/item/immortal-kings-eternal-reign-Unique_Chest_013_x1'
     type = 'torso'
     text = """
 	(2) Set:      Call of the Ancients last until they die.
@@ -1888,6 +2059,7 @@ class Immortal_Kings_Eternal_Reign(Set_Item):
 
 class Blackthornes_Surcoat(Item):
     """ Blackthorne's Surcoat """
+    url = r'/en/item/blackthornes-surcoat-Unique_ChestArmor_028_x1'
     type = 'torso'
     text = """
 	(2) Set:      +250 Vitality     Increases damage against elites by 10.0%
@@ -1898,6 +2070,7 @@ class Blackthornes_Surcoat(Item):
 
 class Demons_Heart(Item):
     """ Demon's Heart """
+    url = r'/en/artisan/blacksmith/recipe/demons-heart'
     type = 'torso'
     text = """
 	(2) Set:      +999 Fire Thorns Damage
@@ -1908,6 +2081,7 @@ class Demons_Heart(Item):
 
 class Tal_Rashas_Relentless_Pursuit(Item):
     """ Tal Rasha's Relentless Pursuit """
+    url = r'/en/item/tal-rashas-relentless-pursuit-Unique_Chest_014_x1'
     type = 'torso'
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
@@ -1918,6 +2092,7 @@ class Tal_Rashas_Relentless_Pursuit(Item):
 
 class Tyraels_Might(Item):
     """ Tyrael's Might """
+    url = r'/en/item/tyraels-might-Unique_Chest_002_x1'
     type = 'torso'
     text = """
 
@@ -1931,6 +2106,7 @@ class Tyraels_Might(Item):
 
 class Innas_Vast_Expanse(Item):
     """ Inna's Vast Expanse """
+    url = r'/en/item/innas-vast-expanse-Unique_Chest_015_x1'
     type = 'torso'
     text = """
 	(2) Set:      Increase the passive effect of your Mystic Ally and the base passive effect of your Mantra by 100%.
@@ -1941,6 +2117,7 @@ class Innas_Vast_Expanse(Item):
 
 class Robes_of_the_Rydraelm(Item):
     """ Robes of the Rydraelm """
+    url = r'/en/artisan/blacksmith/recipe/robes-of-the-rydraelm'
     type = 'torso'
     text = """
 
@@ -1954,6 +2131,7 @@ class Robes_of_the_Rydraelm(Item):
 
 class Bloodsong_Mail(Item):
     """ Bloodsong Mail """
+    url = r'/en/item/bloodsong-mail-P6_Necro_Unique_Chest_21'
     type = 'torso'
     text = """
 
@@ -1966,6 +2144,7 @@ class Bloodsong_Mail(Item):
 
 class Jade_Harvesters_Peace(Item):
     """ Jade Harvester's Peace """
+    url = r'/en/item/jade-harvesters-peace-Unique_Chest_Set_09_x1'
     type = 'torso'
     text = """
 	(2) Set:      When Haunt lands on an enemy already affected by Haunt, it instantly deals 3500 seconds worth of Haunt damage.
@@ -1976,6 +2155,7 @@ class Jade_Harvesters_Peace(Item):
 
 class Demons_Marrow(Item):
     """ Demon's Marrow """
+    url = r'/en/artisan/blacksmith/recipe/demons-marrow'
     type = 'torso'
     text = """
 	(2) Set:      +6000 Fire Thorns Damage
@@ -1986,6 +2166,7 @@ class Demons_Marrow(Item):
 
 class Aughilds_Rule(Item):
     """ Aughild's Rule """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-rule'
     type = 'torso'
     text = """
 	(2) Set:      Reduces damage taken by 15%.     Increases damage dealt by 30%.
@@ -1995,6 +2176,7 @@ class Aughilds_Rule(Item):
 
 class Armor_of_the_Kind_Regent(Item):
     """ Armor of the Kind Regent """
+    url = r'/en/item/armor-of-the-kind-regent-Unique_Chest_102_x1'
     type = 'torso'
     text = """
 	 Smite will now also be cast at a second nearby enemy.
@@ -2004,6 +2186,7 @@ class Armor_of_the_Kind_Regent(Item):
 
 class Spirit_of_the_Earth(Item):
     """ Spirit of the Earth """
+    url = r'/en/item/spirit-of-the-earth-Unique_Chest_Set_15_x1'
     type = 'torso'
     text = """
 	(2) Set:      Reduce the cooldown of Earthquake, Avalanche, Leap, and Ground Stomp by 1 second for every 30 Fury you spend with an attack.
@@ -2014,6 +2197,7 @@ class Spirit_of_the_Earth(Item):
 
 class Borns_Frozen_Soul(Item):
     """ Born's Frozen Soul """
+    url = r'/en/artisan/blacksmith/recipe/borns-frozen-soul'
     type = 'torso'
     text = """
 	(2) Set:      +15% Life
@@ -2023,6 +2207,7 @@ class Borns_Frozen_Soul(Item):
 
 class The_Shadows_Bane(Item):
     """ The Shadow's Bane """
+    url = r'/en/item/the-shadows-bane-Unique_Chest_Set_14_x1'
     type = 'torso'
     text = """
 	(2) Set:      While equipped with a melee weapon, your damage is increased by 6000%.
@@ -2033,6 +2218,7 @@ class The_Shadows_Bane(Item):
 
 class Sunwukos_Soul(Item):
     """ Sunwuko's Soul """
+    url = r'/en/item/sunwukos-soul-Unique_Chest_Set_11_x1'
     type = 'torso'
     text = """
 	(2) Set:      Your damage taken is reduced by 50% while Sweeping Wind is active.
@@ -2043,6 +2229,7 @@ class Sunwukos_Soul(Item):
 
 class Vyrs_Astonishing_Aura(Item):
     """ Vyr's Astonishing Aura """
+    url = r'/en/item/vyrs-astonishing-aura-Unique_Chest_Set_13_x1'
     type = 'torso'
     text = """
 	(2) Set:      Archon gains the effect of every rune.
@@ -2053,6 +2240,7 @@ class Vyrs_Astonishing_Aura(Item):
 
 class Cuirass_of_the_Wastes(Item):
     """ Cuirass of the Wastes """
+    url = r'/en/item/cuirass-of-the-wastes-Unique_Chest_Set_01_p2'
     type = 'torso'
     text = """
 	(2) Set:      Increase the damage per second of Rend by 500% and its duration to 15 seconds.
@@ -2063,6 +2251,7 @@ class Cuirass_of_the_Wastes(Item):
 
 class Markings_of_Savages(Item):
     """ Markings of Savages """
+    url = r'/en/item/markings-of-savages-P68_Unique_Chest_Set_05'
     type = 'torso'
     text = """
 	(2) Set:      Double the effectiveness of shouts. You deal double damage to Feared, Frozen, or Stunned enemies.
@@ -2071,9 +2260,9 @@ class Markings_of_Savages(Item):
     """
 
 
-class Raekors_Heart(Set_Item):
+class Raekors_Heart(Item):
     """ Raekor's Heart """
-    set = The_Legacy_of_Raekor
+    url = r'/en/item/raekors-heart-Unique_Chest_Set_05_x1'
     type = 'torso'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -2084,6 +2273,7 @@ class Raekors_Heart(Set_Item):
 
 class Rolands_Bearing(Item):
     """ Roland's Bearing """
+    url = r'/en/item/rolands-bearing-Unique_Chest_Set_01_p1'
     type = 'torso'
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
@@ -2094,6 +2284,7 @@ class Rolands_Bearing(Item):
 
 class Breastplate_of_Akkhan(Item):
     """ Breastplate of Akkhan """
+    url = r'/en/item/breastplate-of-akkhan-Unique_Chest_Set_10_x1'
     type = 'torso'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -2104,6 +2295,7 @@ class Breastplate_of_Akkhan(Item):
 
 class Heart_of_the_Light(Item):
     """ Heart of the Light """
+    url = r'/en/item/heart-of-the-light-Unique_Chest_Set_03_p3'
     type = 'torso'
     text = """
 	(2) Set:      Every use of Blessed Hammer that hits an enemy reduces the cooldown of Falling Sword and Provoke by 1 second.
@@ -2114,6 +2306,7 @@ class Heart_of_the_Light(Item):
 
 class Brigandine_of_Valor(Item):
     """ Brigandine of Valor """
+    url = r'/en/item/brigandine-of-valor-P67_Unique_Chest_Set_01'
     type = 'torso'
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
@@ -2124,6 +2317,7 @@ class Brigandine_of_Valor(Item):
 
 class Marauders_Carapace(Item):
     """ Marauder's Carapace """
+    url = r'/en/item/marauders-carapace-Unique_Chest_Set_07_x1'
     type = 'torso'
     text = """
 	(2) Set:      Companion calls all companions to your side.
@@ -2132,18 +2326,9 @@ class Marauders_Carapace(Item):
     """
 
 
-class Ulianas_Heart(Item):
-    """ Uliana's Heart """
-    type = 'torso'
-    text = """
-	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
-	(4) Set:      Your Seven-Sided Strike deals 777% its total damage with each hit.
-	(6) Set:      Increase the damage of your Exploding Palm by 9000% and your Seven-Sided Strike detonates your Exploding Palm.
-    """
-
-
 class Heart_of_the_Crashing_Wave(Item):
     """ Heart of the Crashing Wave """
+    url = r'/en/item/heart-of-the-crashing-wave-Unique_Chest_Set_08_x1'
     type = 'torso'
     text = """
 	(2) Set:      Your Spirit Generators have 25% increased attack speed and 400% increased damage.
@@ -2152,8 +2337,20 @@ class Heart_of_the_Crashing_Wave(Item):
     """
 
 
+class Ulianas_Heart(Item):
+    """ Uliana's Heart """
+    url = r'/en/item/ulianas-heart-Unique_Chest_Set_01_p3'
+    type = 'torso'
+    text = """
+	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
+	(4) Set:      Your Seven-Sided Strike deals 777% its total damage with each hit.
+	(6) Set:      Increase the damage of your Exploding Palm by 9000% and your Seven-Sided Strike detonates your Exploding Palm.
+    """
+
+
 class Lamellars_of_Justice(Item):
     """ Lamellars of Justice """
+    url = r'/en/item/lamellars-of-justice-P67_Unique_Chest_Set_02'
     type = 'torso'
     text = """
 	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
@@ -2164,6 +2361,7 @@ class Lamellars_of_Justice(Item):
 
 class Firebirds_Breast(Item):
     """ Firebird's Breast """
+    url = r'/en/item/firebirds-breast-Unique_Chest_Set_06_x1'
     type = 'torso'
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
@@ -2174,6 +2372,7 @@ class Firebirds_Breast(Item):
 
 class Typhons_Thorax(Item):
     """ Typhon's Thorax """
+    url = r'/en/item/typhons-thorax-P68_Unique_Chest_Set_03'
     type = 'torso'
     text = """
 	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
@@ -2184,6 +2383,7 @@ class Typhons_Thorax(Item):
 
 class Harness_of_Truth(Item):
     """ Harness of Truth """
+    url = r'/en/item/harness-of-truth-Unique_Chest_Set_02_p2'
     type = 'torso'
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
@@ -2194,6 +2394,7 @@ class Harness_of_Truth(Item):
 
 class Mundunugus_Robe(Item):
     """ Mundunugu's Robe """
+    url = r'/en/item/mundunugus-robe-P68_Unique_Chest_Set_04'
     type = 'torso'
     text = """
 	(2) Set:      Big Bad Voodoo now follows you and lasts twice as long.
@@ -2204,6 +2405,7 @@ class Mundunugus_Robe(Item):
 
 class Helltooth_Tunic(Item):
     """ Helltooth Tunic """
+    url = r'/en/item/helltooth-tunic-Unique_Chest_Set_16_x1'
     type = 'torso'
     text = """
 	(2) Set:      Enemies hit by your primary skills, Acid Cloud, Firebats, Zombie Charger, Zombie Dogs, Gargantuan, Grasp of the Dead, Piranhas, or Wall of Death are afflicted by Necrosis, becoming Slowed and taking 3000% weapon damage every second for 10 seconds.
@@ -2214,6 +2416,7 @@ class Helltooth_Tunic(Item):
 
 class Arachyrs_Carapace(Item):
     """ Arachyr's Carapace """
+    url = r'/en/item/arachyrs-carapace-Unique_Chest_Set_02_p3'
     type = 'torso'
     text = """
 	(2) Set:      Summon a permanent Spider Queen who leaves behind webs that deal 4000% weapon damage over 5 seconds and Slows enemies. The Spider Queen is commanded to move to where you cast your Corpse Spiders.
@@ -2224,6 +2427,7 @@ class Arachyrs_Carapace(Item):
 
 class TragOuls_Scales(Item):
     """ Trag'Oul's Scales """
+    url = r'/en/item/tragouls-scales-P6_Necro_Set_2_Chest'
     type = 'torso'
     text = """
 	(2) Set:      Blood Rush gains the effect of every rune.
@@ -2234,6 +2438,7 @@ class TragOuls_Scales(Item):
 
 class Rathmas_Ribcage_Plate(Item):
     """ Rathma's Ribcage Plate """
+    url = r'/en/item/rathmas-ribcage-plate-P6_Necro_Set_1_Chest'
     type = 'torso'
     text = """
 	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
@@ -2244,6 +2449,7 @@ class Rathmas_Ribcage_Plate(Item):
 
 class Pestilence_Robe(Item):
     """ Pestilence Robe """
+    url = r'/en/item/pestilence-robe-P6_Necro_Set_4_Chest'
     type = 'torso'
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
@@ -2254,6 +2460,7 @@ class Pestilence_Robe(Item):
 
 class Inariuss_Conviction(Item):
     """ Inarius's Conviction """
+    url = r'/en/item/inariuss-conviction-P6_Necro_Set_3_Chest'
     type = 'torso'
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
@@ -2264,6 +2471,7 @@ class Inariuss_Conviction(Item):
 
 class Requiem_Cereplate(Item):
     """ Requiem Cereplate """
+    url = r'/en/item/requiem-cereplate-P6_Necro_Unique_Chest_22'
     type = 'torso'
     text = """
 
@@ -2276,6 +2484,7 @@ class Requiem_Cereplate(Item):
 
 class Ashnagarrs_Blood_Bracer(Item):
     """ Ashnagarr's Blood Bracer """
+    url = r'/en/item/ashnagarrs-blood-bracer-P4_Unique_Bracer_004'
     type = 'wrists'
     text = """
 
@@ -2288,6 +2497,7 @@ class Ashnagarrs_Blood_Bracer(Item):
 
 class Gungdo_Gear(Item):
     """ Gungdo Gear """
+    url = r'/en/item/gungdo-gear-P2_Unique_Bracer_006'
     type = 'wrists'
     text = """
 	 Exploding Palm's on-death explosion applies Exploding Palm.
@@ -2297,6 +2507,7 @@ class Gungdo_Gear(Item):
 
 class Cesars_Memento(Item):
     """ Cesar's Memento """
+    url = r'/en/item/cesars-memento-P61_Unique_Bracer_107'
     type = 'wrists'
     text = """
 
@@ -2309,6 +2520,7 @@ class Cesars_Memento(Item):
 
 class Sanguinary_Vambraces(Item):
     """ Sanguinary Vambraces """
+    url = r'/en/item/sanguinary-vambraces-Unique_Bracer_105_x1'
     type = 'wrists'
     text = """
 
@@ -2321,6 +2533,7 @@ class Sanguinary_Vambraces(Item):
 
 class Pintos_Pride(Item):
     """ Pinto's Pride """
+    url = r'/en/item/pintos-pride-P4_Unique_Bracer_105'
     type = 'wrists'
     text = """
 
@@ -2333,6 +2546,7 @@ class Pintos_Pride(Item):
 
 class Bindings_of_the_Lesser_Gods(Item):
     """ Bindings of the Lesser Gods """
+    url = r'/en/item/bindings-of-the-lesser-gods-P4_Unique_Bracer_108'
     type = 'wrists'
     text = """
 
@@ -2345,6 +2559,7 @@ class Bindings_of_the_Lesser_Gods(Item):
 
 class Akkhans_Manacles(Item):
     """ Akkhan's Manacles """
+    url = r'/en/item/akkhans-manacles-P4_Unique_Bracer_103'
     type = 'wrists'
     text = """
 
@@ -2357,6 +2572,7 @@ class Akkhans_Manacles(Item):
 
 class Morticks_Brace(Item):
     """ Mortick's Brace """
+    url = r'/en/item/morticks-brace-P2_Unique_Bracer_003'
     type = 'wrists'
     text = """
 
@@ -2368,6 +2584,7 @@ class Morticks_Brace(Item):
 
 class Vambraces_of_Sescheron(Item):
     """ Vambraces of Sescheron """
+    url = r'/en/item/vambraces-of-sescheron-P4_Unique_Bracer_106'
     type = 'wrists'
     text = """
 
@@ -2380,6 +2597,7 @@ class Vambraces_of_Sescheron(Item):
 
 class Bracer_of_Fury(Item):
     """ Bracer of Fury """
+    url = r'/en/item/bracer-of-fury-P61_Unique_Bracer_104'
     type = 'wrists'
     text = """
 
@@ -2392,6 +2610,7 @@ class Bracer_of_Fury(Item):
 
 class Warzechian_Armguards(Item):
     """ Warzechian Armguards """
+    url = r'/en/item/warzechian-armguards-Unique_Bracer_101_x1'
     type = 'wrists'
     text = """
 
@@ -2404,6 +2623,7 @@ class Warzechian_Armguards(Item):
 
 class Nemesis_Bracers(Item):
     """ Nemesis Bracers """
+    url = r'/en/item/nemesis-bracers-Unique_Bracer_106_x1'
     type = 'wrists'
     text = """
 	 Shrines and Pylons will spawn an enemy champion.
@@ -2412,6 +2632,7 @@ class Nemesis_Bracers(Item):
 
 class Custerian_Wristguards(Item):
     """ Custerian Wristguards """
+    url = r'/en/item/custerian-wristguards-Unique_Bracer_107_x1'
     type = 'wrists'
     text = """
 
@@ -2424,6 +2645,7 @@ class Custerian_Wristguards(Item):
 
 class Ancient_Parthan_Defenders(Item):
     """ Ancient Parthan Defenders """
+    url = r'/en/item/ancient-parthan-defenders-Unique_Bracer_102_x1'
     type = 'wrists'
     text = """
 	 Each stunned enemy within 25 yards reduces your damage taken by 9%.
@@ -2433,6 +2655,7 @@ class Ancient_Parthan_Defenders(Item):
 
 class Aughilds_Ultimatum(Item):
     """ Aughild's Ultimatum """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-ultimatum'
     type = 'wrists'
     text = """
 	(2) Set:      Reduces damage from melee attacks by 2.0%
@@ -2442,6 +2665,7 @@ class Aughilds_Ultimatum(Item):
 
 class Promise_of_Glory(Item):
     """ Promise of Glory """
+    url = r'/en/item/promise-of-glory-Unique_Bracer_002_x1'
     type = 'wrists'
     text = """
 
@@ -2453,6 +2677,7 @@ class Promise_of_Glory(Item):
 
 class Guardians_Deflector(Item):
     """ Guardian's Deflector """
+    url = r'/en/artisan/blacksmith/recipe/guardians-deflector'
     type = 'wrists'
     text = """
 	(2) Set:      +110 Vitality     Regenerates 130 Life per Second
@@ -2461,6 +2686,7 @@ class Guardians_Deflector(Item):
 
 class Wondrous_Deflectors(Item):
     """ Wondrous Deflectors """
+    url = r'/en/artisan/blacksmith/recipe/wondrous-deflectors'
     type = 'wrists'
     text = """
 
@@ -2474,6 +2700,7 @@ class Wondrous_Deflectors(Item):
 
 class Strongarm_Bracers(Item):
     """ Strongarm Bracers """
+    url = r'/en/item/strongarm-bracers-Unique_Bracer_007_x1'
     type = 'wrists'
     text = """
 
@@ -2487,6 +2714,7 @@ class Strongarm_Bracers(Item):
 
 class Demons_Revenge(Item):
     """ Demon's Revenge """
+    url = r'/en/artisan/blacksmith/recipe/demons-revenge'
     type = 'wrists'
     text = """
 	(2) Set:      +999 Fire Thorns Damage
@@ -2497,6 +2725,7 @@ class Demons_Revenge(Item):
 
 class Lacuni_Prowlers(Item):
     """ Lacuni Prowlers """
+    url = r'/en/item/lacuni-prowlers-Unique_Bracer_005_x1'
     type = 'wrists'
     text = """
 
@@ -2510,6 +2739,7 @@ class Lacuni_Prowlers(Item):
 
 class Coils_of_the_First_Spider(Item):
     """ Coils of the First Spider """
+    url = r'/en/item/coils-of-the-first-spider-P3_Unique_Bracer_107'
     type = 'wrists'
     text = """
 
@@ -2524,6 +2754,7 @@ class Coils_of_the_First_Spider(Item):
 
 class Wraps_of_Clarity(Item):
     """ Wraps of Clarity """
+    url = r'/en/item/wraps-of-clarity-P61_Unique_Bracer_103'
     type = 'wrists'
     text = """
 
@@ -2536,6 +2767,7 @@ class Wraps_of_Clarity(Item):
 
 class Jerams_Bracers(Item):
     """ Jeram's Bracers """
+    url = r'/en/item/jerams-bracers-P3_Unique_Bracer_106'
     type = 'wrists'
     text = """
 
@@ -2548,6 +2780,7 @@ class Jerams_Bracers(Item):
 
 class Bracers_of_the_First_Men(Item):
     """ Bracers of the First Men """
+    url = r'/en/item/bracers-of-the-first-men-P61_Unique_Bracer_105'
     type = 'wrists'
     text = """
 
@@ -2560,6 +2793,7 @@ class Bracers_of_the_First_Men(Item):
 
 class Ranslors_Folly(Item):
     """ Ranslor's Folly """
+    url = r'/en/item/ranslors-folly-P61_Unique_Bracer_108_x1'
     type = 'wrists'
     text = """
 
@@ -2572,6 +2806,7 @@ class Ranslors_Folly(Item):
 
 class Guardians_Aversion(Item):
     """ Guardian's Aversion """
+    url = r'/en/artisan/blacksmith/recipe/guardians-aversion'
     type = 'wrists'
     text = """
 	(2) Set:      +250 Vitality     Regenerates 8000 Life per Second
@@ -2581,6 +2816,7 @@ class Guardians_Aversion(Item):
 
 class Bracers_of_Destruction(Item):
     """ Bracers of Destruction """
+    url = r'/en/item/bracers-of-destruction-P67_Unique_Bracer_100'
     type = 'wrists'
     text = """
 
@@ -2593,6 +2829,7 @@ class Bracers_of_Destruction(Item):
 
 class Gabriels_Vambraces(Item):
     """ Gabriel's Vambraces """
+    url = r'/en/item/gabriels-vambraces-P3_Unique_Bracer_101'
     type = 'wrists'
     text = """
 
@@ -2605,6 +2842,7 @@ class Gabriels_Vambraces(Item):
 
 class TragOul_Coils(Item):
     """ Trag'Oul Coils """
+    url = r'/en/item/tragoul-coils-P42_Unique_Bracer_SpikeTrap'
     type = 'wrists'
     text = """
 	 Spike Traps gain the Impaling Spines rune and are deployed twice as fast.
@@ -2614,6 +2852,7 @@ class TragOul_Coils(Item):
 
 class Drakons_Lesson(Item):
     """ Drakon's Lesson """
+    url = r'/en/item/drakons-lesson-P4_Unique_Bracer_110'
     type = 'wrists'
     text = """
 
@@ -2626,6 +2865,7 @@ class Drakons_Lesson(Item):
 
 class Aughilds_Search(Item):
     """ Aughild's Search """
+    url = r'/en/artisan/blacksmith/recipe/aughilds-search'
     type = 'wrists'
     text = """
 	(2) Set:      Reduces damage taken by 15%.     Increases damage dealt by 30%.
@@ -2635,6 +2875,7 @@ class Aughilds_Search(Item):
 
 class Shackles_of_the_Invoker(Item):
     """ Shackles of the Invoker """
+    url = r'/en/item/shackles-of-the-invoker-Unique_Bracer_Set_12_x1'
     type = 'wrists'
     text = """
 	(2) Set:      Your Thorns damage now hits all enemies in a 15 yard radius around you. Each time you hit an enemy with Punish, Slash, or block an attack your Thorns is increased by 350% for 2 seconds.
@@ -2645,6 +2886,7 @@ class Shackles_of_the_Invoker(Item):
 
 class Krelms_Buff_Bracers(Item):
     """ Krelm's Buff Bracers """
+    url = r'/en/item/krelms-buff-bracers-Unique_Bracer_Set_02_x1'
     type = 'wrists'
     text = """
 	(2) Set:      +500 Vitality
@@ -2653,6 +2895,7 @@ class Krelms_Buff_Bracers(Item):
 
 class Reapers_Wraps(Item):
     """ Reaper's Wraps """
+    url = r'/en/artisan/blacksmith/recipe/reapers-wraps'
     type = 'wrists'
     text = """
 
@@ -2662,6 +2905,7 @@ class Reapers_Wraps(Item):
 
 class Demons_Animus(Item):
     """ Demon's Animus """
+    url = r'/en/artisan/blacksmith/recipe/demons-animus'
     type = 'wrists'
     text = """
 	(2) Set:      +6000 Fire Thorns Damage
@@ -2672,6 +2916,7 @@ class Demons_Animus(Item):
 
 class Lakumbas_Ornament(Item):
     """ Lakumba's Ornament """
+    url = r'/en/item/lakumbas-ornament-P4_Unique_Bracer_102'
     type = 'wrists'
     text = """
 
@@ -2684,6 +2929,7 @@ class Lakumbas_Ornament(Item):
 
 class Spirit_Guards(Item):
     """ Spirit Guards """
+    url = r'/en/item/spirit-guards-P61_Unique_Bracer_109'
     type = 'wrists'
     text = """
 
@@ -2696,6 +2942,7 @@ class Spirit_Guards(Item):
 
 class Skulars_Salvation(Item):
     """ Skular's Salvation """
+    url = r'/en/item/skulars-salvation-P4_Unique_Bracer_101'
     type = 'wrists'
     text = """
 
@@ -2708,6 +2955,7 @@ class Skulars_Salvation(Item):
 
 class Gloves_of_Worship(Item):
     """ Gloves of Worship """
+    url = r'/en/item/gloves-of-worship-Unique_Gloves_103_x1'
     type = 'hands'
     text = """
 
@@ -2720,6 +2968,7 @@ class Gloves_of_Worship(Item):
 
 class Grasps_of_Essence(Item):
     """ Grasps of Essence """
+    url = r'/en/item/grasps-of-essence-P6_Necro_Unique_Gloves_22'
     type = 'hands'
     text = """
 
@@ -2732,6 +2981,7 @@ class Grasps_of_Essence(Item):
 
 class Cains_Scribe(Item):
     """ Cain's Scribe """
+    url = r'/en/artisan/blacksmith/recipe/cains-scribe'
     type = 'hands'
     text = """
 	(2) Set:      Attack Speed Increased by 2.0%
@@ -2741,6 +2991,7 @@ class Cains_Scribe(Item):
 
 class Stone_Gauntlets(Item):
     """ Stone Gauntlets """
+    url = r'/en/item/stone-gauntlets-P66_Unique_Gloves_007'
     type = 'hands'
     text = """
 	 Getting hit increases your armor by 50%, but reduces your movement speed by 15% and attack speed by 20%. This effect stacks up to 5 times.
@@ -2749,6 +3000,7 @@ class Stone_Gauntlets(Item):
 
 class St_Archews_Gage(Item):
     """ St. Archew's Gage """
+    url = r'/en/item/st-archews-gage-Unique_Gloves_101_p2'
     type = 'hands'
     text = """
 	 The first time an elite pack damages you, gain an absorb shield equal to 145% of your maximum Life for 10 seconds.
@@ -2758,6 +3010,7 @@ class St_Archews_Gage(Item):
 
 class Magefist(Item):
     """ Magefist """
+    url = r'/en/item/magefist-P41_Unique_Gloves_014'
     type = 'hands'
     text = """
 
@@ -2769,6 +3022,7 @@ class Magefist(Item):
 
 class Pendergrasps(Item):
     """ Pendergrasps """
+    url = r'/en/artisan/blacksmith/recipe/pendergrasps'
     type = 'hands'
     text = """
 
@@ -2780,6 +3034,7 @@ class Pendergrasps(Item):
 
 class Moribund_Gauntlets(Item):
     """ Moribund Gauntlets """
+    url = r'/en/item/moribund-gauntlets-P6_Necro_Unique_Gloves_21'
     type = 'hands'
     text = """
 
@@ -2791,6 +3046,7 @@ class Moribund_Gauntlets(Item):
 
 class Gladiator_Gauntlets(Item):
     """ Gladiator Gauntlets """
+    url = r'/en/item/gladiator-gauntlets-Unique_Gloves_011_x1'
     type = 'hands'
     text = """
 
@@ -2801,6 +3057,7 @@ class Gladiator_Gauntlets(Item):
 
 class Ashearas_Iron_Fist(Item):
     """ Asheara's Iron Fist """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-iron-fist'
     type = 'hands'
     text = """
 	(2) Set:      +30 Resistance to All Elements
@@ -2810,6 +3067,7 @@ class Ashearas_Iron_Fist(Item):
 
 class Zunimassas_Finger_Wraps(Item):
     """ Zunimassa's Finger Wraps """
+    url = r'/en/item/zunimassas-finger-wraps-P2_Unique_Gloves_03'
     type = 'hands'
     text = """
 	(2) Set:      Your Fetish Army lasts until they die and the cooldown of your Fetish Army is reduced by 80%.
@@ -2820,6 +3078,7 @@ class Zunimassas_Finger_Wraps(Item):
 
 class Sages_Gesture(Item):
     """ Sage's Gesture """
+    url = r'/en/artisan/blacksmith/recipe/sages-gesture'
     type = 'hands'
     text = """
 	(2) Set:      +35 Strength     +35 Dexterity     +35 Intelligence     +35 Vitality
@@ -2828,6 +3087,7 @@ class Sages_Gesture(Item):
 
 class Frostburn(Item):
     """ Frostburn """
+    url = r'/en/item/frostburn-P41_Unique_Gloves_002'
     type = 'hands'
     text = """
 
@@ -2839,6 +3099,7 @@ class Frostburn(Item):
 
 class Tasker_and_Theo(Item):
     """ Tasker and Theo """
+    url = r'/en/item/tasker-and-theo-Unique_Gloves_003_x1'
     type = 'hands'
     text = """
 
@@ -2850,6 +3111,7 @@ class Tasker_and_Theo(Item):
 
 class Natalyas_Touch(Item):
     """ Natalya's Touch """
+    url = r'/en/item/natalyas-touch-P2_Unique_Gloves_01'
     type = 'hands'
     text = """
 	(2) Set:      Reduce the cooldown of Rain of Vengeance by 4 seconds when you hit with a Hatred-generating attack or Hatred-spending attack.
@@ -2858,8 +3120,9 @@ class Natalyas_Touch(Item):
     """
 
 
-class Immortal_Kings_Irons(Set_Item):
+class Immortal_Kings_Irons(Item):
     """ Immortal King's Irons """
+    url = r'/en/item/immortal-kings-irons-Unique_Gloves_008_x1'
     type = 'hands'
     text = """
 	(2) Set:      Call of the Ancients last until they die.
@@ -2870,6 +3133,7 @@ class Immortal_Kings_Irons(Set_Item):
 
 class Innas_Hold(Item):
     """ Inna's Hold """
+    url = r'/en/item/innas-hold-P2_Unique_Gloves_04'
     type = 'hands'
     text = """
 	(2) Set:      Increase the passive effect of your Mystic Ally and the base passive effect of your Mantra by 100%.
@@ -2880,6 +3144,7 @@ class Innas_Hold(Item):
 
 class Tal_Rashas_Grasp(Item):
     """ Tal Rasha's Grasp """
+    url = r'/en/item/tal-rashas-grasp-P2_Unique_Gloves_02'
     type = 'hands'
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
@@ -2890,6 +3155,7 @@ class Tal_Rashas_Grasp(Item):
 
 class Cains_Scrivener(Item):
     """ Cain's Scrivener """
+    url = r'/en/artisan/blacksmith/recipe/cains-scriviner'
     type = 'hands'
     text = """
 	(2) Set:      Attack Speed Increased by 8.0%     +50% Experience. (5.0% at level 70)
@@ -2899,6 +3165,7 @@ class Cains_Scrivener(Item):
 
 class The_Shadows_Grasp(Item):
     """ The Shadow's Grasp """
+    url = r'/en/item/the-shadows-grasp-Unique_Gloves_Set_14_x1'
     type = 'hands'
     text = """
 	(2) Set:      While equipped with a melee weapon, your damage is increased by 6000%.
@@ -2909,6 +3176,7 @@ class The_Shadows_Grasp(Item):
 
 class Sunwukos_Paws(Item):
     """ Sunwuko's Paws """
+    url = r'/en/item/sunwukos-paws-Unique_Gloves_Set_11_x1'
     type = 'hands'
     text = """
 	(2) Set:      Your damage taken is reduced by 50% while Sweeping Wind is active.
@@ -2919,6 +3187,7 @@ class Sunwukos_Paws(Item):
 
 class Ashearas_Ward(Item):
     """ Asheara's Ward """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-ward'
     type = 'hands'
     text = """
 	(2) Set:      +100 Resistance to All Elements
@@ -2929,6 +3198,7 @@ class Ashearas_Ward(Item):
 
 class Pride_of_the_Invoker(Item):
     """ Pride of the Invoker """
+    url = r'/en/item/pride-of-the-invoker-Unique_Gloves_Set_12_x1'
     type = 'hands'
     text = """
 	(2) Set:      Your Thorns damage now hits all enemies in a 15 yard radius around you. Each time you hit an enemy with Punish, Slash, or block an attack your Thorns is increased by 350% for 2 seconds.
@@ -2939,6 +3209,7 @@ class Pride_of_the_Invoker(Item):
 
 class Jade_Harvesters_Mercy(Item):
     """ Jade Harvester's Mercy """
+    url = r'/en/item/jade-harvesters-mercy-Unique_Gloves_Set_09_x1'
     type = 'hands'
     text = """
 	(2) Set:      When Haunt lands on an enemy already affected by Haunt, it instantly deals 3500 seconds worth of Haunt damage.
@@ -2949,6 +3220,7 @@ class Jade_Harvesters_Mercy(Item):
 
 class Pull_of_the_Earth(Item):
     """ Pull of the Earth """
+    url = r'/en/item/pull-of-the-earth-Unique_Gloves_Set_15_x1'
     type = 'hands'
     text = """
 	(2) Set:      Reduce the cooldown of Earthquake, Avalanche, Leap, and Ground Stomp by 1 second for every 30 Fury you spend with an attack.
@@ -2959,6 +3231,7 @@ class Pull_of_the_Earth(Item):
 
 class Vyrs_Grasping_Gauntlets(Item):
     """ Vyr's Grasping Gauntlets """
+    url = r'/en/item/vyrs-grasping-gauntlets-Unique_Gloves_Set_13_x1'
     type = 'hands'
     text = """
 	(2) Set:      Archon gains the effect of every rune.
@@ -2969,6 +3242,7 @@ class Vyrs_Grasping_Gauntlets(Item):
 
 class Sages_Purchase(Item):
     """ Sage's Purchase """
+    url = r'/en/artisan/blacksmith/recipe/sages-purchase'
     type = 'hands'
     text = """
 	(2) Set:      +250 Strength     +250 Dexterity     +250 Intelligence     +250 Vitality
@@ -2976,9 +3250,9 @@ class Sages_Purchase(Item):
     """
 
 
-class Raekors_Wraps(Set_Item):
+class Raekors_Wraps(Item):
     """ Raekor's Wraps """
-    set = The_Legacy_of_Raekor
+    url = r'/en/item/raekors-wraps-Unique_Gloves_Set_05_x1'
     type = 'hands'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -2989,6 +3263,7 @@ class Raekors_Wraps(Set_Item):
 
 class Gauntlet_of_the_Wastes(Item):
     """ Gauntlet of the Wastes """
+    url = r'/en/item/gauntlet-of-the-wastes-Unique_Gloves_Set_01_p2'
     type = 'hands'
     text = """
 	(2) Set:      Increase the damage per second of Rend by 500% and its duration to 15 seconds.
@@ -2999,6 +3274,7 @@ class Gauntlet_of_the_Wastes(Item):
 
 class Claws_of_Savages(Item):
     """ Claws of Savages """
+    url = r'/en/item/claws-of-savages-P68_Unique_Gloves_Set_05'
     type = 'hands'
     text = """
 	(2) Set:      Double the effectiveness of shouts. You deal double damage to Feared, Frozen, or Stunned enemies.
@@ -3009,6 +3285,7 @@ class Claws_of_Savages(Item):
 
 class Gauntlets_of_Valor(Item):
     """ Gauntlets of Valor """
+    url = r'/en/item/gauntlets-of-valor-P67_Unique_Gloves_Set_01'
     type = 'hands'
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
@@ -3019,6 +3296,7 @@ class Gauntlets_of_Valor(Item):
 
 class Rolands_Grasp(Item):
     """ Roland's Grasp """
+    url = r'/en/item/rolands-grasp-Unique_Gloves_Set_01_p1'
     type = 'hands'
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
@@ -3029,6 +3307,7 @@ class Rolands_Grasp(Item):
 
 class Gauntlets_of_Akkhan(Item):
     """ Gauntlets of Akkhan """
+    url = r'/en/item/gauntlets-of-akkhan-Unique_Gloves_Set_10_x1'
     type = 'hands'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -3039,6 +3318,7 @@ class Gauntlets_of_Akkhan(Item):
 
 class Will_of_the_Light(Item):
     """ Will of the Light """
+    url = r'/en/item/will-of-the-light-Unique_Gloves_Set_03_p3'
     type = 'hands'
     text = """
 	(2) Set:      Every use of Blessed Hammer that hits an enemy reduces the cooldown of Falling Sword and Provoke by 1 second.
@@ -3049,6 +3329,7 @@ class Will_of_the_Light(Item):
 
 class Fiendish_Grips(Item):
     """ Fiendish Grips """
+    url = r'/en/item/fiendish-grips-Unique_Gloves_Set_03_p2'
     type = 'hands'
     text = """
 	(2) Set:      Your generators generate 2 additional Hatred and 1 Discipline.
@@ -3059,6 +3340,7 @@ class Fiendish_Grips(Item):
 
 class Marauders_Gloves(Item):
     """ Marauder's Gloves """
+    url = r'/en/item/marauders-gloves-Unique_Gloves_Set_07_x1'
     type = 'hands'
     text = """
 	(2) Set:      Companion calls all companions to your side.
@@ -3067,8 +3349,20 @@ class Marauders_Gloves(Item):
     """
 
 
+class Bazubands_of_Justice(Item):
+    """ Bazubands of Justice """
+    url = r'/en/item/bazubands-of-justice-P67_Unique_Gloves_Set_02'
+    type = 'hands'
+    text = """
+	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
+	(4) Set:      Attacking with Tempest Rush reduces your damage taken by 50% and increases Spirit Regeneration by 50.
+	(6) Set:      Hitting with Tempest Rush while Sweeping Wind is active increases the size of Sweeping Wind and also increases all damage dealt by 15,000%.
+    """
+
+
 class Ulianas_Fury(Item):
     """ Uliana's Fury """
+    url = r'/en/item/ulianas-fury-Unique_Gloves_Set_01_p3'
     type = 'hands'
     text = """
 	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
@@ -3079,6 +3373,7 @@ class Ulianas_Fury(Item):
 
 class Fists_of_Thunder(Item):
     """ Fists of Thunder """
+    url = r'/en/item/fists-of-thunder-Unique_Gloves_Set_08_x1'
     type = 'hands'
     text = """
 	(2) Set:      Your Spirit Generators have 25% increased attack speed and 400% increased damage.
@@ -3087,18 +3382,9 @@ class Fists_of_Thunder(Item):
     """
 
 
-class Bazubands_of_Justice(Item):
-    """ Bazubands of Justice """
-    type = 'hands'
-    text = """
-	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
-	(4) Set:      Attacking with Tempest Rush reduces your damage taken by 50% and increases Spirit Regeneration by 50.
-	(6) Set:      Hitting with Tempest Rush while Sweeping Wind is active increases the size of Sweeping Wind and also increases all damage dealt by 15,000%.
-    """
-
-
 class Fierce_Gauntlets(Item):
     """ Fierce Gauntlets """
+    url = r'/en/item/fierce-gauntlets-Unique_Gloves_Set_02_p2'
     type = 'hands'
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
@@ -3109,6 +3395,7 @@ class Fierce_Gauntlets(Item):
 
 class Typhons_Claws(Item):
     """ Typhon's Claws """
+    url = r'/en/item/typhons-claws-P68_Unique_Gloves_Set_03'
     type = 'hands'
     text = """
 	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
@@ -3119,6 +3406,7 @@ class Typhons_Claws(Item):
 
 class Firebirds_Talons(Item):
     """ Firebird's Talons """
+    url = r'/en/item/firebirds-talons-Unique_Gloves_Set_06_x1'
     type = 'hands'
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
@@ -3129,6 +3417,7 @@ class Firebirds_Talons(Item):
 
 class Arachyrs_Claws(Item):
     """ Arachyr's Claws """
+    url = r'/en/item/arachyrs-claws-Unique_Gloves_Set_02_p3'
     type = 'hands'
     text = """
 	(2) Set:      Summon a permanent Spider Queen who leaves behind webs that deal 4000% weapon damage over 5 seconds and Slows enemies. The Spider Queen is commanded to move to where you cast your Corpse Spiders.
@@ -3139,6 +3428,7 @@ class Arachyrs_Claws(Item):
 
 class Mundunugus_Rhythm(Item):
     """ Mundunugu's Rhythm """
+    url = r'/en/item/mundunugus-rhythm-P68_Unique_Gloves_Set_04'
     type = 'hands'
     text = """
 	(2) Set:      Big Bad Voodoo now follows you and lasts twice as long.
@@ -3149,6 +3439,7 @@ class Mundunugus_Rhythm(Item):
 
 class Helltooth_Gauntlets(Item):
     """ Helltooth Gauntlets """
+    url = r'/en/item/helltooth-gauntlets-Unique_Gloves_Set_16_x1'
     type = 'hands'
     text = """
 	(2) Set:      Enemies hit by your primary skills, Acid Cloud, Firebats, Zombie Charger, Zombie Dogs, Gargantuan, Grasp of the Dead, Piranhas, or Wall of Death are afflicted by Necrosis, becoming Slowed and taking 3000% weapon damage every second for 10 seconds.
@@ -3157,38 +3448,9 @@ class Helltooth_Gauntlets(Item):
     """
 
 
-class TragOuls_Claws(Item):
-    """ Trag'Oul's Claws """
-    type = 'hands'
-    text = """
-	(2) Set:      Blood Rush gains the effect of every rune.
-	(4) Set:      While at full Life, your healing from skills is added to your maximum Life for 45 seconds, up to 100% more.
-	(6) Set:      Your Life-spending abilities deal 3800% increased damage and your healing from skills is increased by 100%.
-    """
-
-
-class Pestilence_Gloves(Item):
-    """ Pestilence Gloves """
-    type = 'hands'
-    text = """
-	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
-	(4) Set:      Each enemy you hit with Bone Spear, Corpse Lance and Corpse Explosion reduces your damage taken by 2%, up to a maximum of 50%.  Lasts 15 seconds.
-	(6) Set:      Each corpse you consume grants you an Empowered Bone Spear charge that increases the damage of your next Bone Spear by 3300%. In addition, Corpse Lance and Corpse Explosion damage is increased by 1650%.
-    """
-
-
-class Rathmas_Macabre_Vambraces(Item):
-    """ Rathma's Macabre Vambraces """
-    type = 'hands'
-    text = """
-	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
-	(4) Set:      You gain 1% damage reduction for 15 seconds each time one of your minions deal damage. Max 50 stacks.
-	(6) Set:      Each active Skeletal Mage increases the damage of your minions and Army of the Dead by 1000% up to a max of 4000%.
-    """
-
-
 class Inariuss_Will(Item):
     """ Inarius's Will """
+    url = r'/en/item/inariuss-will-P6_Necro_Set_3_Gloves'
     type = 'hands'
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
@@ -3197,8 +3459,42 @@ class Inariuss_Will(Item):
     """
 
 
+class Rathmas_Macabre_Vambraces(Item):
+    """ Rathma's Macabre Vambraces """
+    url = r'/en/item/rathmas-macabre-vambraces-P6_Necro_Set_1_Gloves'
+    type = 'hands'
+    text = """
+	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
+	(4) Set:      You gain 1% damage reduction for 15 seconds each time one of your minions deal damage. Max 50 stacks.
+	(6) Set:      Each active Skeletal Mage increases the damage of your minions and Army of the Dead by 1000% up to a max of 4000%.
+    """
+
+
+class Pestilence_Gloves(Item):
+    """ Pestilence Gloves """
+    url = r'/en/item/pestilence-gloves-P6_Necro_Set_4_Gloves'
+    type = 'hands'
+    text = """
+	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
+	(4) Set:      Each enemy you hit with Bone Spear, Corpse Lance and Corpse Explosion reduces your damage taken by 2%, up to a maximum of 50%.  Lasts 15 seconds.
+	(6) Set:      Each corpse you consume grants you an Empowered Bone Spear charge that increases the damage of your next Bone Spear by 3300%. In addition, Corpse Lance and Corpse Explosion damage is increased by 1650%.
+    """
+
+
+class TragOuls_Claws(Item):
+    """ Trag'Oul's Claws """
+    url = r'/en/item/tragouls-claws-P6_Necro_Set_2_Gloves'
+    type = 'hands'
+    text = """
+	(2) Set:      Blood Rush gains the effect of every rune.
+	(4) Set:      While at full Life, your healing from skills is added to your maximum Life for 45 seconds, up to 100% more.
+	(6) Set:      Your Life-spending abilities deal 3800% increased damage and your healing from skills is increased by 100%.
+    """
+
+
 class Saffron_Wrap(Item):
     """ Saffron Wrap """
+    url = r'/en/item/saffron-wrap-P43_Unique_Belt_001_x1'
     type = 'waist'
     text = """
 	 The damage of your next Overpower is increased by 45% for each enemy hit. Max 20 enemies.
@@ -3209,6 +3505,7 @@ class Saffron_Wrap(Item):
 
 class Goldwrap(Item):
     """ Goldwrap """
+    url = r'/en/item/goldwrap-Unique_Belt_010_x1'
     type = 'waist'
     text = """
 
@@ -3219,6 +3516,7 @@ class Goldwrap(Item):
 
 class Hellcat_Waistguard(Item):
     """ Hellcat Waistguard """
+    url = r'/en/item/hellcat-waistguard-P43_Unique_Belt_005_x1'
     type = 'waist'
     text = """
 	 Grenades have a chance to bounce 4 times dealing an additional 50% damage on each bounce. This bonus is increased to 800% on the final bounce.
@@ -3229,6 +3527,7 @@ class Hellcat_Waistguard(Item):
 
 class Insatiable_Belt(Item):
     """ Insatiable Belt """
+    url = r'/en/item/insatiable-belt-Unique_Belt_103_x1'
     type = 'waist'
     text = """
 
@@ -3241,6 +3540,7 @@ class Insatiable_Belt(Item):
 
 class Binding_of_the_Lost(Item):
     """ Binding of the Lost """
+    url = r'/en/item/binding-of-the-lost-P61_Unique_Belt_03'
     type = 'waist'
     text = """
 	 Each hit with Seven-Sided Strike grants 4.0% damage reduction for 7 seconds.
@@ -3251,6 +3551,7 @@ class Binding_of_the_Lost(Item):
 
 class The_Shame_of_Delsere(Item):
     """ The Shame of Delsere """
+    url = r'/en/item/the-shame-of-delsere-P4_Unique_Belt_02'
     type = 'waist'
     text = """
 	 Your Signature Spells attack 50% faster and restore 9 Arcane Power.
@@ -3261,6 +3562,7 @@ class The_Shame_of_Delsere(Item):
 
 class Dayntees_Binding(Item):
     """ Dayntee's Binding """
+    url = r'/en/item/dayntees-binding-P61_Unique_Belt_01'
     type = 'waist'
     text = """
 	 You gain an additional 45% damage reduction when there is an enemy afflicted by any of your curses.
@@ -3271,6 +3573,7 @@ class Dayntees_Binding(Item):
 
 class Kyoshiros_Soul(Item):
     """ Kyoshiro's Soul """
+    url = r'/en/item/kyoshiros-soul-P4_Unique_Belt_05'
     type = 'waist'
     text = """
 	 Increases Sweeping Wind Damage by [100 - 125]%
@@ -3282,6 +3585,7 @@ class Kyoshiros_Soul(Item):
 
 class Sacred_Harness(Item):
     """ Sacred Harness """
+    url = r'/en/item/sacred-harness-P3_Unique_Belt_01'
     type = 'waist'
     text = """
 	 Judgment gains the effect of the Debilitate rune and is cast at your landing location when casting Falling Sword.
@@ -3291,6 +3595,7 @@ class Sacred_Harness(Item):
 
 class Quick_Draw_Belt(Item):
     """ Quick Draw Belt """
+    url = r'/en/artisan/blacksmith/recipe/quick-draw-belt'
     type = 'waist'
     text = """
 
@@ -3302,6 +3607,7 @@ class Quick_Draw_Belt(Item):
 
 class String_of_Ears(Item):
     """ String of Ears """
+    url = r'/en/item/string-of-ears-P4_Unique_Belt_03'
     type = 'waist'
     text = """
 
@@ -3313,6 +3619,7 @@ class String_of_Ears(Item):
 
 class Bakuli_Jungle_Wraps(Item):
     """ Bakuli Jungle Wraps """
+    url = r'/en/item/bakuli-jungle-wraps-P61_Unique_Belt_007'
     type = 'waist'
     text = """
 
@@ -3325,6 +3632,7 @@ class Bakuli_Jungle_Wraps(Item):
 
 class Saffron_Wrap(Item):
     """ Saffron Wrap """
+    url = r'/en/item/saffron-wrap-Unique_Belt_001_x1'
     type = 'waist'
     text = """
 
@@ -3336,6 +3644,7 @@ class Saffron_Wrap(Item):
 
 class Captain_Crimsons_Satin_Sash(Item):
     """ Captain Crimson's Satin Sash """
+    url = r'/en/artisan/blacksmith/recipe/captain-crimsons-satin-sash'
     type = 'waist'
     text = """
 	(2) Set:      Regenerates 20 Life per Second
@@ -3345,6 +3654,7 @@ class Captain_Crimsons_Satin_Sash(Item):
 
 class Fazulas_Improbable_Chain(Item):
     """ Fazula's Improbable Chain """
+    url = r'/en/item/fazulas-improbable-chain-P4_Unique_Belt_07'
     type = 'waist'
     text = """
 	 You automatically start with 45 Archon stacks when entering Archon form.
@@ -3355,6 +3665,7 @@ class Fazulas_Improbable_Chain(Item):
 
 class Hergbrashs_Binding(Item):
     """ Hergbrash's Binding """
+    url = r'/en/item/hergbrashs-binding-P4_Unique_Belt_06'
     type = 'waist'
     text = """
 	 Reduces the Arcane Power cost of Arcane Torrent, Disintegrate, and Ray of Frost by 54%.
@@ -3365,6 +3676,7 @@ class Hergbrashs_Binding(Item):
 
 class Sebors_Nightmare(Item):
     """ Sebor's Nightmare """
+    url = r'/en/item/sebors-nightmare-Unique_Belt_108_p2'
     type = 'waist'
     text = """
 
@@ -3375,6 +3687,7 @@ class Sebors_Nightmare(Item):
 
 class Sash_of_Knives(Item):
     """ Sash of Knives """
+    url = r'/en/item/sash-of-knives-Unique_Belt_102_p2'
     type = 'waist'
     text = """
 	 With every attack, you throw a dagger at a nearby enemy for 622% weapon damage as Physical.
@@ -3384,6 +3697,7 @@ class Sash_of_Knives(Item):
 
 class Omnislash(Item):
     """ Omnislash """
+    url = r'/en/item/omnislash-P2_Unique_Belt_04'
     type = 'waist'
     text = """
 
@@ -3395,6 +3709,7 @@ class Omnislash(Item):
 
 class Haunting_Girdle(Item):
     """ Haunting Girdle """
+    url = r'/en/item/haunting-girdle-P2_Unique_Belt_03'
     type = 'waist'
     text = """
 
@@ -3407,6 +3722,7 @@ class Haunting_Girdle(Item):
 
 class Sebors_Nightmare(Item):
     """ Sebor's Nightmare """
+    url = r'/en/item/sebors-nightmare-Unique_Belt_108_x1'
     type = 'waist'
     text = """
 
@@ -3417,6 +3733,7 @@ class Sebors_Nightmare(Item):
 
 class Hwoj_Wrap(Item):
     """ Hwoj Wrap """
+    url = r'/en/item/hwoj-wrap-Unique_Belt_107_x1'
     type = 'waist'
     text = """
 
@@ -3429,6 +3746,7 @@ class Hwoj_Wrap(Item):
 
 class Omryns_Chain(Item):
     """ Omryn's Chain """
+    url = r'/en/item/omryns-chain-P2_Unique_Belt_06'
     type = 'waist'
     text = """
 	 Drop Caltrops when using Vault.
@@ -3438,6 +3756,7 @@ class Omryns_Chain(Item):
 
 class Cord_of_the_Sherma(Item):
     """ Cord of the Sherma """
+    url = r'/en/item/cord-of-the-sherma-Unique_Belt_104_p2'
     type = 'waist'
     text = """
 
@@ -3451,6 +3770,7 @@ class Cord_of_the_Sherma(Item):
 
 class Harrington_Waistguard(Item):
     """ Harrington Waistguard """
+    url = r'/en/item/harrington-waistguard-Unique_Belt_105_x1'
     type = 'waist'
     text = """
 
@@ -3462,6 +3782,7 @@ class Harrington_Waistguard(Item):
 
 class Crashing_Rain(Item):
     """ Crashing Rain """
+    url = r'/en/item/crashing-rain-P2_Unique_Belt_01'
     type = 'waist'
     text = """
 
@@ -3474,6 +3795,7 @@ class Crashing_Rain(Item):
 
 class Chain_of_Shadows(Item):
     """ Chain of Shadows """
+    url = r'/en/item/chain-of-shadows-P4_Unique_Belt_01'
     type = 'waist'
     text = """
 
@@ -3485,6 +3807,7 @@ class Chain_of_Shadows(Item):
 
 class Cord_of_the_Sherma(Item):
     """ Cord of the Sherma """
+    url = r'/en/item/cord-of-the-sherma-Unique_Belt_104_x1'
     type = 'waist'
     text = """
 
@@ -3498,6 +3821,7 @@ class Cord_of_the_Sherma(Item):
 
 class Blessed_of_Haull(Item):
     """ Blessed of Haull """
+    url = r'/en/item/blessed-of-haull-P2_Unique_Belt_05'
     type = 'waist'
     text = """
 
@@ -3509,6 +3833,7 @@ class Blessed_of_Haull(Item):
 
 class Belt_of_Transcendence(Item):
     """ Belt of Transcendence """
+    url = r'/en/item/belt-of-transcendence-P2_Unique_Belt_02'
     type = 'waist'
     text = """
 
@@ -3520,6 +3845,7 @@ class Belt_of_Transcendence(Item):
 
 class Razor_Strop(Item):
     """ Razor Strop """
+    url = r'/en/item/razor-strop-Unique_Belt_101_x1'
     type = 'waist'
     text = """
 
@@ -3531,6 +3857,7 @@ class Razor_Strop(Item):
 
 class Angel_Hair_Braid(Item):
     """ Angel Hair Braid """
+    url = r'/en/item/angel-hair-braid-Unique_Belt_003_x1'
     type = 'waist'
     text = """
 
@@ -3542,6 +3869,7 @@ class Angel_Hair_Braid(Item):
 
 class Thundergods_Vigor(Item):
     """ Thundergod's Vigor """
+    url = r'/en/item/thundergods-vigor-Unique_BarbBelt_003_x1'
     type = 'waist'
     text = """
 
@@ -3557,6 +3885,7 @@ class Thundergods_Vigor(Item):
 
 class Angel_Hair_Braid(Item):
     """ Angel Hair Braid """
+    url = r'/en/item/angel-hair-braid-Unique_Belt_003_p1'
     type = 'waist'
     text = """
 	 Punish gains the effect of every rune.
@@ -3566,6 +3895,7 @@ class Angel_Hair_Braid(Item):
 
 class Guardians_Sheath(Item):
     """ Guardian's Sheath """
+    url = r'/en/artisan/blacksmith/recipe/guardians-sheath'
     type = 'waist'
     text = """
 	(2) Set:      +110 Vitality     Regenerates 130 Life per Second
@@ -3574,6 +3904,7 @@ class Guardians_Sheath(Item):
 
 class Belt_of_the_Trove(Item):
     """ Belt of the Trove """
+    url = r'/en/item/belt-of-the-trove-P2_Unique_Belt_008'
     type = 'waist'
     text = """
 
@@ -3588,6 +3919,7 @@ class Belt_of_the_Trove(Item):
 
 class Innas_Favor(Item):
     """ Inna's Favor """
+    url = r'/en/item/innas-favor-Unique_Belt_007_x1'
     type = 'waist'
     text = """
 	(2) Set:      Increase the passive effect of your Mystic Ally and the base passive effect of your Mantra by 100%.
@@ -3598,6 +3930,7 @@ class Innas_Favor(Item):
 
 class Tal_Rashas_Brace(Item):
     """ Tal Rasha's Brace """
+    url = r'/en/item/tal-rashas-brace-Unique_Belt_006_x1'
     type = 'waist'
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
@@ -3608,6 +3941,7 @@ class Tal_Rashas_Brace(Item):
 
 class Demons_Lock(Item):
     """ Demon's Lock """
+    url = r'/en/artisan/blacksmith/recipe/demons-lock'
     type = 'waist'
     text = """
 	(2) Set:      +999 Fire Thorns Damage
@@ -3618,6 +3952,7 @@ class Demons_Lock(Item):
 
 class Blackthornes_Notched_Belt(Item):
     """ Blackthorne's Notched Belt """
+    url = r'/en/item/blackthornes-notched-belt-Unique_Belt_015_x1'
     type = 'waist'
     text = """
 	(2) Set:      +250 Vitality     Increases damage against elites by 10.0%
@@ -3628,6 +3963,7 @@ class Blackthornes_Notched_Belt(Item):
 
 class Jangs_Envelopment(Item):
     """ Jang's Envelopment """
+    url = r'/en/item/jangs-envelopment-Unique_Belt_106_x1'
     type = 'waist'
     text = """
 	 Enemies damaged by Black Hole are also slowed by 60% for 3 seconds.
@@ -3638,6 +3974,7 @@ class Jangs_Envelopment(Item):
 
 class Sages_Ribbon(Item):
     """ Sage's Ribbon """
+    url = r'/en/artisan/blacksmith/recipe/sages-ribbon'
     type = 'waist'
     text = """
 	(2) Set:      +250 Strength     +250 Dexterity     +250 Intelligence     +250 Vitality
@@ -3647,6 +3984,7 @@ class Sages_Ribbon(Item):
 
 class Demons_Restraint(Item):
     """ Demon's Restraint """
+    url = r'/en/artisan/blacksmith/recipe/demons-restraint'
     type = 'waist'
     text = """
 	(2) Set:      +6000 Fire Thorns Damage
@@ -3657,6 +3995,7 @@ class Demons_Restraint(Item):
 
 class Khassetts_Cord_of_Righteousness(Item):
     """ Khassett's Cord of Righteousness """
+    url = r'/en/item/khassetts-cord-of-righteousness-P42_Crusader_FoH_Belt'
     type = 'waist'
     text = """
 	 Fist of the Heavens costs 40% less Wrath and deals 163% more damage.
@@ -3667,6 +4006,7 @@ class Khassetts_Cord_of_Righteousness(Item):
 
 class Zoeys_Secret(Item):
     """ Zoey's Secret """
+    url = r'/en/item/zoeys-secret-P4_Unique_Belt_04'
     type = 'waist'
     text = """
 
@@ -3679,6 +4019,7 @@ class Zoeys_Secret(Item):
 
 class Krelms_Buff_Belt(Item):
     """ Krelm's Buff Belt """
+    url = r'/en/item/krelms-buff-belt-Unique_Belt_Set_02_x1'
     type = 'waist'
     text = """
 	(2) Set:      +500 Vitality
@@ -3687,6 +4028,7 @@ class Krelms_Buff_Belt(Item):
 
 class Guardians_Case(Item):
     """ Guardian's Case """
+    url = r'/en/artisan/blacksmith/recipe/guardians-case'
     type = 'waist'
     text = """
 	(2) Set:      +250 Vitality     Regenerates 8000 Life per Second
@@ -3696,6 +4038,7 @@ class Guardians_Case(Item):
 
 class Captain_Crimsons_Silk_Girdle(Item):
     """ Captain Crimson's Silk Girdle """
+    url = r'/en/artisan/blacksmith/recipe/captain-crimsons-silk-girdle'
     type = 'waist'
     text = """
 	(2) Set:      Regenerates 6000 Life per Second     Reduces cooldown of all skills by 20.0%.     Reduces all resource costs by 20.0%.
@@ -3705,6 +4048,7 @@ class Captain_Crimsons_Silk_Girdle(Item):
 
 class Hunters_Wrath(Item):
     """ Hunter's Wrath """
+    url = r'/en/item/hunters-wrath-P3_Unique_Belt_005'
     type = 'waist'
     text = """
 
@@ -3717,6 +4061,7 @@ class Hunters_Wrath(Item):
 
 class Pox_Faulds(Item):
     """ Pox Faulds """
+    url = r'/en/item/pox-faulds-Unique_Pants_007_p2'
     type = 'pants'
     text = """
 	 When 3 or more enemies are within 12 yards, you release a vile stench that deals 492% weapon damage as Poison every second for 5 seconds to enemies within 15 yards.
@@ -3726,6 +4071,7 @@ class Pox_Faulds(Item):
 
 class Deaths_Bargain(Item):
     """ Death's Bargain """
+    url = r'/en/item/deaths-bargain-Unique_Pants_102_x1'
     type = 'pants'
     text = """
 
@@ -3737,6 +4083,7 @@ class Deaths_Bargain(Item):
 
 class Cains_Robes(Item):
     """ Cain's Robes """
+    url = r'/en/artisan/blacksmith/recipe/cains-robes'
     type = 'pants'
     text = """
 	(2) Set:      Attack Speed Increased by 2.0%
@@ -3746,6 +4093,7 @@ class Cains_Robes(Item):
 
 class Golemskin_Breeches(Item):
     """ Golemskin Breeches """
+    url = r'/en/item/golemskin-breeches-P61_Necro_Unique_Pants_21'
     type = 'pants'
     text = """
 
@@ -3758,6 +4106,7 @@ class Golemskin_Breeches(Item):
 
 class Hammer_Jammers(Item):
     """ Hammer Jammers """
+    url = r'/en/item/hammer-jammers-P4_Unique_Pants_002'
     type = 'pants'
     text = """
 
@@ -3770,6 +4119,7 @@ class Hammer_Jammers(Item):
 
 class Captain_Crimsons_Bowsprit(Item):
     """ Captain Crimson's Bowsprit """
+    url = r'/en/artisan/blacksmith/recipe/captain-crimsons-bowsprit'
     type = 'pants'
     text = """
 	(2) Set:      Regenerates 20 Life per Second
@@ -3779,6 +4129,7 @@ class Captain_Crimsons_Bowsprit(Item):
 
 class Hexing_Pants_of_Mr_Yan(Item):
     """ Hexing Pants of Mr. Yan """
+    url = r'/en/item/hexing-pants-of-mr-yan-Unique_Pants_101_x1'
     type = 'pants'
     text = """
 	 Your resource generation and damage is increased by 25% while moving and decreased by 24% while standing still.
@@ -3788,6 +4139,7 @@ class Hexing_Pants_of_Mr_Yan(Item):
 
 class Defiler_Cuisses(Item):
     """ Defiler Cuisses """
+    url = r'/en/item/defiler-cuisses-P61_Necro_Unique_Pants_22'
     type = 'pants'
     text = """
 
@@ -3800,6 +4152,7 @@ class Defiler_Cuisses(Item):
 
 class Swamp_Land_Waders(Item):
     """ Swamp Land Waders """
+    url = r'/en/item/swamp-land-waders-P41_Unique_Pants_001'
     type = 'pants'
     text = """
 
@@ -3812,6 +4165,7 @@ class Swamp_Land_Waders(Item):
 
 class Ashearas_Gait(Item):
     """ Asheara's Gait """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-gait'
     type = 'pants'
     text = """
 	(2) Set:      +30 Resistance to All Elements
@@ -3821,6 +4175,7 @@ class Ashearas_Gait(Item):
 
 class Tal_Rashas_Stride(Item):
     """ Tal Rasha's Stride """
+    url = r'/en/item/tal-rashas-stride-P2_Unique_Pants_03'
     type = 'pants'
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
@@ -3831,6 +4186,7 @@ class Tal_Rashas_Stride(Item):
 
 class Depth_Diggers(Item):
     """ Depth Diggers """
+    url = r'/en/item/depth-diggers-Unique_Pants_006_p1'
     type = 'pants'
     text = """
 
@@ -3842,6 +4198,7 @@ class Depth_Diggers(Item):
 
 class Zunimassas_Cloth(Item):
     """ Zunimassa's Cloth """
+    url = r'/en/item/zunimassas-cloth-P2_Unique_Pants_04'
     type = 'pants'
     text = """
 	(2) Set:      Your Fetish Army lasts until they die and the cooldown of your Fetish Army is reduced by 80%.
@@ -3850,8 +4207,9 @@ class Zunimassas_Cloth(Item):
     """
 
 
-class Immortal_Kings_Stature(Set_Item):
+class Immortal_Kings_Stature(Item):
     """ Immortal King's Stature """
+    url = r'/en/item/immortal-kings-stature-P2_Unique_Pants_02'
     type = 'pants'
     text = """
 	(2) Set:      Call of the Ancients last until they die.
@@ -3862,6 +4220,7 @@ class Immortal_Kings_Stature(Set_Item):
 
 class Demons_Scale(Item):
     """ Demon's Scale """
+    url = r'/en/artisan/blacksmith/recipe/demons-scale'
     type = 'pants'
     text = """
 	(2) Set:      +999 Fire Thorns Damage
@@ -3872,6 +4231,7 @@ class Demons_Scale(Item):
 
 class Gehennas(Item):
     """ Gehennas """
+    url = r'/en/artisan/blacksmith/recipe/gehennas'
     type = 'pants'
     text = """
 
@@ -3883,6 +4243,7 @@ class Gehennas(Item):
 
 class Innas_Temperance(Item):
     """ Inna's Temperance """
+    url = r'/en/item/innas-temperance-Unique_Pants_008_x1'
     type = 'pants'
     text = """
 	(2) Set:      Increase the passive effect of your Mystic Ally and the base passive effect of your Mantra by 100%.
@@ -3893,6 +4254,7 @@ class Innas_Temperance(Item):
 
 class Natalyas_Leggings(Item):
     """ Natalya's Leggings """
+    url = r'/en/item/natalyas-leggings-P2_Unique_Pants_01'
     type = 'pants'
     text = """
 	(2) Set:      Reduce the cooldown of Rain of Vengeance by 4 seconds when you hit with a Hatred-generating attack or Hatred-spending attack.
@@ -3903,6 +4265,7 @@ class Natalyas_Leggings(Item):
 
 class Blackthornes_Jousting_Mail(Item):
     """ Blackthorne's Jousting Mail """
+    url = r'/en/item/blackthornes-jousting-mail-Unique_Pants_013_x1'
     type = 'pants'
     text = """
 	(2) Set:      +250 Vitality     Increases damage against elites by 10.0%
@@ -3913,6 +4276,7 @@ class Blackthornes_Jousting_Mail(Item):
 
 class Demons_Plate(Item):
     """ Demon's Plate """
+    url = r'/en/artisan/blacksmith/recipe/demons-plate'
     type = 'pants'
     text = """
 	(2) Set:      +6000 Fire Thorns Damage
@@ -3923,6 +4287,7 @@ class Demons_Plate(Item):
 
 class Captain_Crimsons_Thrust(Item):
     """ Captain Crimson's Thrust """
+    url = r'/en/artisan/blacksmith/recipe/captain-crimsons-thrust'
     type = 'pants'
     text = """
 	(2) Set:      Regenerates 6000 Life per Second     Reduces cooldown of all skills by 20.0%.     Reduces all resource costs by 20.0%.
@@ -3932,6 +4297,7 @@ class Captain_Crimsons_Thrust(Item):
 
 class Renewal_of_the_Invoker(Item):
     """ Renewal of the Invoker """
+    url = r'/en/item/renewal-of-the-invoker-Unique_Pants_Set_12_x1'
     type = 'pants'
     text = """
 	(2) Set:      Your Thorns damage now hits all enemies in a 15 yard radius around you. Each time you hit an enemy with Punish, Slash, or block an attack your Thorns is increased by 350% for 2 seconds.
@@ -3942,6 +4308,7 @@ class Renewal_of_the_Invoker(Item):
 
 class Jade_Harvesters_Courage(Item):
     """ Jade Harvester's Courage """
+    url = r'/en/item/jade-harvesters-courage-Unique_Pants_Set_09_x1'
     type = 'pants'
     text = """
 	(2) Set:      When Haunt lands on an enemy already affected by Haunt, it instantly deals 3500 seconds worth of Haunt damage.
@@ -3952,6 +4319,7 @@ class Jade_Harvesters_Courage(Item):
 
 class Vyrs_Fantastic_Finery(Item):
     """ Vyr's Fantastic Finery """
+    url = r'/en/item/vyrs-fantastic-finery-Unique_Pants_Set_13_x1'
     type = 'pants'
     text = """
 	(2) Set:      Archon gains the effect of every rune.
@@ -3962,6 +4330,7 @@ class Vyrs_Fantastic_Finery(Item):
 
 class Sunwukos_Leggings(Item):
     """ Sunwuko's Leggings """
+    url = r'/en/item/sunwukos-leggings-Unique_Pants_Set_11_x1'
     type = 'pants'
     text = """
 	(2) Set:      Your damage taken is reduced by 50% while Sweeping Wind is active.
@@ -3972,6 +4341,7 @@ class Sunwukos_Leggings(Item):
 
 class Cains_Habit(Item):
     """ Cain's Habit """
+    url = r'/en/artisan/blacksmith/recipe/cains-habit'
     type = 'pants'
     text = """
 	(2) Set:      Attack Speed Increased by 8.0%     +50% Experience. (5.0% at level 70)
@@ -3981,6 +4351,7 @@ class Cains_Habit(Item):
 
 class The_Shadows_Coil(Item):
     """ The Shadow's Coil """
+    url = r'/en/item/the-shadows-coil-Unique_Pants_Set_14_x1'
     type = 'pants'
     text = """
 	(2) Set:      While equipped with a melee weapon, your damage is increased by 6000%.
@@ -3991,6 +4362,7 @@ class The_Shadows_Coil(Item):
 
 class Weight_of_the_Earth(Item):
     """ Weight of the Earth """
+    url = r'/en/item/weight-of-the-earth-Unique_Pants_Set_15_x1'
     type = 'pants'
     text = """
 	(2) Set:      Reduce the cooldown of Earthquake, Avalanche, Leap, and Ground Stomp by 1 second for every 30 Fury you spend with an attack.
@@ -4001,6 +4373,7 @@ class Weight_of_the_Earth(Item):
 
 class Ashearas_Pace(Item):
     """ Asheara's Pace """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-pace'
     type = 'pants'
     text = """
 	(2) Set:      +100 Resistance to All Elements
@@ -4009,9 +4382,9 @@ class Ashearas_Pace(Item):
     """
 
 
-class Raekors_Breeches(Set_Item):
+class Raekors_Breeches(Item):
     """ Raekor's Breeches """
-    set = ''
+    url = r'/en/item/raekors-breeches-Unique_Pants_Set_05_x1'
     type = 'pants'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -4022,6 +4395,7 @@ class Raekors_Breeches(Set_Item):
 
 class Tasset_of_the_Wastes(Item):
     """ Tasset of the Wastes """
+    url = r'/en/item/tasset-of-the-wastes-Unique_Pants_Set_01_p2'
     type = 'pants'
     text = """
 	(2) Set:      Increase the damage per second of Rend by 500% and its duration to 15 seconds.
@@ -4032,6 +4406,7 @@ class Tasset_of_the_Wastes(Item):
 
 class Leggings_of_Savages(Item):
     """ Leggings of Savages """
+    url = r'/en/item/leggings-of-savages-P68_Unique_Pants_Set_05'
     type = 'pants'
     text = """
 	(2) Set:      Double the effectiveness of shouts. You deal double damage to Feared, Frozen, or Stunned enemies.
@@ -4042,6 +4417,7 @@ class Leggings_of_Savages(Item):
 
 class Chausses_of_Valor(Item):
     """ Chausses of Valor """
+    url = r'/en/item/chausses-of-valor-P67_Unique_Pants_Set_01'
     type = 'pants'
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
@@ -4052,6 +4428,7 @@ class Chausses_of_Valor(Item):
 
 class Cuisses_of_Akkhan(Item):
     """ Cuisses of Akkhan """
+    url = r'/en/item/cuisses-of-akkhan-Unique_Pants_Set_10_x1'
     type = 'pants'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -4062,6 +4439,7 @@ class Cuisses_of_Akkhan(Item):
 
 class Towers_of_the_Light(Item):
     """ Towers of the Light """
+    url = r'/en/item/towers-of-the-light-Unique_Pants_Set_03_p3'
     type = 'pants'
     text = """
 	(2) Set:      Every use of Blessed Hammer that hits an enemy reduces the cooldown of Falling Sword and Provoke by 1 second.
@@ -4072,6 +4450,7 @@ class Towers_of_the_Light(Item):
 
 class Rolands_Determination(Item):
     """ Roland's Determination """
+    url = r'/en/item/rolands-determination-Unique_Pants_Set_01_p1'
     type = 'pants'
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
@@ -4082,6 +4461,7 @@ class Rolands_Determination(Item):
 
 class Unholy_Plates(Item):
     """ Unholy Plates """
+    url = r'/en/item/unholy-plates-Unique_Pants_Set_03_p2'
     type = 'pants'
     text = """
 	(2) Set:      Your generators generate 2 additional Hatred and 1 Discipline.
@@ -4092,6 +4472,7 @@ class Unholy_Plates(Item):
 
 class Marauders_Encasement(Item):
     """ Marauder's Encasement """
+    url = r'/en/item/marauders-encasement-Unique_Pants_Set_07_x1'
     type = 'pants'
     text = """
 	(2) Set:      Companion calls all companions to your side.
@@ -4100,8 +4481,20 @@ class Marauders_Encasement(Item):
     """
 
 
+class Ulianas_Burden(Item):
+    """ Uliana's Burden """
+    url = r'/en/item/ulianas-burden-Unique_Pants_Set_01_p3'
+    type = 'pants'
+    text = """
+	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
+	(4) Set:      Your Seven-Sided Strike deals 777% its total damage with each hit.
+	(6) Set:      Increase the damage of your Exploding Palm by 9000% and your Seven-Sided Strike detonates your Exploding Palm.
+    """
+
+
 class Scales_of_the_Dancing_Serpent(Item):
     """ Scales of the Dancing Serpent """
+    url = r'/en/item/scales-of-the-dancing-serpent-Unique_Pants_Set_08_x1'
     type = 'pants'
     text = """
 	(2) Set:      Your Spirit Generators have 25% increased attack speed and 400% increased damage.
@@ -4112,6 +4505,7 @@ class Scales_of_the_Dancing_Serpent(Item):
 
 class Mountains_of_Justice(Item):
     """ Mountains of Justice """
+    url = r'/en/item/mountains-of-justice-P67_Unique_Pants_Set_02'
     type = 'pants'
     text = """
 	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
@@ -4120,18 +4514,9 @@ class Mountains_of_Justice(Item):
     """
 
 
-class Ulianas_Burden(Item):
-    """ Uliana's Burden """
-    type = 'pants'
-    text = """
-	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
-	(4) Set:      Your Seven-Sided Strike deals 777% its total damage with each hit.
-	(6) Set:      Increase the damage of your Exploding Palm by 9000% and your Seven-Sided Strike detonates your Exploding Palm.
-    """
-
-
 class Firebirds_Down(Item):
     """ Firebird's Down """
+    url = r'/en/item/firebirds-down-Unique_Pants_Set_06_x1'
     type = 'pants'
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
@@ -4142,6 +4527,7 @@ class Firebirds_Down(Item):
 
 class Leg_Guards_of_Mystery(Item):
     """ Leg Guards of Mystery """
+    url = r'/en/item/leg-guards-of-mystery-Unique_Pants_Set_02_p2'
     type = 'pants'
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
@@ -4152,6 +4538,7 @@ class Leg_Guards_of_Mystery(Item):
 
 class Typhons_Abdomen(Item):
     """ Typhon's Abdomen """
+    url = r'/en/item/typhons-abdomen-P68_Unique_Pants_Set_03'
     type = 'pants'
     text = """
 	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
@@ -4162,6 +4549,7 @@ class Typhons_Abdomen(Item):
 
 class Helltooth_Leg_Guards(Item):
     """ Helltooth Leg Guards """
+    url = r'/en/item/helltooth-leg-guards-Unique_Pants_Set_16_x1'
     type = 'pants'
     text = """
 	(2) Set:      Enemies hit by your primary skills, Acid Cloud, Firebats, Zombie Charger, Zombie Dogs, Gargantuan, Grasp of the Dead, Piranhas, or Wall of Death are afflicted by Necrosis, becoming Slowed and taking 3000% weapon damage every second for 10 seconds.
@@ -4172,6 +4560,7 @@ class Helltooth_Leg_Guards(Item):
 
 class Arachyrs_Legs(Item):
     """ Arachyr's Legs """
+    url = r'/en/item/arachyrs-legs-Unique_Pants_Set_02_p3'
     type = 'pants'
     text = """
 	(2) Set:      Summon a permanent Spider Queen who leaves behind webs that deal 4000% weapon damage over 5 seconds and Slows enemies. The Spider Queen is commanded to move to where you cast your Corpse Spiders.
@@ -4182,6 +4571,7 @@ class Arachyrs_Legs(Item):
 
 class Mundunugus_Decoration(Item):
     """ Mundunugu's Decoration """
+    url = r'/en/item/mundunugus-decoration-P68_Unique_Pants_Set_04'
     type = 'pants'
     text = """
 	(2) Set:      Big Bad Voodoo now follows you and lasts twice as long.
@@ -4192,6 +4582,7 @@ class Mundunugus_Decoration(Item):
 
 class Rathmas_Skeletal_Legplates(Item):
     """ Rathma's Skeletal Legplates """
+    url = r'/en/item/rathmas-skeletal-legplates-P6_Necro_Set_1_Pants'
     type = 'pants'
     text = """
 	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
@@ -4202,6 +4593,7 @@ class Rathmas_Skeletal_Legplates(Item):
 
 class TragOuls_Hide(Item):
     """ Trag'Oul's Hide """
+    url = r'/en/item/tragouls-hide-P6_Necro_Set_2_Pants'
     type = 'pants'
     text = """
 	(2) Set:      Blood Rush gains the effect of every rune.
@@ -4212,6 +4604,7 @@ class TragOuls_Hide(Item):
 
 class Inariuss_Reticence(Item):
     """ Inarius's Reticence """
+    url = r'/en/item/inariuss-reticence-P6_Necro_Set_3_Pants'
     type = 'pants'
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
@@ -4222,6 +4615,7 @@ class Inariuss_Reticence(Item):
 
 class Pestilence_Incantations(Item):
     """ Pestilence Incantations """
+    url = r'/en/item/pestilence-incantations-P6_Necro_Set_4_Pants'
     type = 'pants'
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
@@ -4230,17 +4624,9 @@ class Pestilence_Incantations(Item):
     """
 
 
-class Lut_Socks(Item):
-    """ Lut Socks """
-    type = 'feet'
-    text = """
-	 Leap can be cast up to three times within 2 seconds before the cooldown begins.
-	(Barbarian Only)
-    """
-
-
 class Rivera_Dancers(Item):
     """ Rivera Dancers """
+    url = r'/en/item/rivera-dancers-P4_Unique_Boots_001'
     type = 'feet'
     text = """
 
@@ -4251,8 +4637,19 @@ class Rivera_Dancers(Item):
     """
 
 
+class Lut_Socks(Item):
+    """ Lut Socks """
+    url = r'/en/item/lut-socks-Unique_Boots_009_x1'
+    type = 'feet'
+    text = """
+	 Leap can be cast up to three times within 2 seconds before the cooldown begins.
+	(Barbarian Only)
+    """
+
+
 class The_Crudest_Boots(Item):
     """ The Crudest Boots """
+    url = r'/en/item/the-crudest-boots-P1_Unique_Boots_010'
     type = 'feet'
     text = """
 
@@ -4264,6 +4661,7 @@ class The_Crudest_Boots(Item):
 
 class Illusory_Boots(Item):
     """ Illusory Boots """
+    url = r'/en/item/illusory-boots-Unique_Boots_103_x1'
     type = 'feet'
     text = """
 
@@ -4276,6 +4674,7 @@ class Illusory_Boots(Item):
 
 class Boots_of_Disregard(Item):
     """ Boots of Disregard """
+    url = r'/en/item/boots-of-disregard-Unique_Boots_102_x1'
     type = 'feet'
     text = """
 
@@ -4290,6 +4689,7 @@ class Boots_of_Disregard(Item):
 
 class Cains_Sandals(Item):
     """ Cain's Sandals """
+    url = r'/en/artisan/blacksmith/recipe/cains-sandals'
     type = 'feet'
     text = """
 	(2) Set:      Attack Speed Increased by 2.0%
@@ -4299,6 +4699,7 @@ class Cains_Sandals(Item):
 
 class Captain_Crimsons_Whalers(Item):
     """ Captain Crimson's Whalers """
+    url = r'/en/artisan/blacksmith/recipe/captain-crimsons-whalers'
     type = 'feet'
     text = """
 	(2) Set:      Regenerates 20 Life per Second
@@ -4308,6 +4709,7 @@ class Captain_Crimsons_Whalers(Item):
 
 class Irontoe_Mudsputters(Item):
     """ Irontoe Mudsputters """
+    url = r'/en/item/irontoe-mudsputters-Unique_Boots_104_x1'
     type = 'feet'
     text = """
 
@@ -4319,6 +4721,7 @@ class Irontoe_Mudsputters(Item):
 
 class Bryners_Journey(Item):
     """ Bryner's Journey """
+    url = r'/en/item/bryners-journey-P6_Necro_Unique_Boots_22'
     type = 'feet'
     text = """
 	 Attacking with Bone Spikes has a 25% chance to cast a Bone Nova at the target location.
@@ -4329,6 +4732,7 @@ class Bryners_Journey(Item):
 
 class Fire_Walkers(Item):
     """ Fire Walkers """
+    url = r'/en/item/fire-walkers-Unique_Boots_007_p2'
     type = 'feet'
     text = """
 
@@ -4340,6 +4744,7 @@ class Fire_Walkers(Item):
 
 class Fire_Walkers(Item):
     """ Fire Walkers """
+    url = r'/en/item/fire-walkers-Unique_Boots_007_x1'
     type = 'feet'
     text = """
 
@@ -4350,6 +4755,7 @@ class Fire_Walkers(Item):
 
 class Lost_Boys(Item):
     """ Lost Boys """
+    url = r'/en/artisan/blacksmith/recipe/lost-boys'
     type = 'feet'
     text = """
 
@@ -4363,6 +4769,7 @@ class Lost_Boys(Item):
 
 class Ashearas_Tracks(Item):
     """ Asheara's Tracks """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-tracks'
     type = 'feet'
     text = """
 	(2) Set:      +30 Resistance to All Elements
@@ -4372,6 +4779,7 @@ class Ashearas_Tracks(Item):
 
 class Steuarts_Greaves(Item):
     """ Steuart's Greaves """
+    url = r'/en/item/steuarts-greaves-P6_Necro_Unique_Boots_21'
     type = 'feet'
     text = """
 
@@ -4384,6 +4792,7 @@ class Steuarts_Greaves(Item):
 
 class Steuarts_Greaves(Item):
     """ Steuart's Greaves """
+    url = r'/en/item/steuarts-greaves-P61_Necro_Unique_Boots_21'
     type = 'feet'
     text = """
 
@@ -4394,18 +4803,9 @@ class Steuarts_Greaves(Item):
     """
 
 
-class Zunimassas_Trail(Item):
-    """ Zunimassa's Trail """
-    type = 'feet'
-    text = """
-	(2) Set:      Your Fetish Army lasts until they die and the cooldown of your Fetish Army is reduced by 80%.
-	(4) Set:      You and your pets take 3% less damage for every Fetish you have alive.
-	(6) Set:      Enemies hit by your Mana spenders take 15,000% increased damage from your pets for 8 seconds.
-    """
-
-
 class Innas_Sandals(Item):
     """ Inna's Sandals """
+    url = r'/en/item/innas-sandals-P2_Unique_Boots_02'
     type = 'feet'
     text = """
 	(2) Set:      Increase the passive effect of your Mystic Ally and the base passive effect of your Mantra by 100%.
@@ -4414,8 +4814,20 @@ class Innas_Sandals(Item):
     """
 
 
+class Zunimassas_Trail(Item):
+    """ Zunimassa's Trail """
+    url = r'/en/item/zunimassas-trail-Unique_Boots_013_x1'
+    type = 'feet'
+    text = """
+	(2) Set:      Your Fetish Army lasts until they die and the cooldown of your Fetish Army is reduced by 80%.
+	(4) Set:      You and your pets take 3% less damage for every Fetish you have alive.
+	(6) Set:      Enemies hit by your Mana spenders take 15,000% increased damage from your pets for 8 seconds.
+    """
+
+
 class Natalyas_Bloody_Footprints(Item):
     """ Natalya's Bloody Footprints """
+    url = r'/en/item/natalyas-bloody-footprints-Unique_Boots_011_x1'
     type = 'feet'
     text = """
 	(2) Set:      Reduce the cooldown of Rain of Vengeance by 4 seconds when you hit with a Hatred-generating attack or Hatred-spending attack.
@@ -4424,20 +4836,20 @@ class Natalyas_Bloody_Footprints(Item):
     """
 
 
-class Nilfurs_Boast(Item):
-    """ Nilfur's Boast """
+class Blackthornes_Spurs(Item):
+    """ Blackthorne's Spurs """
+    url = r'/en/item/blackthornes-spurs-Unique_Boots_019_x1'
     type = 'feet'
     text = """
-
-	+[91 - 100] Resistance to All Elements
-	 Increase the damage of Meteor by 600%. When your Meteor hits 3 or fewer enemies, the damage is increased by 675%.
-	(Wizard Only)
-	[675 - 900]%
+	(2) Set:      +250 Vitality     Increases damage against elites by 10.0%
+	(3) Set:      Reduces damage from elites by 10.0%     +25% Extra Gold from Monsters
+	(4) Set:      You are immune to Desecrator, Molten, and Plagued monster ground effects.
     """
 
 
 class Ice_Climbers(Item):
     """ Ice Climbers """
+    url = r'/en/item/ice-climbers-Unique_Boots_008_x1'
     type = 'feet'
     text = """
 
@@ -4448,26 +4860,9 @@ class Ice_Climbers(Item):
     """
 
 
-class Sages_Journey(Item):
-    """ Sage's Journey """
-    type = 'feet'
-    text = """
-	(2) Set:      +35 Strength     +35 Dexterity     +35 Intelligence     +35 Vitality
-    """
-
-
-class Blackthornes_Spurs(Item):
-    """ Blackthorne's Spurs """
-    type = 'feet'
-    text = """
-	(2) Set:      +250 Vitality     Increases damage against elites by 10.0%
-	(3) Set:      Reduces damage from elites by 10.0%     +25% Extra Gold from Monsters
-	(4) Set:      You are immune to Desecrator, Molten, and Plagued monster ground effects.
-    """
-
-
-class Immortal_Kings_Stride(Set_Item):
+class Immortal_Kings_Stride(Item):
     """ Immortal King's Stride """
+    url = r'/en/item/immortal-kings-stride-Unique_Boots_012_x1'
     type = 'feet'
     text = """
 	(2) Set:      Call of the Ancients last until they die.
@@ -4476,8 +4871,31 @@ class Immortal_Kings_Stride(Set_Item):
     """
 
 
+class Nilfurs_Boast(Item):
+    """ Nilfur's Boast """
+    url = r'/en/item/nilfurs-boast-P61_Unique_Boots_01'
+    type = 'feet'
+    text = """
+
+	+[91 - 100] Resistance to All Elements
+	 Increase the damage of Meteor by 600%. When your Meteor hits 3 or fewer enemies, the damage is increased by 675%.
+	(Wizard Only)
+	[675 - 900]%
+    """
+
+
+class Sages_Journey(Item):
+    """ Sage's Journey """
+    url = r'/en/artisan/blacksmith/recipe/sages-journey'
+    type = 'feet'
+    text = """
+	(2) Set:      +35 Strength     +35 Dexterity     +35 Intelligence     +35 Vitality
+    """
+
+
 class Sages_Passage(Item):
     """ Sage's Passage """
+    url = r'/en/artisan/blacksmith/recipe/sages-passage'
     type = 'feet'
     text = """
 	(2) Set:      +250 Strength     +250 Dexterity     +250 Intelligence     +250 Vitality
@@ -4487,6 +4905,7 @@ class Sages_Passage(Item):
 
 class Jade_Harvesters_Swiftness(Item):
     """ Jade Harvester's Swiftness """
+    url = r'/en/item/jade-harvesters-swiftness-Unique_Boots_Set_09_x1'
     type = 'feet'
     text = """
 	(2) Set:      When Haunt lands on an enemy already affected by Haunt, it instantly deals 3500 seconds worth of Haunt damage.
@@ -4497,6 +4916,7 @@ class Jade_Harvesters_Swiftness(Item):
 
 class Zeal_of_the_Invoker(Item):
     """ Zeal of the Invoker """
+    url = r'/en/item/zeal-of-the-invoker-Unique_Boots_Set_12_x1'
     type = 'feet'
     text = """
 	(2) Set:      Your Thorns damage now hits all enemies in a 15 yard radius around you. Each time you hit an enemy with Punish, Slash, or block an attack your Thorns is increased by 350% for 2 seconds.
@@ -4507,6 +4927,7 @@ class Zeal_of_the_Invoker(Item):
 
 class Ashearas_Finders(Item):
     """ Asheara's Finders """
+    url = r'/en/artisan/blacksmith/recipe/ashearas-finders'
     type = 'feet'
     text = """
 	(2) Set:      +100 Resistance to All Elements
@@ -4517,6 +4938,7 @@ class Ashearas_Finders(Item):
 
 class The_Shadows_Heels(Item):
     """ The Shadow's Heels """
+    url = r'/en/item/the-shadows-heels-Unique_Boots_Set_14_x1'
     type = 'feet'
     text = """
 	(2) Set:      While equipped with a melee weapon, your damage is increased by 6000%.
@@ -4527,6 +4949,7 @@ class The_Shadows_Heels(Item):
 
 class Vyrs_Swaggering_Stance(Item):
     """ Vyr's Swaggering Stance """
+    url = r'/en/item/vyrs-swaggering-stance-Unique_Boots_Set_13_x1'
     type = 'feet'
     text = """
 	(2) Set:      Archon gains the effect of every rune.
@@ -4535,17 +4958,19 @@ class Vyrs_Swaggering_Stance(Item):
     """
 
 
-class Captain_Crimsons_Waders(Item):
-    """ Captain Crimson's Waders """
+class Cains_Travelers(Item):
+    """ Cain's Travelers """
+    url = r'/en/artisan/blacksmith/recipe/cains-travelers'
     type = 'feet'
     text = """
-	(2) Set:      Regenerates 6000 Life per Second     Reduces cooldown of all skills by 20.0%.     Reduces all resource costs by 20.0%.
-	(3) Set:      Damage dealt is increased by your percentage of cooldown reduction.     Damage taken is reduced by your percentage of cost reduction.
+	(2) Set:      Attack Speed Increased by 8.0%     +50% Experience. (5.0% at level 70)
+	(3) Set:      When a Greater Rift Keystone drops, there is a 25% chance for an extra one to drop.
     """
 
 
 class Foundation_of_the_Earth(Item):
     """ Foundation of the Earth """
+    url = r'/en/item/foundation-of-the-earth-Unique_Boots_Set_15_x1'
     type = 'feet'
     text = """
 	(2) Set:      Reduce the cooldown of Earthquake, Avalanche, Leap, and Ground Stomp by 1 second for every 30 Fury you spend with an attack.
@@ -4554,17 +4979,19 @@ class Foundation_of_the_Earth(Item):
     """
 
 
-class Cains_Travelers(Item):
-    """ Cain's Travelers """
+class Captain_Crimsons_Waders(Item):
+    """ Captain Crimson's Waders """
+    url = r'/en/artisan/blacksmith/recipe/captain-crimsons-waders'
     type = 'feet'
     text = """
-	(2) Set:      Attack Speed Increased by 8.0%     +50% Experience. (5.0% at level 70)
-	(3) Set:      When a Greater Rift Keystone drops, there is a 25% chance for an extra one to drop.
+	(2) Set:      Regenerates 6000 Life per Second     Reduces cooldown of all skills by 20.0%.     Reduces all resource costs by 20.0%.
+	(3) Set:      Damage dealt is increased by your percentage of cooldown reduction.     Damage taken is reduced by your percentage of cost reduction.
     """
 
 
 class Heel_of_Savages(Item):
     """ Heel of Savages """
+    url = r'/en/item/heel-of-savages-P68_Unique_Boots_Set_05'
     type = 'feet'
     text = """
 	(2) Set:      Double the effectiveness of shouts. You deal double damage to Feared, Frozen, or Stunned enemies.
@@ -4573,9 +5000,9 @@ class Heel_of_Savages(Item):
     """
 
 
-class Raekors_Striders(Set_Item):
+class Raekors_Striders(Item):
     """ Raekor's Striders """
-    set = The_Legacy_of_Raekor
+    url = r'/en/item/raekors-striders-Unique_Boots_Set_05_x1'
     type = 'feet'
     text = """
 	(2) Set:      Furious Charge refunds a charge if it hits only 1 enemy.
@@ -4586,6 +5013,7 @@ class Raekors_Striders(Set_Item):
 
 class Sabaton_of_the_Wastes(Item):
     """ Sabaton of the Wastes """
+    url = r'/en/item/sabaton-of-the-wastes-Unique_Boots_Set_01_p2'
     type = 'feet'
     text = """
 	(2) Set:      Increase the damage per second of Rend by 500% and its duration to 15 seconds.
@@ -4596,6 +5024,7 @@ class Sabaton_of_the_Wastes(Item):
 
 class Rolands_Stride(Item):
     """ Roland's Stride """
+    url = r'/en/item/rolands-stride-Unique_Boots_Set_01_p1'
     type = 'feet'
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
@@ -4606,6 +5035,7 @@ class Rolands_Stride(Item):
 
 class Foundation_of_the_Light(Item):
     """ Foundation of the Light """
+    url = r'/en/item/foundation-of-the-light-Unique_Boots_Set_03_p3'
     type = 'feet'
     text = """
 	(2) Set:      Every use of Blessed Hammer that hits an enemy reduces the cooldown of Falling Sword and Provoke by 1 second.
@@ -4616,6 +5046,7 @@ class Foundation_of_the_Light(Item):
 
 class Greaves_of_Valor(Item):
     """ Greaves of Valor """
+    url = r'/en/item/greaves-of-valor-P67_Unique_Boots_Set_01'
     type = 'feet'
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
@@ -4626,6 +5057,7 @@ class Greaves_of_Valor(Item):
 
 class Sabatons_of_Akkhan(Item):
     """ Sabatons of Akkhan """
+    url = r'/en/item/sabatons-of-akkhan-Unique_Boots_Set_10_x1'
     type = 'feet'
     text = """
 	(2) Set:      Reduce the cost of all abilities by 50% while Akarat's Champion is active.
@@ -4636,6 +5068,7 @@ class Sabatons_of_Akkhan(Item):
 
 class Hell_Walkers(Item):
     """ Hell Walkers """
+    url = r'/en/item/hell-walkers-Unique_Boots_Set_03_p2'
     type = 'feet'
     text = """
 	(2) Set:      Your generators generate 2 additional Hatred and 1 Discipline.
@@ -4646,6 +5079,7 @@ class Hell_Walkers(Item):
 
 class Marauders_Treads(Item):
     """ Marauder's Treads """
+    url = r'/en/item/marauders-treads-Unique_Boots_Set_07_x1'
     type = 'feet'
     text = """
 	(2) Set:      Companion calls all companions to your side.
@@ -4654,8 +5088,20 @@ class Marauders_Treads(Item):
     """
 
 
+class Ulianas_Destiny(Item):
+    """ Uliana's Destiny """
+    url = r'/en/item/ulianas-destiny-Unique_Boots_Set_01_p3'
+    type = 'feet'
+    text = """
+	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
+	(4) Set:      Your Seven-Sided Strike deals 777% its total damage with each hit.
+	(6) Set:      Increase the damage of your Exploding Palm by 9000% and your Seven-Sided Strike detonates your Exploding Palm.
+    """
+
+
 class Weaves_of_Justice(Item):
     """ Weaves of Justice """
+    url = r'/en/item/weaves-of-justice-P67_Unique_Boots_Set_02'
     type = 'feet'
     text = """
 	(2) Set:      Sweeping Wind gains the effect of every rune, and movement speed is increased by 5% for each stack of Sweeping Wind.
@@ -4666,6 +5112,7 @@ class Weaves_of_Justice(Item):
 
 class Eight_Demon_Boots(Item):
     """ Eight-Demon Boots """
+    url = r'/en/item/eightdemon-boots-Unique_Boots_Set_08_x1'
     type = 'feet'
     text = """
 	(2) Set:      Your Spirit Generators have 25% increased attack speed and 400% increased damage.
@@ -4674,18 +5121,9 @@ class Eight_Demon_Boots(Item):
     """
 
 
-class Ulianas_Destiny(Item):
-    """ Uliana's Destiny """
-    type = 'feet'
-    text = """
-	(2) Set:      Every third hit of your Spirit Generators applies Exploding Palm.
-	(4) Set:      Your Seven-Sided Strike deals 777% its total damage with each hit.
-	(6) Set:      Increase the damage of your Exploding Palm by 9000% and your Seven-Sided Strike detonates your Exploding Palm.
-    """
-
-
 class Striders_of_Destiny(Item):
     """ Striders of Destiny """
+    url = r'/en/item/striders-of-destiny-Unique_Boots_Set_02_p2'
     type = 'feet'
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
@@ -4694,18 +5132,9 @@ class Striders_of_Destiny(Item):
     """
 
 
-class Typhons_Tarsus(Item):
-    """ Typhon's Tarsus """
-    type = 'feet'
-    text = """
-	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
-	(4) Set:      Damage taken is reduced by 8% for each Hydra head alive. Each time you take damage, a head dies. A head cannot die more than once every 2 seconds.
-	(6) Set:      Hydras deal 1300% increased damage for each Hydra head alive.
-    """
-
-
 class Firebirds_Tarsi(Item):
     """ Firebird's Tarsi """
+    url = r'/en/item/firebirds-tarsi-Unique_Boots_Set_06_x1'
     type = 'feet'
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
@@ -4714,8 +5143,20 @@ class Firebirds_Tarsi(Item):
     """
 
 
+class Typhons_Tarsus(Item):
+    """ Typhon's Tarsus """
+    url = r'/en/item/typhons-tarsus-P68_Unique_Boots_Set_03'
+    type = 'feet'
+    text = """
+	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
+	(4) Set:      Damage taken is reduced by 8% for each Hydra head alive. Each time you take damage, a head dies. A head cannot die more than once every 2 seconds.
+	(6) Set:      Hydras deal 1300% increased damage for each Hydra head alive.
+    """
+
+
 class Helltooth_Greaves(Item):
     """ Helltooth Greaves """
+    url = r'/en/item/helltooth-greaves-Unique_Boots_Set_16_x1'
     type = 'feet'
     text = """
 	(2) Set:      Enemies hit by your primary skills, Acid Cloud, Firebats, Zombie Charger, Zombie Dogs, Gargantuan, Grasp of the Dead, Piranhas, or Wall of Death are afflicted by Necrosis, becoming Slowed and taking 3000% weapon damage every second for 10 seconds.
@@ -4726,6 +5167,7 @@ class Helltooth_Greaves(Item):
 
 class Arachyrs_Stride(Item):
     """ Arachyr's Stride """
+    url = r'/en/item/arachyrs-stride-Unique_Boots_Set_02_p3'
     type = 'feet'
     text = """
 	(2) Set:      Summon a permanent Spider Queen who leaves behind webs that deal 4000% weapon damage over 5 seconds and Slows enemies. The Spider Queen is commanded to move to where you cast your Corpse Spiders.
@@ -4736,6 +5178,7 @@ class Arachyrs_Stride(Item):
 
 class Mundunugus_Dance(Item):
     """ Mundunugu's Dance """
+    url = r'/en/item/mundunugus-dance-P68_Unique_Boots_Set_04'
     type = 'feet'
     text = """
 	(2) Set:      Big Bad Voodoo now follows you and lasts twice as long.
@@ -4746,6 +5189,7 @@ class Mundunugus_Dance(Item):
 
 class Pestilence_Battle_Boots(Item):
     """ Pestilence Battle Boots """
+    url = r'/en/item/pestilence-battle-boots-P6_Necro_Set_4_Boots'
     type = 'feet'
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
@@ -4756,6 +5200,7 @@ class Pestilence_Battle_Boots(Item):
 
 class Inariuss_Perseverance(Item):
     """ Inarius's Perseverance """
+    url = r'/en/item/inariuss-perseverance-P6_Necro_Set_3_Boots'
     type = 'feet'
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
@@ -4766,6 +5211,7 @@ class Inariuss_Perseverance(Item):
 
 class TragOuls_Stalwart_Greaves(Item):
     """ Trag'Oul's Stalwart Greaves """
+    url = r'/en/item/tragouls-stalwart-greaves-P6_Necro_Set_2_Boots'
     type = 'feet'
     text = """
 	(2) Set:      Blood Rush gains the effect of every rune.
@@ -4776,6 +5222,7 @@ class TragOuls_Stalwart_Greaves(Item):
 
 class Rathmas_Ossified_Sabatons(Item):
     """ Rathma's Ossified Sabatons """
+    url = r'/en/item/rathmas-ossified-sabatons-P6_Necro_Set_1_Boots'
     type = 'feet'
     text = """
 	(2) Set:      Your minions have a chance to reduce the cooldown of Army of the Dead by 1 second each time they deal damage.
@@ -4786,6 +5233,7 @@ class Rathmas_Ossified_Sabatons(Item):
 
 class Lost_Time(Item):
     """ Lost Time """
+    url = r'/en/item/lost-time-P61_Unique_Phylactery_01'
     type = 'phylactery'
     text = """
 
@@ -4800,6 +5248,7 @@ class Lost_Time(Item):
 
 class Iron_Rose(Item):
     """ Iron Rose """
+    url = r'/en/item/iron-rose-P65_Unique_Phylactery_04'
     type = 'phylactery'
     text = """
 
@@ -4816,6 +5265,7 @@ class Iron_Rose(Item):
 
 class Legers_Disdain(Item):
     """ Leger's Disdain """
+    url = r'/en/item/legers-disdain-P61_Unique_Phylactery_03'
     type = 'phylactery'
     text = """
 
@@ -4832,6 +5282,7 @@ class Legers_Disdain(Item):
 
 class Bone_Ringer(Item):
     """ Bone Ringer """
+    url = r'/en/item/bone-ringer-P6_Unique_Phylactery_02'
     type = 'phylactery'
     text = """
 
@@ -4848,6 +5299,7 @@ class Bone_Ringer(Item):
 
 class Funerary_Pick(Item):
     """ Funerary Pick """
+    url = r'/en/item/funerary-pick-P6_Unique_Scythe1H_01'
     type = 'scythe-1h'
     text = """
 
@@ -4861,6 +5313,7 @@ class Funerary_Pick(Item):
 
 class TragOuls_Corroded_Fang(Item):
     """ Trag'Oul's Corroded Fang """
+    url = r'/en/item/tragouls-corroded-fang-P6_Unique_Scythe1H_02'
     type = 'scythe-1h'
     text = """
 
@@ -4873,6 +5326,7 @@ class TragOuls_Corroded_Fang(Item):
 
 class Scythe_of_the_Cycle(Item):
     """ Scythe of the Cycle """
+    url = r'/en/item/scythe-of-the-cycle-P61_Unique_Scythe1H_03'
     type = 'scythe-1h'
     text = """
 
@@ -4885,6 +5339,7 @@ class Scythe_of_the_Cycle(Item):
 
 class Jesseth_Skullscythe(Item):
     """ Jesseth Skullscythe """
+    url = r'/en/item/jesseth-skullscythe-P6_Unique_Scythe1H_04'
     type = 'scythe-1h'
     text = """
 	(2) Set:      When the target of your Command Skeletons dies, your skeletons are automatically commanded to attack a nearby target.     While your skeletons are commanded to attack a target, all of your minions deal 400% increased damage.
@@ -4893,6 +5348,7 @@ class Jesseth_Skullscythe(Item):
 
 class Reilenas_Shadowhook(Item):
     """ Reilena's Shadowhook """
+    url = r'/en/item/reilenas-shadowhook-P6_Unique_Scythe2H_03'
     type = 'scythe-2h'
     text = """
 
@@ -4905,6 +5361,7 @@ class Reilenas_Shadowhook(Item):
 
 class Maltorius_Petrified_Spike(Item):
     """ Maltorius' Petrified Spike """
+    url = r'/en/item/maltorius-petrified-spike-P61_Unique_Scythe2H_01'
     type = 'scythe-2h'
     text = """
 
@@ -4919,6 +5376,7 @@ class Maltorius_Petrified_Spike(Item):
 
 class Bloodtide_Blade(Item):
     """ Bloodtide Blade """
+    url = r'/en/item/bloodtide-blade-P65_Unique_Scythe2H_02'
     type = 'scythe-2h'
     text = """
 
@@ -4933,6 +5391,7 @@ class Bloodtide_Blade(Item):
 
 class Nayrs_Black_Death(Item):
     """ Nayr's Black Death """
+    url = r'/en/item/nayrs-black-death-P61_Unique_Scythe2H_04'
     type = 'scythe-2h'
     text = """
 
@@ -4941,3 +5400,300 @@ class Nayrs_Black_Death(Item):
 	(Necromancer Only)
 	[75 - 100]%
     """
+
+
+class Salvation(Item):
+    """ Salvation """
+    url = r'/en/item/salvation-Unique_CruShield_108_x1'
+    type = 'crusader-shield'
+    text = """
+
+	+11% Chance to Block
+	 Blocked attacks heal you and your allies for 23% of the amount blocked.
+	(Crusader Only)
+	[20 - 30]%
+    """
+
+
+class Shield_of_Fury(Item):
+    """ Shield of Fury """
+    url = r'/en/item/shield-of-fury-P61_Unique_Shield_106_x1'
+    type = 'crusader-shield'
+    text = """
+	 Each time an enemy takes damage from your Heaven's Fury, it increases the damage they take from your Heaven's Fury by 26%. This effect stacks up to 20 times.
+	(Crusader Only)
+	[25 - 30]%
+    """
+
+
+class The_Final_Witness(Item):
+    """ The Final Witness """
+    url = r'/en/item/the-final-witness-Unique_CruShield_107_x1'
+    type = 'crusader-shield'
+    text = """
+	 Shield Glare now hits all enemies around you.
+	(Crusader Only)
+    """
+
+
+class Hallowed_Bulwark(Item):
+    """ Hallowed Bulwark """
+    url = r'/en/item/hallowed-bulwark-Unique_CruShield_103_x1'
+    type = 'crusader-shield'
+    text = """
+	 Iron Skin also increases your Block Amount by 52%.
+	(Crusader Only)
+	[45 - 60]%
+    """
+
+
+class Jekangbord(Item):
+    """ Jekangbord """
+    url = r'/en/item/jekangbord-P65_Unique_CruShield_102_x1'
+    type = 'crusader-shield'
+    text = """
+	 Blessed Shield ricochets to 6 additional enemies and has its damage increased by 379%.
+	[300 - 400]%
+    """
+
+
+class Sublime_Conviction(Item):
+    """ Sublime Conviction """
+    url = r'/en/item/sublime-conviction-Unique_CruShield_106_x1'
+    type = 'crusader-shield'
+    text = """
+
+	+11% Chance to Block
+	 When you block, you have up to a 16% chance to Stun the attacker for 1.5 seconds based on your current Wrath.
+	(Crusader Only)
+	[15 - 20]%
+    """
+
+
+class Akarats_Awakening(Item):
+    """ Akarat's Awakening """
+    url = r'/en/item/akarats-awakening-Unique_CruShield_104_x1'
+    type = 'crusader-shield'
+    text = """
+
+	+11% Chance to Block
+	 Every successful block has a 21% chance to reduce all cooldowns by 1 second.
+	(Crusader Only)
+	[20 - 25]%
+    """
+
+
+class Hellskull(Item):
+    """ Hellskull """
+    url = r'/en/item/hellskull-Unique_CruShield_105_x1'
+    type = 'crusader-shield'
+    text = """
+	 Gain 10% increased damage while wielding a two-handed weapon.
+	(Crusader Only)
+    """
+
+
+class Piro_Marella(Item):
+    """ Piro Marella """
+    url = r'/en/artisan/blacksmith/recipe/piro-marella'
+    type = 'crusader-shield'
+    text = """
+
+	Reduces the Wrath cost of Shield Bash by [40 - 50]%.
+    """
+
+
+class Guard_of_Johanna(Item):
+    """ Guard of Johanna """
+    url = r'/en/item/guard-of-johanna-Unique_Shield_103_x1'
+    type = 'crusader-shield'
+    text = """
+	 Blessed Hammer damage is increased by 204% for the first 3 enemies it hits.
+	(Crusader Only)
+	[200 - 250]%
+    """
+
+
+class Shield_of_the_Steed(Item):
+    """ Shield of the Steed """
+    url = r'/en/item/shield-of-the-steed-P4_Unique_Shield_Set_01_x1'
+    type = 'crusader-shield'
+    text = """
+	(2) Set:      Increases the duration of Steed Charge by 2 seconds. In addition, killing an enemy reduces the cooldown of Steed Charge by 1 second.     Gain 100% increased damage while using Steed Charge and for 5 seconds after it ends.
+    """
+
+
+class Frydehrs_Wrath(Item):
+    """ Frydehr's Wrath """
+    url = r'/en/item/frydehrs-wrath-P61_CruShield_norm_unique_01'
+    type = 'crusader-shield'
+    text = """
+	 Condemn has no cooldown and has its damage increased by 727%, but instead costs 40 Wrath.
+	[600 - 800]%
+    """
+
+
+class Unrelenting_Phalanx(Item):
+    """ Unrelenting Phalanx """
+    url = r'/en/item/unrelenting-phalanx-P1_CruShield_norm_unique_02'
+    type = 'crusader-shield'
+    text = """
+	 Increases Phalanx Damage by [45 - 60]%
+	 Phalanx now casts twice.
+	(Crusader Only)
+    """
+
+
+class Covens_Criterion(Item):
+    """ Coven's Criterion """
+    url = r'/en/item/covens-criterion-Unique_Shield_107_x1'
+    type = 'shield'
+    text = """
+
+	+[626 - 750] Vitality
+
+	+11% Chance to Block
+	 You take 52% less damage from blocked attacks.
+	[45 - 60]%
+    """
+
+
+class Denial(Item):
+    """ Denial """
+    url = r'/en/item/denial-P61_Unique_Shield_007'
+    type = 'shield'
+    text = """
+	 Each enemy hit by your Sweep Attack increases the damage of your next Sweep Attack by 109%, stacking up to 5 times.
+	(Crusader Only)
+	[100 - 125]%
+    """
+
+
+class Wall_of_Bone(Item):
+    """ Wall of Bone """
+    url = r'/en/artisan/blacksmith/recipe/wall-of-bone'
+    type = 'shield'
+    text = """
+
+	+[74 - 91] Vitality
+
+	+[11 - 20] Resistance to All Elements
+
+	[20 - 30]% chance to be protected by a shield of bones when you are hit.
+    """
+
+
+class Eberli_Charo(Item):
+    """ Eberli Charo """
+    url = r'/en/item/eberli-charo-Unique_Shield_102_x1'
+    type = 'shield'
+    text = """
+	 Reduces the cooldown of Heaven's Fury by 46%.
+	(Crusader Only)
+	[45 - 50]%
+    """
+
+
+class Defender_of_Westmarch(Item):
+    """ Defender of Westmarch """
+    url = r'/en/item/defender-of-westmarch-Unique_Shield_101_p2'
+    type = 'shield'
+    text = """
+
+	+11% Chance to Block
+	 Blocks have a chance of summoning a charging wolf that deals 927% weapon damage to all enemies it passes through.
+	[800 - 1000]%
+    """
+
+
+class Freeze_of_Deflection(Item):
+    """ Freeze of Deflection """
+    url = r'/en/item/freeze-of-deflection-Unique_Shield_004_x1'
+    type = 'shield'
+    text = """
+	 Blocking an attack has a chance to Freeze the attacker for 0.8 seconds.
+	[0.5 - 1.5]
+    """
+
+
+class VoToyias_Spiker(Item):
+    """ Vo'Toyias Spiker """
+    url = r'/en/item/votoyias-spiker-Unique_Shield_104_x1'
+    type = 'shield'
+    text = """
+
+	+[5334 - 7696] Thorns Damage
+	 Enemies affected by Provoke take double damage from Thorns.
+	(Crusader Only)
+    """
+
+
+class Lidless_Wall(Item):
+    """ Lidless Wall """
+    url = r'/en/item/lidless-wall-Unique_Shield_008_x1'
+    type = 'shield'
+    text = """
+
+	+[120 - 150] Maximum Mana
+    """
+
+
+class Ivory_Tower(Item):
+    """ Ivory Tower """
+    url = r'/en/item/ivory-tower-P2_Unique_Shield_002'
+    type = 'shield'
+    text = """
+
+	+[626 - 750] Vitality
+	 Blocks release forward a Fires of Heaven.
+	(Crusader Only)
+    """
+
+
+class Stormshield(Item):
+    """ Stormshield """
+    url = r'/en/item/stormshield-Unique_Shield_009_x1'
+    type = 'shield'
+    text = """
+
+	Reduces damage from melee attacks by [25.0 - 30.0]%
+    """
+
+
+class Hallowed_Defender(Item):
+    """ Hallowed Defender """
+    url = r'/en/artisan/blacksmith/recipe/hallowed-defender'
+    type = 'shield'
+    text = """
+	(2) Set:      +40 Resistance to All Elements     Attack Speed Increased by 5.0%
+    """
+
+
+class Jesseth_Skullshield(Item):
+    """ Jesseth Skullshield """
+    url = r'/en/item/jesseth-skullshield-P6_Unique_Shield_01'
+    type = 'shield'
+    text = """
+	(2) Set:      When the target of your Command Skeletons dies, your skeletons are automatically commanded to attack a nearby target.     While your skeletons are commanded to attack a target, all of your minions deal 400% increased damage.
+    """
+
+
+class Wall_of_Man(Item):
+    """ Wall of Man """
+    url = r'/en/artisan/blacksmith/recipe/wall-of-man'
+    type = 'shield'
+    text = """
+
+	[20 - 30]% chance to be protected by a shield of bones when you are hit.
+    """
+
+
+class Hallowed_Barricade(Item):
+    """ Hallowed Barricade """
+    url = r'/en/artisan/blacksmith/recipe/hallowed-barricade'
+    type = 'shield'
+    text = """
+	(2) Set:      +100 Resistance to All Elements     Attack Speed Increased by 10.0%
+    """
+
+

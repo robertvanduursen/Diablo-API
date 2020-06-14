@@ -1,9 +1,9 @@
 import sys
 sys.path.append("..\..")
-from d3api.datatypes import Skill
+from d3api.datatypes import Skill as _skill
 
 
-class Punish(Skill):
+class Punish(_skill):
     """ Punish """
     category = "active"
     description = """Generate: 5 Wrath per attack
@@ -33,7 +33,7 @@ Requires Shield"""
 """
 
 
-class Shield_Bash(Skill):
+class Shield_Bash(_skill):
     """ Shield Bash """
     category = "active"
     description = """Cost: 30 Wrath
@@ -63,7 +63,7 @@ Requires Shield"""
 """
 
 
-class Slash(Skill):
+class Slash(_skill):
     """ Slash """
     category = "active"
     description = """Generate: 5 Wrath per attack
@@ -91,7 +91,7 @@ Ignite the air in front of you, dealing 230% weapon damage as Fire."""
 """
 
 
-class Shield_Glare(Skill):
+class Shield_Glare(_skill):
     """ Shield Glare """
     category = "active"
     description = """Cooldown: 12 seconds
@@ -121,7 +121,7 @@ Requires Shield"""
 """
 
 
-class Sweep_Attack(Skill):
+class Sweep_Attack(_skill):
     """ Sweep Attack """
     category = "active"
     description = """Cost: 20 Wrath
@@ -153,7 +153,7 @@ Sweep Attack's damage turns into Holy.
 """
 
 
-class Iron_Skin(Skill):
+class Iron_Skin(_skill):
     """ Iron Skin """
     category = "active"
     description = """Cooldown: 30 seconds
@@ -181,7 +181,7 @@ Your skin turns to iron, absorbing 50% of all incoming damage for 4 seconds."""
 """
 
 
-class Provoke(Skill):
+class Provoke(_skill):
     """ Provoke """
     category = "active"
     description = """Cooldown: 20 seconds
@@ -210,7 +210,7 @@ Taunt all nearby enemies and instantly generate an additional 5 Wrath for every 
 """
 
 
-class Smite(Skill):
+class Smite(_skill):
     """ Smite """
     category = "active"
     description = """Generate: 5 Wrath per attack
@@ -238,7 +238,7 @@ Smite enemies up to 30 yards away with holy chains that deal 175% weapon damage 
 """
 
 
-class Blessed_Hammer(Skill):
+class Blessed_Hammer(_skill):
     """ Blessed Hammer """
     category = "active"
     description = """Cost: 10 Wrath
@@ -266,7 +266,7 @@ Summon a blessed hammer that spins around you, dealing 320% weapon damage as Hol
 """
 
 
-class Steed_Charge(Skill):
+class Steed_Charge(_skill):
     """ Steed Charge """
     category = "active"
     description = """Cooldown: 16 seconds
@@ -294,7 +294,7 @@ Mount a celestial war horse that allows you to ride through enemies unhindered f
 """
 
 
-class Laws_of_Valor(Skill):
+class Laws_of_Valor(_skill):
     """ Laws of Valor """
     category = "active"
     description = """Cooldown: 30 seconds
@@ -318,7 +318,7 @@ Only one Law may be active at a time."""
 		 Active: Empowering the Law also increases your Critical Hit Damage by 50%.
 
 	 Unstoppable Force
-		 Active: Empowering the law also reduces the Wrath cost of all skills by 50% for 5 seconds.
+		 Active: Empowering the law also reduces the Wrath cost of all _skills by 50% for 5 seconds.
 
 	 Answered Prayer
 		 Active: While the Law is empowered, each enemy killed increases the duration by 1 second, up to a maximum of 10 seconds of increased time.
@@ -326,7 +326,7 @@ Only one Law may be active at a time."""
 """
 
 
-class Justice(Skill):
+class Justice(_skill):
     """ Justice """
     category = "active"
     description = """Generate: 5 Wrath per attack
@@ -354,7 +354,7 @@ Hurl a hammer of justice at your enemies, dealing 245% weapon damage."""
 """
 
 
-class Consecration(Skill):
+class Consecration(_skill):
     """ Consecration """
     category = "active"
     description = """Cooldown: 30 seconds
@@ -384,7 +384,7 @@ The duration of the consecration is reduced to 5 seconds.
 """
 
 
-class Laws_of_Justice(Skill):
+class Laws_of_Justice(_skill):
     """ Laws of Justice """
     category = "active"
     description = """Cooldown: 30 seconds
@@ -416,7 +416,7 @@ Only one Law may be active at a time."""
 """
 
 
-class Falling_Sword(Skill):
+class Falling_Sword(_skill):
     """ Falling Sword """
     category = "active"
     description = """Cost: 25 Wrath
@@ -447,7 +447,7 @@ This ability does not start its cooldown until after its effects expire."""
 """
 
 
-class Blessed_Shield(Skill):
+class Blessed_Shield(_skill):
     """ Blessed Shield """
     category = "active"
     description = """Cost: 20 Wrath
@@ -477,7 +477,7 @@ Requires Shield"""
 """
 
 
-class Condemn(Skill):
+class Condemn(_skill):
     """ Condemn """
     category = "active"
     description = """Cooldown: 15 seconds
@@ -505,7 +505,7 @@ Build up a massive explosion, unleashing it after 3 seconds, dealing 1160% weapo
 """
 
 
-class Judgment(Skill):
+class Judgment(_skill):
     """ Judgment """
     category = "active"
     description = """Cooldown: 20 seconds
@@ -533,7 +533,7 @@ Pass judgment on all enemies within 20 yards of the targeted location, Immobiliz
 """
 
 
-class Laws_of_Hope(Skill):
+class Laws_of_Hope(_skill):
     """ Laws of Hope """
     category = "active"
     description = """Cooldown: 30 seconds
@@ -565,7 +565,7 @@ Only one Law may be active at a time."""
 """
 
 
-class Akarats_Champion(Skill):
+class Akarats_Champion(_skill):
     """ Akarat's Champion """
     category = "active"
     description = """Cooldown: 90 seconds
@@ -594,7 +594,7 @@ class Akarats_Champion(Skill):
     """
 
 
-class Fist_of_the_Heavens(Skill):
+class Fist_of_the_Heavens(_skill):
     """ Fist of the Heavens """
     category = "active"
     description = """Cost: 30 Wrath
@@ -624,7 +624,7 @@ The explosion creates 6 piercing charged bolts that crawl outward, dealing 185% 
 """
 
 
-class Phalanx(Skill):
+class Phalanx(_skill):
     """ Phalanx """
     category = "active"
     description = """Cost: 30 Wrath
@@ -658,7 +658,7 @@ The Avatars can only be summoned once every 30 seconds.
 """
 
 
-class Heavens_Fury(Skill):
+class Heavens_Fury(_skill):
 
 
     """ Heaven's Fury """
@@ -689,7 +689,7 @@ class Heavens_Fury(Skill):
     """
 
 
-class Bombardment(Skill):
+class Bombardment(_skill):
     """ Bombardment """
     category = "active"
     description = """Cooldown: 60 seconds

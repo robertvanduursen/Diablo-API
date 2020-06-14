@@ -16,8 +16,14 @@ class Class_Info:
 
     def get_active_skills(self):
 
+
         from lxml import html
         import requests
+
+        print('""" {} active skills """'.format(self.className))
+
+        print('from datatypes import Active')
+        print('from datatypes import Rune')
 
         url = r'https://us.diablo3.com/en/class/{}/active/'.format(self.className)
         print(url)
@@ -40,30 +46,48 @@ class Class_Info:
             desc = tree.xpath(_test)
             desc = desc[0].text_content().strip()
 
-            template = '''
-            class {name}(Skill):
+
+            rune_template = '''
+            class {name}(Rune):
                 """ {title} """
-                category = "active"
                 description = """{desc}"""
-                url = r'{url}'
+            '''
 
-            '''.format(name=name.replace(' ', '_'), url=url, title=name, desc=desc)
-
-            print(template.lstrip())
-
-            print('"""')
+            # RUNES
+            rune_names = []
+            # print('"""')
             _test = '//*[@class="table rune-list"]'
             runes = tree.xpath(_test)
             for y in runes:
                 rune = y.xpath('table[1]/tbody[1]//*[@class="rune-details"]')  #
                 for data in rune:
-                    name = data.xpath('h3[1]')
-                    print('\t', name[0].text_content())
-                    desc = data.xpath('div[2]')
-                    print('\t\t', desc[0].text_content())
-                    print()
-            print('"""')
-            print()
+                    rune_name = data.xpath('h3[1]')
+                    rune_name = rune_name[0].text_content()
+                    # print('\t', rune_name[0].text_content())
+                    rune_desc = data.xpath('div[2]')
+                    rune_desc = rune_desc[0].text_content()
+                    # print('\t\t', rune_desc[0].text_content())
+                    # print()
+                    rune_cls_name = re.sub(r"[- ]", '_', re.sub(r"['.]", '', rune_name))
+                    rune_names.append(rune_cls_name)
+                    print(rune_template.format(name=rune_cls_name, title=rune_name, desc=rune_desc).lstrip())
+            # print('"""')
+            # print()
+
+            skill_class_name = re.sub(r"[- ]", '_', re.sub(r"['.]", '', name))
+            template = '''
+            class {name}(Active):
+                """ {title} """
+                category = "active"
+                description = """{desc}"""
+                url = r'{url}'
+                runes = [{runes}]
+
+            '''.format(name=skill_class_name, url=url, title=name, desc=desc, runes=','.join(rune_names))
+
+            print(template.lstrip())
+
+
 
         print(total)
         return True
@@ -79,6 +103,8 @@ class Class_Info:
         tree = html.fromstring(page.content)
         _test = '//*[@class="skill-details"]'
         skills = tree.xpath(_test)
+
+        print('from datatypes import Passive')
 
         for idx, skill in enumerate(skills):
             title = skill.xpath('h3[1]/a[1]')
@@ -96,7 +122,7 @@ class Class_Info:
             part_name = 'passive'
 
             template = '''
-            class {name}:
+            class {name}(Passive):
                 """ {title} """
                 category = "{part_name}"
                 description = """{desc}"""
@@ -104,7 +130,7 @@ class Class_Info:
     
             '''.format(name=name.replace(' ', '_'), url=url, part_name=part_name, title=name, desc=desc)
 
-            print(template)
+            print(template.lstrip())
         return True
 
 
@@ -135,6 +161,8 @@ class Armour_miner:
         'phylactery',
         'scythe-1h',
         'scythe-2h',
+        'crusader-shield',
+        'shield',
 
         # 'jewelry',
         # 'off-hand',
@@ -148,11 +176,13 @@ class Armour_miner:
         'mighty-weapon-1h',
         'mace-1h',
         'sword-1h',
+        'flail-1h',
         'spear',
         'dagger',
 
         'axe-2h',
         'mighty-weapon-2h',
+        'flail-2h',
         'mace-2h',
         'sword-2h',
         'polearm',
@@ -349,4 +379,4 @@ if __name__ == '__main__':
     # barbarian = Armour_miner(Classes.CRUSADER.value)
     # barbarian.get_items()
 
-    print(Class_Info(Classes.CRUSADER.value).get_active_skills())
+    print(Class_Info(Classes.CRUSADER.value).get_passives())
