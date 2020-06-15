@@ -1,7 +1,3 @@
-
-from activeSkills import *
-from passiveSkills import *
-
 # print(globals().items())
 
 

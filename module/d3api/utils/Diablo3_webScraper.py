@@ -68,13 +68,13 @@ class Class_Info:
                     rune_desc = rune_desc[0].text_content()
                     # print('\t\t', rune_desc[0].text_content())
                     # print()
-                    rune_cls_name = re.sub(r"[- ]", '_', re.sub(r"['.]", '', rune_name))
+                    rune_cls_name = re.sub(r"[-! ]", '_', re.sub(r"['.]", '', rune_name))
                     rune_names.append(rune_cls_name)
                     print(rune_template.format(name=rune_cls_name, title=rune_name, desc=rune_desc).lstrip())
             # print('"""')
             # print()
 
-            skill_class_name = re.sub(r"[- ]", '_', re.sub(r"['.]", '', name))
+            skill_class_name = re.sub(r"[-! ]", '_', re.sub(r"['.]", '', name))
             template = '''
             class {name}(Active):
                 """ {title} """
@@ -120,6 +120,7 @@ class Class_Info:
             desc = desc[0].text_content().strip()
 
             part_name = 'passive'
+            passive_class_name = re.sub(r"[- ]", '_', re.sub(r"['.]", '', name))
 
             template = '''
             class {name}(Passive):
@@ -128,7 +129,7 @@ class Class_Info:
                 description = """{desc}"""
                 url = r'{url}'
     
-            '''.format(name=name.replace(' ', '_'), url=url, part_name=part_name, title=name, desc=desc)
+            '''.format(name=passive_class_name, url=url, part_name=part_name, title=name, desc=desc)
 
             print(template.lstrip())
         return True
@@ -379,4 +380,5 @@ if __name__ == '__main__':
     # barbarian = Armour_miner(Classes.CRUSADER.value)
     # barbarian.get_items()
 
-    print(Class_Info(Classes.CRUSADER.value).get_passives())
+    # print(Class_Info(Classes.WIZARD.value).get_passives())
+    print(Class_Info(Classes.WIZARD.value).get_active_skills())
