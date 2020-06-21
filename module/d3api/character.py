@@ -77,8 +77,8 @@ class Character(object):
 
     @property
     def items(self):
-        for item in self.__dict__.items():
-            print(item)
+        # for item in self.__dict__.items():
+        #     print(item)
         return [item for item in self.__dict__.values() if item is not None]
 
 
@@ -89,10 +89,12 @@ class Character(object):
             # check for empty slot
             if not self.ring_left:
                 self.__dict__['ring_left'] = item()
-                print('equipped ring:', self.__dict__['ring_left'])
+                print('equipped left ring:', self.__dict__['ring_left'])
             elif self.ring_left and not self.ring_right:
                 self.__dict__['ring_right'] = item()
-                print('equipped ring:', self.__dict__['ring_right'])
+                print('equipped right ring:', self.__dict__['ring_right'])
+
+
 
         elif item.type == 'mighty-weapon-2h':
             # check for empty slot
@@ -116,6 +118,15 @@ class Character(object):
             if 'Set_Item' in str(item.__class__.__mro__):
                 if item.set:
                     sets[item.set] += 1
+
+        # dirty edge case:
+        from data.items_cache import Ring_of_Royal_Grandeur
+        if isinstance(self.ring_left, Ring_of_Royal_Grandeur) or isinstance(self.ring_right, Ring_of_Royal_Grandeur):
+            # print('Ring_of_Royal_Grandeur is equipped')
+            for _set in sets.keys():
+                sets[_set] += 1
+
+
         for _set, equipped in sets.items():
             print(_set, equipped)
             for bonus in _set().yield_bonus(equipped):
@@ -135,6 +146,10 @@ class Character(object):
         self.Strength -= other.Strength
         # self.Dexterity -= other.Dexterity
         # self.Intelligence -= other.Intelligence
+
+
+    def check_build_properties(self):
+        pass
 
 
 '''

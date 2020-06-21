@@ -1,6 +1,6 @@
 import sys
 sys.path.append("..\..")
-from d3api.datatypes import Item, Set, Set_Item
+from datatypes import Item, Set, Set_Item
 
 class Genzaniku(Item):
     """ Genzaniku """

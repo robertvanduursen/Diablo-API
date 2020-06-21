@@ -1,6 +1,9 @@
-import sys
+import sys, os
 sys.path.append("..\..")
-from d3api.datatypes import Item, Set, Set_Item
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from datatypes import Item, Set, Set_Item
+from .armor_sets import Rolands_Legacy, Aegis_of_Valor
 
 
 class Hellfire_Ring(Item):
@@ -1230,6 +1233,7 @@ class Crown_of_Valor(Item):
     """ Crown of Valor """
     url = r'/en/item/crown-of-valor-P67_Unique_Helm_Set_01'
     type = 'helm'
+    set = Aegis_of_Valor
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
 	(4) Set:      Hitting with Fist of the Heavens returns 5 Wrath and reduces damage taken by 1% for 10 seconds. Stacks up to 50 times.
@@ -1237,10 +1241,11 @@ class Crown_of_Valor(Item):
     """
 
 
-class Rolands_Visage(Item):
+class Rolands_Visage(Set_Item):
     """ Roland's Visage """
     url = r'/en/item/rolands-visage-Unique_Helm_Set_01_p1'
     type = 'helm'
+    set = Rolands_Legacy
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
 	(4) Set:      Increase the damage of Shield Bash and Sweep Attack by 13,000%.
@@ -1735,10 +1740,11 @@ class Pauldrons_of_the_Wastes(Item):
     """
 
 
-class Spaulders_of_Valor(Item):
+class Spaulders_of_Valor(Set_Item):
     """ Spaulders of Valor """
     url = r'/en/item/spaulders-of-valor-P67_Unique_Shoulder_Set_01'
     type = 'shoulders'
+    set = Aegis_of_Valor
     text = """
 	(2) Set:      Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.
 	(4) Set:      Hitting with Fist of the Heavens returns 5 Wrath and reduces damage taken by 1% for 10 seconds. Stacks up to 50 times.
@@ -1746,7 +1752,7 @@ class Spaulders_of_Valor(Item):
     """
 
 
-class Rolands_Mantle(Item):
+class Rolands_Mantle(Set_Item):
     """ Roland's Mantle """
     url = r'/en/item/rolands-mantle-Unique_Shoulder_Set_01_p1'
     type = 'shoulders'
@@ -1757,7 +1763,7 @@ class Rolands_Mantle(Item):
     """
 
 
-class Mountain_of_the_Light(Item):
+class Mountain_of_the_Light(Set_Item):
     """ Mountain of the Light """
     url = r'/en/item/mountain-of-the-light-Unique_Shoulder_Set_03_p3'
     type = 'shoulders'
@@ -1768,7 +1774,7 @@ class Mountain_of_the_Light(Item):
     """
 
 
-class Pauldrons_of_Akkhan(Item):
+class Pauldrons_of_Akkhan(Set_Item):
     """ Pauldrons of Akkhan """
     url = r'/en/item/pauldrons-of-akkhan-Unique_Shoulder_Set_10_x1'
     type = 'shoulders'
@@ -2260,7 +2266,7 @@ class Markings_of_Savages(Item):
     """
 
 
-class Raekors_Heart(Item):
+class Raekors_Heart(Set_Item):
     """ Raekor's Heart """
     url = r'/en/item/raekors-heart-Unique_Chest_Set_05_x1'
     type = 'torso'
@@ -2271,10 +2277,11 @@ class Raekors_Heart(Item):
     """
 
 
-class Rolands_Bearing(Item):
+class Rolands_Bearing(Set_Item):
     """ Roland's Bearing """
     url = r'/en/item/rolands-bearing-Unique_Chest_Set_01_p1'
     type = 'torso'
+    set = Rolands_Legacy
     text = """
 	(2) Set:      Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.
 	(4) Set:      Increase the damage of Shield Bash and Sweep Attack by 13,000%.
@@ -2282,7 +2289,7 @@ class Rolands_Bearing(Item):
     """
 
 
-class Breastplate_of_Akkhan(Item):
+class Breastplate_of_Akkhan(Set_Item):
     """ Breastplate of Akkhan """
     url = r'/en/item/breastplate-of-akkhan-Unique_Chest_Set_10_x1'
     type = 'torso'
@@ -2293,7 +2300,7 @@ class Breastplate_of_Akkhan(Item):
     """
 
 
-class Heart_of_the_Light(Item):
+class Heart_of_the_Light(Set_Item):
     """ Heart of the Light """
     url = r'/en/item/heart-of-the-light-Unique_Chest_Set_03_p3'
     type = 'torso'
@@ -2304,7 +2311,7 @@ class Heart_of_the_Light(Item):
     """
 
 
-class Brigandine_of_Valor(Item):
+class Brigandine_of_Valor(Set_Item):
     """ Brigandine of Valor """
     url = r'/en/item/brigandine-of-valor-P67_Unique_Chest_Set_01'
     type = 'torso'
@@ -2315,7 +2322,7 @@ class Brigandine_of_Valor(Item):
     """
 
 
-class Marauders_Carapace(Item):
+class Marauders_Carapace(Set_Item):
     """ Marauder's Carapace """
     url = r'/en/item/marauders-carapace-Unique_Chest_Set_07_x1'
     type = 'torso'
@@ -2326,7 +2333,7 @@ class Marauders_Carapace(Item):
     """
 
 
-class Heart_of_the_Crashing_Wave(Item):
+class Heart_of_the_Crashing_Wave(Set_Item):
     """ Heart of the Crashing Wave """
     url = r'/en/item/heart-of-the-crashing-wave-Unique_Chest_Set_08_x1'
     type = 'torso'
@@ -2337,7 +2344,7 @@ class Heart_of_the_Crashing_Wave(Item):
     """
 
 
-class Ulianas_Heart(Item):
+class Ulianas_Heart(Set_Item):
     """ Uliana's Heart """
     url = r'/en/item/ulianas-heart-Unique_Chest_Set_01_p3'
     type = 'torso'
@@ -2348,7 +2355,7 @@ class Ulianas_Heart(Item):
     """
 
 
-class Lamellars_of_Justice(Item):
+class Lamellars_of_Justice(Set_Item):
     """ Lamellars of Justice """
     url = r'/en/item/lamellars-of-justice-P67_Unique_Chest_Set_02'
     type = 'torso'
@@ -2359,7 +2366,7 @@ class Lamellars_of_Justice(Item):
     """
 
 
-class Firebirds_Breast(Item):
+class Firebirds_Breast(Set_Item):
     """ Firebird's Breast """
     url = r'/en/item/firebirds-breast-Unique_Chest_Set_06_x1'
     type = 'torso'
@@ -2370,7 +2377,7 @@ class Firebirds_Breast(Item):
     """
 
 
-class Typhons_Thorax(Item):
+class Typhons_Thorax(Set_Item):
     """ Typhon's Thorax """
     url = r'/en/item/typhons-thorax-P68_Unique_Chest_Set_03'
     type = 'torso'
@@ -2381,7 +2388,7 @@ class Typhons_Thorax(Item):
     """
 
 
-class Harness_of_Truth(Item):
+class Harness_of_Truth(Set_Item):
     """ Harness of Truth """
     url = r'/en/item/harness-of-truth-Unique_Chest_Set_02_p2'
     type = 'torso'
@@ -2392,7 +2399,7 @@ class Harness_of_Truth(Item):
     """
 
 
-class Mundunugus_Robe(Item):
+class Mundunugus_Robe(Set_Item):
     """ Mundunugu's Robe """
     url = r'/en/item/mundunugus-robe-P68_Unique_Chest_Set_04'
     type = 'torso'
@@ -2403,7 +2410,7 @@ class Mundunugus_Robe(Item):
     """
 
 
-class Helltooth_Tunic(Item):
+class Helltooth_Tunic(Set_Item):
     """ Helltooth Tunic """
     url = r'/en/item/helltooth-tunic-Unique_Chest_Set_16_x1'
     type = 'torso'
@@ -3294,7 +3301,7 @@ class Gauntlets_of_Valor(Item):
     """
 
 
-class Rolands_Grasp(Item):
+class Rolands_Grasp(Set_Item):
     """ Roland's Grasp """
     url = r'/en/item/rolands-grasp-Unique_Gloves_Set_01_p1'
     type = 'hands'
@@ -4437,7 +4444,7 @@ class Cuisses_of_Akkhan(Item):
     """
 
 
-class Towers_of_the_Light(Item):
+class Towers_of_the_Light(Set_Item):
     """ Towers of the Light """
     url = r'/en/item/towers-of-the-light-Unique_Pants_Set_03_p3'
     type = 'pants'
@@ -4448,7 +4455,7 @@ class Towers_of_the_Light(Item):
     """
 
 
-class Rolands_Determination(Item):
+class Rolands_Determination(Set_Item):
     """ Roland's Determination """
     url = r'/en/item/rolands-determination-Unique_Pants_Set_01_p1'
     type = 'pants'
@@ -4459,7 +4466,7 @@ class Rolands_Determination(Item):
     """
 
 
-class Unholy_Plates(Item):
+class Unholy_Plates(Set_Item):
     """ Unholy Plates """
     url = r'/en/item/unholy-plates-Unique_Pants_Set_03_p2'
     type = 'pants'
@@ -4470,7 +4477,7 @@ class Unholy_Plates(Item):
     """
 
 
-class Marauders_Encasement(Item):
+class Marauders_Encasement(Set_Item):
     """ Marauder's Encasement """
     url = r'/en/item/marauders-encasement-Unique_Pants_Set_07_x1'
     type = 'pants'
@@ -5022,7 +5029,7 @@ class Sabaton_of_the_Wastes(Item):
     """
 
 
-class Rolands_Stride(Item):
+class Rolands_Stride(Set_Item):
     """ Roland's Stride """
     url = r'/en/item/rolands-stride-Unique_Boots_Set_01_p1'
     type = 'feet'

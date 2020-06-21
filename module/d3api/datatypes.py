@@ -19,6 +19,10 @@ class Item(object):
         """ return derived gemslots """
         return 0
 
+    def visit(self):
+        import webbrowser
+        webbrowser.open('https://eu.diablo3.com{}'.format(self.url))
+        print('visiting')
 
 class Set(object):
     items = False

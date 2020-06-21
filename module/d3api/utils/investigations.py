@@ -14,4 +14,11 @@ where can I see the current seasons Kanais power items?
 
 
 # https://www.d3planner.com/335087708
+
+
+
+Passives and Item Effects boost Item types and Actives
+
+
 '''
+

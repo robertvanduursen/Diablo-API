@@ -1,8 +1,23 @@
-# Items repository
+""" Items repository """
 
+'''
+
+ideally, I'd have this as as fully linked data network:
+to facilitate exploring, contextual feedback &
+python / pycharm automated type highlighting
+
+'''
 
 from datatypes import Item, Set, Set_Item
 
+class Rolands_Legacy(Set):
+    """ Roland's Legacy """
+    items = list
+    levels = {
+    	2 : 'Every use of Shield Bash and Sweep Attack reduces the cooldowns of your Laws and Defensive Skills by 1 second.',
+    	4 : 'Increase the damage of Shield Bash and Sweep Attack by 13,000%.',
+    	6 : 'Every use of Shield Bash or Sweep Attack that hits an enemy grants 75% increased Attack Speed and 15% damage reduction for 8 seconds. This effect stacks up to 5 times.'
+    }
 
 class The_Legacy_of_Raekor(Set):
     """ The Legacy of Raekor """
@@ -13,7 +28,17 @@ class The_Legacy_of_Raekor(Set):
         6: 'Whirlwind gains the effect of the Dust Devils rune and all Whirlwind and Rend damage is increased by 10,000%.',
     }
 
-class Immortal_Kings_Call:
+class Aegis_of_Valor(Set):
+    """ Aegis of Valor """
+    items = list
+    levels = {
+	    2: "'Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.",
+	    4: "Hitting with Fist of the Heavens returns 5 Wrath and reduces damage taken by 1% for 10 seconds. Stacks up to 50 times.",
+	    6: "Increase the damage of Fist of the Heavens and Heaven's Fury by 20,000%."
+    }
+
+
+class Immortal_Kings_Call(Set):
     """ Immortal King's Call armor set """
     set_size = 7
 
@@ -71,6 +96,7 @@ class Immortal_Kings_Call:
         type = 'Mighty Weapons'
         name = "Immortal King's Boulder Breaker"
         url = r'https://us.diablo3.com/en/item/immortal-kings-boulder-breaker-Unique_Mighty_2H_010_x1'
+
 
 
 '''

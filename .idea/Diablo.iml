@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/module/d3api/Crusader" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/module/d3api" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/module/d3api/utils" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/module/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

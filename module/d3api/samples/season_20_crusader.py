@@ -14,32 +14,25 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-
+import classes.Crusader
 import classes.Crusader.skills
 import classes.Crusader.passives
 import data.items_cache
 import data.weapons_cache
-
-
-from datatypes import Skill, isGenerator
 import inspect
 
-def get_generators():
-    total = 0
-    generators = []
-    for cache in [classes.Crusader.skills, classes.Crusader.passives, data.items_cache, data.weapons_cache]:
-        for x, cls in inspect.getmembers(cache, isGenerator):
-            print(x, inspect.getsource(cls))
-            print()
-            generators.append(x)
-            total += 1
 
-    # print(total)
-    return generators
+def rank_skill_support():
+    """ examine how many items support a skill """
+    import collections
+    score_dict = collections.defaultdict(int)
+    for item in classes.Crusader.items:
+        for name in classes.Crusader.skill_names:
+            if name in inspect.getsource(item):
+                score_dict[name] += 1
 
-
-get_generators()
-
+    for name, freq in sorted(score_dict.items(), key=lambda x: -x[1]):
+        print(name, freq)
 
 
 if 1 == 1:
@@ -48,48 +41,39 @@ if 1 == 1:
     # sys.path.append("..\..")
 
     from Playstyle import Playstyle
-    from utils import analyse_sets
-    from utils import item_utils
-    from classes.Crusader import skills as _skills
 
     _test = Playstyle(cls='Crusader')
     _test.discover.focus('close up')
 
-    # analyse_sets.get_sets(items)
+    # rank_skill_support()
 
-    #
-    # for x in item_utils.get_class_eligible_items(weapons, 'crusader'):
-    #     print(x)
+    # print(classes.Crusader.get_items_that_boost('Blessed Hammer'))
 
-    total = 0
-    skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(classes.Crusader.skills, inspect.isclass) if
-                   _skills.Skill in cls.__bases__]
+    crusader_belts = [x for x in classes.Crusader.items if x.type == 'waist']
+    print(len(crusader_belts))
+    for x in crusader_belts:
+        print(x.__doc__)
+        print(x.text)
 
-    import collections
-    score_dict = collections.defaultdict(int)
+    from character import Character
+    build_1 = Character()
 
+    import data.items_cache as items
+    import data.weapons_cache as weapons
+    build_1.equip(items.Ring_of_Royal_Grandeur)
 
+    build_1.equip(items.Rolands_Bearing)
+    build_1.equip(items.Rolands_Visage)
+    build_1.equip(items.Spaulders_of_Valor)
+    build_1.equip(items.Gauntlets_of_Valor)
+    build_1.equip(weapons.Nutcracker)
 
-    for item in item_utils.debug_get_items(data.items_cache) + item_utils.debug_get_items(data.weapons_cache):
-        for name in skill_names:
-            if name in inspect.getsource(item):
-                score_dict[name] += 1
+    build_1.equip(items.Blessed_of_Haull)
 
-    for name, freq in sorted(score_dict.items(), key=lambda x: -x[1]):
-        print(name, freq)
-
-
-    # from d3api.character import Character
-    # build_1 = Character()
-    #
-    # # import items_cache as items
-    # # import weapons_cache as weapons
-    # build_1.equip(items.Rolands_Bearing)
-    # build_1.equip(items.Rolands_Visage)
-    # build_1.equip(items.Spaulders_of_Valor)
-    # build_1.equip(items.Stone_Gauntlets)
-    # build_1.equip(weapons.Nutcracker)
+    build_1.show_bonus()
 
 
 
+
+# todo: an exercise in excluding option ranges through knowing / 100% fact reasoning
 
