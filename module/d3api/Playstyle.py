@@ -1,3 +1,59 @@
+class Discovery:
+
+    def __init__(self, save_file=False):
+        if save_file:
+            self.save_file = save_file
+            self.load(self.save_file)
+
+
+    def pick(self):
+        print('which class?')
+        import classes
+        import os
+        print(os.listdir(classes.__package__))
+
+        _class = input()
+        print("picked {}".format(_class))
+
+        print('classes.{}'.format(_class))
+        import importlib
+        myClassModule = importlib.import_module('classes.{}'.format(_class))
+        print('myClassModule = {}'.format(myClassModule))
+        # import classes.Crusader.skills
+
+        chosen_skills = []
+        for choice in range(6):
+            for x in sorted(set(myClassModule.skill_names) - set(chosen_skills)):
+                print(x)
+            print('Pick a skill - {} choices left'.format(6 - choice))
+            _skill_choice = input()
+            print("you picked {}".format(_skill_choice))
+            chosen_skills.append(_skill_choice)
+
+        print('chosen_skills: {}'.format(chosen_skills))
+
+        self.chosen_skills = chosen_skills
+        self.save()
+
+    def save(self):
+        if self.save_file:
+            import json
+            with open(self.save_file, 'w') as save_off:
+                json.dump(self.chosen_skills, save_off)
+
+
+    def load(self, _file):
+        if self.save_file:
+            import json
+            with open(_file) as load_in:
+                self.chosen_skills = json.load(load_in)
+                print("loaded saved skills: {}".format(self.chosen_skills))
+
+    def focus(self, on):
+        """ what to focus on """
+
+# 'C:\Users\rober\Desktop\test\Diablo-API\module\d3api\samples'
+
 class Playstyle:
     """ the notion of a play-style """
 
@@ -11,13 +67,7 @@ class Playstyle:
         if cls:
             self._class = cls
 
-    class Discover:
 
-        def pick(self):
-            return True
-
-        def focus(self, on):
-            """ what to focus on """
 
     def goals(self):
         return self.Goals()
@@ -29,9 +79,10 @@ class Playstyle:
 
     @property
     def discover(self):
-        return self.Discover()
+        return Discovery()
 
-from d3api.datatypes import Classes, Gear
+# from d3api.datatypes import Classes, Gear
+
 
 
 # helm = Gear(1)

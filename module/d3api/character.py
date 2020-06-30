@@ -151,6 +151,19 @@ class Character(object):
     def check_build_properties(self):
         pass
 
+    def save(self):
+        if self.save_file:
+            import json
+            with open(self.save_file, 'w') as save_off:
+                json.dump(self.chosen_skills, save_off)
+
+
+    def load(self):
+        if self.save_file:
+            import json
+            with open(self.save_file) as load_in:
+                self.chosen_skills = json.load(load_in)
+
 
 '''
 todo:

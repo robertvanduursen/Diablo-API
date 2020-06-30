@@ -1,4 +1,5 @@
 class Item(object):
+    text = str
 
     def get_stat_potential(self):
         print('own url', self.url)
@@ -23,6 +24,16 @@ class Item(object):
         import webbrowser
         webbrowser.open('https://eu.diablo3.com{}'.format(self.url))
         print('visiting')
+
+    def interpet(self):
+        self.text
+
+    def damage_increase(self):
+        import re
+        result = re.search(r"damage.* (\d+?)%", self.text)
+        if result:
+            return int(result.groups()[0])
+        return 0
 
 class Set(object):
     items = False

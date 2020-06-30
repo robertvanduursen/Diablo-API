@@ -40,37 +40,68 @@ if 1 == 1:
 
     # sys.path.append("..\..")
 
-    from Playstyle import Playstyle
+    from Playstyle import Playstyle, Discovery
+
+    chosen_skills = Discovery(r'C:\Users\rober\Desktop\test\Diablo-API\module\d3api\samples\season_20_crusader_skills.json').chosen_skills
+    # d.pick()
 
     _test = Playstyle(cls='Crusader')
     _test.discover.focus('close up')
 
     # rank_skill_support()
 
-    # print(classes.Crusader.get_items_that_boost('Blessed Hammer'))
+    print()
+    import collections
+    items_that_boost_my_chosen_skills = collections.defaultdict(list)
+    for name in chosen_skills:
+        items_that_boost_my_chosen_skills[name] = classes.Crusader.get_items_that_boost(name)
+        print(name, [y.__doc__ for y in items_that_boost_my_chosen_skills[name]])
 
-    crusader_belts = [x for x in classes.Crusader.items if x.type == 'waist']
-    print(len(crusader_belts))
-    for x in crusader_belts:
-        print(x.__doc__)
-        print(x.text)
+    print()
+    competition = collections.defaultdict(int)
+    for idx,(name, items) in enumerate(items_that_boost_my_chosen_skills.items()):
+        print(name)
+        print([x.type for x in items])
+        for x in items:
+            competition[x.type] += 1
 
-    from character import Character
-    build_1 = Character()
+    print()
+    for part, freq in competition.items():
+        print(part, freq)
 
-    import data.items_cache as items
-    import data.weapons_cache as weapons
-    build_1.equip(items.Ring_of_Royal_Grandeur)
 
-    build_1.equip(items.Rolands_Bearing)
-    build_1.equip(items.Rolands_Visage)
-    build_1.equip(items.Spaulders_of_Valor)
-    build_1.equip(items.Gauntlets_of_Valor)
-    build_1.equip(weapons.Nutcracker)
+    overlap = tuple(tuple(items_that_boost_my_chosen_skills.values())[0])
+    for idx, x in enumerate(items_that_boost_my_chosen_skills.values()):
+        print(idx, overlap)
+        print(tuple(x))
+        overlap = set(overlap) & set(tuple(x))
+    print(len(overlap), overlap)
+        # print(classes.Crusader.get_items_that_boost('Blessed Hammer'))
 
-    build_1.equip(items.Blessed_of_Haull)
+    if 0:
+        crusader_belts = [x for x in classes.Crusader.items if x.type == 'waist']
+        print(len(crusader_belts))
+        for x in crusader_belts:
+            print(x.__doc__)
+            print(x.text)
 
-    build_1.show_bonus()
+        from character import Character
+        build_1 = Character()
+
+        import data.items_cache as items
+        import data.weapons_cache as weapons
+
+        build_1.equip(items.Ring_of_Royal_Grandeur)
+        build_1.equip(items.Blessed_of_Haull)
+
+        build_1.equip(items.Rolands_Bearing)
+        build_1.equip(items.Rolands_Visage)
+        build_1.equip(items.Spaulders_of_Valor)
+        build_1.equip(items.Gauntlets_of_Valor)
+        build_1.equip(weapons.Nutcracker)
+
+
+        build_1.show_bonus()
 
 
 
