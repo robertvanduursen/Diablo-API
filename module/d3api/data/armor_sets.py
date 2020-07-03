@@ -10,6 +10,26 @@ python / pycharm automated type highlighting
 
 from datatypes import Item, Set, Set_Item
 
+
+
+class Pestilence_Battle(Set):
+    """ Pestilence Battle """
+    items = list
+    levels = {
+    	2 : 'Each corpse you consume fires a Corpse Lance at a nearby enemy.',
+    	4 : 'Each enemy you hit with Bone Spear, Corpse Lance and Corpse Explosion reduces your damage taken by 2%, up to a maximum of 50%.  Lasts 15 seconds.',
+    	6 : 'Each corpse you consume grants you an Empowered Bone Spear charge that increases the damage of your next Bone Spear by 3300%. In addition, Corpse Lance and Corpse Explosion damage is increased by 1650%.'
+    }
+
+class Masquerade_of_the_Burning_Carnival(Set):
+    """ Masquerade of the Burning Carnival """
+    items = list
+    levels = {
+    	2 : 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+    	4 : 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+    	6 : 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+    }
+
 class Rolands_Legacy(Set):
     """ Roland's Legacy """
     items = list

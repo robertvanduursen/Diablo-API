@@ -3,7 +3,7 @@ sys.path.append("..\..")
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from datatypes import Item, Set, Set_Item
-from .armor_sets import Rolands_Legacy, Aegis_of_Valor
+from .armor_sets import Rolands_Legacy, Aegis_of_Valor, Pestilence_Battle
 
 
 class Hellfire_Ring(Item):
@@ -1396,10 +1396,11 @@ class Inariuss_Understanding(Item):
     """
 
 
-class Pestilence_Mask(Item):
+class Pestilence_Mask(Set_Item):
     """ Pestilence Mask """
     url = r'/en/item/pestilence-mask-P6_Necro_Set_4_Helm'
     type = 'helm'
+    set = Pestilence_Battle
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
 	(4) Set:      Each enemy you hit with Bone Spear, Corpse Lance and Corpse Explosion reduces your damage taken by 2%, up to a maximum of 50%.  Lasts 15 seconds.

@@ -23,14 +23,14 @@ def get_class_eligible_items(_collection, class_name='barbarian'):
     print(total)
     return items
 
-def get_skill_items(items):
+def get_skill_items(items, class_name):
 
     if not items:
         from classes.Crusader import items_cache as items
-    eligible_items = get_class_eligible_items(items, 'crusader')
+    eligible_items = get_class_eligible_items(items, class_name.lower())
 
-
-    from classes.Crusader import skills as _skills
+    import importlib
+    _skills = importlib.import_module('classes.{}.skills'.format(class_name))
 
     from datatypes import Active
     skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(_skills, inspect.isclass) if

@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 class Discovery:
 
     def __init__(self, save_file=False):
@@ -10,7 +14,9 @@ class Discovery:
         print('which class?')
         import classes
         import os
-        print(os.listdir(classes.__package__))
+        print(classes)
+
+        print(os.listdir(os.path.dirname(classes.__file__)))
 
         _class = input()
         print("picked {}".format(_class))

@@ -6,8 +6,6 @@ import classes
 # from utils import item_utils
 import classes.Crusader.skills as crusader_skills
 
-import classes.Crusader.passives
-import classes.Crusader.passives
 import data.items_cache
 import data.weapons_cache
 from datatypes import Active
