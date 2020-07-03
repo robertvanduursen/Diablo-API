@@ -25,7 +25,7 @@ class Item(object):
         webbrowser.open('https://eu.diablo3.com{}'.format(self.url))
         print('visiting')
 
-    def interpet(self):
+    def interpret(self):
         self.text
 
     def damage_increase(self):
@@ -38,6 +38,8 @@ class Item(object):
 class Set(object):
     items = False
     levels = dict
+    _class = False
+    pieces = None
 
     def yield_bonus(self, amount):
         bonusses = []
@@ -374,6 +376,15 @@ class Active(Skill):
 
 class Rune:
     pass
+
+
+Head = 'Helm'
+Hands = 'Gloves'
+Torso = 'Chest Armor'
+Waist = 'Belt'
+Legs = 'Pants'
+Feet = 'Boots'
+Shoulders = 'Shoulders'
 
 
 if __name__ == '__main__':

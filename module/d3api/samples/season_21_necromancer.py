@@ -36,6 +36,24 @@ def rank_skill_support():
         print(name, freq)
 
 
+        # Necromancer_belts = [x for x in classes.Necromancer.items if x.type == 'waist']
+        # print(len(Necromancer_belts))
+        # for x in Necromancer_belts:
+        #     print(x.__doc__)
+        #     print(x.text)
+
+
+# for _set in classes.Necromancer.armor_sets:
+#     print(_set)
+#     print(_set.pieces)
+
+for item in classes.Necromancer.items:
+    print(item.__doc__)
+    print(item.text)
+    print()
+
+print(len(classes.Necromancer.items))
+
 if 1 == 1:
     import os, sys
 
@@ -51,10 +69,14 @@ if 1 == 1:
 
     _test = Playstyle(cls='Necromancer')
     _test.discover.focus('close up')
+    _test.discover.focus('resource regen')
+
+    print()
     print("rank_skill_support")
     rank_skill_support()
 
     print()
+    print('items_that_boost_my_chosen_skills')
     import collections
     items_that_boost_my_chosen_skills = collections.defaultdict(list)
     for name in chosen_skills:
@@ -62,6 +84,7 @@ if 1 == 1:
         print(name, [y.__doc__.strip() for y in items_that_boost_my_chosen_skills[name]])
 
     print()
+    print('overlap between items that support multiple skills')
     competition = collections.defaultdict(int)
     for idx,(name, items) in enumerate(items_that_boost_my_chosen_skills.items()):
         print(name)
@@ -70,6 +93,7 @@ if 1 == 1:
             competition[x.type] += 1
 
     print()
+    print('what is this? ')
     for part, freq in competition.items():
         print(part, freq)
 
@@ -83,11 +107,11 @@ if 1 == 1:
         # print(classes.Necromancer.get_items_that_boost('Blessed Hammer'))
 
     if 0:
-        Necromancer_belts = [x for x in classes.Necromancer.items if x.type == 'waist']
-        print(len(Necromancer_belts))
-        for x in Necromancer_belts:
-            print(x.__doc__)
-            print(x.text)
+        # Necromancer_belts = [x for x in classes.Necromancer.items if x.type == 'waist']
+        # print(len(Necromancer_belts))
+        # for x in Necromancer_belts:
+        #     print(x.__doc__)
+        #     print(x.text)
 
         from character import Character
         build_1 = Character()
@@ -95,14 +119,35 @@ if 1 == 1:
         import data.items_cache as items
         import data.weapons_cache as weapons
 
+        activ = classes.Necromancer.skills
+        build_1.active_skills = [
+            activ.Army_of_the_Dead + activ.Unconventional_Warfare,
+            activ.Bone_Spear + activ.Blood_Spear,
+            activ.Siphon_Blood + activ.Blood_Sucker,
+            activ.Blood_Rush + activ.Metabolism,
+            activ.Frailty + activ.Aura_of_Frailty,
+            activ.Devour + activ.Devouring_Aura,
+        ]
+        passiv = classes.Necromancer.passives
+        build_1.passive_skills = [
+            passiv.Life_from_Death,
+            passiv.Blood_for_Blood,
+            passiv.Serration,
+            passiv.Spreading_Malediction
+        ]
+
         build_1.equip(items.Ring_of_Royal_Grandeur)
-        build_1.equip(items.Blessed_of_Haull)
+        build_1.equip(items.Funerary_Pick)
 
         build_1.equip(items.Pestilence_Battle_Boots)
         build_1.equip(items.Maltorius_Petrified_Spike)
         build_1.equip(items.Haunted_Visions)
-        build_1.equip(items.Gauntlets_of_Valor)
-        build_1.equip(weapons.Nutcracker)
+        build_1.equip(items.TragOuls_Guise)
+        build_1.equip(items.TragOuls_Claws)
+        build_1.equip(items.TragOuls_Heart)
+        build_1.equip(items.TragOuls_Stalwart_Greaves)
+        build_1.equip(items.TragOuls_Corroded_Fang)
+
 
 
         build_1.show_bonus()

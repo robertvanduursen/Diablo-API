@@ -3,7 +3,7 @@ sys.path.append("..\..")
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from datatypes import Item, Set, Set_Item
-from .armor_sets import Rolands_Legacy, Aegis_of_Valor, Pestilence_Battle
+from .armor_sets import Rolands_Legacy, Aegis_of_Valor, Pestilence_Masters_Shroud, Grace_of_Inarius
 
 
 class Hellfire_Ring(Item):
@@ -1374,7 +1374,7 @@ class Helltooth_Mask(Item):
     """
 
 
-class TragOuls_Guise(Item):
+class TragOuls_Guise(Set_Item):
     """ Trag'Oul's Guise """
     url = r'/en/item/tragouls-guise-P6_Necro_Set_2_Helm'
     type = 'helm'
@@ -1385,10 +1385,11 @@ class TragOuls_Guise(Item):
     """
 
 
-class Inariuss_Understanding(Item):
+class Inariuss_Understanding(Set_Item):
     """ Inarius's Understanding """
     url = r'/en/item/inariuss-understanding-P6_Necro_Set_3_Helm'
     type = 'helm'
+    set = Grace_of_Inarius
     text = """
 	(2) Set:      Bone Armor damage is increased by 1000%.
 	(4) Set:      Bone Armor grants an additional 2% damage reduction per enemy hit.
@@ -1400,7 +1401,7 @@ class Pestilence_Mask(Set_Item):
     """ Pestilence Mask """
     url = r'/en/item/pestilence-mask-P6_Necro_Set_4_Helm'
     type = 'helm'
-    set = Pestilence_Battle
+    set = Pestilence_Masters_Shroud
     text = """
 	(2) Set:      Each corpse you consume fires a Corpse Lance at a nearby enemy.
 	(4) Set:      Each enemy you hit with Bone Spear, Corpse Lance and Corpse Explosion reduces your damage taken by 2%, up to a maximum of 50%.  Lasts 15 seconds.
@@ -1940,7 +1941,7 @@ class TragOuls_Heart(Item):
     """
 
 
-class Inariuss_Martyrdom(Item):
+class Inariuss_Martyrdom(Set_Item):
     """ Inarius's Martyrdom """
     url = r'/en/item/inariuss-martyrdom-P6_Necro_Set_3_Shoulders'
     type = 'shoulders'
@@ -2466,7 +2467,7 @@ class Pestilence_Robe(Item):
     """
 
 
-class Inariuss_Conviction(Item):
+class Inariuss_Conviction(Set_Item):
     """ Inarius's Conviction """
     url = r'/en/item/inariuss-conviction-P6_Necro_Set_3_Chest'
     type = 'torso'
@@ -3456,7 +3457,7 @@ class Helltooth_Gauntlets(Item):
     """
 
 
-class Inariuss_Will(Item):
+class Inariuss_Will(Set_Item):
     """ Inarius's Will """
     url = r'/en/item/inariuss-will-P6_Necro_Set_3_Gloves'
     type = 'hands'
@@ -4610,7 +4611,7 @@ class TragOuls_Hide(Item):
     """
 
 
-class Inariuss_Reticence(Item):
+class Inariuss_Reticence(Set_Item):
     """ Inarius's Reticence """
     url = r'/en/item/inariuss-reticence-P6_Necro_Set_3_Pants'
     type = 'pants'
@@ -5206,7 +5207,7 @@ class Pestilence_Battle_Boots(Item):
     """
 
 
-class Inariuss_Perseverance(Item):
+class Inariuss_Perseverance(Set_Item):
     """ Inarius's Perseverance """
     url = r'/en/item/inariuss-perseverance-P6_Necro_Set_3_Boots'
     type = 'feet'

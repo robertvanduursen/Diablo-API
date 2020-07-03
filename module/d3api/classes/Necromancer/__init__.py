@@ -50,3 +50,19 @@ def get_items_that_boost(skillName: str):
     return skill_dict[skillName]
 
 # generators = get_generators()
+
+
+def get_class_armour_sets(class_name):
+    import data.armor_sets as armor_sets
+    from datatypes import Set
+
+    class_armor_sets = []
+    for x, cls in inspect.getmembers(armor_sets, lambda x: inspect.isclass(x) and issubclass(x, Set)):
+        if cls._class == class_name:
+            # print(x, inspect.getsource(cls))
+            # print()
+            class_armor_sets.append(cls)
+
+    return class_armor_sets
+
+armor_sets = get_class_armour_sets('Necromancer')

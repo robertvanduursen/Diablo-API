@@ -37,6 +37,9 @@ class Character(object):
     Toughness = 0
     Recovery = 0
 
+    active_skills = list
+    passive_skills = list
+
 
     def __init__(self):
 

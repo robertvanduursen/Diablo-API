@@ -9,26 +9,30 @@ python / pycharm automated type highlighting
 '''
 
 from datatypes import Item, Set, Set_Item
+from datatypes import Head, Hands, Torso, Waist, Legs, Feet, Shoulders
 
 
-
-class Pestilence_Battle(Set):
-    """ Pestilence Battle """
+class Pestilence_Masters_Shroud(Set):
+    """ Pestilence Master's Shroud """
+    _class = 'Necromancer'
     items = list
     levels = {
     	2 : 'Each corpse you consume fires a Corpse Lance at a nearby enemy.',
     	4 : 'Each enemy you hit with Bone Spear, Corpse Lance and Corpse Explosion reduces your damage taken by 2%, up to a maximum of 50%.  Lasts 15 seconds.',
     	6 : 'Each corpse you consume grants you an Empowered Bone Spear charge that increases the damage of your next Bone Spear by 3300%. In addition, Corpse Lance and Corpse Explosion damage is increased by 1650%.'
     }
+    pieces = [Head, Hands, Torso, Legs, Feet, Shoulders]
 
 class Masquerade_of_the_Burning_Carnival(Set):
     """ Masquerade of the Burning Carnival """
+    _class = 'Necromancer'
     items = list
     levels = {
     	2 : 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
     	4 : 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
     	6 : 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
     }
+    pieces = [Head, Hands, Torso, Legs, Feet, Shoulders] # todo ?
 
 class Rolands_Legacy(Set):
     """ Roland's Legacy """
@@ -56,6 +60,28 @@ class Aegis_of_Valor(Set):
 	    4: "Hitting with Fist of the Heavens returns 5 Wrath and reduces damage taken by 1% for 10 seconds. Stacks up to 50 times.",
 	    6: "Increase the damage of Fist of the Heavens and Heaven's Fury by 20,000%."
     }
+
+class Grace_of_Inarius(Set):
+    """ Grace of Inarius """
+    items = list
+    levels = {
+	    2: "'Attacking with Fists of the Heavens empowers you, allowing Heaven's Fury to deal 100% increased damage for 5 seconds. Stacks up to 3 times multiplicatively.",
+	    4: "Hitting with Fist of the Heavens returns 5 Wrath and reduces damage taken by 1% for 10 seconds. Stacks up to 50 times.",
+	    6: "Increase the damage of Fist of the Heavens and Heaven's Fury by 20,000%."
+    }
+    pieces = []
+
+
+class TragOuls_Avatar(Set):
+    """ TragOul's Avatar """
+    items = list
+    levels = {
+	    2: "Blood Rush gains the effect of every rune.",
+	    4: "While at full Life, your healing from skills is added to your maximum Life for 45 seconds, up to 100% more.",
+	    6: "Your Life-spending abilities deal 3800% increased damage and your healing from skills is increased by 100%."
+    }
+    pieces = [Hands, Legs, Head, Torso, Feet, Shoulders]
+
 
 
 class Immortal_Kings_Call(Set):

@@ -1,7 +1,6 @@
 import inspect, sys
 sys.path.append("..\..")
-from d3api.datatypes import classes
-from datatypes import Item
+from datatypes import Item, classes
 
 # import Diablo
 # from .datatypes import classes
@@ -20,7 +19,7 @@ def get_class_eligible_items(_collection, class_name='barbarian'):
                 total += 1
                 items.append(cls)
 
-    print(total)
+    # print(total)
     return items
 
 def get_skill_items(items, class_name):
