@@ -47,14 +47,14 @@ def rank_skill_support():
 #     print(_set)
 #     print(_set.pieces)
 
-for item in classes.Necromancer.items:
-    print(item.__doc__)
-    print(item.text)
-    print()
+# for item in classes.Necromancer.items:
+#     print(item.__doc__)
+#     print(item.text)
+#     print()
+#
+# print(len(classes.Necromancer.items))
 
-print(len(classes.Necromancer.items))
-
-if 1 == 1:
+if 0:
     import os, sys
 
     # sys.path.append("..\..")
@@ -106,54 +106,55 @@ if 1 == 1:
     print(len(overlap), overlap)
         # print(classes.Necromancer.get_items_that_boost('Blessed Hammer'))
 
-    if 0:
-        # Necromancer_belts = [x for x in classes.Necromancer.items if x.type == 'waist']
-        # print(len(Necromancer_belts))
-        # for x in Necromancer_belts:
-        #     print(x.__doc__)
-        #     print(x.text)
+if 0:
+    # Necromancer_belts = [x for x in classes.Necromancer.items if x.type == 'waist']
+    # print(len(Necromancer_belts))
+    # for x in Necromancer_belts:
+    #     print(x.__doc__)
+    #     print(x.text)
 
-        from character import Character
-        build_1 = Character()
+    from character import Character
+    build_1 = Character()
 
-        import data.items_cache as items
-        import data.weapons_cache as weapons
+    import data.items_cache as items
+    import data.weapons_cache as weapons
 
-        activ = classes.Necromancer.skills
-        build_1.active_skills = [
-            activ.Army_of_the_Dead + activ.Unconventional_Warfare,
-            activ.Bone_Spear + activ.Blood_Spear,
-            activ.Siphon_Blood + activ.Blood_Sucker,
-            activ.Blood_Rush + activ.Metabolism,
-            activ.Frailty + activ.Aura_of_Frailty,
-            activ.Devour + activ.Devouring_Aura,
-        ]
-        passiv = classes.Necromancer.passives
-        build_1.passive_skills = [
-            passiv.Life_from_Death,
-            passiv.Blood_for_Blood,
-            passiv.Serration,
-            passiv.Spreading_Malediction
-        ]
+    activ = classes.Necromancer.skills
+    build_1.active_skills = [
+        activ.Army_of_the_Dead,  # + activ.Unconventional_Warfare,
+        activ.Bone_Spear,  # + activ.Blood_Spear,
+        activ.Siphon_Blood,  # + activ.Blood_Sucker,
+        activ.Blood_Rush,  # + activ.Metabolism,
+        activ.Frailty,  # + activ.Aura_of_Frailty,
+        activ.Devour,  # + activ.Devouring_Aura,
+    ]
+    passiv = classes.Necromancer.passives
+    build_1.passive_skills = [
+        passiv.Life_from_Death,
+        passiv.Blood_for_Blood,
+        passiv.Serration,
+        passiv.Spreading_Malediction
+    ]
 
-        build_1.equip(items.Ring_of_Royal_Grandeur)
-        build_1.equip(items.Funerary_Pick)
+    build_1.equip(items.Ring_of_Royal_Grandeur)
+    build_1.equip(items.Funerary_Pick)
 
-        build_1.equip(items.Pestilence_Battle_Boots)
-        build_1.equip(items.Maltorius_Petrified_Spike)
-        build_1.equip(items.Haunted_Visions)
-        build_1.equip(items.TragOuls_Guise)
-        build_1.equip(items.TragOuls_Claws)
-        build_1.equip(items.TragOuls_Heart)
-        build_1.equip(items.TragOuls_Stalwart_Greaves)
-        build_1.equip(items.TragOuls_Corroded_Fang)
-
-
-
-        build_1.show_bonus()
+    build_1.equip(items.Pestilence_Battle_Boots)
+    build_1.equip(items.Maltorius_Petrified_Spike)
+    build_1.equip(items.Haunted_Visions)
+    build_1.equip(items.TragOuls_Guise)
+    build_1.equip(items.TragOuls_Claws)
+    build_1.equip(items.TragOuls_Heart)
+    build_1.equip(items.TragOuls_Stalwart_Greaves)
+    build_1.equip(items.TragOuls_Corroded_Fang)
 
 
 
+    build_1.show_bonus()
+
+
+import data.items_cache as items
+items.Funerary_Pick().help()
 
 # todo: an exercise in excluding option ranges through knowing / 100% fact reasoning
 

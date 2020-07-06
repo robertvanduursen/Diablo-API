@@ -4,6 +4,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from datatypes import Item, Set, Set_Item
 from .armor_sets import Rolands_Legacy, Aegis_of_Valor, Pestilence_Masters_Shroud, Grace_of_Inarius
+from .armor_sets import Delseres_Magnum_Opus, Vyrs_Amazing_Arcana, The_Typhons_Veil, Tal_Rashas_Elements, Firebirds_Finery
+
 
 
 class Hellfire_Ring(Item):
@@ -749,10 +751,11 @@ class The_Travelers_Pledge(Item):
     """
 
 
-class Tal_Rashas_Allegiance(Item):
+class Tal_Rashas_Allegiance(Set_Item):
     """ Tal Rasha's Allegiance """
     url = r'/en/item/tal-rashas-allegiance-Unique_Amulet_007_x1'
     type = 'amulet'
+    set = Tal_Rashas_Elements
     text = """
 	(2) Set:      Damaging enemies with Arcane, Cold, Fire or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.
 	(4) Set:      Arcane, Cold, Fire, and Lightning attacks each increase all of your resistances by 25% for 8 seconds.
@@ -1019,7 +1022,7 @@ class Natalyas_Sight(Item):
     """
 
 
-class Tal_Rashas_Guise_of_Wisdom(Item):
+class Tal_Rashas_Guise_of_Wisdom(Set_Item):
     """ Tal Rasha's Guise of Wisdom """
     url = r'/en/item/tal-rashas-guise-of-wisdom-Unique_Helm_010_x1'
     type = 'helm'
@@ -1121,7 +1124,7 @@ class Sages_Apogee(Item):
     """
 
 
-class Vyrs_Sightless_Skull(Item):
+class Vyrs_Sightless_Skull(Set_Item):
     """ Vyr's Sightless Skull """
     url = r'/en/item/vyrs-sightless-skull-Unique_Helm_Set_13_x1'
     type = 'helm'
@@ -1319,7 +1322,7 @@ class Decree_of_Justice(Item):
     """
 
 
-class Firebirds_Plume(Item):
+class Firebirds_Plume(Set_Item):
     """ Firebird's Plume """
     url = r'/en/item/firebirds-plume-Unique_Helm_Set_06_x1'
     type = 'helm'
@@ -1330,10 +1333,11 @@ class Firebirds_Plume(Item):
     """
 
 
-class Shrouded_Mask(Item):
+class Shrouded_Mask(Set_Item):
     """ Shrouded Mask """
     url = r'/en/item/shrouded-mask-Unique_Helm_Set_02_p2'
     type = 'helm'
+    set = Delseres_Magnum_Opus
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
 	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
@@ -1341,7 +1345,7 @@ class Shrouded_Mask(Item):
     """
 
 
-class Typhons_Frons(Item):
+class Typhons_Frons(Set_Item):
     """ Typhon's Frons """
     url = r'/en/item/typhons-frons-P68_Unique_Helm_Set_03'
     type = 'helm'
@@ -1687,7 +1691,7 @@ class Ashearas_Custodian(Item):
     """
 
 
-class Vyrs_Proud_Pauldrons(Item):
+class Vyrs_Proud_Pauldrons(Set_Item):
     """ Vyr's Proud Pauldrons """
     url = r'/en/item/vyrs-proud-pauldrons-Unique_Shoulder_Set_13_x1'
     type = 'shoulders'
@@ -1842,10 +1846,11 @@ class Mirrors_of_Justice(Item):
     """
 
 
-class Dashing_Pauldrons_of_Despair(Item):
+class Dashing_Pauldrons_of_Despair(Set_Item):
     """ Dashing Pauldrons of Despair """
     url = r'/en/item/dashing-pauldrons-of-despair-Unique_Shoulder_Set_02_p2'
     type = 'shoulders'
+    set = Delseres_Magnum_Opus
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
 	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
@@ -1853,10 +1858,11 @@ class Dashing_Pauldrons_of_Despair(Item):
     """
 
 
-class Firebirds_Pinions(Item):
+class Firebirds_Pinions(Set_Item):
     """ Firebird's Pinions """
     url = r'/en/item/firebirds-pinions-Unique_Shoulder_Set_06_x1'
     type = 'shoulders'
+    set = Firebirds_Finery
     text = """
 	(2) Set:      When you die, a meteor falls from the sky and revives you. This effect has a 60 second cooldown.
 	(4) Set:      Dealing Fire damage with one of your skills causes the enemy to take 1000% weapon damage as Fire per second for 3 seconds. This effect can be repeated a second and third time by different skills. If an enemy is burning due to three different skills simultaneously the enemy will Ignite, taking 3000% weapon damage per second until they die.
@@ -1864,7 +1870,7 @@ class Firebirds_Pinions(Item):
     """
 
 
-class Typhons_Tibia(Item):
+class Typhons_Tibia(Set_Item):
     """ Typhon's Tibia """
     url = r'/en/item/typhons-tibia-P68_Unique_Shoulder_Set_03'
     type = 'shoulders'
@@ -2087,7 +2093,7 @@ class Demons_Heart(Item):
     """
 
 
-class Tal_Rashas_Relentless_Pursuit(Item):
+class Tal_Rashas_Relentless_Pursuit(Set_Item):
     """ Tal Rasha's Relentless Pursuit """
     url = r'/en/item/tal-rashas-relentless-pursuit-Unique_Chest_014_x1'
     type = 'torso'
@@ -2235,7 +2241,7 @@ class Sunwukos_Soul(Item):
     """
 
 
-class Vyrs_Astonishing_Aura(Item):
+class Vyrs_Astonishing_Aura(Set_Item):
     """ Vyr's Astonishing Aura """
     url = r'/en/item/vyrs-astonishing-aura-Unique_Chest_Set_13_x1'
     type = 'torso'
@@ -2394,6 +2400,7 @@ class Harness_of_Truth(Set_Item):
     """ Harness of Truth """
     url = r'/en/item/harness-of-truth-Unique_Chest_Set_02_p2'
     type = 'torso'
+    set = Delseres_Magnum_Opus
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
 	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
@@ -3151,7 +3158,7 @@ class Innas_Hold(Item):
     """
 
 
-class Tal_Rashas_Grasp(Item):
+class Tal_Rashas_Grasp(Set_Item):
     """ Tal Rasha's Grasp """
     url = r'/en/item/tal-rashas-grasp-P2_Unique_Gloves_02'
     type = 'hands'
@@ -3238,7 +3245,7 @@ class Pull_of_the_Earth(Item):
     """
 
 
-class Vyrs_Grasping_Gauntlets(Item):
+class Vyrs_Grasping_Gauntlets(Set_Item):
     """ Vyr's Grasping Gauntlets """
     url = r'/en/item/vyrs-grasping-gauntlets-Unique_Gloves_Set_13_x1'
     type = 'hands'
@@ -3391,7 +3398,7 @@ class Fists_of_Thunder(Item):
     """
 
 
-class Fierce_Gauntlets(Item):
+class Fierce_Gauntlets(Set_Item):
     """ Fierce Gauntlets """
     url = r'/en/item/fierce-gauntlets-Unique_Gloves_Set_02_p2'
     type = 'hands'
@@ -3402,10 +3409,11 @@ class Fierce_Gauntlets(Item):
     """
 
 
-class Typhons_Claws(Item):
+class Typhons_Claws(Set_Item):
     """ Typhon's Claws """
     url = r'/en/item/typhons-claws-P68_Unique_Gloves_Set_03'
     type = 'hands'
+    set = The_Typhons_Veil
     text = """
 	(2) Set:      Double the duration of Hydras and increase the number of heads on multi-headed Hydras by two.
 	(4) Set:      Damage taken is reduced by 8% for each Hydra head alive. Each time you take damage, a head dies. A head cannot die more than once every 2 seconds.
@@ -3413,7 +3421,7 @@ class Typhons_Claws(Item):
     """
 
 
-class Firebirds_Talons(Item):
+class Firebirds_Talons(Set_Item):
     """ Firebird's Talons """
     url = r'/en/item/firebirds-talons-Unique_Gloves_Set_06_x1'
     type = 'hands'
@@ -3937,7 +3945,7 @@ class Innas_Favor(Item):
     """
 
 
-class Tal_Rashas_Brace(Item):
+class Tal_Rashas_Brace(Set_Item):
     """ Tal Rasha's Brace """
     url = r'/en/item/tal-rashas-brace-Unique_Belt_006_x1'
     type = 'waist'
@@ -4182,7 +4190,7 @@ class Ashearas_Gait(Item):
     """
 
 
-class Tal_Rashas_Stride(Item):
+class Tal_Rashas_Stride(Set_Item):
     """ Tal Rasha's Stride """
     url = r'/en/item/tal-rashas-stride-P2_Unique_Pants_03'
     type = 'pants'
@@ -4326,10 +4334,11 @@ class Jade_Harvesters_Courage(Item):
     """
 
 
-class Vyrs_Fantastic_Finery(Item):
+class Vyrs_Fantastic_Finery(Set_Item):
     """ Vyr's Fantastic Finery """
     url = r'/en/item/vyrs-fantastic-finery-Unique_Pants_Set_13_x1'
     type = 'pants'
+    set = Vyrs_Amazing_Arcana
     text = """
 	(2) Set:      Archon gains the effect of every rune.
 	(4) Set:      Archon stacks also increase your Attack Speed, Armor, and Resistances by 1%.
@@ -4523,7 +4532,7 @@ class Mountains_of_Justice(Item):
     """
 
 
-class Firebirds_Down(Item):
+class Firebirds_Down(Set_Item):
     """ Firebird's Down """
     url = r'/en/item/firebirds-down-Unique_Pants_Set_06_x1'
     type = 'pants'
@@ -4534,10 +4543,11 @@ class Firebirds_Down(Item):
     """
 
 
-class Leg_Guards_of_Mystery(Item):
+class Leg_Guards_of_Mystery(Set_Item):
     """ Leg Guards of Mystery """
     url = r'/en/item/leg-guards-of-mystery-Unique_Pants_Set_02_p2'
     type = 'pants'
+    set = Delseres_Magnum_Opus
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
 	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
@@ -4545,7 +4555,7 @@ class Leg_Guards_of_Mystery(Item):
     """
 
 
-class Typhons_Abdomen(Item):
+class Typhons_Abdomen(Set_Item):
     """ Typhon's Abdomen """
     url = r'/en/item/typhons-abdomen-P68_Unique_Pants_Set_03'
     type = 'pants'
@@ -4956,7 +4966,7 @@ class The_Shadows_Heels(Item):
     """
 
 
-class Vyrs_Swaggering_Stance(Item):
+class Vyrs_Swaggering_Stance(Set_Item):
     """ Vyr's Swaggering Stance """
     url = r'/en/item/vyrs-swaggering-stance-Unique_Boots_Set_13_x1'
     type = 'feet'
@@ -5130,10 +5140,11 @@ class Eight_Demon_Boots(Item):
     """
 
 
-class Striders_of_Destiny(Item):
+class Striders_of_Destiny(Set_Item):
     """ Striders of Destiny """
     url = r'/en/item/striders-of-destiny-Unique_Boots_Set_02_p2'
     type = 'feet'
+    set = Delseres_Magnum_Opus
     text = """
 	(2) Set:      Casting Arcane Orb, Energy Twister, Explosive Blast, Magic Missile, Shock Pulse, Spectral Blade, or Wave of Force reduces the cooldown of Slow Time by 3 seconds.
 	(4) Set:      You take 60% reduced damage while you have a Slow Time active. Allies inside your Slow Time gain half benefit.
@@ -5141,7 +5152,7 @@ class Striders_of_Destiny(Item):
     """
 
 
-class Firebirds_Tarsi(Item):
+class Firebirds_Tarsi(Set_Item):
     """ Firebird's Tarsi """
     url = r'/en/item/firebirds-tarsi-Unique_Boots_Set_06_x1'
     type = 'feet'
@@ -5152,7 +5163,7 @@ class Firebirds_Tarsi(Item):
     """
 
 
-class Typhons_Tarsus(Item):
+class Typhons_Tarsus(Set_Item):
     """ Typhon's Tarsus """
     url = r'/en/item/typhons-tarsus-P68_Unique_Boots_Set_03'
     type = 'feet'

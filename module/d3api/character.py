@@ -82,8 +82,34 @@ class Character(object):
     def items(self):
         # for item in self.__dict__.items():
         #     print(item)
-        return [item for item in self.__dict__.values() if item is not None]
+        return [item for item in self.__dict__.items() if item[1] is not None]
 
+
+    def swap(self):
+        print('which item do you want to swap?')
+        equipped_items = {nr: item for nr, item in enumerate(self.items)}
+        for nr, item in equipped_items.items():
+            print('\t', nr, item)
+
+        print('which nr?')
+        choice = int(input())
+
+        print('swapping {}'.format(equipped_items[choice]))
+        print('options are:')
+
+        import classes.Necromancer
+
+        typed_items = {nr: item for nr, item in enumerate(filter(lambda x: x.type == equipped_items[choice][0], classes.Necromancer.items))}
+        for nr, item in typed_items.items():
+            print('\t', nr, item.__doc__)
+            print(item.text)
+            print()
+
+        print('which nr?')
+        choice = int(input())
+
+        print('looking to equip: {}'.format(typed_items[choice]))
+        self.equip(typed_items[choice])
 
     def equip(self, item):
         print('equipping {}'.format(item.__name__))
@@ -108,6 +134,7 @@ class Character(object):
         else:
             self.__dict__[item.type] = item()
             print('equipped', self.__dict__[item.type])
+
 
     def show_summary(self):
         for item in self.items:

@@ -35,6 +35,13 @@ class Item(object):
             return int(result.groups()[0])
         return 0
 
+    def help(self):
+        for x in dir(self):
+            print(x)
+        return self.text
+
+
+
 class Set(object):
     items = False
     levels = dict

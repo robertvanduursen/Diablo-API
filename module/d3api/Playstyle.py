@@ -58,6 +58,10 @@ class Discovery:
     def focus(self, on):
         """ what to focus on """
 
+    def swap_item(self):
+        """ the notion of being able to pick from options """
+        # todo: to be synergized with Character
+
 # 'C:\Users\rober\Desktop\test\Diablo-API\module\d3api\samples'
 
 class Playstyle:
