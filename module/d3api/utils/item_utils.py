@@ -1,9 +1,18 @@
 import inspect, sys
+
 sys.path.append("..\..")
 from datatypes import Item, classes
 
-# import Diablo
-# from .datatypes import classes
+
+def skill_dict_generator(items, skill_names):
+    import collections
+    skill_dict = collections.defaultdict(list)
+    for item in items:
+        for name in skill_names:
+            if name in item.text:
+            # if name in inspect.getsource(item):
+                skill_dict[name].append(item)
+    return skill_dict
 
 def get_class_eligible_items(_collection, class_name='barbarian'):
     # import Barbarian.items_cache as items_cache
@@ -13,7 +22,8 @@ def get_class_eligible_items(_collection, class_name='barbarian'):
     remaining_classes = set(classes) - {class_name}
     for name, cls in inspect.getmembers(_collection, inspect.isclass):
         if issubclass(cls, Item):
-            class_str = inspect.getsource(cls).lower()
+            # class_str = inspect.getsource(cls).lower()
+            class_str = cls.text.lower()
             if not any([_cls in class_str for _cls in remaining_classes]) or class_name in class_str:
                 # print(inspect.getsource(cls))
                 total += 1
@@ -22,8 +32,8 @@ def get_class_eligible_items(_collection, class_name='barbarian'):
     # print(total)
     return items
 
-def get_skill_items(items, class_name):
 
+def get_skill_items(items, class_name):
     if not items:
         from classes.Crusader import items_cache as items
     eligible_items = get_class_eligible_items(items, class_name.lower())
@@ -37,7 +47,7 @@ def get_skill_items(items, class_name):
 
     def match_skills(item):
         """ filter items based on if they match a class skill """
-        text = inspect.getsource(item)
+        text = item.text
         if any([skill in text for skill in skill_names]):
             return True
         return False
@@ -73,5 +83,3 @@ def item_patterns():
 
     for rune in set(every_effect_rune):
         print(rune)
-
-# item_patterns()

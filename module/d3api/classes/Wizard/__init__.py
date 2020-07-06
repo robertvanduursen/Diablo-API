@@ -10,23 +10,18 @@ import data.weapons_cache
 from datatypes import Active
 import classes.Wizard.skills
 import classes.Wizard.passives
-
+from item_utils import skill_dict_generator
 from datatypes import Skill, isGenerator
 
-skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(Wizard_skills, inspect.isclass) if
-               Active in cls.__bases__]
+if __name__ != '__main__':
+    skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(Wizard_skills, inspect.isclass) if
+                   Active in cls.__bases__]
 
-from utils import item_utils
+    from utils import item_utils
 
-items = item_utils.get_skill_items(data.items_cache, 'Wizard') + item_utils.get_skill_items(data.weapons_cache, 'Wizard')
-
-import collections
-
-skill_dict = collections.defaultdict(list)
-for item in items:
-    for name in skill_names:
-        if name in inspect.getsource(item):
-            skill_dict[name].append(item)
+    items = item_utils.get_skill_items(data.items_cache, 'Wizard') + item_utils.get_skill_items(data.weapons_cache,
+                                                                                                'Wizard')
+    skill_dict = skill_dict_generator(items, skill_names)
 
 
 def get_generators():
@@ -49,6 +44,7 @@ def get_items_that_boost(skillName: str):
 
     return skill_dict[skillName]
 
+
 # generators = get_generators()
 
 
@@ -64,5 +60,6 @@ def get_class_armour_sets(class_name):
             class_armor_sets.append(cls)
 
     return class_armor_sets
+
 
 armor_sets = get_class_armour_sets('Wizard')

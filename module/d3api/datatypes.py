@@ -1,5 +1,5 @@
 class Item(object):
-    text = str
+    text = ''
 
     def get_stat_potential(self):
         print('own url', self.url)

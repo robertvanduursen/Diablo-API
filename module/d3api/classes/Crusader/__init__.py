@@ -2,8 +2,6 @@ import os, sys, inspect
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..\..\..')))
 import classes
-
-# from utils import item_utils
 import classes.Crusader.skills as crusader_skills
 
 import data.items_cache
@@ -11,23 +9,21 @@ import data.weapons_cache
 from datatypes import Active
 import classes.Crusader.skills
 import classes.Crusader.passives
-
+from item_utils import skill_dict_generator
 from datatypes import Skill, isGenerator
 
-skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(crusader_skills, inspect.isclass) if
-               Active in cls.__bases__]
+if __name__ != '__main__':
 
-from utils import item_utils
+    skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(crusader_skills, inspect.isclass) if
+                   Active in cls.__bases__]
 
-items = item_utils.get_skill_items(data.items_cache) + item_utils.get_skill_items(data.weapons_cache)
+    from utils import item_utils
 
-import collections
+    items = item_utils.get_skill_items(data.items_cache) + item_utils.get_skill_items(data.weapons_cache)
 
-skill_dict = collections.defaultdict(list)
-for item in items:
-    for name in skill_names:
-        if name in inspect.getsource(item):
-            skill_dict[name].append(item)
+    import collections
+
+    skill_dict = skill_dict_generator(items, skill_names)
 
 
 def get_generators():

@@ -10,24 +10,19 @@ import data.weapons_cache
 from datatypes import Active
 import classes.Necromancer.skills
 import classes.Necromancer.passives
-
+from item_utils import skill_dict_generator
 from datatypes import Skill, isGenerator
 
-skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(Necromancer_skills, inspect.isclass) if
-               Active in cls.__bases__]
 
-from utils import item_utils
+if __name__ != '__main__':
+    skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(Necromancer_skills, inspect.isclass) if
+                   Active in cls.__bases__]
 
-items = item_utils.get_skill_items(data.items_cache, 'Necromancer') + item_utils.get_skill_items(data.weapons_cache, 'Necromancer')
+    from utils import item_utils
 
-import collections
+    items = item_utils.get_skill_items(data.items_cache, 'Necromancer') + item_utils.get_skill_items(data.weapons_cache, 'Necromancer')
 
-skill_dict = collections.defaultdict(list)
-for item in items:
-    for name in skill_names:
-        if name in inspect.getsource(item):
-            skill_dict[name].append(item)
-
+    skill_dict = skill_dict_generator(items, skill_names)
 
 def get_generators():
     total = 0
