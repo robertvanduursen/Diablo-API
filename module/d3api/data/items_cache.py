@@ -2,7 +2,7 @@ import sys, os
 sys.path.append("..\..")
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from datatypes import Item, Set, Set_Item
+from datatypes import Item, Set_Item
 from .armor_sets import Rolands_Legacy, Aegis_of_Valor, Pestilence_Masters_Shroud, Grace_of_Inarius
 from .armor_sets import Delseres_Magnum_Opus, Vyrs_Amazing_Arcana, The_Typhons_Veil, Tal_Rashas_Elements, Firebirds_Finery
 

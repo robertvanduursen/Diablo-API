@@ -19,7 +19,7 @@ if __name__ != '__main__':
 
     from utils import item_utils
 
-    items = item_utils.get_skill_items(data.items_cache) + item_utils.get_skill_items(data.weapons_cache)
+    items = item_utils.get_skill_items(data.items_cache, 'Crusader') + item_utils.get_skill_items(data.weapons_cache, 'Crusader')
 
     import collections
 

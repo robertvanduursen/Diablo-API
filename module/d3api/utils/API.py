@@ -146,7 +146,7 @@ def get_part_from_url(url=''):
     return template
 
 
-if __name__ != '__main__':
+if __name__ == '__main__':
     my_profile = r'https://eu.diablo3.com/en/profile/Ralicx-2273/'
     my_chars = dict(get_characters_urls_from_profile(my_profile))
 

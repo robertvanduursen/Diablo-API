@@ -43,16 +43,23 @@ def rank_skill_support():
         #     print(x.text)
 
 
-# for _set in classes.Wizard.armor_sets:
-#     print(_set)
-#     print(_set.pieces)
-
-for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Wizard.items)):
-    print(nr, item.__doc__)
-    print(item.__subclasses__())
-    print(item.text)
+for _set in classes.Wizard.armor_sets:
+    print(_set)
+    for x in _set.levels.items():
+        print(x)
+    print(_set.pieces)
     print()
 
+def class_legendary_item_effects(cls='Wiard'):
+    for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Wizard.items)):
+        print(nr, item.__doc__.strip())
+        print(item.text.strip())
+        print()
+class_legendary_item_effects()
+
+print()
+print("rank_skill_support")
+rank_skill_support()
 
 if 0:
     import os, sys
@@ -71,9 +78,7 @@ if 0:
     _test.discover.focus('close up')
     _test.discover.focus('resource regen')
 
-    print()
-    print("rank_skill_support")
-    rank_skill_support()
+
 
     print()
     print('items_that_boost_my_chosen_skills')
@@ -148,7 +153,8 @@ if 0:
     build_1.equip(items.TragOuls_Stalwart_Greaves)
     build_1.equip(items.TragOuls_Corroded_Fang)
 
-
+    items.Mantle_of_Channeling
+    weapons.Deathwish
 
     build_1.show_bonus()
 

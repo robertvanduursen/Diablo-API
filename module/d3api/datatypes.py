@@ -36,9 +36,15 @@ class Item(object):
         return 0
 
     def help(self):
-        for x in dir(self):
-            print(x)
-        return self.text
+        """ print a textual version of the objects functions and attributes """
+        import inspect
+        for name, attr in inspect.getmembers(self):
+            if not name.startswith('__'):
+                print("{} {} -> {}: {}".format(name, ' ' * (20-len(name)), type(attr), attr))
+                if inspect.ismethod(attr):
+                    print("'''{}'''".format(attr.__doc__))
+                print()
+
 
 
 
@@ -314,25 +320,46 @@ import enum
 
 
 class Classes(enum.Enum):
-    BARBARIAN = 'barbarian'
-    WIZARD = 'wizard'
-    WITCH_DOCTOR = 'witch doctor'
-    DEMON_HUNTER = 'demon hunter'
-    NECROMANCER = 'necromancer'
-    CRUSADER = 'crusader'
-    MONK = 'monk'
+    """ utility class to make name look-up's easier """
+    BARBARIAN = 'Barbarian'
+    WIZARD = 'Wizard'
+    WITCH_DOCTOR = 'Witch Doctor'
+    DEMON_HUNTER = 'Demon Hunter'
+    NECROMANCER = 'Necromancer'
+    CRUSADER = 'Crusader'
+    MONK = 'Monk'
 
+    from types import DynamicClassAttribute
 
-classes = [
-    'barbarian',
-    'wizard',
-    'witch doctor',
-    'demon hunter',
-    'necromancer',
-    'crusader',
-    'monk',
-]
+    @DynamicClassAttribute
+    def low(self):
+        """The name of the Enum member."""
+        return self._value_.lower()
 
+    @DynamicClassAttribute
+    def internet(self):
+        """The name of the Enum member."""
+        return self._value_.replace(' ', '-').lower()
+
+    @DynamicClassAttribute
+    def os_name(self):
+        """The name of the Enum member."""
+        return self._value_.replace(' ', '_')
+
+    @staticmethod
+    def names():
+        return [obj.value for n, obj in Classes._value2member_map_.items()]
+
+    @staticmethod
+    def items():
+        return [obj for n, obj in Classes._value2member_map_.items()]
+
+    @staticmethod
+    def find(cls):
+        if cls in Classes._value2member_map_:
+            return Classes._value2member_map_[cls]
+        else:
+            print('{} not found in Classes'.format(cls))
 
 def isGenerator(obj):
     """ assert when object generates the primary resource """

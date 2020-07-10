@@ -4,7 +4,7 @@ Diablo webscraping utils
 
 """
 
-import inspect
+import inspect, os
 import requests, re
 from datatypes import Classes
 
@@ -14,18 +14,26 @@ class Class_Info:
         self.className = className
         # break_down & get_skills -> took 22 min
 
-    def get_active_skills(self):
+        # check whether the cache folder exists
+        self.root_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..\classes'))
+        os_name = self.className.os_name
+        if os_name  not in os.listdir(self.root_folder):
+            print('not found, creating {} folder'.format(os_name))
+            os.mkdir(os.path.join(self.root_folder, os_name))
 
+        self.root_folder = os.path.join(self.root_folder, os_name)
 
+    def get_active_skills(self, save = False):
         from lxml import html
         import requests
 
-        print('""" {} active skills """'.format(self.className))
+        lines = []
+        lines.append('""" {} active skills """'.format(self.className))
 
-        print('from datatypes import Active')
-        print('from datatypes import Rune')
+        lines.append('from datatypes import Active')
+        lines.append('from datatypes import Rune')
 
-        url = r'https://us.diablo3.com/en/class/{}/active/'.format(self.className)
+        url = r'https://us.diablo3.com/en/class/{}/active/'.format(self.className.internet)
         print(url)
         page = requests.get(url)
         tree = html.fromstring(page.content)
@@ -70,11 +78,12 @@ class Class_Info:
                     # print()
                     rune_cls_name = re.sub(r"[-! ]", '_', re.sub(r"['.]", '', rune_name))
                     rune_names.append(rune_cls_name)
-                    print(rune_template.format(name=rune_cls_name, title=rune_name, desc=rune_desc).lstrip())
+                    lines.append(rune_template.format(name=rune_cls_name, title=rune_name, desc=rune_desc).lstrip())
             # print('"""')
             # print()
 
             skill_class_name = re.sub(r"[-! ]", '_', re.sub(r"['.]", '', name))
+            print('fetching {}'.format(skill_class_name))
             template = '''
             class {name}(Active):
                 """ {title} """
@@ -85,33 +94,40 @@ class Class_Info:
 
             '''.format(name=skill_class_name, url=url, title=name, desc=desc, runes=','.join(rune_names))
 
-            print(template.lstrip())
+            lines.append(template.lstrip())
 
 
 
         print(total)
-        return True
 
-    def get_passives(self):
+        if save:
+            with open(os.path.join(self.root_folder, 'skills.py'), 'w') as skills_file:
+                skills_file.write('\n'.join(lines))
+            print("{} saved at {}".format('skills.py', self.root_folder))
+
+
+
+    def get_passives(self, save = False):
 
         from lxml import html
         import requests
 
-        url = r'https://us.diablo3.com/en/class/{}/passive/'.format(self.className)
+        url = r'https://us.diablo3.com/en/class/{}/passive/'.format(self.className.internet)
         print('fetching {}'.format(url))
         page = requests.get(url)
         tree = html.fromstring(page.content)
         _test = '//*[@class="skill-details"]'
         skills = tree.xpath(_test)
 
-        print('from datatypes import Passive')
+        lines = []
+        lines.append('from datatypes import Passive')
 
         for idx, skill in enumerate(skills):
             title = skill.xpath('h3[1]/a[1]')
             url = r'https://us.diablo3.com/{}'.format(title[0].attrib['href'])
 
             name = title[0].text_content()
-
+            print('fetching {}'.format(name))
             page = requests.get(url)
             tree = html.fromstring(page.content)
 
@@ -131,8 +147,15 @@ class Class_Info:
     
             '''.format(name=passive_class_name, url=url, part_name=part_name, title=name, desc=desc)
 
-            print(template.lstrip())
-        return True
+            lines.append(template.lstrip())
+
+        if save:
+            with open(os.path.join(self.root_folder, 'passives.py'), 'w') as passives_file:
+                passives_file.write('\n'.join(lines))
+            print("{} saved at {}".format('passives.py', self.root_folder))
+
+
+
 
 
 item_template = '''
@@ -380,5 +403,5 @@ if __name__ == '__main__':
     # barbarian = Armour_miner(Classes.CRUSADER.value)
     # barbarian.get_items()
 
-    # print(Class_Info(Classes.WIZARD.value).get_passives())
-    print(Class_Info(Classes.WIZARD.value).get_active_skills())
+    Class_Info(Classes.DEMON_HUNTER).get_passives(save=True)
+    Class_Info(Classes.DEMON_HUNTER).get_active_skills(save=True)

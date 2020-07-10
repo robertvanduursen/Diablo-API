@@ -1,0 +1,1 @@
+attributes = ['Hatred', 'Discipline']
