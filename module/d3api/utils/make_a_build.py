@@ -11,4 +11,5 @@ from data.weapons_cache import Spear_of_Jairo
 
 item = Spear_of_Jairo()
 item.help()
+
 item.interpret()

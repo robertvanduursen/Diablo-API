@@ -26,7 +26,15 @@ class Item(object):
         print('visiting')
 
     def interpret(self):
-        self.text
+        import re
+        result = re.search(r"damage.* (\d+?)%", self.text)
+        if result:
+            return int(result.groups()[0])
+        return 0
+
+
+
+
 
     def damage_increase(self):
         import re
