@@ -36,7 +36,7 @@ if __name__ == '__main__':
         if issubclass(cls, Item) and cls is not Item and cls is not Set_Item:
             weapons.append(cls)
 
-    eligible_items = exclude_other_class_items(items + weapons, 'Wizard')
+    eligible_items = exclude_other_class_items(items + weapons, 'Monk')
 
     for nr, item in enumerate(eligible_items):
         print(nr, item.__doc__.strip())

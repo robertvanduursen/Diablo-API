@@ -33,7 +33,7 @@ class Masquerade_of_the_Burning_Carnival(Set):
         4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
         6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
     }
-    pieces = [Head, Hands, Torso, Legs, Feet, Shoulders]  # todo ?
+    pieces = [Head, Hands, Torso, Legs, Feet, Shoulders]
 
 
 class Rolands_Legacy(Set):

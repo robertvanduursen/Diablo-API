@@ -104,7 +104,3 @@ if 1 == 1:
         build_1.show_bonus()
 
 
-
-
-# todo: an exercise in excluding option ranges through knowing / 100% fact reasoning
-

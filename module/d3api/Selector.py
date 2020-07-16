@@ -15,7 +15,7 @@ scope = [
     r'C:\Users\rober\Google Drive\Games\Diablo\Kanai.py',
 ]
 
-# todo: load all the items that can be selected
+
 scope_globals = {}
 scope_locals = {}
 

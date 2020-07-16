@@ -156,5 +156,3 @@ if 0:
 import data.items_cache as items
 items.Funerary_Pick().help()
 
-# todo: an exercise in excluding option ranges through knowing / 100% fact reasoning
-

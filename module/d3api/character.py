@@ -207,8 +207,6 @@ a way to turn statements into effects
 '''
 
 
-# todo: how does Gear / Character stat levels correspond to which Rift level is appropriate?
-
 
 t = Character()
 t.Strength = 100

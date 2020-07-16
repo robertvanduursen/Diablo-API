@@ -15,9 +15,9 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import classes.Wizard
-import classes.Wizard.skills
-import classes.Wizard.passives
+import classes.Monk
+import classes.Monk.skills
+import classes.Monk.passives
 import data.items_cache
 import data.weapons_cache
 import inspect
@@ -27,8 +27,8 @@ def rank_skill_support():
     """ examine how many items support a skill """
     import collections
     score_dict = collections.defaultdict(int)
-    for item in classes.Wizard.items:
-        for name in classes.Wizard.skill_names:
+    for item in classes.Monk.items:
+        for name in classes.Monk.skill_names:
             if name in inspect.getsource(item):
                 score_dict[name] += 1
 
@@ -36,22 +36,22 @@ def rank_skill_support():
         print(name, freq)
 
 
-        # Wizard_belts = [x for x in classes.Wizard.items if x.type == 'waist']
+        # Wizard_belts = [x for x in classes.Monk.items if x.type == 'waist']
         # print(len(Wizard_belts))
         # for x in Wizard_belts:
         #     print(x.__doc__)
         #     print(x.text)
 
 
-for _set in classes.Wizard.armor_sets:
+for _set in classes.Monk.armor_sets:
     print(_set)
     for x in _set.levels.items():
         print(x)
     print(_set.pieces)
     print()
 
-def class_legendary_item_effects(cls='Wiard'):
-    for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Wizard.items)):
+def class_legendary_item_effects(cls='Wizard'):
+    for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Monk.items)):
         print(nr, item.__doc__.strip())
         print(item.text.strip())
         print()
@@ -64,17 +64,14 @@ rank_skill_support()
 if 0:
     import os, sys
 
-    # sys.path.append("..\..")
-
     from Playstyle import Playstyle, Discovery
-    #
     # chosen_skills = Discovery()
-    # chosen_skills.save_file = r'G:\projects\Diablo-API\module\d3api\samples\season_20_Wizard_skills.json'
+    # chosen_skills.save_file = r'G:\projects\Diablo-API\module\d3api\samples\season_21_Monk_skills.json'
     # chosen_skills.pick()
 
-    chosen_skills = Discovery('season_20_Wizard_skills.json').chosen_skills
+    chosen_skills = Discovery('season_21_Monk_skills.json').chosen_skills
 
-    _test = Playstyle(cls='Wizard')
+    _test = Playstyle(cls='Monk')
     _test.discover.focus('close up')
     _test.discover.focus('resource regen')
 
@@ -85,7 +82,7 @@ if 0:
     import collections
     items_that_boost_my_chosen_skills = collections.defaultdict(list)
     for name in chosen_skills:
-        items_that_boost_my_chosen_skills[name] = classes.Wizard.get_items_that_boost(name)
+        items_that_boost_my_chosen_skills[name] = classes.Monk.get_items_that_boost(name)
         print(name, [y.__doc__.strip() for y in items_that_boost_my_chosen_skills[name]])
 
     print()
@@ -109,10 +106,10 @@ if 0:
             print(tuple(x))
             overlap = set(overlap) & set(tuple(x))
         print(len(overlap), overlap)
-        # print(classes.Wizard.get_items_that_boost('Blessed Hammer'))
+        # print(classes.Monk.get_items_that_boost('Blessed Hammer'))
 
 if 0:
-    # Wizard_belts = [x for x in classes.Wizard.items if x.type == 'waist']
+    # Wizard_belts = [x for x in classes.Monk.items if x.type == 'waist']
     # print(len(Wizard_belts))
     # for x in Wizard_belts:
     #     print(x.__doc__)
@@ -124,7 +121,7 @@ if 0:
     import data.items_cache as items
     import data.weapons_cache as weapons
 
-    activ = classes.Wizard.skills
+    activ = classes.Monk.skills
     build_1.active_skills = [
         activ.Army_of_the_Dead,  # + activ.Unconventional_Warfare,
         activ.Bone_Spear,  # + activ.Blood_Spear,
@@ -133,7 +130,7 @@ if 0:
         activ.Frailty,  # + activ.Aura_of_Frailty,
         activ.Devour,  # + activ.Devouring_Aura,
     ]
-    passiv = classes.Wizard.passives
+    passiv = classes.Monk.passives
     build_1.passive_skills = [
         passiv.Life_from_Death,
         passiv.Blood_for_Blood,
