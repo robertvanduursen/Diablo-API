@@ -36,30 +36,42 @@ def rank_skill_support():
         print(name, freq)
 
 
-        # Wizard_belts = [x for x in classes.Monk.items if x.type == 'waist']
-        # print(len(Wizard_belts))
-        # for x in Wizard_belts:
-        #     print(x.__doc__)
-        #     print(x.text)
+Monk_belts = [x for x in classes.Monk.items if x.type == 'waist']
+print(len(Monk_belts))
+for x in Monk_belts:
+    print(x.__doc__)
+    print(x.text)
 
+Monk_belts = [x for x in classes.Monk.items if x.type == 'ring']
+print(len(Monk_belts))
+for x in Monk_belts:
+    print(x.__doc__)
+    print(x.text)
 
-for _set in classes.Monk.armor_sets:
-    print(_set)
-    for x in _set.levels.items():
-        print(x)
-    print(_set.pieces)
-    print()
+Monk_belts = [x for x in classes.Monk.items if x.type == 'neck']
+print(len(Monk_belts))
+for x in Monk_belts:
+    print(x.__doc__)
+    print(x.text)
 
-def class_legendary_item_effects(cls='Wizard'):
-    for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Monk.items)):
-        print(nr, item.__doc__.strip())
-        print(item.text.strip())
+if 0:
+    for _set in classes.Monk.armor_sets:
+        print(_set)
+        for x in _set.levels.items():
+            print(x)
+        print(_set.pieces)
         print()
-class_legendary_item_effects()
 
-print()
-print("rank_skill_support")
-rank_skill_support()
+    def class_legendary_item_effects(cls='Wizard'):
+        for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Monk.items)):
+            print(nr, item.__doc__.strip())
+            print(item.text.strip())
+            print()
+    class_legendary_item_effects()
+
+    print()
+    print("rank_skill_support")
+    rank_skill_support()
 
 if 0:
     import os, sys

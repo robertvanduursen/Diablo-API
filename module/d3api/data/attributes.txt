@@ -1,0 +1,16 @@
+Thorns
+Block Chance
+Hatred
+Discipline
+Fury
+Mana
+Spirit
+Arcane Power
+Wrath
+Essence
+Strength
+Dexterity
+Intelligence
+Vitality
+Armor
+Damage

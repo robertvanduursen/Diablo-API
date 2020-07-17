@@ -26,11 +26,18 @@ class Item(object):
         print('visiting')
 
     def interpret(self):
+        """ returns a list of tokens found in the items text """
         import re
-        result = re.search(r"damage.* (\d+?)%", self.text)
-        if result:
-            return int(result.groups()[0])
-        return 0
+
+        with open(r'G:\projects\Diablo-API\module\d3api\data\tokens.txt', 'r') as token_file:
+            tokens = [x[:-1] for x in token_file.readlines() if x[:-1] != '']
+
+        found_tokens = []
+        for token in tokens:
+            if re.search(r"[( ]"+token+"[) .]", self.text):
+                found_tokens.append(token)
+
+        return found_tokens
 
 
 

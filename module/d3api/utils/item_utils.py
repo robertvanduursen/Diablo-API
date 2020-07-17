@@ -99,8 +99,8 @@ def all_class_skill_names():
     return all_skill_names
 
 
-for x in sorted(all_class_skill_names()):
-    print(x)
+# for x in sorted(all_class_skill_names()):
+#     print(x)
 
 def exclude_other_class_items(_items, class_name):
     """ filter based on the presence of skill names of other classes """

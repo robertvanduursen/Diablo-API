@@ -6,10 +6,18 @@
 
 """
 
-item = 'Spear of Jairo'
+# item = 'Spear of Jairo'
 from data.weapons_cache import Spear_of_Jairo
 
 item = Spear_of_Jairo()
-item.help()
+print(item.text)
 
-item.interpret()
+tokens = item.interpret()
+print(tokens)
+
+
+import Interpeter
+
+inter = Interpeter.Interpeter(tokens)
+print(inter.process())
+build_focus = []
