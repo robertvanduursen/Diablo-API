@@ -9,15 +9,19 @@
 # item = 'Spear of Jairo'
 from data.weapons_cache import Spear_of_Jairo
 
-item = Spear_of_Jairo()
+from data.items_cache import Lavishing_Gloves
+
+item = Lavishing_Gloves()
 print(item.text)
 
 tokens = item.interpret()
-print(tokens)
+print('tokens =', tokens)
 
 
 import Interpeter
 
 inter = Interpeter.Interpeter(tokens)
-print(inter.process())
+inter.process()
 build_focus = []
+
+print(inter.result)

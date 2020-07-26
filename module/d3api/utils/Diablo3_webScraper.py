@@ -17,13 +17,13 @@ class Class_Info:
         # check whether the cache folder exists
         self.root_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..\classes'))
         os_name = self.className.os_name
-        if os_name  not in os.listdir(self.root_folder):
+        if os_name not in os.listdir(self.root_folder):
             print('not found, creating {} folder'.format(os_name))
             os.mkdir(os.path.join(self.root_folder, os_name))
 
         self.root_folder = os.path.join(self.root_folder, os_name)
 
-    def get_active_skills(self, save = False):
+    def get_active_skills(self, save=False):
         from lxml import html
         import requests
 
@@ -53,7 +53,6 @@ class Class_Info:
             _test = '//*[@class="skill-desc"]'
             desc = tree.xpath(_test)
             desc = desc[0].text_content().strip()
-
 
             rune_template = '''
             class {name}(Rune):
@@ -96,8 +95,6 @@ class Class_Info:
 
             lines.append(template.lstrip())
 
-
-
         print(total)
 
         if save:
@@ -105,9 +102,7 @@ class Class_Info:
                 skills_file.write('\n'.join(lines))
             print("{} saved at {}".format('skills.py', self.root_folder))
 
-
-
-    def get_passives(self, save = False):
+    def get_passives(self, save=False):
 
         from lxml import html
         import requests
@@ -155,8 +150,16 @@ class Class_Info:
             print("{} saved at {}".format('passives.py', self.root_folder))
 
 
-
-
+armour_set_template = '''
+class {class_name}(Set):
+    """ {name} """
+    _class = {_class}
+    items = list
+    levels = {levels}
+    pieces = {pieces}
+    parts = {parts}
+    size = {size}
+'''
 
 item_template = '''
 class {class_name}(Item):
@@ -213,8 +216,9 @@ class Armour_miner:
         'staff',
     ]
 
-    def __init__(self, className):
-        self.className = className
+    def __init__(self, className=False):
+        if className:
+            self.className = className
         # break_down & get_skills -> took 22 min
 
     def get_piece(self, url=r'https://eu.diablo3.com/en/item/tragouls-scales-P6_Necro_Set_2_Chest'):
@@ -390,9 +394,91 @@ class Armour_miner:
             #     print()
             #     total += 1
 
+    def get_armor_sets(self, save=False):
+        from lxml import html
+        import requests
+
+        # G:\projects\Diablo-API\module\d3api\data\armor_sets.py
+
+        armor_dict = {}  # cache and lookup
+
+        for part in self.armorTypes:
+            print("fetching {}".format(part))
+            url = 'https://us.diablo3.com/en/item/{}/#type=set'.format(part)
+
+            page = requests.get(url)
+            tree = html.fromstring(page.content)
+
+            _test = '//*[@class="item-details-text"]'
+            armor_sets = tree.xpath(_test)
+
+            for x in armor_sets:
+                pieces = []
+                item_url = x.xpath('h3[1]/a[1]')[0].attrib['href']
+
+                _type = x.xpath('div[1]/*[@class="item-type"]/li[1]/span[1]/text()')[0]
+                itemset = x.xpath('div[1]/*[@class="item-itemset"]/span')
+
+                if itemset and 'Set ' in _type:
+
+                    # now actually go to the page for the armor set breakdown
+                    set_url = 'https://us.diablo3.com/{}'.format(item_url)
+                    page = requests.get(set_url)
+                    tree = html.fromstring(page.content)
+
+                    restricted = tree.xpath('//*[@class="item-class-specific d3-color-white"]')
+                    if restricted:
+                        restricted = restricted[0].text_content().strip()
+                        # print("{} Only".format(restricted))
+                    else:
+                        restricted = False
+
+                    # set_part = tree.xpath('//*[@class="item-slot"]')
+                    # if set_part:
+                    #     print("part = {}".format(set_part[0].text_content().strip()))
+
+                    _test = '//*[@class="item-itemset"]'
+                    armor_parts = tree.xpath(_test)
+                    item_set_desc = armor_parts[0]
+                    bits = item_set_desc.xpath('li')
+                    name = re.sub(r"[\xc3\xa2|\x80\x99|\xe2\x80\x99]", "'", bits[0].text_content().strip())
+                    parts = []
+                    for x in bits[1:]:
+                        parts += [x.text_content().strip()]
+
+                    levels = []
+                    for y in itemset:
+                        level = y.text_content().strip()
+                        levels += [level[level.find(' Set:') + 6:].strip()]
+
+                    armor_dict[name] = (parts, levels, pieces, restricted)
+
+        print('armor_dict', len(armor_dict))
+        for item in armor_dict.items():
+            print(item)
+
+        if save:
+            lines = [
+                '"""" this is an auto-generated file"""',
+                'from datatypes import Item, Set, Set_Item',
+                'from datatypes import Head, Hands, Torso, Waist, Legs, Feet, Shoulders'
+            ]
+            for name, (parts, levels, pieces, restricted) in armor_dict.items():
+                levels = dict(zip([2, 4, 6], levels))
+                lines.append(
+                    armour_set_template.format(class_name=re.sub(r"[- ]", '_', re.sub(r"['.]", '', name)), name=name,
+                                               parts=parts, levels=str(levels).replace("',", "',\n"),
+                                               _class='"{}"'.format(restricted) if restricted else None,
+                                               size=len(parts), pieces=[]))
+
+            root_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..\data'))
+            with open(os.path.join(root_folder, 'armor_sets.py'), 'w') as passives_file:
+                passives_file.write('\n'.join(lines))
+            print("{} saved at {}".format('armour_sets.py', root_folder))
+
 
 if __name__ == '__main__':
-    if False:
+    if 0:
         for name, cls in copy.copy(globals()).items():
             if isinstance(cls, Gear):
                 print(name, cls)
@@ -403,5 +489,7 @@ if __name__ == '__main__':
     # barbarian = Armour_miner(Classes.CRUSADER.value)
     # barbarian.get_items()
 
-    Class_Info(Classes.DEMON_HUNTER).get_passives(save=True)
-    Class_Info(Classes.DEMON_HUNTER).get_active_skills(save=True)
+    # Class_Info(Classes.DEMON_HUNTER).get_passives(save=True)
+    # Class_Info(Classes.DEMON_HUNTER).get_active_skills(save=True)
+
+    Armour_miner().get_armor_sets(save=True)

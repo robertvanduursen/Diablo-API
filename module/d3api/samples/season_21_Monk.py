@@ -21,40 +21,23 @@ import classes.Monk.passives
 import data.items_cache
 import data.weapons_cache
 import inspect
-from datatypes import Set_Item
+from datatypes import Set_Item, Item
 
 def rank_skill_support():
     """ examine how many items support a skill """
     import collections
-    score_dict = collections.defaultdict(int)
+    score_dict = collections.defaultdict(list)
     for item in classes.Monk.items:
         for name in classes.Monk.skill_names:
             if name in inspect.getsource(item):
-                score_dict[name] += 1
+                score_dict[name] += [item]
 
-    for name, freq in sorted(score_dict.items(), key=lambda x: -x[1]):
-        print(name, freq)
+    # for name, freq in sorted(score_dict.items(), key=lambda x: -len(x[1])):
+    #     print(name, len(freq), ["{} ({})".format(f.__doc__.strip(), f.type) for f in freq])
 
+    return score_dict
 
-Monk_belts = [x for x in classes.Monk.items if x.type == 'waist']
-print(len(Monk_belts))
-for x in Monk_belts:
-    print(x.__doc__)
-    print(x.text)
-
-Monk_belts = [x for x in classes.Monk.items if x.type == 'ring']
-print(len(Monk_belts))
-for x in Monk_belts:
-    print(x.__doc__)
-    print(x.text)
-
-Monk_belts = [x for x in classes.Monk.items if x.type == 'neck']
-print(len(Monk_belts))
-for x in Monk_belts:
-    print(x.__doc__)
-    print(x.text)
-
-if 0:
+if 1:
     for _set in classes.Monk.armor_sets:
         print(_set)
         for x in _set.levels.items():
@@ -63,15 +46,23 @@ if 0:
         print()
 
     def class_legendary_item_effects(cls='Wizard'):
+        """ returns a list of non-Set Legendary Items usable by the provided class """
         for nr, item in enumerate(filter(lambda x: not issubclass(x, Set_Item), classes.Monk.items)):
             print(nr, item.__doc__.strip())
             print(item.text.strip())
             print()
-    class_legendary_item_effects()
+    # class_legendary_item_effects()
 
     print()
     print("rank_skill_support")
-    rank_skill_support()
+    score_dict = rank_skill_support()
+
+    for name, freq in sorted(score_dict.items(), key=lambda x: -len(x[1])):
+        print(name, len(freq))
+        for f in freq:
+            print("\t{} ({})".format(f.__doc__.strip(), f.type))
+            print('\t', f.text)
+
 
 if 0:
     import os, sys
@@ -151,16 +142,7 @@ if 0:
     ]
 
     build_1.equip(items.Ring_of_Royal_Grandeur)
-    build_1.equip(items.Funerary_Pick)
-
-    build_1.equip(items.Pestilence_Battle_Boots)
-    build_1.equip(items.Maltorius_Petrified_Spike)
-    build_1.equip(items.Haunted_Visions)
-    build_1.equip(items.TragOuls_Guise)
-    build_1.equip(items.TragOuls_Claws)
-    build_1.equip(items.TragOuls_Heart)
-    build_1.equip(items.TragOuls_Stalwart_Greaves)
-    build_1.equip(items.TragOuls_Corroded_Fang)
+    build_1.equip(items.Kyoshiros_Soul)
 
     items.Mantle_of_Channeling
     weapons.Deathwish

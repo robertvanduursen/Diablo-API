@@ -54,7 +54,7 @@ def rank_skill_support():
 #
 # print(len(classes.Necromancer.items))
 
-if 0:
+if 1:
     import os, sys
 
     # sys.path.append("..\..")
@@ -65,7 +65,7 @@ if 0:
     # chosen_skills.save_file = r'G:\projects\Diablo-API\module\d3api\samples\season_20_Necromancer_skills.json'
     # chosen_skills.pick()
 
-    chosen_skills = Discovery('season_20_Necromancer_skills.json').chosen_skills
+    chosen_skills = Discovery('season_21_Necromancer_skills.json').chosen_skills
 
     _test = Playstyle(cls='Necromancer')
     _test.discover.focus('close up')
@@ -106,12 +106,8 @@ if 0:
     print(len(overlap), overlap)
         # print(classes.Necromancer.get_items_that_boost('Blessed Hammer'))
 
-if 0:
-    # Necromancer_belts = [x for x in classes.Necromancer.items if x.type == 'waist']
-    # print(len(Necromancer_belts))
-    # for x in Necromancer_belts:
-    #     print(x.__doc__)
-    #     print(x.text)
+if 1:
+
 
     from character import Character
     build_1 = Character()
@@ -121,8 +117,9 @@ if 0:
 
     activ = classes.Necromancer.skills
     build_1.active_skills = [
-        activ.Army_of_the_Dead,  # + activ.Unconventional_Warfare,
+        activ.Simulacrum,  # + activ.Unconventional_Warfare,
         activ.Bone_Spear,  # + activ.Blood_Spear,
+
         activ.Siphon_Blood,  # + activ.Blood_Sucker,
         activ.Blood_Rush,  # + activ.Metabolism,
         activ.Frailty,  # + activ.Aura_of_Frailty,
@@ -137,22 +134,18 @@ if 0:
     ]
 
     build_1.equip(items.Ring_of_Royal_Grandeur)
-    build_1.equip(items.Funerary_Pick)
 
-    build_1.equip(items.Pestilence_Battle_Boots)
-    build_1.equip(items.Maltorius_Petrified_Spike)
-    build_1.equip(items.Haunted_Visions)
-    build_1.equip(items.TragOuls_Guise)
-    build_1.equip(items.TragOuls_Claws)
-    build_1.equip(items.TragOuls_Heart)
-    build_1.equip(items.TragOuls_Stalwart_Greaves)
-    build_1.equip(items.TragOuls_Corroded_Fang)
+    build_1.equip(items.Luxurious_Bauta)
+    build_1.equip(items.Sophistocated_Vest)
+    build_1.equip(items.Lavishing_Gloves)
+    build_1.equip(items.Extravagant_Shoes)
+    build_1.equip(items.Elegant_Pants)
+    build_1.equip(items.Glamorous_Gigot)
+
 
 
 
     build_1.show_bonus()
+    build_1.show_summary()
 
-
-import data.items_cache as items
-items.Funerary_Pick().help()
 

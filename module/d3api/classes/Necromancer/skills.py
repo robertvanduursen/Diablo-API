@@ -784,4 +784,3 @@ Cooldown: 120 seconds
 Create a Simulacrum made of blood that will duplicate your Secondary skills for 15 seconds."""
     url = r'https://us.diablo3.com//en/class/necromancer/active/simulacrum'
     runes = [Cursed_Form, Reservoir, Self_Sacrifice, Blood_Debt, Blood_and_Bone]
-

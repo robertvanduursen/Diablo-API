@@ -1,11 +1,13 @@
 import sys, os
+
 sys.path.append("..\..")
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from datatypes import Item, Set_Item
 from .armor_sets import Rolands_Legacy, Aegis_of_Valor, Pestilence_Masters_Shroud, Grace_of_Inarius
-from .armor_sets import Delseres_Magnum_Opus, Vyrs_Amazing_Arcana, The_Typhons_Veil, Tal_Rashas_Elements, Firebirds_Finery
-
+from .armor_sets import Delseres_Magnum_Opus, Vyrs_Amazing_Arcana, The_Typhons_Veil, Tal_Rashas_Elements, \
+    Firebirds_Finery
+from .armor_sets import Masquerade_of_the_Burning_Carnival
 
 
 class Hellfire_Ring(Item):
@@ -5717,3 +5719,63 @@ class Hallowed_Barricade(Item):
     """
 
 
+class Luxurious_Bauta(Set_Item):
+    """ Luxurious Bauta """
+    set = Masquerade_of_the_Burning_Carnival
+    type = 'head'
+    text = """
+        2: 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+        4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+        6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+        """
+
+class Sophistocated_Vest(Set_Item):
+    """ Sophistocated Vest """
+    set = Masquerade_of_the_Burning_Carnival
+    type = 'torso'
+    text = """
+        2: 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+        4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+        6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+        """
+
+class Lavishing_Gloves(Set_Item):
+    """ Lavishing Gloves """
+    set = Masquerade_of_the_Burning_Carnival
+    type = 'hands'
+    text = """
+        2: 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+        4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+        6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+        """
+
+class Extravagant_Shoes(Set_Item):
+    """ Extravagant Shoes """
+    set = Masquerade_of_the_Burning_Carnival
+    type = 'legs'
+    text = """
+        2: 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+        4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+        6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+        """
+
+class Elegant_Pants(Set_Item):
+    """ Elegant Pants """
+    set = Masquerade_of_the_Burning_Carnival
+    type = 'legs'
+    text = """
+        2: 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+        4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+        6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+        """
+
+class Glamorous_Gigot(Set_Item):
+    """ Glamorous Gigot"""
+    set = Masquerade_of_the_Burning_Carnival
+    type = 'shoulders'
+    url = r'https://www.icy-veins.com/d3/sets/masquerade-of-the-burning-carnival'
+    text = """
+        2: 'Your Simulacrums no longer take damage, gains all runes, and its cooldown is refreshed when you die.',
+        4: 'While you have a Simulacrum, damage is reduced by 50%. Damage you take is split with your Simulacrums as well.',
+        6: 'Your Bone Spear deals 10,000% increased damage. Simulacrums gain triple this bonus.'
+        """

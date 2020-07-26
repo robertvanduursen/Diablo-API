@@ -1,3 +1,6 @@
+# from data import items_cache
+# from data import weapons_cache
+
 class Item(object):
     text = ''
 
@@ -34,7 +37,7 @@ class Item(object):
 
         found_tokens = []
         for token in tokens:
-            if re.search(r"[( ]"+token+"[) .]", self.text):
+            if re.search(r"[( ]"+token+"[) .,s]", self.text):
                 found_tokens.append(token)
 
         return found_tokens
@@ -301,6 +304,190 @@ class KanaisCube:
 
         def AUGMENT_ANCIENT_OR_PRIMAL_ANCIENT_ITEM(self, input):
             pass
+
+
+
+        #todo
+        '''
+        challenge:
+        circular imports
+        # '''
+        # weapon_powers = [
+        #     weapons_cache.Ahavarion_Spear_of_Lycander,
+        #     weapons_cache.Arthefs_Spark_of_Life,
+        #     weapons_cache.Azurewrath,
+        #     weapons_cache.Blood_Brother,
+        #     items_cache.Bloodtide_Blade,
+        #     items_cache.Bone_Ringer,
+        #     weapons_cache.Burst_of_Wrath,
+        #     weapons_cache.Butchers_Carver,
+        #     weapons_cache.Cinder_Switch,
+        #     items_cache.Covens_Criterion,
+        #     items_cache.Defender_of_Westmarch,
+        #     weapons_cache.Echoing_Fury,
+        #     weapons_cache.Envious_Blade,
+        #     weapons_cache.Eun_jang_do,
+        #     items_cache.Freeze_of_Deflection,
+        #     weapons_cache.Fulminator,
+        #     items_cache.Funerary_Pick,
+        #     weapons_cache.Genzaniku,
+        #
+        #     weapons_cache.Hack,
+        #     weapons_cache.In_geom,
+        #     items_cache.Iron_Rose,
+        #     items_cache.Legers_Disdain,
+        #     items_cache.Lost_Time,
+        #     weapons_cache.Mad_Monarchs_Scepter,
+        #     weapons_cache.Maloths_Focus,
+        #     items_cache.Maltorius_Petrified_Spike,
+        #     weapons_cache.Maximus,
+        #     weapons_cache.Messerschmidts_Reaver,
+        #     items_cache.Nayrs_Black_Death,
+        #     weapons_cache.Odyn_Son,
+        #     items_cache.Reilenas_Shadowhook,
+        #     weapons_cache.Rimeheart,
+        #     weapons_cache.Schaefers_Hammer,
+        #     weapons_cache.Scourge,
+        #     items_cache.Scythe_of_the_Cycle,
+        #     weapons_cache.Sever,
+        #
+        #     weapons_cache.Shard_of_Hate,
+        #     weapons_cache.Sky_Splitter,
+        #     weapons_cache.Skycutter,
+        #     weapons_cache.Solanium,
+        #     weapons_cache.Soulsmasher,
+        #     weapons_cache.Spear_of_Jairo,
+        #     weapons_cache.Stalgards_Decimator,
+        #     weapons_cache.Sunder,
+        #     weapons_cache.The_Burning_Axe_of_Sankis,
+        #     weapons_cache.The_Butchers_Sickle,
+        #     weapons_cache.The_Executioner,
+        #     weapons_cache.The_Furnace,
+        #     weapons_cache.The_Tormentor,
+        #     weapons_cache.Thunderfury_Blessed_Blade_of_the_Windseeker,
+        #     items_cache.TragOuls_Corroded_Fang,
+        #     items_cache.Wall_of_Man,
+        #     weapons_cache.Wizardspike,
+        #
+        # ]
+        # # 53
+        #
+        # armor_powers = [
+        #     items_cache.Ancient_Parthan_Defenders,
+        #     items_cache.Andariels_Visage,
+        #     items_cache.Aquila_Cuirass,
+        #     items_cache.Bloodsong_Mail,
+        #     items_cache.Boots_of_Disregard,
+        #     items_cache.Broken_Crown,
+        #     items_cache.Bryners_Journey,
+        #     items_cache.Chaingmail,
+        #     items_cache.Cindercoat,
+        #     items_cache.Cord_of_the_Sherma,
+        #     items_cache.Corpsewhisper_Pauldrons,
+        #     items_cache.Custerian_Wristguards,
+        #     items_cache.Dayntees_Binding,
+        #     items_cache.Death_Watch_Mantle,
+        #     items_cache.Deaths_Bargain,
+        #     items_cache.Deathseers_Cowl,
+        #     items_cache.Defiler_Cuisses,
+        #     items_cache.Depth_Diggers,
+        #
+        #     items_cache.Fates_Vow,
+        #     items_cache.Fire_Walkers,
+        #     items_cache.Frostburn,
+        #     items_cache.Gladiator_Gauntlets,
+        #     items_cache.Gloves_of_Worship,
+        #     items_cache.Goldskin,
+        #     items_cache.Goldwrap,
+        #     items_cache.Golemskin_Breeches,
+        #     items_cache.Grasps_of_Essence,
+        #     items_cache.Harrington_Waistguard,
+        #     items_cache.Heart_of_Iron,
+        #     items_cache.Hexing_Pants_of_Mr_Yan,
+        #     items_cache.Homing_Pads,
+        #     items_cache.Ice_Climbers,
+        #     items_cache.Illusory_Boots,
+        #     items_cache.Insatiable_Belt,
+        #     items_cache.Irontoe_Mudsputters,
+        #     items_cache.Krelms_Buff_Belt,
+        #
+        #     items_cache.Krelms_Buff_Bracers,
+        #     items_cache.Leorics_Crown,
+        #     items_cache.Magefist,
+        #     items_cache.Mantle_of_Channeling,
+        #     items_cache.Mask_of_Scarlet_Death,
+        #     items_cache.Moribund_Gauntlets,
+        #     items_cache.Nemesis_Bracers,
+        #     items_cache.Pauldrons_of_the_Skeleton_King,
+        #     items_cache.Pox_Faulds,
+        #     items_cache.Prides_Fall,
+        #     items_cache.Promise_of_Glory,
+        #     items_cache.Razeths_Volition,
+        #     items_cache.Razor_Strop,
+        #     items_cache.Reapers_Wraps,
+        #     items_cache.Requiem_Cereplate,
+        #     items_cache.Sanguinary_Vambraces,
+        #     items_cache.Sash_of_Knives,
+        #     items_cache.Sebors_Nightmare,
+        #
+        #     items_cache.Shi_Mizus_Haori,
+        #     items_cache.Spaulders_of_Zakara,
+        #     items_cache.St_Archews_Gage,
+        #     items_cache.Steuarts_Greaves,
+        #     items_cache.Stone_Gauntlets,
+        #     items_cache.String_of_Ears,
+        #     items_cache.Strongarm_Bracers,
+        #     items_cache.Tasker_and_Theo,
+        #     items_cache.Thundergods_Vigor,
+        #     items_cache.Warzechian_Armguards
+        # ]
+        #
+        # trinket_powers = [
+        #     items_cache.Arcstone,
+        #     items_cache.Avarice_Band,
+        #     items_cache.Band_of_Hollow_Whispers,
+        #     items_cache.Briggs_Wrath,
+        #     items_cache.Broken_Crown,
+        #     items_cache.Bul_Kathoss_Wedding_Band,
+        #     items_cache.Circle_of_Nailujs_Evol,
+        #     items_cache.Convention_of_Elements,
+        #     items_cache.Countess_Julias_Cameo,
+        #     items_cache.Dovu_Energy_Trap,
+        #     items_cache.Golden_Gorget_of_Leoric,
+        #     items_cache.Haunt_of_Vaxo,
+        #     items_cache.Haunted_Visions,
+        #     items_cache.Hellfire_Ring,
+        #     items_cache.Justice_Lantern,
+        #     items_cache.Kredes_Flame,
+        #     items_cache.Krysbins_Sentence,
+        #     items_cache.Kymbos_Gold,
+        #
+        #     items_cache.Lornelles_Sunstone,
+        #     items_cache.Maras_Kaleidoscope,
+        #     items_cache.Moonlight_Ward,
+        #     items_cache.Nagelring,
+        #     items_cache.Obsidian_Ring_of_the_Zodiac,
+        #     items_cache.Oculus_Ring,
+        #     items_cache.Overwhelming_Desire,
+        #     items_cache.Pandemonium_Loop,
+        #     items_cache.Puzzle_Ring,
+        #     items_cache.Rakoffs_Glass_of_Life,
+        #     items_cache.Rechels_Ring_of_Larceny,
+        #     items_cache.Ring_of_Royal_Grandeur,
+        #     items_cache.Rogars_Huge_Stone,
+        #     items_cache.Squirts_Necklace,
+        #     items_cache.Stone_of_Jordan,
+        #     items_cache.Talisman_of_Aranoch,
+        #     items_cache.The_Ess_of_Johan,
+        #     items_cache.The_Flavor_of_Time,
+        #
+        #     items_cache.The_Johnstone,
+        #     items_cache.The_Star_of_Azkaranth,
+        #     items_cache.Unity,
+        #     items_cache.Wisdom_of_Kalan,
+        #     items_cache.Wyrdward,
+        #     items_cache.Xephirian_Amulet
+        # ]
 
 
 class attribute:

@@ -14,6 +14,7 @@ I.e. if equipped; modifies stats if ability is also equipped
 
 
 class Interpeter(object):
+    focus = False
 
     def __init__(self, tokens):
         self.tokens = tokens
@@ -39,7 +40,24 @@ class Interpeter(object):
 
     @property
     def _attributes(self):
+        """ look for attributes in the tokens that aid in a playstyle """
         with open(r'G:\projects\Diablo-API\module\d3api\data\attributes.txt', 'r') as token_file:
             attrs = [x[:-1] for x in token_file.readlines() if x[:-1] != '']
 
         return set(self.tokens) & set(attrs)
+
+    def isClassRestricted(self):
+        if self._classes:
+            for cls in self._classes:
+                if '{} Only'.format(cls) in self.tokens:
+                    return '{} Only'.format(cls)
+        return False
+
+    @property
+    def result(self):
+        statements = []
+        restricted = self.isClassRestricted()
+        if restricted:
+            statements.append("restricted to {}: requires {} class".format(restricted, restricted[:-len(' Only')]))
+
+        return statements

@@ -49,18 +49,13 @@ def get_skill_items(items, class_name):
 
     def match_skills(item):
         """ filter items based on if they match a class skill """
+
         text = item.text
         if any([skill in text for skill in skill_names]):
             return True
         return False
 
     filtered = list(filter(match_skills, eligible_items))
-
-    # for nr, item in enumerate(filtered):
-    #     print(nr)
-    #     print(inspect.getsource(item))
-    #
-    # print(len(filtered))
 
     return filtered
 
@@ -86,6 +81,16 @@ def class_skill_names(class_name):
     return skill_names
 
 
+def class_skills(class_name):
+    import importlib
+    _skills = importlib.import_module('classes.{}.skills'.format(class_name))
+
+    from datatypes import Active
+    skill_names = [cls for name, cls in inspect.getmembers(_skills, inspect.isclass) if
+                   Active in cls.__bases__]
+
+    return skill_names
+
 def all_class_skill_names():
     from datatypes import Classes
 
@@ -98,6 +103,31 @@ def all_class_skill_names():
             all_skill_names += class_skill_names(cls)
     return all_skill_names
 
+
+def get_non_class_armour_sets():
+    import data.armor_sets as armor_sets
+    from datatypes import Set
+
+    non_class_armor_sets = []
+    for x, cls in inspect.getmembers(armor_sets, lambda x: inspect.isclass(x) and issubclass(x, Set)):
+        if cls is not Set:
+            if cls._class not in [cls.value for cls in Classes.items()]:
+                non_class_armor_sets.append(cls)
+
+    return non_class_armor_sets
+
+def get_class_armour_sets(class_name):
+    import data.armor_sets as armor_sets
+    from datatypes import Set
+
+    class_armor_sets = []
+    for x, cls in inspect.getmembers(armor_sets, lambda x: inspect.isclass(x) and issubclass(x, Set)):
+        if cls._class == class_name:
+            # print(x, inspect.getsource(cls))
+            # print()
+            class_armor_sets.append(cls)
+
+    return class_armor_sets
 
 # for x in sorted(all_class_skill_names()):
 #     print(x)

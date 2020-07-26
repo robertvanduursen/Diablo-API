@@ -82,7 +82,9 @@ class Character(object):
     def items(self):
         # for item in self.__dict__.items():
         #     print(item)
-        return [item for item in self.__dict__.items() if item[1] is not None]
+        print('Summary =')
+        from datatypes import Item
+        return [item[1] for item in self.__dict__.items() if item[1] is not None and issubclass(item[1].__class__,Item)]
 
 
     def swap(self):
