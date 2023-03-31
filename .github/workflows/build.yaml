@@ -37,6 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/rvd-package-1.0.0.tar.gz
-          asset_name: rvd-package-1.0.0.tar.gz
+          asset_path: ./dist/diablo-api-rvd-1.0.0.tar.gz
+          asset_name: diablo-api-rvd-1.0.0.tar.gz
           asset_content_type: application/gzip
