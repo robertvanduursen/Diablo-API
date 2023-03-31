@@ -9,9 +9,9 @@ jobs:
   build_and_release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.3
+      - uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v2.4.3
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - name: Install Dependencies
@@ -37,6 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/my-package-1.0.0.tar.gz
-          asset_name: my-package-1.0.0.tar.gz
+          asset_path: ./dist/rvd-package-1.0.0.tar.gz
+          asset_name: rvd-package-1.0.0.tar.gz
           asset_content_type: application/gzip
