@@ -17,7 +17,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: Build Package
-        run: python setup.py sdist bdist_wheel
+        run: python build/setup.py sdist bdist_wheel
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
