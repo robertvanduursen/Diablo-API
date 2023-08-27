@@ -1,27 +1,3 @@
-import os, sys, inspect
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..\..\..')))
-
-import classes.Barbarian.skills as Barbarian_skills
-
-import data.items_cache
-import data.weapons_cache
-from datatypes import Active
-import classes.Barbarian.skills
-import classes.Barbarian.passives
-from item_utils import skill_dict_generator
-
-if __name__ != '__main__':
-    skill_names = [cls.__doc__.strip() for name, cls in inspect.getmembers(Barbarian_skills, inspect.isclass) if
-                   Active in cls.__bases__]
-
-    from utils import item_utils
-
-    items = item_utils.get_skill_items(data.items_cache, 'Barbarian') + item_utils.get_skill_items(data.weapons_cache, 'Barbarian')
-
-    skill_dict = skill_dict_generator(items, skill_names)
-
-
 class ItemsManager:
 
     def __init__(self):

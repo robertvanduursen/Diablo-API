@@ -1,0 +1,99 @@
+{
+  "classType": "Barbarian",
+  "level": "70",
+  "title": "(244)",
+  "name": "Smitina",
+  "core_attrs": {
+    "Strength": "8664",
+    "Dexterity": "77",
+    "Intelligence": "77",
+    "Vitality": "3088"
+  },
+  "sec_attrs": {
+    "Damage": "570852",
+    "Toughness": "4646440",
+    "Recovery": "557332"
+  },
+  "active_skills": [
+    {
+      "name": "Weapon Throw",
+      "rune": "Balanced Weapon"
+    },
+    {
+      "name": "Whirlwind",
+      "rune": "Volcanic Eruption"
+    },
+    {
+      "name": "Rend",
+      "rune": "Ravage"
+    },
+    {
+      "name": "Furious Charge",
+      "rune": "Dreadnought"
+    },
+    {
+      "name": "War Cry",
+      "rune": "Charge!"
+    },
+    {
+      "name": "Call of the Ancients",
+      "rune": "Together as One"
+    }
+  ],
+  "passive_skills": [
+    "Unforgiving",
+    "Berserker Rage",
+    "Animosity",
+    "Boon of Bul-Kathos"
+  ],
+  "gear_slots": [
+    [
+      "slot-head",
+      "/en-us/item/helm-of-the-wastes-Unique_Helm_Set_01_p2"
+    ],
+    [
+      "slot-torso",
+      "/en-us/item/cuirass-of-the-wastes-Unique_Chest_Set_01_p2"
+    ],
+    [
+      "slot-feet",
+      "/en-us/item/immortal-kings-stride-Unique_Boots_012_x1"
+    ],
+    [
+      "slot-hands",
+      "/en-us/item/gauntlet-of-the-wastes-Unique_Gloves_Set_01_p2"
+    ],
+    [
+      "slot-shoulders",
+      "/en-us/item/pauldrons-of-the-wastes-Unique_Shoulder_Set_01_p2"
+    ],
+    [
+      "slot-legs",
+      "/en-us/item/tasset-of-the-wastes-Unique_Pants_Set_01_p2"
+    ],
+    [
+      "slot-bracers",
+      "/en-us/item/nemesis-bracers-Unique_Bracer_106_x1"
+    ],
+    [
+      "slot-mainHand",
+      "/en-us/item/immortal-kings-boulder-breaker-Unique_Mighty_2H_010_x1"
+    ],
+    [
+      "slot-waist",
+      "/en-us/item/blackthornes-notched-belt-Unique_Belt_015_x1"
+    ],
+    [
+      "slot-rightFinger",
+      "/en-us/item/skull-grasp-P61_Unique_Ring_02"
+    ],
+    [
+      "slot-leftFinger",
+      "/en-us/item/focus-Unique_Ring_Set_001_x1"
+    ],
+    [
+      "slot-neck",
+      "/en-us/item/squirts-necklace-P66_Unique_Amulet_010"
+    ]
+  ]
+}

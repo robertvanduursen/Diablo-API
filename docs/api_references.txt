@@ -1,0 +1,3 @@
+https://develop.battle.net/
+https://develop.battle.net/documentation/guides/getting-started
+https://develop.battle.net/documentation/diablo-3/community-apis

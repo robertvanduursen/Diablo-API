@@ -2,7 +2,7 @@
 """ barbarian active skills """
 from datatypes import Active
 from datatypes import Rune
-
+from character import Character
 
 class Frostbite(Rune):
     """ Frostbite """
@@ -14,8 +14,15 @@ Enemies can be frozen by Bash once every 5 seconds."""
 class Onslaught(Rune):
     """ Onslaught """
     description = """The enemy has a 10% increased chance to be Critically Hit for 3 seconds.
+    
+    
 
 Bash's damage turns into Lightning."""
+
+    def __add__(self, other):
+        """ what happens to the input if you added this """
+        # i.e. Active skill + Rune
+        pass
 
 
 class Punish(Rune):
@@ -44,6 +51,19 @@ Brutally smash an enemy for 320% weapon damage."""
     url = r'https://us.diablo3.com//en/class/barbarian/active/bash'
     runes = [Frostbite, Onslaught, Punish, Instigation, Pulverize]
 
+    def __iadd__(self, char: Character):
+        # i.e. Char + Active skill
+        char.Damage += char.weapon.damage * 320
+        char.resource.regen = '6 Fury per attack'  # Fury += 6 * weapon speed
+
+        return char
+
+    def __add__(self, char: Character):
+        # i.e. Char + Active skill
+        char.Damage += char.weapon.damage * 320
+        char.resource.regen = '6 Fury per attack'  # Fury += 6 * weapon speed
+
+        return char
 
 class Rolling_Thunder(Rune):
     """ Rolling Thunder """
@@ -883,3 +903,4 @@ Cooldown is reduced by 1 second for every 25 Fury you spend."""
     runes = [Volcano, Lahar, Snow_Capped_Mountain, Tectonic_Rift, Glacier]
 
 
+# all_skills = [y for x, y in locals().items() if isinstance(y, type) and Active in y.__mro__][1:]

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c86dcd42-fd8e-4c02-b583-4e985d86eaa4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/api_references.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/d3api/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/d3api/samples/season_23_Barbarian.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/d3api/techtree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/d3api/tests/playstyle_of_a_whirlwind_barbi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Diablo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Diablo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/Playstyle.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/Playstyle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/classes/Barbarian/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/classes/Barbarian/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/classes/Barbarian/passives.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/classes/Barbarian/passives.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/classes/Barbarian/skills.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/classes/Barbarian/skills.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/data/armor_sets.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/data/armor_sets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/datatypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/datatypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/samples/season_20_Barbarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/samples/season_20_Barbarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/tests/class_specific_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/tests/class_specific_queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/d3api/utils/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/d3api/utils/API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/setup.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qCKZZC8uVeos9vuZUNKkeFlk9n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python&#10;GitIgnore" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.playstyle_of_a_whirlwind_barbi">
+    <configuration name="Playstyle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Diablo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/d3api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/d3api/Playstyle.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="class_specific_queries" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Diablo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/d3api/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/d3api/tests/class_specific_queries.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="playstyle_of_a_whirlwind_barbi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Diablo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/d3api/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/d3api/tests/playstyle_of_a_whirlwind_barbi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="season_23_Barbarian" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Diablo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/d3api/samples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/d3api/samples/season_23_Barbarian.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testbed" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Diablo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/d3api/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/d3api/tests/testbed.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.playstyle_of_a_whirlwind_barbi" />
+        <item itemvalue="Python.Playstyle" />
+        <item itemvalue="Python.class_specific_queries" />
+        <item itemvalue="Python.testbed" />
+        <item itemvalue="Python.season_23_Barbarian" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c86dcd42-fd8e-4c02-b583-4e985d86eaa4" name="Default Changelist" comment="" />
+      <created>1616578188070</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616578188070</updated>
+      <workItem from="1616578189867" duration="21036000" />
+      <workItem from="1616706786985" duration="3328000" />
+      <workItem from="1616788735377" duration="642000" />
+      <workItem from="1616833261249" duration="6976000" />
+      <workItem from="1618342456525" duration="1739000" />
+      <workItem from="1618416906435" duration="617000" />
+      <workItem from="1620937633492" duration="1428000" />
+      <workItem from="1621444534056" duration="1296000" />
+      <workItem from="1622408743755" duration="942000" />
+      <workItem from="1625923261821" duration="1377000" />
+      <workItem from="1625936325106" duration="12646000" />
+      <workItem from="1626037072427" duration="619000" />
+      <workItem from="1626115181402" duration="954000" />
+      <workItem from="1626370838442" duration="6688000" />
+      <workItem from="1626726048927" duration="161000" />
+      <workItem from="1640118489348" duration="251000" />
+      <workItem from="1653902606153" duration="545000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Diablo_API$Selector.coverage" NAME="Selector Coverage Results" MODIFIED="1616707473844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api" />
+    <SUITE FILE_PATH="coverage/Diablo_API$class_specific_queries.coverage" NAME="class_specific_queries Coverage Results" MODIFIED="1626376387995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/tests" />
+    <SUITE FILE_PATH="coverage/Diablo_API$scratch_21.coverage" NAME="scratch_21 Coverage Results" MODIFIED="1616583140753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Diablo_API$scratch_43.coverage" NAME="scratch_43 Coverage Results" MODIFIED="1625946754094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Diablo_API$season_23_Barbarian.coverage" NAME="season_23_Barbarian Coverage Results" MODIFIED="1625951077747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/samples" />
+    <SUITE FILE_PATH="coverage/Diablo_API$PubQuiz_generator__1_.coverage" NAME="PubQuiz_generator (1) Coverage Results" MODIFIED="1616601513403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Diablo_API$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1625941305793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/data" />
+    <SUITE FILE_PATH="coverage/Diablo_API$sql_declarative.coverage" NAME="sql_declarative Coverage Results" MODIFIED="1616834904942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Timeliner/services" />
+    <SUITE FILE_PATH="coverage/Diablo_API$knapsack.coverage" NAME="knapsack Coverage Results" MODIFIED="1616834810111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Diablo_API$scratch_23.coverage" NAME="scratch_23 Coverage Results" MODIFIED="1616596721614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Diablo_API$API.coverage" NAME="API Coverage Results" MODIFIED="1625950349800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/utils" />
+    <SUITE FILE_PATH="coverage/Diablo_API$testbed.coverage" NAME="testbed Coverage Results" MODIFIED="1626371162773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/tests" />
+    <SUITE FILE_PATH="coverage/Diablo_API$skills.coverage" NAME="skills Coverage Results" MODIFIED="1616708432676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/classes/Barbarian" />
+    <SUITE FILE_PATH="coverage/Diablo_API$scratch_22.coverage" NAME="scratch_22 Coverage Results" MODIFIED="1616627833136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Diablo_API$Playstyle.coverage" NAME="Playstyle Coverage Results" MODIFIED="1626377482383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api" />
+    <SUITE FILE_PATH="coverage/Diablo_API$season_20_Barbarian.coverage" NAME="season_20_Barbarian Coverage Results" MODIFIED="1618344187453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/samples" />
+    <SUITE FILE_PATH="coverage/Diablo_API$systemTray_menu_pyw.coverage" NAME="systemTray_menu.pyw Coverage Results" MODIFIED="1616836905492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../rOS/programs" />
+    <SUITE FILE_PATH="coverage/Diablo_API$what_are_you_doing.coverage" NAME="what_are_you_doing Coverage Results" MODIFIED="1616836888277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Timeliner/services" />
+    <SUITE FILE_PATH="coverage/Diablo_API$character.coverage" NAME="character Coverage Results" MODIFIED="1625948940152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api" />
+    <SUITE FILE_PATH="coverage/Diablo_API$insertData.coverage" NAME="insertData Coverage Results" MODIFIED="1616595322438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../postGres" />
+    <SUITE FILE_PATH="coverage/Diablo_API$passives.coverage" NAME="passives Coverage Results" MODIFIED="1616708620971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/classes/Barbarian" />
+    <SUITE FILE_PATH="coverage/Diablo_API$playstyle_of_a_whirlwind_barbi.coverage" NAME="playstyle_of_a_whirlwind_barbi Coverage Results" MODIFIED="1626379584307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api/tests" />
+    <SUITE FILE_PATH="coverage/Diablo_API$techtree.coverage" NAME="techtree Coverage Results" MODIFIED="1618342477488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module/d3api" />
+  </component>
+</project>

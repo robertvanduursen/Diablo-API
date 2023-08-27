@@ -1,6 +1,6 @@
 """" this is an auto-generated file"""
 from datatypes import Item, Set, Set_Item
-from datatypes import Head, Hands, Torso, Waist, Legs, Feet, Shoulders
+# from datatypes import Head, Hands, Torso, Waist, Legs, Feet, Shoulders
 
 
 class Legacy_of_Nightmares(Set):

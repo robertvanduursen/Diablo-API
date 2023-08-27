@@ -20,6 +20,11 @@ from classes.Barbarian import skills
 from character import Character, Resource
 
 build_1 = Character()
+
+# load Smitina
+build_1.load_from_save()
+
+
 build_1.resource = Resource.FURY
 build_1.weapon = Blade_of_the_Tribes()
 # dirty hack

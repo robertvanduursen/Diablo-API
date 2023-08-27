@@ -1,5 +1,6 @@
 # from data import items_cache
 # from data import weapons_cache
+import re
 
 class Item(object):
     text = ''
@@ -601,6 +602,32 @@ class Skill(object):
             return True
         return False
 
+    @property
+    def tags(self):
+        # derivisions of skill text
+        desc = self.description.lower()
+        lookup = {
+            'cause': 'trigger',
+            'rocks': 'falling objects',
+            'area': 'area of effect',
+            'weapon damage': 'weapon damage',
+            'in its path': 'directional',
+            'hurl.*at': 'directional',
+            'cooldown is reduced': 'cooldown stacker',
+            'whirlwind': 'all round damage',
+            '\d{1,6}% movement speed': 'speed increase',
+            'cost: \d{1,6} fury': 'fury spender',
+            'cooldown:  \d{1,4} seconds': 'has cooldown',
+            'raises.*attributes': 'temp attr bumper',
+            'summon.': 'adds minions',
+        }
+        _tags = []
+        for tag, concept in lookup.items():
+            if re.search(tag, desc):
+                _tags.append(concept)
+
+        return _tags
+
 
 class Passive(Skill):
     pass
@@ -611,16 +638,17 @@ class Active(Skill):
 
 
 class Rune:
-    pass
 
+    Head = 'Helm'
+    Hands = 'Gloves'
+    Torso = 'Chest Armor'
+    Waist = 'Belt'
+    Legs = 'Pants'
+    Feet = 'Boots'
+    Shoulders = 'Shoulders'
 
-Head = 'Helm'
-Hands = 'Gloves'
-Torso = 'Chest Armor'
-Waist = 'Belt'
-Legs = 'Pants'
-Feet = 'Boots'
-Shoulders = 'Shoulders'
+    def __add__(self, other):
+        pass
 
 
 if __name__ == '__main__':

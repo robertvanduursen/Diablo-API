@@ -147,3 +147,5 @@ class Rampage(Passive):
     description = """Increase Strength by 1% for 8 seconds after killing or assisting in killing an enemy. This effect stacks up to 25 times."""
     url = r'https://us.diablo3.com//en/class/barbarian/passive/rampage'
 
+
+# all_passives = [y for x, y in locals().items() if isinstance(y, type) and Passive in y.__mro__][1:]

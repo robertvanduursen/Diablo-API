@@ -2,7 +2,7 @@ import os, sys, inspect
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..\..\..')))
 
-import classes.Necromancer as myClass
+import classes.Barbarian as myClass
 
 
 print('belts')
